@@ -1,0 +1,8 @@
+# はぐみぃ
+
+> 離れて暮らす親同士が、面会予定と養育費をアプリ内だけで共有できる共同養育サポートアプリ。連絡先を交換せずに、子どものために協力し合えます。iOS版・無料。
+
+- [はぐみぃ LP](https://hugme.tigerlabo.com/): 機能紹介・使い方・FAQ
+- [App Store](https://apps.apple.com/app/id6782561944): ダウンロード
+- [プライバシーポリシー](https://dulcet-licorice-b7bd09.netlify.app): 個人情報の取り扱い
+- 運営: 株式会社タイガーラボ (https://tigerlabo.com)
