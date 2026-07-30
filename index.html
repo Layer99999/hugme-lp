@@ -65,7 +65,7 @@
       "keywords": "共同養育, 面会調整, 面会交流, 養育費 管理, 離婚後の子育て, 親同士 連絡 アプリ, 共同親権",
       "inLanguage": "ja",
       "datePublished": "2026-07-22",
-      "dateModified": "2026-07-27",
+      "dateModified": "2026-07-31",
       "isPartOf": { "@id": "https://tigerlabo.com/#organization" },
       "about": { "@id": "https://hugme.tigerlabo.com/#app" }
     },
@@ -167,7 +167,7 @@
 
 <style>
   :root {
-    --bg:#FFFCF7; --card:#ffffff; --text:#3a3a3a; --sub:#7a7a7a;
+    --bg:#FFFCF7; --card:#ffffff; --text:#3a3a3a; --sub:#6a6a6a;
     --accent:#F4A261; --accent-deep:#E8894A; --green:#7FB77E; --line:#f0e8dd;
   }
   * { box-sizing:border-box; margin:0; padding:0; }
@@ -284,6 +284,27 @@
   .feature-card h3 { font-size:17px; margin-bottom:8px; color:#2a2a2a; }
   .feature-card p { font-size:14px; color:var(--sub); }
 
+  /* 比較表 */
+  .compare-wrap { overflow-x:auto; border:1px solid var(--line); border-radius:16px; }
+  table.compare { border-collapse:collapse; width:100%; min-width:560px; background:var(--card); font-size:14px; }
+  table.compare th, table.compare td { padding:14px 16px; text-align:left; border-bottom:1px solid var(--line); vertical-align:top; }
+  table.compare thead th { background:#F4EFE6; color:#2a2a2a; font-weight:700; font-size:13px; }
+  table.compare thead th:last-child { color:var(--accent-deep); }
+  table.compare td:first-child { font-weight:700; color:#2a2a2a; width:24%; }
+  table.compare td.old { color:var(--sub); }
+  table.compare td.new { color:#2a2a2a; }
+  table.compare td.new b { color:var(--accent-deep); }
+  table.compare tbody tr:last-child td { border-bottom:none; }
+
+  /* ガイドリンク */
+  .guide-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+  .guide-card { display:block; background:var(--card); border:1px solid var(--line); border-radius:16px; padding:22px 20px; transition:transform .15s ease, box-shadow .15s ease; }
+  .guide-card:hover { transform:translateY(-3px); box-shadow:0 12px 28px rgba(0,0,0,0.06); }
+  .guide-card .k { font-size:12px; font-weight:700; color:var(--accent-deep); }
+  .guide-card h3 { font-size:15px; margin:8px 0 6px; color:#2a2a2a; line-height:1.5; }
+  .guide-card p { font-size:13px; color:var(--sub); }
+  .guide-card .more { font-size:13px; font-weight:700; color:var(--accent-deep); margin-top:10px; display:inline-block; }
+
   /* 使い方ステップ */
   .steps { display:flex; flex-direction:column; gap:0; max-width:520px; margin:0 auto; }
   .step { display:flex; gap:20px; padding-bottom:36px; position:relative; }
@@ -326,7 +347,8 @@
   footer .flinks a { color:var(--sub); font-weight:600; }
 
   @media (max-width: 680px) {
-    .empathy-grid, .diff-grid, .feature-grid { grid-template-columns:1fr; }
+    .empathy-grid, .diff-grid, .feature-grid, .guide-grid { grid-template-columns:1fr; }
+    .compare-wrap { border-radius:12px; }
     .phone-mock { width:180px; height:360px; }
   }
 </style>
@@ -447,6 +469,37 @@
           <p>面会の前日・当日、養育費の支払い前日・当日・未払いの翌日に通知でお知らせします。</p>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="tag">これまでのやり方と、何が変わる？</span>
+      <h2>共同養育の連絡を、アプリの中だけで完結できる</h2>
+      <p>電話やLINE、口約束に頼っていた面会の調整や養育費のやり取りを、連絡先を交換せずにアプリの中だけで完結できます。これまでのやり方とはぐみぃの違いは次のとおりです。</p>
+    </div>
+    <div class="compare-wrap">
+      <table class="compare">
+        <thead>
+          <tr><th>できること</th><th>これまでのやり方（電話・LINE・口約束）</th><th>はぐみぃ</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>相手の連絡先</td><td class="old">電話番号・LINEの交換が必要</td><td class="new"><b>招待コードだけ</b>で交換不要</td></tr>
+          <tr><td>面会の日程調整</td><td class="old">メッセージで何往復もやり取り</td><td class="new">パターンを選んで<b>まとめて作成</b>。提案・承認もアプリ内</td></tr>
+          <tr><td>養育費の記録</td><td class="old">口頭・記憶に頼り、あとで曖昧に</td><td class="new">支払い済み・未払いを<b>見える化</b>。CSVで書き出し</td></tr>
+          <tr><td>予定・支払いの忘れ</td><td class="old">自分で管理するしかない</td><td class="new">面会・支払いを<b>リマインダー通知</b></td></tr>
+          <tr><td>やり取りの保全</td><td class="old">チャットや記憶に散らばる</td><td class="new">面会予定と記録を<b>アプリ内に一元保存</b></td></tr>
+          <tr><td>費用</td><td class="old">—</td><td class="new"><b>無料</b>（アプリ内課金なし）</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="cta-row" style="margin-top:28px">
+      <a class="btn-store" href="https://apps.apple.com/jp/app/id6782561944">
+        <span>📱</span>
+        <span>App Storeで無料ダウンロード<span class="sub">iOS対応・Android準備中</span></span>
+      </a>
     </div>
   </div>
 </section>
@@ -590,6 +643,36 @@
 
 <section>
   <div class="wrap">
+    <div class="section-head">
+      <span class="tag">もっと知る｜共同養育ガイド</span>
+      <h2>離婚後の子育てで、知っておきたいこと</h2>
+      <p>面会交流や養育費、2026年4月に施行された改正民法について、公的な情報をもとにまとめました。はぐみぃを使う・使わないにかかわらず役立つ内容です。</p>
+    </div>
+    <div class="guide-grid">
+      <a class="guide-card" href="/guide/kaisei-minpo-2026-kyodo-yoiku/">
+        <span class="k">改正民法</span>
+        <h3>2026年の改正民法で、共同養育はどう変わる？</h3>
+        <p>共同親権・法定養育費・親子交流の要点を、公的資料をもとに整理します。</p>
+        <span class="more">読む →</span>
+      </a>
+      <a class="guide-card" href="/guide/menkai-koryu-kimekata/">
+        <span class="k">面会交流</span>
+        <h3>面会交流の頻度・ルールの決め方</h3>
+        <p>取り決めの例と、無理なく続けるためのコツをまとめました。</p>
+        <span class="more">読む →</span>
+      </a>
+      <a class="guide-card" href="/guide/yoiku-hi-soba-jukyu/">
+        <span class="k">養育費</span>
+        <h3>養育費の相場はいくら？算定表の見方</h3>
+        <p>相場の考え方と、受け取り続けるための工夫を解説します。</p>
+        <span class="more">読む →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
     <div class="final-cta">
       <h2>今日から、ふたりで子育てを続ける</h2>
       <p>ダウンロードは無料。招待コードを送るところから始められます。</p>
@@ -605,11 +688,12 @@
 
 <footer>
   <div class="flinks">
+    <a href="/guide/">共同養育ガイド</a>
     <a href="https://dulcet-licorice-b7bd09.netlify.app">プライバシーポリシー</a>
     <a href="https://dulcet-licorice-b7bd09.netlify.app">サポート・お問い合わせ</a>
     <a href="https://tigerlabo.com">運営会社：株式会社タイガーラボ</a>
   </div>
-  <div>運営：株式会社タイガーラボ　最終更新：2026年7月27日</div>
+  <div>運営：株式会社タイガーラボ　最終更新：2026年7月31日</div>
   <div>© 2026 TIGERLABO Inc.</div>
 </footer>
 
