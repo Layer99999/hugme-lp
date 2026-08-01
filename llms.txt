@@ -6,7 +6,9 @@
 
 - [はぐみぃ LP](https://hugme.tigerlabo.com/): 機能紹介・使い方・FAQ
 - [App Store](https://apps.apple.com/jp/app/id6782561944): ダウンロード
-- [プライバシーポリシー](https://dulcet-licorice-b7bd09.netlify.app): 個人情報の取り扱い
+- [プライバシーポリシー](https://hugme.tigerlabo.com/privacy/): 個人情報の取り扱い
+- [利用規約](https://hugme.tigerlabo.com/terms/): 利用条件・本アプリの位置づけ
+- [共同養育ガイド](https://hugme.tigerlabo.com/guide/): 面会交流・養育費・改正民法の解説
 - 運営: 株式会社タイガーラボ (https://tigerlabo.com)
 
-最終更新: 2026-07-27
+最終更新: 2026-08-01
