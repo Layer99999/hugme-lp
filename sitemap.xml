@@ -8,25 +8,25 @@
   </url>
   <url>
     <loc>https://hugme.tigerlabo.com/guide/</loc>
-    <lastmod>2026-07-31</lastmod>
+    <lastmod>2026-08-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://hugme.tigerlabo.com/guide/kaisei-minpo-2026-kyodo-yoiku/</loc>
-    <lastmod>2026-07-31</lastmod>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://hugme.tigerlabo.com/guide/menkai-koryu-kimekata/</loc>
-    <lastmod>2026-07-31</lastmod>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://hugme.tigerlabo.com/guide/yoiku-hi-soba-jukyu/</loc>
-    <lastmod>2026-07-31</lastmod>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -47,5 +47,17 @@
     <lastmod>2026-08-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://hugme.tigerlabo.com/guide/kyodo-yoiku-toha/</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hugme.tigerlabo.com/guide/renraku-toritakunai/</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
