@@ -8,6 +8,7 @@
 - [App Store](https://apps.apple.com/jp/app/id6782561944): ダウンロード
 - [プライバシーポリシー](https://hugme.tigerlabo.com/privacy/): 個人情報の取り扱い
 - [利用規約](https://hugme.tigerlabo.com/terms/): 利用条件・本アプリの位置づけ
+- [支援団体・士業・自治体の方へ](https://hugme.tigerlabo.com/for-professionals/): 専門職向けの説明・導入の考え方
 - 運営: 株式会社タイガーラボ (https://tigerlabo.com)
 
 ## 共同養育ガイド（解説記事）
@@ -18,7 +19,9 @@
 - [面会交流の頻度・ルールの決め方](https://hugme.tigerlabo.com/guide/menkai-koryu-kimekata/): 頻度の目安、決めておく項目、変更したいときの進め方
 - [養育費の相場はいくら？算定表の見方](https://hugme.tigerlabo.com/guide/yoiku-hi-soba-jukyu/): 裁判所の算定表の読み方、相場の考え方、取り決めの残し方
 - [元パートナーと連絡を取りたくないときの共同養育の進め方](https://hugme.tigerlabo.com/guide/renraku-toritakunai/): 直接やりとりを避けたい場合の選択肢と、記録の残し方
+- [共同親権と単独親権の違いは？2026年改正民法での決め方](https://hugme.tigerlabo.com/guide/kyodo-shinken-tandoku/): 親権とは何か、共同/単独の違い、決め方、共同親権を選べない場合、日常の行為の範囲
+- [養育費が未払いのときの対処（法定養育費・履行勧告・差押え）](https://hugme.tigerlabo.com/guide/yoiku-hi-mibarai-taisho/): 未払い時の手順、履行勧告・履行命令・強制執行の違い、法定養育費（子1人月額2万円）、相談窓口
 
 出典は各記事内に明記（こども家庭庁・厚生労働省・法務省の公式情報）。
 
-最終更新: 2026-08-08
+最終更新: 2026-08-11
