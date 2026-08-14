@@ -9,6 +9,7 @@
 - [プライバシーポリシー](https://hugme.tigerlabo.com/privacy/): 個人情報の取り扱い
 - [利用規約](https://hugme.tigerlabo.com/terms/): 利用条件・本アプリの位置づけ
 - [支援団体・士業・自治体の方へ](https://hugme.tigerlabo.com/for-professionals/): 専門職向けの説明・導入の考え方
+- [note「はぐみぃ」](https://note.com/tigerlabo): 共同養育ガイドの記事を読みやすく書き直して掲載
 - 運営: 株式会社タイガーラボ (https://tigerlabo.com)
 
 ## 共同養育ガイド（解説記事）
