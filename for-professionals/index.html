@@ -79,9 +79,10 @@
       "@id": "https://hugme.tigerlabo.com/#app",
       "name": "はぐみぃ",
       "applicationCategory": "LifestyleApplication",
-      "operatingSystem": "iOS",
+      "operatingSystem": "iOS, Android",
       "url": "https://hugme.tigerlabo.com/",
       "downloadUrl": "https://apps.apple.com/jp/app/id6782561944",
+      "sameAs": ["https://apps.apple.com/jp/app/id6782561944", "https://play.google.com/store/apps/details?id=com.tigerlabo.hugme"],
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
       "publisher": { "@id": "https://tigerlabo.com/#organization" }
     }
@@ -146,7 +147,7 @@
     {
       "@type": "Question",
       "name": "Android版はありますか。",
-      "acceptedAnswer": { "@type": "Answer", "text": "現在はiOS版のみ公開しています。Android版は準備中です。両方の親のうち一方がAndroidの場合、いまはご一緒に使っていただけません。" }
+      "acceptedAnswer": { "@type": "Answer", "text": "iOS版・Android版の両方を公開しています（App StoreとGoogle Play）。両方の親のうち一方がAndroid、もう一方がiPhoneでも、ご一緒に使っていただけます。" }
     },
     {
       "@type": "Question",
@@ -216,6 +217,7 @@
   .mail { display:inline-block; background:var(--accent); color:#fff; font-weight:700; font-size:15px; padding:13px 26px; border-radius:14px; text-decoration:none; margin:12px 0 6px; }
   .btn-store { display:inline-flex; align-items:center; gap:10px; background:#111; color:#fff; padding:13px 24px; border-radius:16px; font-weight:700; font-size:14.5px; text-decoration:none; margin-top:8px; }
   .btn-store .sub { display:block; font-size:11px; font-weight:400; opacity:.8; }
+  .store-pair{display:flex; flex-wrap:wrap; justify-content:center; gap:12px}
   .mailnote { font-size:13px; color:var(--sub); }
   .links a { display:block; padding:12px 0; border-bottom:1px solid var(--line); text-decoration:none; color:#2a2a2a; font-weight:700; font-size:14.5px; }
   .links a:last-child { border-bottom:none; }
@@ -243,7 +245,7 @@
     <img src="/assets/icon-256.png" alt="はぐみぃ 共同養育アプリのアイコン" width="34" height="34">
     <span>はぐみぃ</span>
   </a>
-  <a class="nav-cta" href="https://apps.apple.com/jp/app/id6782561944">無料で入手</a>
+  <a class="nav-cta" href="/#download">無料で入手</a>
 </nav>
 
 <div class="crumb"><a href="/">はぐみぃ</a><span>›</span>支援団体・士業・自治体の方へ</div>
@@ -435,7 +437,7 @@
 
   <p class="ans">正直に書きます。導入していただいた団体はまだありません。App Storeのレビューも0件です。利用者数は公開していません。ここに載せられる自慢が、ひとつもない状態です。</p>
 
-  <p>iOS版を公開したのは2026年7月で、Android版は準備中です。ですので「みんな使っています」という言い方はできません。</p>
+  <p>iOS版を公開したのは2026年7月、Android版は2026年8月です。どちらも公開したばかりで、「みんな使っています」という言い方はできません。</p>
 
   <p>そのかわり、確かめられることだけを書いています。無料であること、課金も広告もないこと、位置情報・連絡先・写真を取得しないこと、記録を書き出せること、いつでも削除できること、そして当社が何をしないか。これは全部、アプリと<a href="/terms/">利用規約</a>を見ていただければ確認できます。実際に触っていただくのが一番早いと思います。親でなくても、ひとりで予定と記録の画面を試すことはできます。</p>
 
@@ -447,7 +449,7 @@
       <tr><td>導入していただいた団体・事務所・自治体</td><td>0件</td></tr>
       <tr><td>App Storeのレビュー</td><td>0件</td></tr>
       <tr><td>利用者数</td><td>公開していません</td></tr>
-      <tr><td>対応している端末</td><td>iOS（Android版は準備中）</td></tr>
+      <tr><td>対応している端末</td><td>iOS・Android</td></tr>
       <tr><td>料金</td><td>無料（アプリ内課金なし・広告なし）</td></tr>
       <tr><td>運営</td><td>株式会社タイガーラボ（東京都渋谷区）</td></tr>
     </table>
@@ -498,7 +500,7 @@
     </details>
     <details>
       <summary>Android版はありますか。</summary>
-      <p>現在はiOS版のみ公開しています。Android版は準備中です。両方の親のうち一方がAndroidの場合、いまはご一緒に使っていただけません。</p>
+      <p>iOS版・Android版の両方を公開しています（App StoreとGoogle Play）。両方の親のうち一方がAndroid、もう一方がiPhoneでも、ご一緒に使っていただけます。</p>
     </details>
     <details>
       <summary>資料はありますか。説明に来ていただくことはできますか。</summary>
@@ -520,10 +522,10 @@
     <p>資料の送り先や、ご質問はこちらへ。</p>
     <a class="mail" href="mailto:contact_hugme@tigerlabo.com">contact_hugme@tigerlabo.com へメールする</a>
     <p class="mailnote">表示名：はぐみぃ運営　／　返信は土日祝を除いて順次お送りします。<br>売り込みの電話や、繰り返しのメールをお送りすることはありません。</p>
-    <a class="btn-store" href="https://apps.apple.com/jp/app/id6782561944">
-      <span>📱</span>
-      <span>App Storeで無料ダウンロード<span class="sub">iOS対応・Android準備中</span></span>
-    </a>
+    <div class="store-pair">
+      <a class="btn-store" href="https://apps.apple.com/jp/app/id6782561944"><span>📱</span><span>App Storeで無料ダウンロード<span class="sub">iPhone・iPad</span></span></a>
+      <a class="btn-store" href="https://play.google.com/store/apps/details?id=com.tigerlabo.hugme"><span>📱</span><span>Google Playで無料ダウンロード<span class="sub">Android 7.0以上</span></span></a>
+    </div>
   </div>
 
   <p class="operator">

@@ -76,7 +76,7 @@
       "alternateName": ["Hugme", "はぐみぃ 共同養育サポート", "はぐみぃ 共同養育アプリ", "はぐみぃ 面会調整アプリ"],
       "applicationCategory": "LifestyleApplication",
       "applicationSubCategory": "共同養育・面会調整・養育費管理",
-      "operatingSystem": "iOS",
+      "operatingSystem": "iOS, Android",
       "description": "離婚後・別居後に離れて暮らす親同士が、面会の日程調整と養育費の管理をアプリ内だけで共有できる共同養育サポートアプリ。連絡先を交換せずに、子どものために協力し合えます。",
       "featureList": [
         "面会スケジュールの作成（週ごと・隔週・月ごとのパターンから選択）",
@@ -89,7 +89,7 @@
       "keywords": "共同養育, 面会調整, 面会交流, 養育費 管理, 離婚後の子育て, 親同士 連絡 アプリ",
       "url": "https://hugme.tigerlabo.com/",
       "downloadUrl": "https://apps.apple.com/jp/app/id6782561944",
-      "sameAs": ["https://apps.apple.com/jp/app/%E3%81%AF%E3%81%90%E3%81%BF%E3%81%83-%E5%85%B1%E5%90%8C%E9%A4%8A%E8%82%B2%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88/id6782561944"],
+      "sameAs": ["https://apps.apple.com/jp/app/%E3%81%AF%E3%81%90%E3%81%BF%E3%81%83-%E5%85%B1%E5%90%8C%E9%A4%8A%E8%82%B2%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88/id6782561944", "https://play.google.com/store/apps/details?id=com.tigerlabo.hugme"],
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
       "publisher": { "@id": "https://tigerlabo.com/#organization" }
     }
@@ -159,7 +159,7 @@
     {
       "@type": "Question",
       "name": "Androidでも使えますか？",
-      "acceptedAnswer": { "@type": "Answer", "text": "現在はiOS版のみ公開しています。Android版は準備中です。" }
+      "acceptedAnswer": { "@type": "Answer", "text": "iOS版・Android版の両方を公開しています。App Store（iPhone・iPad）とGoogle Play（Android 7.0以上）から無料でダウンロードできます。" }
     },
     {
       "@type": "Question",
@@ -236,6 +236,7 @@
   }
   .btn-store:hover { transform:translateY(-2px); }
   .btn-store .sub { display:block; font-size:11px; font-weight:400; opacity:.8; }
+  .store-pair{display:flex; flex-wrap:wrap; justify-content:center; gap:12px}
   .price-note { font-size:13px; color:var(--sub); }
 
   .phone-mock {
@@ -372,7 +373,7 @@
     <img src="./assets/icon-256.png" alt="はぐみぃ 共同養育アプリのアイコン" width="36" height="36" fetchpriority="high">
     <span>はぐみぃ</span>
   </div>
-  <a class="nav-cta" href="https://apps.apple.com/jp/app/id6782561944">無料で入手</a>
+  <a class="nav-cta" href="#download">無料で入手</a>
 </header>
 
 <main>
@@ -386,10 +387,10 @@
       面会の日程調整と養育費の管理をアプリの中だけで共有でき、電話番号やLINEを交換せず、気をつかう連絡も減らして、子どものための協力を続けられます。
     </p>
     <div class="cta-row">
-      <a class="btn-store" href="https://apps.apple.com/jp/app/id6782561944">
-        <span>📱</span>
-        <span>App Storeで無料ダウンロード<span class="sub">iOS対応・Android準備中</span></span>
-      </a>
+      <div class="store-pair">
+        <a class="btn-store" href="https://apps.apple.com/jp/app/id6782561944"><span>📱</span><span>App Storeで無料ダウンロード<span class="sub">iPhone・iPad</span></span></a>
+        <a class="btn-store" href="https://play.google.com/store/apps/details?id=com.tigerlabo.hugme"><span>📱</span><span>Google Playで無料ダウンロード<span class="sub">Android 7.0以上</span></span></a>
+      </div>
       <span class="price-note">アプリ内課金なし・登録は数分で完了</span>
     </div>
 
@@ -508,10 +509,10 @@
       </table>
     </div>
     <div class="cta-row" style="margin-top:28px">
-      <a class="btn-store" href="https://apps.apple.com/jp/app/id6782561944">
-        <span>📱</span>
-        <span>App Storeで無料ダウンロード<span class="sub">iOS対応・Android準備中</span></span>
-      </a>
+      <div class="store-pair">
+        <a class="btn-store" href="https://apps.apple.com/jp/app/id6782561944"><span>📱</span><span>App Storeで無料ダウンロード<span class="sub">iPhone・iPad</span></span></a>
+        <a class="btn-store" href="https://play.google.com/store/apps/details?id=com.tigerlabo.hugme"><span>📱</span><span>Google Playで無料ダウンロード<span class="sub">Android 7.0以上</span></span></a>
+      </div>
     </div>
   </div>
 </section>
@@ -693,7 +694,7 @@
     </details>
     <details>
       <summary>Androidでも使えますか？</summary>
-      <p>現在はiOS版のみ公開しています。Android版は準備中です。</p>
+      <p>iOS版・Android版の両方を公開しています。App Store（iPhone・iPad）とGoogle Play（Android 7.0以上）から無料でダウンロードできます。</p>
     </details>
     <details>
       <summary>元パートナーと連絡を取らずに、面会交流の予定を管理できるアプリはありますか？</summary>
@@ -760,15 +761,15 @@
   </div>
 </section>
 
-<section>
+<section id="download">
   <div class="wrap">
     <div class="final-cta">
       <h2>今日から、ふたりで子育てを続ける</h2>
       <p>ダウンロードは無料。招待コードを送るところから始められます。</p>
-      <a class="btn-store" href="https://apps.apple.com/jp/app/id6782561944">
-        <span>📱</span>
-        <span>App Storeで無料ダウンロード<span class="sub">iOS対応・Android準備中</span></span>
-      </a>
+      <div class="store-pair">
+        <a class="btn-store" href="https://apps.apple.com/jp/app/id6782561944"><span>📱</span><span>App Storeで無料ダウンロード<span class="sub">iPhone・iPad</span></span></a>
+        <a class="btn-store" href="https://play.google.com/store/apps/details?id=com.tigerlabo.hugme"><span>📱</span><span>Google Playで無料ダウンロード<span class="sub">Android 7.0以上</span></span></a>
+      </div>
     </div>
   </div>
 </section>
