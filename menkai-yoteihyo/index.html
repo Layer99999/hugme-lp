@@ -186,6 +186,9 @@
   .btn-store{display:inline-flex; align-items:center; gap:9px; background:#111; color:#fff; padding:13px 24px; border-radius:14px; font-weight:700; font-size:14.5px; text-decoration:none; box-shadow:0 8px 20px rgba(0,0,0,0.14)}
   .btn-store .sub{display:block; font-size:10.5px; font-weight:400; opacity:.8}
   .store-pair{display:flex; flex-wrap:wrap; justify-content:center; gap:12px}
+  .cta .ctanote{font-size:13px; color:var(--sub); margin:14px 0 0}
+  .appcta{margin:18px 0 22px; padding:22px 20px}
+  .inline-app{background:var(--soft); border:1px solid var(--line); border-radius:12px; padding:13px 15px; font-size:14.5px}
   details{background:var(--card); border:1px solid var(--line); border-radius:13px; padding:16px 18px; margin-bottom:11px}
   summary{font-weight:700; font-size:14.5px; cursor:pointer; color:#2a2a2a; list-style:none}
   summary::-webkit-details-marker{display:none}
@@ -263,6 +266,7 @@
     header.nav, .crumb, footer, main .wrap > *{display:none !important}
     main .wrap > h1, main .wrap > #sheet, main .wrap > .disclaimer{display:block !important}
     #sheet .rowbtns, #sheet #shareMsg, #sheet .noprint, #sheet .cta{display:none !important}
+    .appcta, .inline-app, .store-pair, .btn-store{display:none !important}
     #sheet .printline{display:block !important; font-size:8pt; line-height:1.45; margin:6pt 0 0; padding:4pt 6pt; border:.5pt solid #999; border-radius:4pt}
     main{padding:0}
     .wrap{max-width:none; padding:0}
@@ -316,6 +320,17 @@
       法務省は「親子の安全・安心を確保することができないなど親子交流がこどもの利益に反する場合には、無理な親子交流は相当でないと考えられます」としています。
       配偶者からの暴力やお子さんへの虐待のおそれがある場合は、配偶者暴力相談支援センター（お住まいの自治体の窓口）、DV相談ナビ（内閣府）、児童相談所虐待対応ダイヤル「189」、緊急のときは警察「110」へご相談ください。
     </div>
+
+    <div class="cta appcta">
+      <p><b>この予定表と同じことを、アプリなら相手と同じ画面で毎月続けられます。</b><br>
+      「この日でどうですか」と提案すると相手の画面に届き、そのまま承認するか、内容を変えて提案し返せます。面会の前にはリマインダーが届きます。</p>
+      <div class="store-pair">
+        <a class="btn-store" href="https://apps.apple.com/jp/app/id6782561944" data-store="ios"><span>📱</span><span>App Storeで無料ダウンロード<span class="sub">iPhone・iOS 15.1以上</span></span></a>
+        <a class="btn-store" href="https://play.google.com/store/apps/details?id=com.tigerlabo.hugme" data-store="android"><span>📱</span><span>Google Playで無料ダウンロード<span class="sub">Android 7.0以上</span></span></a>
+      </div>
+      <p class="ctanote">利用料はいただきません／アプリ内に広告も課金もありません／連絡先の交換は要りません</p>
+    </div>
+
     <p class="byline">文責：株式会社タイガーラボ 編集部　｜　公開日：2026年8月25日　｜　更新日：2026年8月25日</p>
 
     <!-- ── 選ぶ ────────────────────────────── -->
@@ -492,6 +507,7 @@
 
       <div class="cta">
         <p><b>決めた予定を毎月回すところは、アプリでできます。</b><br>
+        紙のままでも使えます。相手と毎月回すならアプリで。招待は8桁のコードを伝えるだけです。<br>
         「この日でどうですか」と提案すると相手の画面に届き、承認・変更までアプリの中で完結します。面会の前にはリマインダーが届きます。連絡先の交換は要りません。利用料も広告も、アプリ内の課金もありません。</p>
         <div class="store-pair">
           <a class="btn-store" href="https://apps.apple.com/jp/app/id6782561944" data-store="ios"><span>📱</span><span>App Storeで無料ダウンロード<span class="sub">iPhone・iOS 15.1以上</span></span></a>
@@ -525,6 +541,7 @@
       </table>
     </div>
     <p style="font-size:13.5px;color:var(--sub)">（出典：<a href="https://www.moj.go.jp/MINJI/minji07_00393.html" target="_blank" rel="noopener">法務省 共同養育計画作成支援ページ（離婚後の場合）</a>）</p>
+    <p class="inline-app">ここまでを決めたあと、<b>日時の提案・承認・変更を相手とアプリの中だけで済ませる</b>こともできます。電話やメッセージのやり取りは要りません。→ <a href="/#download">はぐみぃ（無料アプリ）について</a></p>
 
     <h2>そもそも文書にする必要はありますか？</h2>
     <p class="ans"><b>法務省は「あえて文書で取決めをする必要がないことも考えられます」とも書いています。</b></p>
