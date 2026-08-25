@@ -188,6 +188,13 @@
   .store-pair{display:flex; flex-wrap:wrap; justify-content:center; gap:12px}
   .cta .ctanote{font-size:13px; color:var(--sub); margin:14px 0 0}
   .appcta{margin:18px 0 22px; padding:22px 20px}
+  .appcta-body{min-width:0}
+  .appshot{display:block; width:168px; height:230px; margin:16px auto 0; border:1px solid var(--line); border-radius:14px; background:var(--card)}
+  @media (min-width:700px){
+    .appcta{display:flex; align-items:center; gap:24px; text-align:left}
+    .appcta .store-pair{justify-content:flex-start}
+    .appshot{flex:none; width:260px; height:356px; margin:0}
+  }
   .inline-app{background:var(--soft); border:1px solid var(--line); border-radius:12px; padding:13px 15px; font-size:14.5px}
   details{background:var(--card); border:1px solid var(--line); border-radius:13px; padding:16px 18px; margin-bottom:11px}
   summary{font-weight:700; font-size:14.5px; cursor:pointer; color:#2a2a2a; list-style:none}
@@ -266,7 +273,7 @@
     header.nav, .crumb, footer, main .wrap > *{display:none !important}
     main .wrap > h1, main .wrap > #sheet, main .wrap > .disclaimer{display:block !important}
     #sheet .rowbtns, #sheet #shareMsg, #sheet .noprint, #sheet .cta{display:none !important}
-    .appcta, .inline-app, .store-pair, .btn-store{display:none !important}
+    .appcta, .appcta-body, .appshot, .inline-app, .store-pair, .btn-store{display:none !important}
     #sheet .printline{display:block !important; font-size:8pt; line-height:1.45; margin:6pt 0 0; padding:4pt 6pt; border:.5pt solid #999; border-radius:4pt}
     main{padding:0}
     .wrap{max-width:none; padding:0}
@@ -322,6 +329,7 @@
     </div>
 
     <div class="cta appcta">
+      <div class="appcta-body">
       <p><b>この予定表と同じことを、アプリなら相手と同じ画面で毎月続けられます。</b><br>
       「この日でどうですか」と提案すると相手の画面に届き、そのまま承認するか、内容を変えて提案し返せます。面会の前にはリマインダーが届きます。</p>
       <div class="store-pair">
@@ -329,6 +337,8 @@
         <a class="btn-store" href="https://play.google.com/store/apps/details?id=com.tigerlabo.hugme" data-store="android"><span>📱</span><span>Google Playで無料ダウンロード<span class="sub">Android 7.0以上</span></span></a>
       </div>
       <p class="ctanote">利用料はいただきません／アプリ内に広告も課金もありません／連絡先の交換は要りません</p>
+      </div>
+      <img class="appshot" src="/assets/app-yotei@2x.webp" width="168" height="230" loading="lazy" decoding="async" alt="はぐみぃアプリの面会交流の予定画面（スクリーンショット）。カレンダーの日付に面会と養育費の印がつき、下に面会のタブが並んでいる。">
     </div>
 
     <p class="byline">文責：株式会社タイガーラボ 編集部　｜　公開日：2026年8月25日　｜　更新日：2026年8月25日</p>
