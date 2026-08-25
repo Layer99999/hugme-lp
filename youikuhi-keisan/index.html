@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G57V70ZJ66"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  /* 計測に渡す「ページの住所」から、入力内容でできた部分（a= b= k= 等）を落とし、
+     流入元をあらわす utm だけ残す。入力した内容がGoogleへ渡らないようにするため。 */
+  window.__pageLoc = (function () {
+    var u = new URL(window.location.href), keep = new URLSearchParams();
+    u.searchParams.forEach(function (v, k) { if (k.indexOf('utm_') === 0 || k === 'gclid') keep.set(k, v); });
+    var q = keep.toString();
+    return u.origin + u.pathname + (q ? '?' + q : '');
+  })();
+  gtag('js', new Date());
+  gtag('config', 'G-G57V70ZJ66', {
+    allow_google_signals: false,
+    allow_ad_personalization_signals: false,
+    page_location: window.__pageLoc
+  });
+</script>
+<title>養育費かんたん計算｜算定表の目安と法定養育費をならべて見る</title>
+<meta name="description" content="裁判所の養育費算定表（令和元年版）にもとづく目安を、2026年4月から始まった法定養育費（月2万円×子の人数）とならべて表示します。父母のどちらが何人みているかも入れられます。結果は印刷・共有できます。無料・登録不要。">
+<meta name="keywords" content="養育費 計算,養育費 算定表,法定養育費,共同監護 養育費,養育費 シミュレーション">
+<link rel="canonical" href="https://hugme.tigerlabo.com/youikuhi-keisan/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hugme.tigerlabo.com/youikuhi-keisan/">
+<meta property="og:title" content="養育費かんたん計算｜算定表の目安と法定養育費をならべて見る">
+<meta property="og:description" content="裁判所の養育費算定表（令和元年版）の目安と、2026年4月から始まった法定養育費をならべて表示。父母のどちらが何人みているかにも対応。結果は印刷・共有できます。">
+<meta property="og:site_name" content="はぐみぃ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://hugme.tigerlabo.com/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://hugme.tigerlabo.com/assets/og-image.png">
+<link rel="icon" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/icon.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://tigerlabo.com/#organization",
+      "name": "株式会社タイガーラボ",
+      "alternateName": ["TIGERLABO", "TigerLabo", "Tigerlabo Inc."],
+      "url": "https://tigerlabo.com",
+      "logo": "https://tigerlabo.com/assets/logo.png",
+      "sameAs": ["https://map.yahoo.co.jp/v3/place/VBGxuHJFPOM", "https://note.com/tigerlabo"]
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://hugme.tigerlabo.com/youikuhi-keisan/#tool",
+      "name": "養育費かんたん計算",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "browserRequirements": "JavaScriptが有効なブラウザ",
+      "inLanguage": "ja",
+      "description": "裁判所が公表している養育費算定表（令和元年版）のもとになっている標準算定方式で、養育費の月額の目安を計算し、2026年4月に始まった法定養育費とならべて表示するツール。父母の双方が子を監護している場合の入力にも対応する。",
+      "featureList": [
+        "裁判所の養育費算定表（令和元年版）にもとづく月額の目安",
+        "法定養育費（月2万円×子の人数）との並列表示",
+        "父母のどちらが何人の子をみているかの入力",
+        "結果の印刷（A4 1枚）・リンクでの共有",
+        "子ごとの内訳（生活費指数による按分）"
+      ],
+      "isAccessibleForFree": true,
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
+      "publisher": { "@id": "https://tigerlabo.com/#organization" }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://hugme.tigerlabo.com/youikuhi-keisan/#webpage",
+      "url": "https://hugme.tigerlabo.com/youikuhi-keisan/",
+      "name": "養育費かんたん計算｜算定表の目安と法定養育費をならべて見る",
+      "inLanguage": "ja",
+      "datePublished": "2026-08-25",
+      "dateModified": "2026-08-25",
+      "isPartOf": { "@id": "https://tigerlabo.com/#organization" },
+      "author": { "@id": "https://tigerlabo.com/#organization" },
+      "publisher": { "@id": "https://tigerlabo.com/#organization" },
+      "mainEntity": { "@id": "https://hugme.tigerlabo.com/youikuhi-keisan/#tool" },
+      "primaryImageOfPage": "https://hugme.tigerlabo.com/assets/og-image.png"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://hugme.tigerlabo.com/youikuhi-keisan/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "はぐみぃ", "item": "https://hugme.tigerlabo.com/" },
+        { "@type": "ListItem", "position": 2, "name": "養育費かんたん計算", "item": "https://hugme.tigerlabo.com/youikuhi-keisan/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://hugme.tigerlabo.com/youikuhi-keisan/#faq",
+      "isPartOf": { "@id": "https://hugme.tigerlabo.com/youikuhi-keisan/#webpage" },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "この計算は何にもとづいていますか？",
+          "acceptedAnswer": { "@type": "Answer", "text": "裁判所が令和元年（2019年）12月23日に公表した改定標準算定表（令和元年版）のもとになっている標準算定方式です。年収から基礎収入を出し、子の生活費指数（0〜14歳は62、15歳以上は85）で子の生活費を出し、父母の基礎収入で按分します。2026年8月現在、これより新しい算定表は公表されていません。" }
+        },
+        {
+          "@type": "Question",
+          "name": "入れる年収は手取りですか、額面ですか？",
+          "acceptedAnswer": { "@type": "Answer", "text": "額面です。給与の方は源泉徴収票の「支払金額」、自営の方は確定申告書の「課税される所得金額」に、実際には支出していない控除（基礎控除、青色申告控除（青色申告特別控除）、支払っていない専従者給与など）を足し戻した額を入れてください。児童扶養手当や児童手当は、受け取る側の年収に含めません（出典：裁判所「養育費・婚姻費用算定表について」）。" }
+        },
+        {
+          "@type": "Question",
+          "name": "法定養育費とは何ですか？",
+          "acceptedAnswer": { "@type": "Answer", "text": "2026年4月1日から始まった、取り決めがないまま離婚した場合に、離婚のときから引き続きこどもの監護を主として行う親が、もう一方に対して、取り決めるまでの間だけ暫定的に請求できる養育費です。額は子1人あたり月2万円で、離婚の日から発生します。2026年4月1日以降に離婚した場合にだけ適用され、それ以前の離婚では発生しません（出典：法務省パンフレット）。" }
+        },
+        {
+          "@type": "Question",
+          "name": "法定養育費はいつまで続きますか？",
+          "acceptedAnswer": { "@type": "Answer", "text": "次の3つのうち、いちばん早い日までです。（1）父母が養育費の取決めをした日（2）家庭裁判所における養育費の審判が確定した日（3）こどもが18歳に達した日（出典：法務省パンフレット Q2）。" }
+        },
+        {
+          "@type": "Question",
+          "name": "父母の双方が子どもをみている場合も計算できますか？",
+          "acceptedAnswer": { "@type": "Answer", "text": "できます。子どもごとに「主にみている親」を選べます。ただし裁判所の算定表には、父母の双方が子をみている場合の表がありません。その場合は標準算定方式の考え方をそのまま当てはめた参考の計算として、どちらからどちらへいくら渡すかを表示します。" }
+        },
+        {
+          "@type": "Question",
+          "name": "受け取る側の年収が支払う側より高いときはどうなりますか？",
+          "acceptedAnswer": { "@type": "Answer", "text": "裁判所の算定表は、受け取る側の年収が支払う側を上回る範囲では枠が横一直線になり、それ以上は下がりません。この計算も表に合わせ、受け取る側の基礎収入は支払う側と同じ額までとして計算します。" }
+        },
+        {
+          "@type": "Question",
+          "name": "結果は保存できますか？相手に渡せますか？",
+          "acceptedAnswer": { "@type": "Answer", "text": "できます。結果のリンクをコピーして残す、A4 1枚で印刷する、LINEなどで送る、の3つが使えます。リンクに入るのは25万円きざみに丸めた年収の区分値だけで、1円単位の年収は入りません。名前は最初から扱いません。" }
+        },
+        {
+          "@type": "Question",
+          "name": "計算した金額はそのまま決まりますか？",
+          "acceptedAnswer": { "@type": "Answer", "text": "決まりません。算定表は標準的な養育費を簡易迅速に算定することを目的としたもので、最終的な金額はいろいろな事情を考慮して定まります（出典：裁判所「養育費・婚姻費用算定表について」）。ここで出るのは一般的な目安です。" }
+        },
+        {
+          "@type": "Question",
+          "name": "子どもが4人以上のときは？",
+          "acceptedAnswer": { "@type": "Answer", "text": "裁判所の算定表は子3人までです。4人以上を入れた場合は表がないため、標準算定方式の式をそのまま当てはめた参考の計算として表示します。" }
+        },
+        {
+          "@type": "Question",
+          "name": "決めた金額を、子どもごとに分けるとどうなりますか？",
+          "acceptedAnswer": { "@type": "Answer", "text": "子の生活費指数（0〜14歳は62、15歳以上は85）で按分します。裁判所の説明書にも例があり、子2人（10歳と15歳）で全額5万円のとき、10歳の子は2万円（5万円×62÷147）、15歳の子は3万円（5万円×85÷147）になります。このページでも、決めた金額を入れると内訳を表示します。" }
+        },
+        {
+          "@type": "Question",
+          "name": "入力した内容はどこかに送られますか？",
+          "acceptedAnswer": { "@type": "Answer", "text": "送られません。計算はすべてお使いのブラウザの中で行われ、年収や金額がサーバーへ送られることはありません。アクセス解析には「計算が終わった」という事実だけを記録し、入力した数字や計算結果は記録しません。" }
+        },
+        {
+          "@type": "Question",
+          "name": "計算したあとは何をすればいいですか？",
+          "acceptedAnswer": { "@type": "Answer", "text": "3つあります。（1）決めたことを書面に残す（2）支払方法と支払日を決める（3）毎月の受け渡しを記録する。とくに文書での取り決めがあると、養育費に先取特権という優先権が認められ、その文書をもって差押えの手続を申し立てられます（出典：法務省パンフレット）。" }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+  :root{
+    --bg:#FFFCF7; --card:#ffffff; --text:#3a3a3a; --sub:#6a6a6a;
+    --accent:#F4A261; --accent-deep:#D9772F; --green:#7FB77E; --line:#f0e8dd; --soft:#FBF3E8;
+    --maxw:760px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg); color:var(--text); font-family:-apple-system,"Hiragino Maru Gothic ProN","Hiragino Sans",sans-serif; line-height:1.95; -webkit-font-smoothing:antialiased; overflow-x:hidden}
+  a{color:var(--accent-deep)}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 22px}
+  header.nav{display:flex; align-items:center; justify-content:space-between; max-width:960px; margin:0 auto; padding:18px 22px}
+  header.nav .brand{display:flex; align-items:center; gap:10px}
+  header.nav .brand img{width:34px; height:34px; border-radius:9px}
+  header.nav .brand span{font-weight:700; font-size:17px; color:#2a2a2a}
+  header.nav .nav-cta{background:var(--accent); color:#fff; padding:8px 18px; border-radius:999px; font-weight:700; font-size:13px; text-decoration:none; white-space:nowrap}
+  .crumb{max-width:var(--maxw); margin:0 auto; padding:16px 22px 0; font-size:12.5px; color:var(--sub)}
+  .crumb a{color:var(--sub); text-decoration:none}
+  .crumb span{margin:0 7px; opacity:.5}
+  main{padding:8px 0 40px}
+  .eyebrow{display:inline-block; background:var(--card); border:1px solid var(--line); color:var(--accent-deep); font-size:12px; font-weight:700; padding:5px 14px; border-radius:999px; margin:20px 0 16px}
+  h1{font-size:clamp(24px,4.5vw,33px); line-height:1.5; font-weight:800; color:#2a2a2a; margin-bottom:20px}
+  .lead{background:var(--soft); border:1px solid var(--line); border-radius:16px; padding:20px 22px; font-size:15.5px; color:#3a3a3a; margin-bottom:16px}
+  .byline{font-size:12.5px; color:var(--sub); margin-bottom:26px}
+  h2{font-size:clamp(20px,3.6vw,25px); color:#2a2a2a; line-height:1.5; margin:46px 0 6px; padding-top:22px; border-top:1px solid var(--line); font-weight:800}
+  h3{font-size:17px; color:#2a2a2a; margin:28px 0 6px; font-weight:700}
+  .ans{font-size:15.5px; color:#3a3a3a; margin:14px 0 10px; font-weight:600}
+  p{font-size:15px; color:var(--text); margin:12px 0}
+  strong,b{color:#2a2a2a}
+  ul,ol{margin:14px 0 14px 2px}
+  li{margin:8px 0 8px 22px; font-size:15px}
+  .tablewrap{overflow-x:auto; border:1px solid var(--line); border-radius:14px; margin:18px 0}
+  table{border-collapse:collapse; width:100%; min-width:420px; background:var(--card); font-size:14px}
+  th,td{padding:12px 14px; text-align:left; border-bottom:1px solid var(--line); vertical-align:top}
+  thead th{background:var(--soft); color:#2a2a2a; font-weight:700; font-size:13px}
+  tbody tr:last-child td{border-bottom:none}
+  td b{color:var(--accent-deep)}
+  .callout{background:#F1F7F0; border-left:4px solid var(--green); border-radius:0 12px 12px 0; padding:16px 18px; margin:20px 0; font-size:14.5px; color:#3a3a3a}
+  .cta{background:linear-gradient(135deg,#FFF3E4,#F4EFE6); border-radius:20px; padding:28px 24px; margin:32px 0; text-align:center}
+  .cta p{margin:0 0 16px; font-size:15px; color:#3a3a3a}
+  .btn-store{display:inline-flex; align-items:center; gap:9px; background:#111; color:#fff; padding:13px 24px; border-radius:14px; font-weight:700; font-size:14.5px; text-decoration:none; box-shadow:0 8px 20px rgba(0,0,0,0.14)}
+  .btn-store .sub{display:block; font-size:10.5px; font-weight:400; opacity:.8}
+  .store-pair{display:flex; flex-wrap:wrap; justify-content:center; gap:12px}
+  details{background:var(--card); border:1px solid var(--line); border-radius:13px; padding:16px 18px; margin-bottom:11px}
+  summary{font-weight:700; font-size:14.5px; cursor:pointer; color:#2a2a2a; list-style:none}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"＋"; float:right; color:var(--accent-deep)}
+  details[open] summary::after{content:"－"}
+  details p{margin-top:11px; font-size:14px; color:var(--sub)}
+  .sources{font-size:12.5px; color:var(--sub); margin:24px 0; padding-top:16px; border-top:1px solid var(--line)}
+  .sources a{color:var(--sub)}
+  .related{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:22px; margin:28px 0}
+  .related h2{border:none; padding:0; margin:0 0 14px; font-size:17px}
+  .related a{display:block; padding:11px 0; border-bottom:1px solid var(--line); text-decoration:none; color:#2a2a2a; font-weight:700; font-size:14.5px}
+  .related a:last-child{border-bottom:none}
+  .related a span{color:var(--accent-deep)}
+  .disclaimer{font-size:12.5px; color:var(--sub); background:var(--soft); border-radius:12px; padding:14px 16px; margin:22px 0}
+  footer{padding:36px 22px 56px; text-align:center; color:var(--sub); font-size:12px}
+  footer .flinks{display:flex; gap:18px; justify-content:center; margin-bottom:14px; flex-wrap:wrap}
+  footer .flinks a{color:var(--sub); font-weight:600; text-decoration:none}
+
+  /* ── 計算フォーム ───────────────────────────── */
+  .calc{background:var(--card); border:1px solid var(--line); border-radius:20px; padding:24px 22px; margin:26px 0}
+  .calc h2{border:none; padding:0; margin:0 0 6px; font-size:19px}
+  .calc .hint{font-size:13px; color:var(--sub); margin:0 0 18px}
+  fieldset{border:none; margin:0 0 20px}
+  legend{font-weight:700; font-size:15px; color:#2a2a2a; margin-bottom:10px}
+  .parents{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+  .pcard{background:var(--soft); border:1px solid var(--line); border-radius:14px; padding:14px 15px}
+  .pcard .who{font-weight:700; font-size:14.5px; color:#2a2a2a; margin-bottom:8px}
+  label.f{display:block; font-size:12.5px; color:var(--sub); margin:10px 0 4px; font-weight:600}
+  input[type=number], select{
+    width:100%; font:inherit; font-size:15px; padding:10px 12px; border:1px solid var(--line);
+    border-radius:11px; background:#fff; color:var(--text); -webkit-appearance:none; appearance:none;
+  }
+  select{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8'><path d='M1 1l5 5 5-5' fill='none' stroke='%23999' stroke-width='2'/></svg>"); background-repeat:no-repeat; background-position:right 12px center}
+  input[type=number]:focus, select:focus{outline:2px solid var(--accent); outline-offset:1px}
+  .unit{display:flex; align-items:center; gap:8px}
+  .unit input{flex:1}
+  .unit span{font-size:13px; color:var(--sub); white-space:nowrap}
+  .kids{display:flex; flex-direction:column; gap:10px}
+  .kidrow{display:grid; grid-template-columns:auto 1fr 1fr auto; gap:9px; align-items:center; background:var(--soft); border:1px solid var(--line); border-radius:12px; padding:10px 12px}
+  .kidrow .n{font-size:13px; font-weight:700; color:var(--sub); white-space:nowrap}
+  .kidrow select{font-size:14px; padding:8px 10px}
+  .btn{font:inherit; font-weight:700; border:none; border-radius:12px; cursor:pointer; padding:12px 20px; font-size:14.5px}
+  .btn-sub{background:#fff; border:1px solid var(--line); color:var(--accent-deep); padding:9px 15px; font-size:13.5px}
+  .btn-x{background:transparent; border:none; color:var(--sub); font-size:18px; cursor:pointer; line-height:1; padding:4px 6px}
+  .btn-main{background:var(--accent); color:#fff; width:100%; padding:15px; font-size:16px; box-shadow:0 6px 16px rgba(244,162,97,.35)}
+  .btn-main:hover{background:var(--accent-deep)}
+  .rowbtns{display:flex; gap:10px; flex-wrap:wrap; margin-top:6px}
+
+  /* ── 結果 ───────────────────────────────── */
+  #result[hidden]{display:none}
+  .resultbox{background:var(--card); border:2px solid var(--accent); border-radius:20px; padding:26px 22px; margin:26px 0 0}
+  .r-label{font-size:13px; color:var(--sub); font-weight:700}
+  .r-amount{font-size:clamp(30px,7vw,44px); font-weight:800; color:var(--accent-deep); line-height:1.3; margin:6px 0 4px; letter-spacing:-.01em}
+  .r-dir{font-size:15px; font-weight:700; color:#2a2a2a; margin-bottom:10px}
+  .r-note{font-size:13.5px; color:var(--sub); margin:8px 0 0}
+  .r-warn{background:#FFF6EA; border:1px solid var(--line); border-radius:12px; padding:12px 14px; font-size:13.5px; color:#3a3a3a; margin-top:14px}
+  .r-warn .wl{display:block}
+  .r-warn .wl + .wl{margin-top:13px}
+  .compare2{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:18px 0 0}
+  .cbox{border:1px solid var(--line); border-radius:14px; padding:14px 15px; background:var(--soft)}
+  .cbox .t{font-size:12.5px; color:var(--sub); font-weight:700}
+  .cbox .v{font-size:21px; font-weight:800; color:#2a2a2a; margin:4px 0 6px}
+  .cbox .d{font-size:12.5px; color:var(--sub); line-height:1.75}
+  .next3{counter-reset:n; list-style:none; margin:16px 0 0; padding:0}
+  .next3 li{counter-increment:n; list-style:none; margin:0 0 12px; padding:14px 16px 14px 52px; position:relative; background:var(--soft); border:1px solid var(--line); border-radius:14px; font-size:14.5px}
+  .next3 li::before{content:counter(n); position:absolute; left:14px; top:13px; width:26px; height:26px; border-radius:50%; background:var(--accent); color:#fff; font-weight:800; font-size:13px; display:flex; align-items:center; justify-content:center}
+  .next3 li b{display:block; color:#2a2a2a; margin-bottom:2px}
+  .versionbox{font-size:12.5px; color:var(--sub); background:var(--soft); border:1px solid var(--line); border-radius:12px; padding:13px 15px; margin:18px 0 0; line-height:1.85}
+  .versionbox a{color:var(--sub)}
+  .breakdown{margin-top:16px}
+  .breakdown .bd-in{display:flex; align-items:center; gap:9px; flex-wrap:wrap; font-size:14px; color:var(--sub)}
+  .breakdown .bd-in input{width:92px; flex:none}
+  #bdTable{min-width:0}
+  #bdTable th, #bdTable td{padding:10px 10px; font-size:13.5px}
+  .noscript{background:#FFF6EA; border:1px solid var(--line); border-radius:12px; padding:14px 16px; font-size:14px}
+
+  @media (max-width:600px){
+    .parents{grid-template-columns:1fr}
+    .compare2{grid-template-columns:1fr}
+    .kidrow{grid-template-columns:1fr auto; grid-template-areas:"n x" "age age" "carer carer"; row-gap:8px}
+    .kidrow .n{grid-area:n}
+    .kidrow .btn-x{grid-area:x; justify-self:end}
+    .kidrow .k-age{grid-area:age}
+    .kidrow .k-carer{grid-area:carer}
+  }
+
+  /* ── 印刷（A4 1枚） ─────────────────────────── */
+  @media print{
+    @page{size:A4; margin:9mm}
+    body{background:#fff; font-size:9pt; line-height:1.42; color:#000}
+    /* 既定で全部隠し、話し合いに持っていく分だけ出す */
+    header.nav, .crumb, footer, main .wrap > *{display:none !important}
+    main .wrap > h1, main .wrap > #result, main .wrap > .disclaimer, main .wrap > .printonly{display:block !important}
+    #result .breakdown, #result .cta, #result .sharerow, #result #shareMsg, #result .noprint{display:none !important}
+    main{padding:0}
+    .wrap{max-width:none; padding:0}
+    h1{font-size:13.5pt; line-height:1.35; margin:0 0 4pt; border-bottom:.75pt solid #999; padding-bottom:3pt}
+    h1 br{display:none}
+    #result h2{font-size:11pt; margin:5pt 0 2pt; padding-top:3pt; border-top:.5pt solid #ccc}
+    #result p{font-size:8.5pt; margin:3pt 0}
+    .printonly{font-size:8pt; color:#333; margin:0 0 5pt}
+    .resultbox{border:1pt solid #666; border-radius:5pt; padding:6pt 8pt; margin:0; break-inside:avoid}
+    .r-label{font-size:8.5pt}
+    .r-dir{font-size:10pt; margin-bottom:2pt}
+    .r-amount{font-size:21pt; color:#000; margin:1pt 0}
+    .r-note{font-size:8.5pt; color:#333}
+    .cbox .v{color:#000; font-size:14pt; margin:2pt 0 3pt}
+    .cbox .t{font-size:8.5pt}
+    .cbox .d{font-size:7.5pt; line-height:1.35}
+    .compare2{grid-template-columns:1fr 1fr; gap:5pt; margin-top:5pt}
+    .cbox{padding:5pt 6pt}
+    .cbox,.next3 li,.versionbox,.r-warn{background:#fff; border:.5pt solid #999; break-inside:avoid}
+    .r-warn{font-size:7pt; padding:4pt 6pt; margin-top:4pt; line-height:1.3}
+    .r-warn .wl + .wl{margin-top:2.5pt}
+    .r-warn ul{margin:3pt 0 0}
+    .r-warn li{font-size:7pt; margin:0.5pt 0 0.5pt 13pt}
+    .next3{margin-top:6pt}
+    .next3 li{padding:3pt 6pt 3pt 22pt; margin-bottom:2pt; font-size:8pt; line-height:1.35}
+    .next3 li::before{background:#555; width:15pt; height:15pt; font-size:8pt; left:6pt; top:5pt}
+    #result .printline{display:block !important; font-size:7.5pt; line-height:1.35; margin:5pt 0 0; padding:4pt 6pt; border:.5pt solid #999; border-radius:4pt}
+    .versionbox{font-size:7.5pt; padding:4pt 6pt; margin-top:5pt; line-height:1.4}
+    .disclaimer{background:#fff; border:.5pt solid #999; font-size:7.5pt; line-height:1.4; margin:5pt 0 0; padding:4pt 6pt}
+    a{color:#000; text-decoration:none}
+  }
+  .printonly, .printline{display:none}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <a class="brand" href="/" style="text-decoration:none">
+    <img src="/assets/icon-256.png" alt="はぐみぃ 共同養育アプリのアイコン" width="34" height="34" fetchpriority="high">
+    <span>はぐみぃ</span>
+  </a>
+  <a class="nav-cta" href="/#download">無料で入手</a>
+</header>
+
+<nav class="crumb" aria-label="パンくず">
+  <a href="/">はぐみぃ</a><span>›</span>養育費かんたん計算
+</nav>
+
+<main>
+  <article class="wrap">
+    <span class="eyebrow">無料の道具｜登録なし・広告なし</span>
+    <h1>養育費かんたん計算<br>― 算定表の目安と、法定養育費をならべて見る</h1>
+
+    <div class="lead">
+      <b>裁判所が公表している養育費算定表（令和元年版）のもとになっている計算式で、養育費の月額の目安を出します。</b>
+      あわせて、<b>2026年4月1日から始まった法定養育費（子1人あたり月2万円）</b>もならべて表示します。
+      父母のどちらが何人の子をみているかも入れられます。結果は印刷とリンクで持ち出せます。
+      入力した数字がサーバーへ送られることはありません。
+    </div>
+    <p class="byline">文責：株式会社タイガーラボ 編集部　｜　公開日：2026年8月25日　｜　更新日：2026年8月25日</p>
+    <div class="printonly" id="printCond"></div>
+
+    <!-- ── 計算フォーム ───────────────────────── -->
+    <section class="calc" id="calcform">
+      <h2>年収と子どものことを入れてください</h2>
+      <p class="hint">年収は<b>額面（税込み）</b>を万円で。給与の方は源泉徴収票の「支払金額」です。手取りではありません。</p>
+
+      <fieldset>
+        <legend>父母それぞれの年収</legend>
+        <div class="parents">
+          <div class="pcard">
+            <div class="who">あなた</div>
+            <label class="f" for="incomeA">年収（額面）</label>
+            <div class="unit"><input type="number" id="incomeA" min="0" max="9999" step="1" inputmode="numeric" value="400"><span>万円</span></div>
+            <label class="f" for="typeA">働き方</label>
+            <select id="typeA">
+              <option value="k" selected>給与（会社員・パートなど）</option>
+              <option value="j">自営（個人事業・フリーランス）</option>
+            </select>
+          </div>
+          <div class="pcard">
+            <div class="who">相手</div>
+            <label class="f" for="incomeB">年収（額面）</label>
+            <div class="unit"><input type="number" id="incomeB" min="0" max="9999" step="1" inputmode="numeric" value="200"><span>万円</span></div>
+            <label class="f" for="typeB">働き方</label>
+            <select id="typeB">
+              <option value="k" selected>給与（会社員・パートなど）</option>
+              <option value="j">自営（個人事業・フリーランス）</option>
+            </select>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>子どものこと</legend>
+        <p class="hint" style="margin-bottom:12px">年齢は<b>0〜14歳</b>と<b>15歳以上</b>の2つに分かれます（算定表の区分）。<b>主にみている親</b>は、父母の双方がみている場合も入れられます。</p>
+        <div class="kids" id="kids"></div>
+        <div class="rowbtns">
+          <button type="button" class="btn btn-sub" id="addKid">＋ 子どもを追加</button>
+        </div>
+      </fieldset>
+
+      <button type="button" class="btn btn-main" id="calcBtn">この条件で計算する</button>
+      <noscript><p class="noscript" style="margin-top:14px">この計算はブラウザの中で動きます。JavaScriptを有効にすると使えます。計算式と法定養育費の説明は、このページの下にそのまま書いてあります。</p></noscript>
+    </section>
+
+    <!-- ── 結果（S4の順番: ①目安 ②法定養育費との比較 ③次にやること3つ ④記録＝アプリ ⑤免責は最下部） ── -->
+    <section id="result" hidden aria-live="polite">
+      <div class="resultbox">
+        <div class="r-label">算定表（令和元年版）の目安</div>
+        <div class="r-dir" id="rDir">あなたが相手へ支払う場合</div>
+        <div class="r-amount" id="rAmount">－</div>
+        <p class="r-note" id="rNote"></p>
+        <div class="r-warn" id="rWarn" hidden></div>
+
+        <div class="breakdown" id="rBreak">
+          <div class="bd-in">
+            <label for="decided" style="font-weight:600;color:#3a3a3a">この枠の中で月</label>
+            <input type="number" id="decided" min="0" max="200" step="1" inputmode="numeric">
+            <span>万円と決めた場合の、子ごとの内訳</span>
+          </div>
+          <div class="tablewrap"><table id="bdTable"><tbody></tbody></table></div>
+        </div>
+      </div>
+
+      <h2>法定養育費とくらべる</h2>
+      <p class="ans">取り決めをしないまま離婚した場合、<b>取り決めるまでの間だけ</b>請求できる暫定的な養育費が、2026年4月1日から始まりました。上の目安とは<b>別のもの</b>です。</p>
+      <div class="compare2">
+        <div class="cbox">
+          <div class="t">算定表の目安（取り決めるときの基準）</div>
+          <div class="v" id="cSantei">－</div>
+          <div class="d">父母それぞれの年収と、子の人数・年齢から出る標準的な月額。話し合いや家庭裁判所の手続きで基準になります。</div>
+        </div>
+        <div class="cbox">
+          <div class="t">法定養育費（取り決めがないとき）</div>
+          <div class="v" id="cHoutei">－</div>
+          <div class="d">子1人あたり<b>月2万円</b>×子の人数。<b>離婚の日から</b>発生し、取り決めるまでの間だけの暫定的なものです。法務省の説明では、請求できるのは「離婚のときから引き続きこどもの監護を主として行う父母」です。</div>
+        </div>
+      </div>
+      <div class="r-warn" style="margin-top:14px">
+        <b>法定養育費で、まず押さえる3つ</b>
+        <ul style="margin:8px 0 0">
+          <li>額は<b>子1人あたり月2万円</b>。取り決めをしないまま離婚した場合に、<b>離婚のときから引き続きこどもの監護を主として行う親</b>が、もう一方に対して<b>離婚の日から</b>請求できます。</li>
+          <li><b>2026年4月1日以降に離婚した場合だけ</b>です。それ以前に離婚した場合には発生しません。</li>
+          <li>終わるのは、①父母が養育費の取決めをした日 ②家庭裁判所における養育費の審判が確定した日 ③こどもが18歳に達した日 の<b>いずれか早い日</b>まで。</li>
+        </ul>
+        <p style="font-size:12.5px;color:var(--sub);margin:10px 0 0">出典：法務省「父母の離婚後の子の養育に関するルールが改正されました」（<a href="https://www.moj.go.jp/content/001449160.pdf" target="_blank" rel="noopener">PDF・2026年1月改訂</a>）。この制度は取り決めをするまでの暫定的・補充的なものだと法務省が明記しています。</p>
+      </div>
+
+      <h2>養育費を取り決めるときに、一般にやることは3つ</h2>
+      <ol class="next3">
+        <li><b>書面に残す</b>決めた金額・支払う人・受け取る人を文書にします。法務省は、養育費債権に「先取特権」という優先権が付与されるため、債務名義がなくても、取決めの際に父母間で作成した文書に基づいて差押えの手続を申し立てられるようになる、と説明しています。先取特権が付与される上限額は、子1人あたり月額8万円です（法務省）。文書の形には、公正証書のほか、父母の間で作成した文書もあります。</li>
+          <li><b>支払方法と支払日を決める</b>振込先・毎月何日に払うか・振込手数料はどちらが持つかまで決めておくと、毎月の連絡が要らなくなります。</li>
+        <li><b>毎月の受け渡しを記録する</b>いつ・いくら渡した（受け取った）かを、ふたりが同じ形で残します。「言った・言わない」を防げます。</li>
+      </ol>
+
+      <div class="cta">
+        <p><b>3つめの「毎月の記録」は、アプリでできます。</b><br>
+        支払う側が記録し、受け取る側が確認する形なので、どちらか一方の言い分になりません。連絡先の交換は要りません。利用料も広告も、アプリ内の課金もありません。</p>
+        <div class="store-pair">
+          <a class="btn-store" href="https://apps.apple.com/jp/app/id6782561944" data-store="ios"><span>📱</span><span>App Storeで無料ダウンロード<span class="sub">iPhone・iOS 15.1以上</span></span></a>
+          <a class="btn-store" href="https://play.google.com/store/apps/details?id=com.tigerlabo.hugme" data-store="android"><span>📱</span><span>Google Playで無料ダウンロード<span class="sub">Android 7.0以上</span></span></a>
+        </div>
+      </div>
+
+      <p class="printline">3つめの「毎月の受け渡しの記録」は、無料アプリ「はぐみぃ」（hugme.tigerlabo.com）で残せます。支払う側が記録し、受け取る側が確認する形なので、どちらか一方の言い分になりません。連絡先の交換は要りません。</p>
+
+      <div class="rowbtns sharerow" style="margin:22px 0 0">
+        <button type="button" class="btn btn-sub" id="btnCopy">結果のリンクをコピー</button>
+        <button type="button" class="btn btn-sub" id="btnPrint">印刷する（A4 1枚）</button>
+        <button type="button" class="btn btn-sub" id="btnShare">送る</button>
+        <a class="btn btn-sub" id="btnLine" href="#" target="_blank" rel="noopener" style="text-decoration:none">LINEで送る</a>
+      </div>
+      <p class="r-note" id="shareMsg" style="margin-top:8px"></p>
+      <p class="r-note noprint">リンクに入るのは<b>25万円きざみに丸めた年収の区分値</b>と、子の年齢区分・みている親だけです。<b>1円単位の年収は入りません。名前は最初から扱いません。</b></p>
+
+      <div class="versionbox" id="versionBox">
+        この目安は<b>裁判所が令和元年（2019年）12月23日に公表した改定標準算定表（令和元年版）</b>に基づいています。<b>2026年8月現在、これより新しい算定表は公表されていません。</b><br>
+        出典：<a href="https://www.courts.go.jp/toukei_siryou/siryo/H30shihou_houkoku/index.html" target="_blank" rel="noopener">裁判所「平成30年度司法研究（養育費，婚姻費用の算定に関する実証的研究）の報告について」</a>　／　最終照合日：2026年8月25日
+      </div>
+    </section>
+
+    <!-- ── 静的な説明（JSがなくても読める・AI検索にも渡る） ───────── -->
+    <h2>算定表の目安は、どうやって出していますか？</h2>
+    <p class="ans"><b>裁判所の養育費算定表（令和元年版）のもとになっている「標準算定方式」を、そのまま計算しています。</b></p>
+    <p>手順は3つです。①父母それぞれの年収（額面）から、生活に使える分＝<b>基礎収入</b>を出す。②子の生活費指数（<b>0〜14歳は62、15歳以上は85</b>／親を100とした割合）を使って、<b>子の生活費</b>を出す。③それを父母の基礎収入の比で分ける。この結果が、算定表の枠の金額と同じになります。</p>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>手順</th><th>やっていること</th></tr></thead>
+        <tbody>
+          <tr><td><b>① 基礎収入</b></td><td>年収に、収入額に応じた割合をかけます（給与は38〜54%、自営は48〜61%）。税金・社会保険料・住居費など、生活のために必ず出ていく分を差し引いた「実際に生活に使える額」にあたります。</td></tr>
+          <tr><td><b>② 子の生活費</b></td><td>支払う側の基礎収入を、親（100）と子（0〜14歳＝62／15歳以上＝85）の指数で分け、子に充てられる分を出します。</td></tr>
+          <tr><td><b>③ 父母で分ける</b></td><td>②を、父母それぞれの基礎収入の比で分けます。支払う側の受け持ち分を12で割ると、月額の目安になります。</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>算定表は、<b>支払う側の年収が少ない場合は1万円、それ以外は2万円の幅</b>をもたせて金額を示しています（裁判所の説明書）。このページも同じ幅で表示し、1円単位の金額は出しません。</p>
+    <div class="callout">
+      <b>裁判所の説明書にある例で確かめられます。</b>権利者（受け取る側）の給与が202万8000円、義務者（支払う側）の給与が715万2000円、子は7歳と10歳の2人。裁判所は「表3を選び、横軸200・縦軸725で読む」として<b>10〜12万円</b>と説明しています。同じ条件をこのページに入れると、同じ<b>10〜12万円</b>が出ます（出典：<a href="https://www.courts.go.jp/toukei_siryou/siryo/H30shihou_houkoku/index.html" target="_blank" rel="noopener">裁判所「養育費・婚姻費用算定表について」</a>）。
+    </div>
+
+    <h2>入れる年収は、額面ですか手取りですか？</h2>
+    <p class="ans"><b>額面（税金や社会保険料を引く前の総収入）です。手取りではありません。</b></p>
+    <ul>
+      <li><b>給与の方</b>：源泉徴収票の「支払金額」。給与明細だと特定の月だけになり、賞与も入らないので使いません。ほかに確定申告していない収入があれば、その分を足します。</li>
+      <li><b>自営の方</b>：確定申告書の「課税される所得金額」に、<b>実際には支出していない控除</b>（基礎控除、青色申告控除（青色申告特別控除）、支払っていない専従者給与など）を足し戻した額。</li>
+      <li><b>児童扶養手当・児童手当</b>：子のための社会保障給付なので、受け取る側の年収に<b>含めません</b>。</li>
+    </ul>
+    <p style="font-size:13.5px;color:var(--sub)">（出典：裁判所「養育費・婚姻費用算定表について」）</p>
+
+    <h2>2026年4月に始まった「法定養育費」とは？</h2>
+    <p class="ans"><b>取り決めをしないまま離婚した場合に、取り決めるまでの間だけ請求できる暫定的な養育費です。額は子1人あたり月2万円で、離婚の日から発生します。</b></p>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>項目</th><th>内容（法務省パンフレット）</th></tr></thead>
+        <tbody>
+          <tr><td><b>額</b></td><td>子1人あたり<b>月額2万円</b>。取り決めをしないまま離婚した場合に、<b>離婚のときから引き続きこどもの監護を主として行う父母</b>が、もう一方に対して<b>離婚の日から</b>請求できます。毎月末に、その月の分を支払います。</td></tr>
+          <tr><td><b>差押えの上限<br><span style="font-weight:400;font-size:12.5px;color:var(--sub)">（法定養育費に限らない）</span></b></td><td>先取特権（債務名義がなくても差押えを申し立てられる優先権）が付与される<b>上限は、子1人あたり月額8万円</b>です。これは<b>養育費全体についての上限</b>で、法定養育費だけの決まりではありません。</td></tr>
+          <tr><td><b>対象</b></td><td><b>2026年（令和8年）4月1日以降に離婚した場合だけ</b>。それ以前（令和8年3月31日まで）に離婚した場合には発生しません。</td></tr>
+          <tr><td><b>終わる日</b></td><td>①父母が養育費の取決めをした日　②家庭裁判所における養育費の審判が確定した日　③こどもが18歳に達した日　の<b>いずれか早い日</b>まで。</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>法務省は、この制度を<b>「養育費の取決めをするまでの暫定的・補充的なもの」</b>とし、父母の協議や家庭裁判所の手続により、各自の収入などを踏まえた適正な額を取り決めることが重要だと書いています。支払う側が支払能力を欠く場合などについての説明も、同じパンフレットのQ&Aにあります。</p>
+    <p style="font-size:13.5px;color:var(--sub)">（出典：法務省「父母の離婚後の子の養育に関するルールが改正されました」<a href="https://www.moj.go.jp/content/001449160.pdf" target="_blank" rel="noopener">PDF</a>／2026年1月改訂）</p>
+
+    <h2>父母の双方が子どもをみている場合は？</h2>
+    <p class="ans"><b>入力できます。ただし裁判所の算定表には、父母の双方が子をみている場合の表がありません。</b></p>
+    <p>算定表の9枚は、いずれも<b>受け取る側が子ども全員をみている</b>前提で作られています。2026年4月に共同親権が始まり、子どもを分けてみている家庭もありますが、そこは表の外です。このページでは、子どもごとに「主にみている親」を選べるようにし、双方がみている場合は<b>標準算定方式の考え方をそのまま当てはめた参考の計算</b>として、どちらからどちらへいくら渡すことになるかを表示します。表そのものではないことは、結果の画面にも書いてあります。</p>
+
+    <h2>よくある質問</h2>
+    <details><summary>この計算は何にもとづいていますか？</summary><p>裁判所が令和元年（2019年）12月23日に公表した改定標準算定表（令和元年版）のもとになっている標準算定方式です。年収から基礎収入を出し、子の生活費指数（0〜14歳は62、15歳以上は85）で子の生活費を出し、父母の基礎収入で按分します。2026年8月現在、これより新しい算定表は公表されていません。</p></details>
+    <details><summary>入れる年収は手取りですか、額面ですか？</summary><p>額面です。給与の方は源泉徴収票の「支払金額」、自営の方は確定申告書の「課税される所得金額」に、実際には支出していない控除（基礎控除、青色申告控除（青色申告特別控除）、支払っていない専従者給与など）を足し戻した額を入れてください。児童扶養手当や児童手当は、受け取る側の年収に含めません。</p></details>
+    <details><summary>法定養育費とは何ですか？</summary><p>2026年4月1日から始まった、取り決めがないまま離婚した場合に、離婚のときから引き続きこどもの監護を主として行う親が、もう一方に対して、取り決めるまでの間だけ暫定的に請求できる養育費です。額は子1人あたり月2万円で、離婚の日から発生します。2026年4月1日以降に離婚した場合にだけ適用され、それ以前の離婚では発生しません。</p></details>
+    <details><summary>法定養育費はいつまで続きますか？</summary><p>次の3つのうち、いちばん早い日までです。（1）父母が養育費の取決めをした日（2）家庭裁判所における養育費の審判が確定した日（3）こどもが18歳に達した日。</p></details>
+    <details><summary>父母の双方が子どもをみている場合も計算できますか？</summary><p>できます。子どもごとに「主にみている親」を選べます。ただし裁判所の算定表には、父母の双方が子をみている場合の表がありません。その場合は標準算定方式の考え方をそのまま当てはめた参考の計算として、どちらからどちらへいくら渡すかを表示します。</p></details>
+    <details><summary>受け取る側の年収が支払う側より高いときはどうなりますか？</summary><p>裁判所の算定表は、受け取る側の年収が支払う側を上回る範囲では枠が横一直線になり、それ以上は下がりません。この計算も表に合わせ、受け取る側の基礎収入は支払う側と同じ額までとして計算します。</p></details>
+    <details><summary>結果は保存できますか？相手に渡せますか？</summary><p>できます。結果のリンクをコピーして残す、A4 1枚で印刷する、LINEなどで送る、の3つが使えます。リンクに入るのは25万円きざみに丸めた年収の区分値だけで、1円単位の年収は入りません。名前は最初から扱いません。</p></details>
+    <details><summary>計算した金額はそのまま決まりますか？</summary><p>決まりません。算定表は標準的な養育費を簡易迅速に算定することを目的としたもので、最終的な金額はいろいろな事情を考慮して定まります。ここで出るのは一般的な目安です。</p></details>
+    <details><summary>子どもが4人以上のときは？</summary><p>裁判所の算定表は子3人までです。4人以上を入れた場合は表がないため、標準算定方式の式をそのまま当てはめた参考の計算として表示します。</p></details>
+    <details><summary>決めた金額を、子どもごとに分けるとどうなりますか？</summary><p>子の生活費指数（0〜14歳は62、15歳以上は85）で按分します。裁判所の説明書にも例があり、子2人（10歳と15歳）で全額5万円のとき、10歳の子は2万円（5万円×62÷147）、15歳の子は3万円（5万円×85÷147）になります。このページでも、決めた金額を入れると内訳を表示します。</p></details>
+    <details><summary>入力した内容はどこかに送られますか？</summary><p>送られません。計算はすべてお使いのブラウザの中で行われ、年収や金額がサーバーへ送られることはありません。アクセス解析には「計算が終わった」という事実だけを記録し、入力した数字や計算結果は記録しません。</p></details>
+    <details><summary>計算したあとは何をすればいいですか？</summary><p>3つあります。（1）決めたことを書面に残す（2）支払方法と支払日を決める（3）毎月の受け渡しを記録する。とくに文書での取り決めがあると、養育費に先取特権という優先権が認められ、その文書をもって差押えの手続を申し立てられます。</p></details>
+
+    <p class="sources">出典：裁判所「平成30年度司法研究（養育費，婚姻費用の算定に関する実証的研究）の報告について／養育費算定表・算定表についての説明書」（<a href="https://www.courts.go.jp/toukei_siryou/siryo/H30shihou_houkoku/index.html" target="_blank" rel="noopener">courts.go.jp</a>）／法務省「父母の離婚後の子の養育に関するルールが改正されました」（<a href="https://www.moj.go.jp/content/001449160.pdf" target="_blank" rel="noopener">moj.go.jp・PDF</a>）／こども家庭庁「民法等改正について」（<a href="https://support-hitorioya.cfa.go.jp/revision/" target="_blank" rel="noopener">support-hitorioya.cfa.go.jp</a>）。最終照合日：2026年8月25日。</p>
+
+    <div class="related">
+      <h2>関連ガイド</h2>
+      <a href="/guide/yoiku-hi-soba-jukyu/">養育費の相場はいくら？算定表の見方 <span>→</span></a>
+      <a href="/guide/yoiku-hi-mibarai-taisho/">養育費が未払いのときの対処 <span>→</span></a>
+      <a href="/guide/kaisei-minpo-2026-kyodo-yoiku/">2026年の改正民法で共同養育はどう変わる <span>→</span></a>
+      <a href="/guide/menkai-koryu-kimekata/">面会交流の頻度・ルールの決め方 <span>→</span></a>
+      <a href="/">はぐみぃ（共同養育アプリ）について <span>→</span></a>
+    </div>
+
+    <div class="disclaimer">
+      一般的な目安の計算です。取り決めは当事者の話し合いか専門家と。<br>
+      このページの計算は、裁判所が公表している養育費算定表（令和元年版）と同じ考え方で出した<b>一般的な目安</b>であり、個別の事情に応じた判断ではありません。算定表について裁判所は「この算定表は，あくまで標準的な養育費及び婚姻費用を簡易迅速に算定することを目的としています。最終的な金額については，いろいろな事情を考慮して定まることになります。」と説明しています。実際の取り決めは父母の話し合いで、必要なときは家庭裁判所・法テラス・弁護士・養育費や親子交流の相談窓口など、専門の窓口にご相談ください。
+    </div>
+  </article>
+</main>
+
+<footer>
+  <div class="flinks">
+    <a href="/">はぐみぃトップ</a>
+    <a href="/guide/">共同養育ガイド</a>
+    <a href="/support/">サポート・お問い合わせ</a>
+    <a href="/for-professionals/">支援団体・士業・自治体の方へ</a>
+    <a href="/privacy/">プライバシーポリシー</a>
+    <a href="/terms/">利用規約</a>
+    <a href="https://note.com/tigerlabo" target="_blank" rel="noopener">note（はぐみぃの記事）</a>
+    <a href="/support/#operator">運営会社：株式会社タイガーラボ</a>
+  </div>
+  <div>運営：株式会社タイガーラボ　最終更新：2026年8月25日</div>
+  <div>© 2026 TIGERLABO Inc.</div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ─────────────────────────────────────────────
+     裁判所の算定表（令和元年版）のもとになっている標準算定方式。
+     ・基礎収入割合: 令和元年 司法研究の公表値（給与38〜54% / 自営48〜61%）
+     ・生活費指数: 親=100 / 子0〜14歳=62 / 子15歳以上=85（裁判所の説明書）
+     ・帯の幅: 支払う側の年収が少ない場合は1万円、それ以外は2万円（裁判所の説明書）
+     裁判所公表の表1〜9（全29,889セル）と突合済み。突合結果は実装メモを参照。
+     ───────────────────────────────────────────── */
+  var KYUYO = [[75,.54],[100,.50],[125,.46],[175,.44],[275,.43],[525,.42],[725,.41],[1325,.40],[1475,.39],[2000,.38]];
+  var JIEI  = [[66,.61],[82,.60],[98,.59],[256,.58],[349,.57],[392,.56],[496,.55],[563,.54],[784,.53],[942,.52],[1046,.51],[1179,.50],[1482,.49],[1567,.48]];
+  var IDX_YOUNG = 62, IDX_OLD = 85;          // 子の生活費指数
+  var TABLE_MAX_PAYER = 2000, TABLE_MAX_RECV = 1000;          // 算定表の軸の上限（給与・万円）
+  var TABLE_MAX_PAYER_JIEI = 1567, TABLE_MAX_RECV_JIEI = 763; // 同（自営・万円）※裁判所PDFの軸を実測して確定
+  var STEP = 25;                              // 算定表の軸のきざみ（万円）＝URLに載せる区分値の粒度
+  var NEAR = 0.02;                            // 帯の境目とみなす相対距離
+
+  /** 年収（万円）→ 基礎収入（万円） */
+  function kiso(man, jiei) {
+    var t = jiei ? JIEI : KYUYO, i;
+    if (man <= 0) return 0;
+    for (i = 0; i < t.length; i++) { if (man <= t[i][0]) return man * t[i][1]; }
+    return man * t[t.length - 1][1];          // 表の外は最後の割合を延長（画面で注記する）
+  }
+
+  /** 月額 → 算定表の帯 [下限, 上限]（0〜1／1〜2／以降2万円きざみ） */
+  function band(v) {
+    if (v < 1) return [0, 1];
+    if (v < 2) return [1, 2];
+    var lo = Math.floor(v / 2) * 2;
+    return [lo, lo + 2];
+  }
+  function bandText(b) { return b[0] + '〜' + b[1] + '万円'; }
+
+  /** 帯の境目に近いか（＝表では隣の枠になることがある） */
+  function nearEdge(v) {
+    var b = band(v), d = Math.min(Math.abs(v - b[0]), Math.abs(v - b[1]));
+    return d <= NEAR * Math.max(v, 0.5);
+  }
+  function neighbourBand(v) {
+    var b = band(v);
+    return (Math.abs(v - b[0]) < Math.abs(v - b[1])) ? band(Math.max(0, b[0] - 0.5)) : band(b[1] + 0.5);
+  }
+
+  /**
+   * 養育費の月額を計算する。
+   * @param {number} xa 支払う側の基礎収入 @param {number} xb 受け取る側の基礎収入
+   * @param {number} z  受け取る側がみている子の生活費指数の合計
+   * @param {number} za 支払う側がみている子の生活費指数の合計（0なら算定表と同じ形）
+   */
+  function monthly(xa, xb, z, za) {
+    if (xa <= 0 || z <= 0) return 0;
+    if (!za) {
+      // 算定表と同じ形。表は受け取る側の収入が支払う側を上回る範囲で枠が横一直線になるため、
+      // 受け取る側の基礎収入は支払う側と同額までとして読む。
+      var xbEff = Math.min(xb, xa);
+      return (xa * z / (100 + z)) * xa / (xa + xbEff) / 12;
+    }
+    // 父母の双方が子をみている場合（算定表に該当する表がない＝参考計算）
+    var denom = 100 + z + za;
+    return (xa * z / denom) * xa / (xa + xb) / 12;
+  }
+
+  /* ── 子どもの行 ───────────────────────────── */
+  var kidsEl = document.getElementById('kids');
+  var MAX_KIDS = 6;
+
+  function kidRow(age, carer) {
+    var row = document.createElement('div');
+    row.className = 'kidrow';
+    row.innerHTML =
+      '<span class="n"></span>' +
+      '<select class="k-age" aria-label="年齢の区分">' +
+        '<option value="y">0〜14歳</option><option value="o">15歳以上</option>' +
+      '</select>' +
+      '<select class="k-carer" aria-label="主にみている親">' +
+        '<option value="b">相手がみている</option><option value="a">あなたがみている</option>' +
+      '</select>' +
+      '<button type="button" class="btn-x" aria-label="この子を削除">×</button>';
+    row.querySelector('.k-age').value = age || 'y';
+    row.querySelector('.k-carer').value = carer || 'b';
+    row.querySelector('.btn-x').addEventListener('click', function () {
+      if (kidsEl.children.length > 1) { row.remove(); renumber(); }
+    });
+    return row;
+  }
+  function renumber() {
+    Array.prototype.forEach.call(kidsEl.children, function (r, i) {
+      r.querySelector('.n').textContent = (i + 1) + '人目';
+    });
+    document.getElementById('addKid').disabled = kidsEl.children.length >= MAX_KIDS;
+  }
+  function addKid(age, carer) {
+    if (kidsEl.children.length >= MAX_KIDS) return;
+    kidsEl.appendChild(kidRow(age, carer));
+    renumber();
+  }
+  document.getElementById('addKid').addEventListener('click', function () { addKid(); });
+
+  /* ── 入力の読み取り ───────────────────────── */
+  function num(id, max) {
+    var v = parseFloat(document.getElementById(id).value);
+    if (!isFinite(v) || v < 0) v = 0;
+    return Math.min(v, max || 9999);
+  }
+  function readForm() {
+    var kids = Array.prototype.map.call(kidsEl.children, function (r) {
+      return { age: r.querySelector('.k-age').value, carer: r.querySelector('.k-carer').value };
+    });
+    return {
+      ia: num('incomeA'), ta: document.getElementById('typeA').value,
+      ib: num('incomeB'), tb: document.getElementById('typeB').value,
+      kids: kids
+    };
+  }
+
+  /* ── 計算と表示 ───────────────────────────── */
+  var lastState = null, calcFired = false;
+
+  function run(fromUrl) {
+    var s = readForm();
+    if (!s.kids.length) { addKid(); s = readForm(); }
+
+    var idxOf = function (k) { return k.age === 'o' ? IDX_OLD : IDX_YOUNG; };
+    var withB = s.kids.filter(function (k) { return k.carer === 'b'; });   // 相手がみている
+    var withA = s.kids.filter(function (k) { return k.carer === 'a'; });   // あなたがみている
+    var zB = withB.reduce(function (t, k) { return t + idxOf(k); }, 0);
+    var zA = withA.reduce(function (t, k) { return t + idxOf(k); }, 0);
+
+    var xa = kiso(s.ia, s.ta === 'j'), xb = kiso(s.ib, s.tb === 'j');
+    var split = (zA > 0 && zB > 0);
+    var payerIsYou, amount, giverIncome, recvIncome;
+
+    if (split) {
+      var aOwes = monthly(xa, xb, zB, zA);   // あなた → 相手
+      var bOwes = monthly(xb, xa, zA, zB);   // 相手 → あなた
+      var net = aOwes - bOwes;
+      payerIsYou = net >= 0;
+      amount = Math.abs(net);
+    } else if (zB > 0) {
+      payerIsYou = true;  amount = monthly(xa, xb, zB, 0);
+    } else if (zA > 0) {
+      payerIsYou = false; amount = monthly(xb, xa, zA, 0);
+    } else {
+      payerIsYou = true;  amount = 0;
+    }
+    giverIncome = payerIsYou ? s.ia : s.ib;
+    recvIncome  = payerIsYou ? s.ib : s.ia;
+
+    var b = band(amount);
+    document.getElementById('rDir').textContent =
+      payerIsYou ? 'あなたが相手へ、月に' : '相手があなたへ、月に';
+    document.getElementById('rAmount').textContent = bandText(b);
+    document.getElementById('cSantei').textContent = bandText(b);
+
+    var houtei = s.kids.length * 2;
+    document.getElementById('cHoutei').textContent = split ? '―' : ('月' + houtei + '万円');
+
+    // 注記（表の外・帯の境目・共同監護・子4人以上）
+    var notes = [], warns = [];
+    notes.push('子どもは' + s.kids.length + '人（0〜14歳 ' +
+      s.kids.filter(function (k) { return k.age === 'y'; }).length + '人／15歳以上 ' +
+      s.kids.filter(function (k) { return k.age === 'o'; }).length + '人）で計算しました。');
+
+    if (nearEdge(amount) && amount > 0) {
+      var nb = neighbourBand(amount);
+      warns.push('<b>表の枠の境目に近い金額です。</b>算定表は年収を25万円きざみの目盛りで読むため、実際の表では <b>' +
+        bandText(nb) + '</b> の枠になることもあります。どちらの枠かで迷うときは、両方を持って話し合ってください。');
+    }
+    if (split) {
+      warns.push('<b>父母の双方が子どもをみている前提で計算しました。</b>裁判所の算定表には、このケースの表がありません。ここは標準算定方式の考え方をそのまま当てはめた<b>参考の計算</b>です（あなたがみている' + withA.length + '人分と、相手がみている' + withB.length + '人分を差し引きした額）。');
+      warns.push('<b>法定養育費の金額は表示していません。</b>法務省の説明では、この制度は「離婚のときから引き続きこどもの監護を主として行う父母」が、もう一方に対して請求できるものです。父母が子どもを分けてみている場合にどうなるかは法務省の資料に書かれていないため、当社では金額を出しません。');
+    }
+    if (!split && recvIncome > 0 && (payerIsYou ? xb > xa : xa > xb)) {
+      warns.push('<b>受け取る側の年収が、支払う側を上回っています。</b>裁判所の算定表は、この範囲では枠が横一直線になり、それ以上は下がりません。この計算も表に合わせ、受け取る側の収入は支払う側と同じところまでとして読んでいます。');
+    }
+    if (s.kids.length > 3) {
+      warns.push('<b>算定表は子3人までです。</b>4人以上は表がないため、標準算定方式の式をそのまま当てはめた参考の計算です。');
+    }
+    var overPayer = (payerIsYou ? (s.ta === 'j') : (s.tb === 'j')) ? giverIncome > TABLE_MAX_PAYER_JIEI : giverIncome > TABLE_MAX_PAYER;
+    var overRecv  = (payerIsYou ? (s.tb === 'j') : (s.ta === 'j')) ? recvIncome > TABLE_MAX_RECV_JIEI : recvIncome > TABLE_MAX_RECV;
+    if (overPayer || overRecv) {
+      warns.push('<b>算定表の目盛りの外です。</b>表は支払う側が年収2000万円（自営1567万円）まで、受け取る側が1000万円（自営763万円）までしか目盛りがありません。ここから先は表では決まらず、事情に応じて個別に判断されます。上の金額は式をそのまま延長したもので、目安としての確かさは落ちます。');
+    }
+    document.getElementById('rNote').innerHTML = notes.join(' ');
+
+    // 印刷用の条件行（話し合いに持っていく1枚が、それだけで読めるように）
+    var work = function (t) { return t === 'j' ? '自営' : '給与'; };
+    var carerText = split ? ('あなた' + withA.length + '人／相手' + withB.length + '人') :
+      (zB > 0 ? '相手が' + s.kids.length + '人' : 'あなたが' + s.kids.length + '人');
+    document.getElementById('printCond').textContent =
+      '計算した条件：あなた ' + s.ia + '万円（' + work(s.ta) + '）／相手 ' + s.ib + '万円（' + work(s.tb) + '）／子ども ' +
+      s.kids.length + '人（0〜14歳 ' + s.kids.filter(function (k) { return k.age === 'y'; }).length +
+      '人・15歳以上 ' + s.kids.filter(function (k) { return k.age === 'o'; }).length +
+      '人／主にみている親：' + carerText + '）　年収は額面。' + new Date().getFullYear() + '年' + (new Date().getMonth() + 1) + '月' + new Date().getDate() + '日に計算。';
+    var warnEl = document.getElementById('rWarn');
+    if (warns.length) {
+      warnEl.innerHTML = warns.map(function (w) { return '<span class="wl">' + w + '</span>'; }).join('');
+      warnEl.hidden = false;
+    }
+    else { warnEl.hidden = true; warnEl.innerHTML = ''; }
+
+    // 子ごとの内訳（裁判所の説明書 §3 の按分）
+    var dec = document.getElementById('decided');
+    if (!dec.dataset.touched) { dec.value = Math.max(0, Math.round((b[0] + b[1]) / 2)); }
+    renderBreakdown(s.kids, payerIsYou, split, withA, withB);
+
+    lastState = s;
+    writeUrl(s, fromUrl);
+    document.getElementById('result').hidden = false;
+
+    if (!calcFired) {   // 発火の事実だけを送る（入力値・金額は送らない）
+      calcFired = true;
+      if (typeof gtag === 'function') { gtag('event', 'calc_complete', { page_location: window.__pageLoc }); }
+    }
+  }
+
+  function renderBreakdown(kids, payerIsYou, split, withA, withB) {
+    var total = parseFloat(document.getElementById('decided').value);
+    var tb = document.querySelector('#bdTable tbody');
+    tb.innerHTML = '';
+    var target = split ? (payerIsYou ? withB : withA) : kids;
+    if (!isFinite(total) || total <= 0 || !target.length) {
+      tb.innerHTML = '<tr><td>金額を入れると、子どもごとの内訳が出ます。</td></tr>';
+      return;
+    }
+    var sum = target.reduce(function (t, k) { return t + (k.age === 'o' ? IDX_OLD : IDX_YOUNG); }, 0);
+    var head = document.createElement('tr');
+    head.innerHTML = '<th>子ども</th><th>年齢の区分</th><th>月あたりの内訳</th>';
+    tb.appendChild(head);
+    target.forEach(function (k, i) {
+      var idx = k.age === 'o' ? IDX_OLD : IDX_YOUNG;
+      var v = total * idx / sum;
+      var tr = document.createElement('tr');
+      tr.innerHTML = '<td>' + (i + 1) + '人目</td><td>' + (k.age === 'o' ? '15歳以上' : '0〜14歳') +
+        '（指数' + idx + '）</td><td><b>約' + (Math.round(v * 10) / 10) + '万円</b></td>';
+      tb.appendChild(tr);
+    });
+    var note = document.createElement('tr');
+    note.innerHTML = '<td colspan="3" style="color:var(--sub);font-size:13px">子の生活費指数（0〜14歳＝62／15歳以上＝85）で按分しています。裁判所の説明書に同じ計算の例があります。</td>';
+    tb.appendChild(note);
+  }
+
+  /* ── URLでの保存・復元（年収は25万円きざみの区分値だけ） ────── */
+  function roundStep(v) { return Math.round(v / STEP) * STEP; }
+
+  function writeUrl(s, skip) {
+    if (skip) return;
+    var p = new URLSearchParams(window.location.search);   // utm等の既存パラメータは壊さない
+    p.set('a', roundStep(s.ia)); p.set('at', s.ta);
+    p.set('b', roundStep(s.ib)); p.set('bt', s.tb);
+    p.set('k', s.kids.map(function (k) { return k.age + k.carer; }).join(''));
+    history.replaceState(null, '', window.location.pathname + '?' + p.toString());
+  }
+
+  function readUrl() {
+    var p = new URLSearchParams(window.location.search);
+    if (!p.has('a') && !p.has('k')) return false;
+    var setNum = function (id, key) {
+      var v = parseFloat(p.get(key));
+      if (isFinite(v) && v >= 0 && v <= 9999) document.getElementById(id).value = roundStep(v);
+    };
+    setNum('incomeA', 'a'); setNum('incomeB', 'b');
+    if (p.get('at') === 'j' || p.get('at') === 'k') document.getElementById('typeA').value = p.get('at');
+    if (p.get('bt') === 'j' || p.get('bt') === 'k') document.getElementById('typeB').value = p.get('bt');
+    var k = (p.get('k') || '').slice(0, MAX_KIDS * 2);
+    kidsEl.innerHTML = '';
+    for (var i = 0; i + 1 < k.length; i += 2) {
+      var age = (k[i] === 'o') ? 'o' : 'y';
+      var carer = (k[i + 1] === 'a') ? 'a' : 'b';
+      addKid(age, carer);
+    }
+    if (!kidsEl.children.length) addKid();
+    return true;
+  }
+
+  /* ── 持ち出し（コピー・印刷・送る） ───────────────── */
+  function msg(t) {
+    var el = document.getElementById('shareMsg');
+    el.textContent = t;
+    setTimeout(function () { if (el.textContent === t) el.textContent = ''; }, 4000);
+  }
+  document.getElementById('btnCopy').addEventListener('click', function () {
+    var url = window.location.href;
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(url).then(function () { msg('リンクをコピーしました。'); },
+        function () { msg('コピーできませんでした。アドレス欄のURLをそのままお使いください。'); });
+    } else { msg('アドレス欄のURLをそのままお使いください。'); }
+  });
+  document.getElementById('btnPrint').addEventListener('click', function () { window.print(); });
+  document.getElementById('btnShare').addEventListener('click', function () {
+    if (navigator.share) {
+      navigator.share({ title: '養育費かんたん計算の結果', url: window.location.href })
+        .catch(function () { });
+    } else {
+      msg('お使いの環境では「送る」が使えません。左の「リンクをコピー」をお使いください。');
+    }
+  });
+
+  /* ── 起動 ────────────────────────────────── */
+  document.getElementById('calcBtn').addEventListener('click', function () { run(false); });
+  document.getElementById('decided').addEventListener('input', function () {
+    this.dataset.touched = '1';
+    if (lastState) {
+      var idxOf = function (k) { return k.age === 'o' ? IDX_OLD : IDX_YOUNG; };
+      var withB = lastState.kids.filter(function (k) { return k.carer === 'b'; });
+      var withA = lastState.kids.filter(function (k) { return k.carer === 'a'; });
+      var split = withA.length > 0 && withB.length > 0;
+      var payerIsYou = document.getElementById('rDir').textContent.indexOf('あなたが') === 0;
+      renderBreakdown(lastState.kids, payerIsYou, split, withA, withB);
+    }
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('[data-store]'), function (a) {
+    a.addEventListener('click', function () {
+      if (typeof gtag === 'function') { gtag('event', 'store_click', { page_location: window.__pageLoc }); }
+    });
+  });
+  document.getElementById('btnLine').addEventListener('click', function () {
+    this.href = 'https://social-plugins.line.me/lineit/share?url=' + encodeURIComponent(window.location.href);
+  });
+
+  var restored = readUrl();
+  if (!kidsEl.children.length) addKid();
+  if (restored) { run(true); }
+})();
+</script>
+
+</body>
+</html>
