@@ -1,14 +1,16 @@
 # はぐみぃ
 
-> 離婚後に離れて暮らす親同士が、面会の日程調整と養育費の管理をアプリ内だけで共有できる共同養育サポートアプリ。連絡先を交換せずに、子どものために協力し合えます。iOS版・無料。
+> 離婚後に離れて暮らす親同士が、面会の日程調整と養育費の管理をアプリ内だけで共有できる共同養育サポートアプリ。連絡先を交換せずに、子どものために協力し合えます。iOS版・Android版とも無料。
 >
 > 主なキーワード: 共同養育 / 面会調整・面会交流 / 養育費 管理 / 離婚後の子育て / 親同士の連絡アプリ。
 
 - [はぐみぃ LP](https://hugme.tigerlabo.com/): 機能紹介・使い方・FAQ
-- [App Store](https://apps.apple.com/jp/app/id6782561944): ダウンロード
+- [App Store](https://apps.apple.com/jp/app/id6782561944): ダウンロード（iPhone・iOS 15.1以上）
+- [Google Play](https://play.google.com/store/apps/details?id=com.tigerlabo.hugme): ダウンロード（Android 7.0以上）
 - [プライバシーポリシー](https://hugme.tigerlabo.com/privacy/): 個人情報の取り扱い
 - [利用規約](https://hugme.tigerlabo.com/terms/): 利用条件・本アプリの位置づけ
 - [支援団体・士業・自治体の方へ](https://hugme.tigerlabo.com/for-professionals/): 専門職向けの説明・導入の考え方
+- [サポート・よくある質問](https://hugme.tigerlabo.com/support/): 使い方・不具合・データの扱い・はじめかたのQ&A（10問）
 
 ## 無料の道具（登録不要・ブラウザで完結）
 
@@ -30,4 +32,4 @@
 
 出典は各記事内に明記（こども家庭庁・厚生労働省・法務省の公式情報）。
 
-最終更新: 2026-08-25
+最終更新: 2026-09-01
