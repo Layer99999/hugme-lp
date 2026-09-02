@@ -59,7 +59,7 @@
       "description": "共同養育の意味、共同親権との違い、2026年4月施行の改正民法で変わった点、始め方の手順を公的資料をもとに整理する。",
       "inLanguage": "ja",
       "datePublished": "2026-08-03",
-      "dateModified": "2026-08-08",
+      "dateModified": "2026-09-02",
       "author": {
         "@id": "https://tigerlabo.com/#organization"
       },
@@ -340,6 +340,8 @@
 
     <div class="related">
       <h2>関連ガイド</h2>
+      <a href="/youikuhi-keisan/">養育費かんたん計算（算定表の目安と法定養育費） <span>→</span></a>
+      <a href="/menkai-yoteihyo/">面会交流の予定表テンプレート（A4 1枚） <span>→</span></a>
       <a href="/guide/kaisei-minpo-2026-kyodo-yoiku/">2026年の改正民法で共同養育はどう変わる <span>→</span></a>
       <a href="/guide/menkai-koryu-kimekata/">面会交流の頻度・ルールの決め方 <span>→</span></a>
       <a href="/guide/renraku-toritakunai/">連絡を取りたくない相手との共同養育の進め方 <span>→</span></a>
@@ -368,9 +370,26 @@
     <a href="https://note.com/tigerlabo" target="_blank" rel="noopener">note（はぐみぃの記事）</a>
     <a href="/support/#operator">運営会社：株式会社タイガーラボ</a>
   </div>
-  <div>運営：株式会社タイガーラボ　最終更新：2026年8月8日</div>
+  <div>運営：株式会社タイガーラボ　最終更新：2026年9月2日</div>
   <div>© 2026 TIGERLABO Inc.</div>
 </footer>
 
+<script>
+/* ストアボタンの計測（2026-09-02・アプリグロースチーム）: ストアへのリンクが押された回数をGA4のイベント store_click に記録する。
+   個人情報・入力値は送らない（ページの住所はクエリ文字列を外して送る）。道具箱2ページは既存の同名イベントで計測済み。 */
+(function () {
+  var links = document.querySelectorAll('a[href*="apps.apple.com"], a[href*="play.google.com"]');
+  Array.prototype.forEach.call(links, function (a) {
+    a.addEventListener('click', function () {
+      if (typeof gtag === 'function') {
+        gtag('event', 'store_click', {
+          store: a.href.indexOf('apple.com') > -1 ? 'app_store' : 'google_play',
+          page_location: location.origin + location.pathname
+        });
+      }
+    });
+  });
+})();
+</script>
 </body>
 </html>

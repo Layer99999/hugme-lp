@@ -831,5 +831,22 @@
   <div>© 2026 TIGERLABO Inc.</div>
 </footer>
 
+<script>
+/* ストアボタンの計測（2026-09-02・アプリグロースチーム）: ストアへのリンクが押された回数をGA4のイベント store_click に記録する。
+   個人情報・入力値は送らない（ページの住所はクエリ文字列を外して送る）。道具箱2ページは既存の同名イベントで計測済み。 */
+(function () {
+  var links = document.querySelectorAll('a[href*="apps.apple.com"], a[href*="play.google.com"]');
+  Array.prototype.forEach.call(links, function (a) {
+    a.addEventListener('click', function () {
+      if (typeof gtag === 'function') {
+        gtag('event', 'store_click', {
+          store: a.href.indexOf('apple.com') > -1 ? 'app_store' : 'google_play',
+          page_location: location.origin + location.pathname
+        });
+      }
+    });
+  });
+})();
+</script>
 </body>
 </html>
