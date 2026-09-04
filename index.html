@@ -80,7 +80,7 @@
       "keywords": "共同養育, 面会調整, 面会交流, 養育費 管理, 離婚後の子育て, 親同士 連絡 アプリ, 共同親権",
       "inLanguage": "ja",
       "datePublished": "2026-07-22",
-      "dateModified": "2026-09-02",
+      "dateModified": "2026-09-04",
       "isPartOf": { "@id": "https://tigerlabo.com/#organization" },
       "about": { "@id": "https://hugme.tigerlabo.com/#app" }
     },
@@ -99,9 +99,17 @@
         "養育費の記録と支払い済み・未払いの見える化",
         "招待コードで連絡先を交換せずにつながる",
         "面会・養育費のリマインダー通知",
+        "話題ごとにトピックを分けて話せるチャット（お互いの同意があるときだけ利用でき、どちらからでも停止できる）",
         "クラウド同期とデータのCSV書き出し"
       ],
       "keywords": "共同養育, 面会調整, 面会交流, 養育費 管理, 離婚後の子育て, 親同士 連絡 アプリ",
+      "screenshot": [
+        "https://hugme.tigerlabo.com/assets/screens/screen-visits.webp",
+        "https://hugme.tigerlabo.com/assets/screens/screen-payments.webp",
+        "https://hugme.tigerlabo.com/assets/screens/screen-chat.webp",
+        "https://hugme.tigerlabo.com/assets/screens/screen-home.webp",
+        "https://hugme.tigerlabo.com/assets/screens/screen-calendar.webp"
+      ],
       "url": "https://hugme.tigerlabo.com/",
       "downloadUrl": "https://apps.apple.com/jp/app/id6782561944",
       "sameAs": ["https://apps.apple.com/jp/app/%E3%81%AF%E3%81%90%E3%81%BF%E3%81%83-%E5%85%B1%E5%90%8C%E9%A4%8A%E8%82%B2%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88/id6782561944", "https://play.google.com/store/apps/details?id=com.tigerlabo.hugme"],
@@ -155,6 +163,11 @@
       "@type": "Question",
       "name": "養育費はどう記録・確認しますか？",
       "acceptedAnswer": { "@type": "Answer", "text": "毎月の養育費を記録し、支払い済み・未払いを見える化します。確認もアプリ内で完結し、記録はCSVで書き出せます。" }
+    },
+    {
+      "@type": "Question",
+      "name": "アプリの中でメッセージのやり取りはできますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "できます。学校・通院・誕生日など、話題ごとにトピックを分けて話せるチャットがあります。連絡先の交換は不要で、やり取りはアプリの中だけに残ります。チャットはお互いが同意したときだけ使える仕組みで、やめたいときはどちらからでも無効にできます（再開にはあらためて二人の同意が必要です）。" }
     },
     {
       "@type": "Question",
@@ -259,21 +272,119 @@
   .store-pair{display:flex; flex-wrap:wrap; justify-content:center; gap:12px}
   .price-note { font-size:13px; color:var(--sub); }
 
-  .phone-mock {
-    margin:44px auto 0; width:220px; height:440px; background:#fff; border-radius:34px;
-    border:8px solid #2a2a2a; box-shadow:0 30px 60px rgba(0,0,0,0.15); position:relative; overflow:hidden;
+  /* ヒーロー：アプリの操作デモ（画像なし・CSSのみ／JSなしでもタブ切替が動く） */
+  .hero-grid { display:grid; gap:22px; align-items:center; grid-template-areas:"copy" "demo" "lede" "cta"; }
+  .hero-copy { grid-area:copy; text-align:center; }
+  .hero-lede { grid-area:lede; }
+  .hero-demo { grid-area:demo; }
+  .hero-cta  { grid-area:cta; }
+  .demo { position:relative; display:flex; flex-direction:column; align-items:center; gap:14px; }
+  .demo input { position:absolute; width:1px; height:1px; opacity:0; pointer-events:none; }
+  .phone {
+    width:252px; font-size:10px; background:#FFFCF7; border:8px solid #2a2a2a; border-radius:34px;
+    box-shadow:0 30px 60px rgba(0,0,0,0.15); overflow:hidden; text-align:left; line-height:1.5;
+    font-family:"Hiragino Maru Gothic ProN","Hiragino Sans",sans-serif; color:#3D3833;
   }
-  .phone-mock .screen {
-    position:absolute; inset:0; background:linear-gradient(180deg,#FFFCF7 0%,#FFF6EA 100%);
-    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; padding:20px;
+  .ph-hd { display:flex; align-items:center; gap:.6em; padding:.9em 1em; border-bottom:1px solid #EFE9E1; }
+  .ph-hd .ic { width:1.9em; height:1.9em; border-radius:50%; border:1px solid #E0D8CC; display:flex; align-items:center; justify-content:center; color:#78716C; font-size:.85em; }
+  .ph-hd .who { font-size:.95em; color:#A8A29E; }
+  .ph-hd .ttl { font-size:1.25em; font-weight:700; }
+  .ph-hd .sp { flex:1; }
+  .ph-body { padding:1.1em 1.1em .7em; min-height:318px; display:flex; flex-direction:column; }
+  .sc { display:none; flex:1 1 auto; }
+  .sc .lbl { font-size:.95em; color:#78716C; letter-spacing:.06em; margin-bottom:.6em; display:flex; align-items:center; justify-content:space-between; }
+  .lbl.right { justify-content:flex-end; }
+  .sc .pill { background:var(--accent); color:#fff; border-radius:999px; padding:.35em .8em; font-size:.9em; }
+  .card-a { background:#fff; border:1px solid #EFE9E1; border-radius:14px; padding:.9em 1em; margin-bottom:.7em; }
+  .card-a.warm { background:#FFF7EE; border-color:#FDE2A8; }
+  .card-a .day { font-size:1.35em; font-weight:700; }
+  .card-a .meta { font-size:.95em; color:#78716C; margin-top:.15em; }
+  .card-a .amt { font-size:1.45em; font-weight:700; letter-spacing:.02em; }
+  .card-a .st { font-size:.9em; color:var(--accent-deep); margin-top:.15em; }
+  .btn-row { display:flex; gap:.5em; margin-top:.7em; }
+  .btn-a { flex:1; text-align:center; border-radius:8px; padding:.5em 0; font-size:.95em; font-weight:700; }
+  .btn-a.fill { background:var(--accent); color:#fff; }
+  .btn-a.line { border:1px solid #E0D8CC; color:#78716C; background:#fff; }
+  .btn-a.dark { flex:0 0 auto; background:#3D3833; color:#fff; padding:.5em .9em; border-radius:6px; }
+  .pay-top { display:flex; align-items:baseline; justify-content:space-between; }
+  .pay-bot { display:flex; align-items:center; justify-content:space-between; gap:.6em; margin-top:.2em; }
+  .done { display:flex; align-items:center; gap:.4em; margin-top:.6em; background:#EAF6EE; color:#2F7D58; border-radius:8px; padding:.5em .7em; font-size:.95em; font-weight:700; }
+  .mini { display:flex; justify-content:space-between; align-items:center; font-size:.95em; color:#78716C; padding:.55em 0; border-bottom:1px solid #F3EDE5; }
+  .mini b { color:#3D3833; font-weight:700; }
+  .mini .ok { color:#2F7D58; }
+  .bub { max-width:80%; padding:.6em .8em; border-radius:12px; font-size:.98em; margin-bottom:.7em; }
+  .bub.them { background:#fff; border:1px solid #EFE9E1; border-bottom-left-radius:4px; }
+  .bub.me { background:var(--accent); color:#fff; margin-left:auto; border-bottom-right-radius:4px; }
+  .bub .nm { font-size:.8em; color:#A8A29E; display:block; margin-bottom:.2em; }
+  .read { font-size:.8em; color:#A8A29E; text-align:right; margin:-.4em 0 .7em; }
+  .typing { display:inline-flex; align-items:center; gap:3px; background:#fff; border:1px solid #EFE9E1; border-radius:12px; border-bottom-left-radius:4px; padding:.75em .8em; }
+  .typing i { width:4px; height:4px; border-radius:50%; background:#C7BFB5; display:block; animation:dot 1.2s infinite; }
+  .typing i:nth-child(2){ animation-delay:.2s } .typing i:nth-child(3){ animation-delay:.4s }
+  .ph-in { display:flex; align-items:center; gap:.5em; margin-top:.6em; }
+  .ph-in .fld { flex:1; border:1px solid #EFE9E1; background:#fff; border-radius:999px; padding:.5em .8em; font-size:.9em; color:#A8A29E; }
+  .ph-in .snd { width:2.2em; height:2.2em; border-radius:50%; background:var(--accent); color:#fff; display:flex; align-items:center; justify-content:center; font-size:.9em; }
+  .kid { display:flex; align-items:center; gap:.7em; background:#FCE5CE; border-radius:14px; padding:.8em 1em; margin-bottom:.9em; }
+  .kid .av { width:2.6em; height:2.6em; border-radius:50%; background:#fff; display:flex; align-items:center; justify-content:center; font-size:1.2em; }
+  .kid .nm { font-size:1.25em; font-weight:700; }
+  .kid .sb { font-size:.9em; color:#8a7a68; }
+  .ph-tabs { display:flex; border-top:1px solid #EFE9E1; background:#fff; }
+  .ph-tab { flex:1; padding:.75em 0 .8em; text-align:center; font-size:.85em; color:#A8A29E; cursor:pointer; }
+  .ph-tab svg { display:block; margin:0 auto .3em; width:1.7em; height:1.7em; stroke:currentColor; fill:none; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+  .demo-cap { font-size:13px; color:var(--sub); text-align:center; max-width:300px; min-height:40px; }
+  .demo-cap span { display:none; }
+  .demo-hint { font-size:11px; color:#A8A29E; }
+  /* タブ切替（CSSのみ） */
+  #dt-home:checked   ~ .phone .sc-home,   #dt-visits:checked ~ .phone .sc-visits,
+  #dt-pay:checked    ~ .phone .sc-pay,    #dt-chat:checked   ~ .phone .sc-chat { display:block; }
+  #dt-chat:checked ~ .phone .sc-chat { display:flex; flex-direction:column; }
+  .sc-chat .ph-in { margin-top:auto; }
+  #dt-home:checked   ~ .phone .ph-hd .t-home,   #dt-visits:checked ~ .phone .ph-hd .t-visits,
+  #dt-pay:checked    ~ .phone .ph-hd .t-pay,    #dt-chat:checked   ~ .phone .ph-hd .t-chat { display:inline; }
+  .ph-hd .ttl span { display:none; }
+  #dt-home:checked   ~ .phone .ph-tab[for="dt-home"],   #dt-visits:checked ~ .phone .ph-tab[for="dt-visits"],
+  #dt-pay:checked    ~ .phone .ph-tab[for="dt-pay"],    #dt-chat:checked   ~ .phone .ph-tab[for="dt-chat"] { color:var(--accent-deep); font-weight:700; }
+  #dt-home:checked   ~ .demo-cap .c-home,   #dt-visits:checked ~ .demo-cap .c-visits,
+  #dt-pay:checked    ~ .demo-cap .c-pay,    #dt-chat:checked   ~ .demo-cap .c-chat { display:inline; }
+  .demo input:focus-visible ~ .phone { outline:3px solid var(--accent-deep); outline-offset:3px; }
+  /* 画面内の小さな動き（切り替わるたびに再生） */
+  @keyframes fadeUp { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:none; } }
+  @keyframes dim { to { opacity:.35; } }
+  @keyframes dot { 0%,60%,100% { opacity:.3; } 30% { opacity:1; } }
+  .sc .done { animation:fadeUp .45s 1.9s both; }
+  .sc .btn-row { animation:dim .4s 1.9s both; }
+  .sc .bub-new { animation:fadeUp .45s 2.1s both; }
+  .sc .typing { animation:fadeUp .3s both, tOut .35s 1.85s forwards; }
+  @keyframes tOut { to { opacity:0; transform:translateY(-4px); } }
+  .slot { position:relative; }
+  .slot .typing { position:absolute; left:0; top:0; }
+  @media (prefers-reduced-motion: reduce) {
+    .sc .done, .sc .btn-row, .sc .bub-new, .sc .typing, .typing i { animation:none; }
+    .sc .typing { display:none; }
   }
-  .phone-mock img { width:64px; height:64px; border-radius:16px; }
-  .phone-mock .card-mini {
-    width:100%; background:#fff; border:1px solid var(--line); border-radius:14px; padding:12px 14px; text-align:left;
+  @media (min-width: 900px) {
+    .hero { text-align:left; }
+    .hero .inner { max-width:940px; }
+    .hero-grid { grid-template-columns:1fr auto; grid-template-areas:"copy demo" "lede demo" "cta demo"; align-items:start; gap:16px 52px; }
+    .hero-copy { text-align:left; }
+    .hero-lede .lede { margin-left:0; }
+    .hero-cta { padding-top:14px; }
+    .hero .cta-row { align-items:flex-start; }
+    .hero .store-pair { justify-content:flex-start; }
   }
-  .phone-mock .card-mini .t { font-size:11px; color:var(--sub); }
-  .phone-mock .card-mini .b { font-size:13px; font-weight:700; margin-top:4px; }
-  .phone-mock .dot { width:10px; height:10px; border-radius:50%; background:var(--accent); display:inline-block; margin-right:6px; }
+
+  /* アプリ画面のセクション */
+  .shots { display:grid; grid-template-columns:repeat(3,1fr); gap:32px; }
+  .shot { text-align:center; }
+  .shot .frame {
+    width:100%; max-width:238px; margin:0 auto 18px; border:7px solid #2a2a2a; border-radius:30px;
+    overflow:hidden; background:#FFFCF7; box-shadow:0 18px 36px rgba(0,0,0,0.12); line-height:0;
+  }
+  .shot .frame img { width:100%; height:auto; display:block; }
+  .shot h3 { font-size:17px; margin-bottom:8px; color:#2a2a2a; }
+  .shot p { font-size:14px; color:var(--sub); text-align:left; }
+  .shots-sub { display:grid; grid-template-columns:repeat(2,1fr); gap:32px; max-width:620px; margin:44px auto 0; }
+  .shots-sub .frame { max-width:190px; }
+  .shots-note { font-size:12px; color:#9a9187; text-align:center; margin-top:24px; }
 
   /* セクション共通 */
   section { padding:64px 0; }
@@ -382,7 +493,13 @@
   @media (max-width: 680px) {
     .empathy-grid, .diff-grid, .feature-grid, .guide-grid { grid-template-columns:1fr; }
     .compare-wrap { border-radius:12px; }
-    .phone-mock { width:180px; height:360px; }
+    .hero { padding:24px 24px 48px; }
+    .eyebrow { font-size:12px; padding:5px 14px; margin-bottom:14px; }
+    h1 { margin-bottom:14px; }
+    .lede { font-size:15px; margin-bottom:0; }
+    .shots { grid-template-columns:1fr; gap:40px; }
+    .shots-sub { grid-template-columns:1fr; gap:40px; }
+    .phone { width:236px; font-size:9.6px; }
   }
 </style>
 </head>
@@ -399,34 +516,158 @@
 <main>
 
 <section class="hero">
-  <div class="inner">
-    <span class="eyebrow">共同養育サポートアプリ・無料｜面会調整と養育費管理</span>
-    <h1>連絡先を交換しなくても、<br><span class="accent">ふたりで子育て</span>は続けられる。</h1>
-    <p class="lede">
-      はぐみぃは、離婚後に離れて暮らす親同士のための共同養育アプリです。
-      面会の日程調整と養育費の管理をアプリの中だけで共有でき、電話番号やLINEを交換せず、気をつかう連絡も減らして、子どものための協力を続けられます。
-    </p>
-    <div class="cta-row">
-      <div class="store-pair">
-        <a class="btn-store" href="https://apps.apple.com/jp/app/id6782561944"><span>📱</span><span>App Storeで無料ダウンロード<span class="sub">iPhone・iOS 15.1以上</span></span></a>
-        <a class="btn-store" href="https://play.google.com/store/apps/details?id=com.tigerlabo.hugme"><span>📱</span><span>Google Playで無料ダウンロード<span class="sub">Android 7.0以上</span></span></a>
-      </div>
-      <span class="price-note">アプリ内課金なし・登録は数分で完了</span>
+  <div class="inner hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow">共同養育サポートアプリ・無料｜面会調整と養育費管理</span>
+      <h1>連絡先を交換しなくても、<br><span class="accent">ふたりで子育て</span>は続けられる。</h1>
     </div>
 
-    <div class="phone-mock">
-      <div class="screen">
-        <img src="./assets/icon-256.png" alt="はぐみぃ 面会予定と養育費の管理画面イメージ" width="64" height="64" loading="lazy">
-        <div class="card-mini">
-          <div class="t"><span class="dot"></span>次の面会予定</div>
-          <div class="b">7月26日（日）10:00〜</div>
+    <div class="hero-lede">
+      <p class="lede">
+        はぐみぃは、離婚後に離れて暮らす親同士のための共同養育アプリです。
+        <strong>面会の日程調整</strong>、<strong>養育費の受け取りの確認</strong>、<strong>子どものことだけを話すチャット</strong>が、ぜんぶアプリの中で完結します。電話番号やLINEを交換する必要はありません。
+      </p>
+    </div>
+
+    <div class="hero-demo">
+      <div class="demo">
+        <input type="radio" name="demotab" id="dt-home" aria-label="ホームの画面を見る">
+        <input type="radio" name="demotab" id="dt-visits" checked aria-label="面会の画面を見る">
+        <input type="radio" name="demotab" id="dt-pay" aria-label="養育費の画面を見る">
+        <input type="radio" name="demotab" id="dt-chat" aria-label="チャットの画面を見る">
+        <div class="phone">
+          <div class="ph-hd">
+            <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></span>
+            <span class="who">ひまりのママ</span>
+            <span class="ttl"><span class="t-home">ホーム</span><span class="t-visits">面会</span><span class="t-pay">養育費</span><span class="t-chat">チャット</span></span>
+            <span class="sp"></span>
+            <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg></span>
+            <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3.2"/><path d="M12 2v2.6M12 19.4V22M2 12h2.6M19.4 12H22M4.9 4.9l1.9 1.9M17.2 17.2l1.9 1.9M19.1 4.9l-1.9 1.9M6.8 17.2l-1.9 1.9"/></svg></span>
+          </div>
+
+          <div class="ph-body">
+            <div class="sc sc-home">
+              <div class="kid"><div class="av" aria-hidden="true">🧸</div><div><div class="nm">ひまり</div><div class="sb">7歳・5月12日生まれ</div></div></div>
+              <div class="lbl">次の面会</div>
+              <div class="card-a warm">
+                <div class="day">7月30日（木）</div>
+                <div class="meta">10:00〜13:00 ・ 上野動物園</div>
+              </div>
+              <div class="lbl">養育費</div>
+              <div class="mini"><span>今月分　¥50,000</span><b class="ok">確認済み</b></div>
+              <div class="mini"><span>先月分　¥50,000</span><b class="ok">確認済み</b></div>
+            </div>
+
+            <div class="sc sc-visits">
+              <div class="lbl right"><span class="pill">＋ 面会を追加</span></div>
+              <div class="card-a warm">
+                <div class="meta">相手からの提案</div>
+                <div class="day">7月30日（木）</div>
+                <div class="meta">10:00〜13:00 ・ 上野動物園</div>
+                <div class="btn-row"><span class="btn-a fill">承認する</span><span class="btn-a line">変更を提案</span></div>
+                <div class="done"><span aria-hidden="true">✓</span> 承認しました</div>
+              </div>
+              <div class="mini"><span>8月13日（木）10:00〜</span><b>承認済み</b></div>
+              <div class="mini"><span>8月27日（木）10:00〜</span><b>承認済み</b></div>
+              <div class="mini"><span>9月10日（水）10:00〜</span><b>承認済み</b></div>
+            </div>
+
+            <div class="sc sc-pay">
+              <div class="lbl">受領の確認まち</div>
+              <div class="card-a">
+                <div class="pay-top"><span class="day">2026年7月分</span><span class="amt">¥50,000</span></div>
+                <div class="pay-bot btn-row"><span class="st">送金済・確認待ち（7月25日 送金）</span><span class="btn-a dark">確認しました</span></div>
+                <div class="done"><span aria-hidden="true">✓</span> 受け取りを確認しました</div>
+              </div>
+              <div class="mini"><span>6月分　¥50,000</span><b class="ok">確認済み</b></div>
+              <div class="mini"><span>5月分　¥50,000</span><b class="ok">確認済み</b></div>
+              <div class="mini"><span>4月分　¥50,000</span><b class="ok">確認済み</b></div>
+            </div>
+
+            <div class="sc sc-chat">
+              <div class="lbl"><span>🎒 運動会の日程</span><span>学校・園のこと</span></div>
+              <div class="bub them"><span class="nm">ママ</span>当日は9時からです。お弁当はこちらで用意します</div>
+              <div class="bub me">ありがとうございます。9時前に着くようにします</div>
+              <div class="read">既読</div>
+              <div class="slot">
+                <span class="typing" aria-hidden="true"><i></i><i></i><i></i></span>
+                <div class="bub them bub-new"><span class="nm">ママ</span>写真はあとで送りますね</div>
+              </div>
+              <div class="ph-in"><span class="fld">メッセージを入力...</span><span class="snd" aria-hidden="true">➤</span></div>
+            </div>
+          </div>
+
+          <div class="ph-tabs">
+            <label class="ph-tab" for="dt-home"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"/></svg>ホーム</label>
+            <label class="ph-tab" for="dt-visits"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 2v5M16 2v5M3 11h18"/></svg>面会</label>
+            <label class="ph-tab" for="dt-pay"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 6.5a6 6 0 1 0 0 11"/><circle cx="17" cy="8" r="4"/></svg>養育費</label>
+            <label class="ph-tab" for="dt-chat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4V5z"/></svg>チャット</label>
+          </div>
         </div>
-        <div class="card-mini">
-          <div class="t"><span class="dot" style="background:#7FB77E"></span>養育費</div>
-          <div class="b">今月分：支払い済み ✓</div>
-        </div>
+
+        <p class="demo-cap">
+          <span class="c-home">ひらいてすぐ、次の面会と養育費の状況がわかります。</span>
+          <span class="c-visits">相手からの提案は「承認する」を押すだけ。日時を変えて返すこともできます。</span>
+          <span class="c-pay">支払う側が送金を記録し、受け取った側が「確認しました」を押します。</span>
+          <span class="c-chat">学校・通院・誕生日など、話題ごとに分けて話せます（お互いの同意で使えます）。</span>
+        </p>
+        <p class="demo-hint">下のタブを押すと、画面が切り替わります</p>
       </div>
     </div>
+
+    <div class="hero-cta">
+      <div class="cta-row">
+        <div class="store-pair">
+          <a class="btn-store" href="https://apps.apple.com/jp/app/id6782561944"><span>📱</span><span>App Storeで無料ダウンロード<span class="sub">iPhone・iOS 15.1以上</span></span></a>
+          <a class="btn-store" href="https://play.google.com/store/apps/details?id=com.tigerlabo.hugme"><span>📱</span><span>Google Playで無料ダウンロード<span class="sub">Android 7.0以上</span></span></a>
+        </div>
+        <span class="price-note">アプリ内課金なし・登録は数分で完了</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="shots-sec">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="tag">画面で見る</span>
+      <h2>アプリの中でできる、3つのこと</h2>
+      <p>面会の日程調整、養育費の受け取りの確認、子どものことだけを話すチャット。どれも連絡先を交換せずに、アプリの中だけで進められます。</p>
+    </div>
+    <div class="shots">
+      <figure class="shot">
+        <div class="frame"><img src="./assets/screens/screen-visits.webp" alt="はぐみぃの面会タブの画面。7月30日・8月13日・8月27日の面会予定が日付順に並び、それぞれに「変更」「削除」ボタンが付いている" width="540" height="898" loading="lazy" decoding="async"></div>
+        <figcaption>
+          <h3>面会の日程を、ふたりで決める</h3>
+          <p>「この日でどうですか」と提案すると、相手の画面に届きます。相手はそのまま承認するか、日時を変えて提案し返せます。電話もメッセージアプリも要りません。</p>
+        </figcaption>
+      </figure>
+      <figure class="shot">
+        <div class="frame"><img src="./assets/screens/screen-payments.webp" alt="はぐみぃの養育費タブの画面。2026年7月分5万円が「送金済・確認待ち」と表示され、「確認しました」ボタンが並んでいる" width="540" height="898" loading="lazy" decoding="async"></div>
+        <figcaption>
+          <h3>養育費を受け取ったら、確認する</h3>
+          <p>支払う側が「送金を記録」し、受け取った側が「確認しました」を押します。どちらか一方の言い分にならず、記録はCSVで書き出せます。</p>
+        </figcaption>
+      </figure>
+      <figure class="shot">
+        <div class="frame"><img src="./assets/screens/screen-chat.webp" alt="はぐみぃのチャットタブの画面。運動会の日程・歯医者の通院・誕生日プレゼントなど、話題ごとのトピックが未読件数つきで並んでいる" width="540" height="898" loading="lazy" decoding="async"></div>
+        <figcaption>
+          <h3>子どものことだけ、チャットで話す</h3>
+          <p>学校・通院・誕生日など、話題ごとにトピックを分けて話せます。お互いが同意したときだけ使え、やめたいときはどちらからでも止められます。</p>
+        </figcaption>
+      </figure>
+    </div>
+    <div class="shots-sub">
+      <figure class="shot">
+        <div class="frame"><img src="./assets/screens/screen-home.webp" alt="はぐみぃのホーム画面。子どもの名前と誕生日、次の面会予定、今月の養育費の状況がまとまって表示されている" width="540" height="898" loading="lazy" decoding="async"></div>
+        <figcaption><h3>ホーム</h3><p>ひらいてすぐ、次の面会と今月の養育費がわかります。</p></figcaption>
+      </figure>
+      <figure class="shot">
+        <div class="frame"><img src="./assets/screens/screen-calendar.webp" alt="はぐみぃのカレンダー画面。面会と養育費の予定が色分けされた月表示のカレンダー" width="540" height="898" loading="lazy" decoding="async"></div>
+        <figcaption><h3>カレンダー</h3><p>面会の予定は、先の月までカレンダーでひと目。</p></figcaption>
+      </figure>
+    </div>
+    <p class="shots-note">※ 面会・養育費・ホーム・カレンダーは実際のアプリの画面です（表示している名前・金額は説明のための見本）。チャットの画面は表示例です。</p>
   </div>
 </section>
 
@@ -524,6 +765,7 @@
           <tr><td>養育費の記録</td><td class="old">口頭・記憶に頼り、あとで曖昧に</td><td class="new">支払い済み・未払いを<b>見える化</b>。CSVで書き出し</td></tr>
           <tr><td>予定・支払いの忘れ</td><td class="old">自分で管理するしかない</td><td class="new">面会・支払いを<b>リマインダー通知</b></td></tr>
           <tr><td>やり取りの保全</td><td class="old">チャットや記憶に散らばる</td><td class="new">面会予定と記録を<b>アプリ内に一元保存</b></td></tr>
+          <tr><td>子どものことの相談</td><td class="old">LINEや電話。話が過去のことへ広がりやすい</td><td class="new">話題ごとに分けて話す<b>チャット</b>（お互いが同意したときだけ使う）</td></tr>
           <tr><td>費用</td><td class="old">—</td><td class="new"><b>無料</b>（アプリ内課金なし）</td></tr>
         </tbody>
       </table>
@@ -542,7 +784,7 @@
     <div class="section-head">
       <span class="tag">主な機能｜面会調整・養育費管理</span>
       <h2>子育てに必要なことだけを、シンプルに</h2>
-      <p>はぐみぃの機能は、面会スケジュール・養育費トラッキング・クラウド同期・あたたかいデザインの4つ。共同養育に必要なことだけに絞っています。</p>
+      <p>はぐみぃの機能は、面会スケジュール・養育費トラッキング・チャット・クラウド同期・あたたかいデザインの5つ。共同養育に必要なことだけに絞っています。</p>
     </div>
     <div class="feature-grid">
       <div class="feature-card">
@@ -554,6 +796,11 @@
         <div class="ic">💰</div>
         <h3>養育費トラッキング</h3>
         <p>毎月の養育費を記録し、支払い済み・未払いを見える化。確認はアプリ内で完結し、記録はCSVで書き出せます。</p>
+      </div>
+      <div class="feature-card">
+        <div class="ic">💬</div>
+        <h3>子どものことだけのチャット</h3>
+        <p>学校・通院・誕生日など、話題ごとにトピックを分けて話せます。お互いが同意したときだけ使え、やめたいときはどちらからでも止められます。</p>
       </div>
       <div class="feature-card">
         <div class="ic">☁️</div>
@@ -701,6 +948,10 @@
       <p>毎月の養育費を記録し、支払い済み・未払いを見える化します。確認もアプリ内で完結し、記録はCSVで書き出せます。</p>
     </details>
     <details>
+      <summary>アプリの中でメッセージのやり取りはできますか？</summary>
+      <p>できます。学校・通院・誕生日など、話題ごとにトピックを分けて話せるチャットがあります。連絡先の交換は不要で、やり取りはアプリの中だけに残ります。チャットは<strong>お互いが同意したときだけ</strong>使える仕組みで、やめたいときはどちらからでも無効にできます（再開にはあらためて二人の同意が必要です）。</p>
+    </details>
+    <details>
       <summary>位置情報や連絡先、写真にアクセスされますか？</summary>
       <p>いいえ。位置情報・連絡先・写真へのアクセスは一切行いません。入力した内容はご本人だけがアクセスできます。</p>
     </details>
@@ -827,7 +1078,7 @@
     〒150-0012 東京都渋谷区広尾1丁目2番地1号 ヒカリビル4階<br>
     お問い合わせ：<a href="mailto:contact_hugme@tigerlabo.com">contact_hugme@tigerlabo.com</a>
   </div>
-  <div>公開日：2026年7月22日　｜　最終更新：2026年9月2日</div>
+  <div>公開日：2026年7月22日　｜　最終更新：2026年9月4日</div>
   <div>© 2026 TIGERLABO Inc.</div>
 </footer>
 
@@ -846,6 +1097,17 @@
       }
     });
   });
+})();
+</script>
+<script>
+(function(){
+  var ids=['dt-visits','dt-pay','dt-chat','dt-home'], i=0, timer=null;
+  var demo=document.querySelector('.demo'); if(!demo) return;
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function step(){ i=(i+1)%ids.length; var el=document.getElementById(ids[i]); if(el) el.checked=true; }
+  function stop(){ if(timer){ clearInterval(timer); timer=null; } }
+  demo.addEventListener('click',stop); demo.addEventListener('keydown',stop);
+  if(!reduce) timer=setInterval(step,4600);
 })();
 </script>
 </body>
