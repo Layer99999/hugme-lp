@@ -8,7 +8,7 @@
   var SOURCES = ['note', 'esukuru', 'smf', 'jspf', 'visit', 'rikonterrace', 'qr-a4', 'qr-card', 'pearchil'];
   var MEDIUMS = ['article', 'community', 'qr', 'referral'];
   var CONTENTS = ['article_intro', 'article_body', 'article_footer', 'inline_tool'];
-  var NOTE_KEYS = ['n29e9d4e47a8c', 'n0bf2f95d53bf', 'nbb4d71574d08', 'nc57acacf8590', 'na33a9aa4ae37', 'n134b82181145', 'n9f611dc60076', 'n7a347a64f279', 'n37fd87347d44', 'n429ac7c884de', 'n3ed4dcb2c884', 'n3ca8f7940546', 'n18eb2a85e213', 'n51b719aaab32', 'n06370dc30286', 'nbb1aff55c75e', 'n53446867a88e', 'n6d0fb143af66', 'n713072cc94b2', 'nf543efcf469b', 'n204eb7b42db6'];
+  var NOTE_KEYS = ["n29e9d4e47a8c", "n0bf2f95d53bf", "nbb4d71574d08", "nc57acacf8590", "na33a9aa4ae37", "n134b82181145", "n9f611dc60076", "n7a347a64f279", "n37fd87347d44", "n429ac7c884de", "n3ed4dcb2c884", "n3ca8f7940546", "n18eb2a85e213", "n51b719aaab32", "n06370dc30286", "nbb1aff55c75e", "n53446867a88e", "n6d0fb143af66", "n713072cc94b2", "nf543efcf469b", "n204eb7b42db6", "nb0edb3f88593"];
   var PAGES = ['/', '/guide/', '/for-professionals/', '/youikuhi-keisan/', '/menkai-yoteihyo/', '/guide/menkai-koryu-kimekata/', '/guide/yoiku-hi-mibarai-taisho/', '/guide/renraku-toritakunai/', '/guide/kaisei-minpo-2026-kyodo-yoiku/', '/guide/yoiku-hi-soba-jukyu/', '/guide/kodomo-kimochi-menkai/', '/guide/kyodo-yoiku-toha/', '/guide/kyodo-shinken-tandoku/', '/guide/menkai-kyohi/'];
   function contains(list, value) { return list.indexOf(value) !== -1; }
   function validatedCampaign(values) {
