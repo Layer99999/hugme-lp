@@ -3,26 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- GA4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-G57V70ZJ66"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  /* 計測に渡す「ページの住所」から、入力内容でできた部分（a= b= k= 等）を落とし、
-     流入元をあらわす utm だけ残す。入力した内容がGoogleへ渡らないようにするため。 */
-  window.__pageLoc = (function () {
-    var u = new URL(window.location.href), keep = new URLSearchParams();
-    u.searchParams.forEach(function (v, k) { if (k.indexOf('utm_') === 0 || k === 'gclid') keep.set(k, v); });
-    var q = keep.toString();
-    return u.origin + u.pathname + (q ? '?' + q : '');
-  })();
-  gtag('js', new Date());
-  gtag('config', 'G-G57V70ZJ66', {
-    allow_google_signals: false,
-    allow_ad_personalization_signals: false,
-    page_location: window.__pageLoc
-  });
-</script>
+<meta name="apple-itunes-app" content="app-id=6782561944">
+<!-- 本番だけを計測。共通スクリプトで流入元とストアクリックを集計します。 -->
+<script src="../assets/analytics.js"></script>
 <title>養育費かんたん計算｜算定表の目安と法定養育費をならべて見る</title>
 <meta name="description" content="裁判所の養育費算定表（令和元年版）にもとづく目安を、2026年4月から始まった法定養育費（月2万円×子の人数）とならべて表示します。父母のどちらが何人みているかも入れられます。結果は印刷・共有できます。無料・登録不要。">
 <meta name="keywords" content="養育費 計算,養育費 算定表,法定養育費,共同監護 養育費,養育費 シミュレーション">
@@ -795,7 +778,7 @@
 
     if (!calcFired) {   // 発火の事実だけを送る（入力値・金額は送らない）
       calcFired = true;
-      if (typeof gtag === 'function') { gtag('event', 'calc_complete', { page_location: window.__pageLoc }); }
+      if (window.hugmeAnalytics) { window.hugmeAnalytics.event('calc_complete'); }
     }
   }
 
@@ -893,11 +876,6 @@
       var payerIsYou = document.getElementById('rDir').textContent.indexOf('あなたが') === 0;
       renderBreakdown(lastState.kids, payerIsYou, split, withA, withB);
     }
-  });
-  Array.prototype.forEach.call(document.querySelectorAll('[data-store]'), function (a) {
-    a.addEventListener('click', function () {
-      if (typeof gtag === 'function') { gtag('event', 'store_click', { page_location: window.__pageLoc }); }
-    });
   });
   document.getElementById('btnLine').addEventListener('click', function () {
     this.href = 'https://social-plugins.line.me/lineit/share?url=' + encodeURIComponent(window.location.href);

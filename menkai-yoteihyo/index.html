@@ -3,26 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- GA4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-G57V70ZJ66"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  /* 計測に渡す「ページの住所」から、入力内容でできた部分（a= b= k= 等）を落とし、
-     流入元をあらわす utm だけ残す。入力した内容がGoogleへ渡らないようにするため。 */
-  window.__pageLoc = (function () {
-    var u = new URL(window.location.href), keep = new URLSearchParams();
-    u.searchParams.forEach(function (v, k) { if (k.indexOf('utm_') === 0 || k === 'gclid') keep.set(k, v); });
-    var q = keep.toString();
-    return u.origin + u.pathname + (q ? '?' + q : '');
-  })();
-  gtag('js', new Date());
-  gtag('config', 'G-G57V70ZJ66', {
-    allow_google_signals: false,
-    allow_ad_personalization_signals: false,
-    page_location: window.__pageLoc
-  });
-</script>
+<meta name="apple-itunes-app" content="app-id=6782561944">
+<!-- 本番だけを計測。共通スクリプトで流入元とストアクリックを集計します。 -->
+<script src="../assets/analytics.js"></script>
 <title>面会交流の予定表テンプレート｜法務省の例示から選んでA4 1枚に</title>
 <meta name="description" content="面会交流（親子交流）の取り決めを、法務省が例示している項目から選ぶだけでA4 1枚にまとめられるテンプレートです。内容・頻度・時間・待ち合わせ場所・長期休暇・連絡の取り方・再協議のタイミング。次の3か月の予定表つき。無料・登録不要。">
 <meta name="keywords" content="面会交流 予定表 テンプレート,親子交流 取り決め,面会交流 頻度 決め方,共同養育 スケジュール">
@@ -739,7 +722,7 @@
 
     writeUrl(s);
     $('sheet').hidden = false;
-    if (!fired) { fired = true; if (typeof gtag === 'function') { gtag('event', 'template_complete', { page_location: window.__pageLoc }); } }
+    if (!fired) { fired = true; if (window.hugmeAnalytics) { window.hugmeAnalytics.event('template_complete'); } }
   }
 
   /* URLでの保存・復元（選んだ項目だけ。自由記入は載せない） */
@@ -787,9 +770,6 @@
         function () { msg('リンクをコピーしました。自由記入の欄は入っていません。'); },
         function () { msg('コピーできませんでした。アドレス欄のURLをそのままお使いください。'); });
     } else { msg('アドレス欄のURLをそのままお使いください。'); }
-  });
-  Array.prototype.forEach.call(document.querySelectorAll('[data-store]'), function (a) {
-    a.addEventListener('click', function () { if (typeof gtag === 'function') { gtag('event', 'store_click', { page_location: window.__pageLoc }); } });
   });
 
   if (readUrl()) { build(); }

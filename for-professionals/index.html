@@ -3,14 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- GA4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-G57V70ZJ66"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-G57V70ZJ66', { allow_google_signals: false, allow_ad_personalization_signals: false });
-</script>
+<meta name="apple-itunes-app" content="app-id=6782561944">
+<!-- 本番だけを計測。共通スクリプトで流入元とストアクリックを集計します。 -->
+<script src="../assets/analytics.js"></script>
 <title>支援団体・士業・自治体の方へ｜はぐみぃ（共同養育アプリ）</title>
 <meta name="description" content="親子交流の支援団体・離婚を扱う士業・自治体の方へ。はぐみぃは、支援や書面づくりが終わったあとを親だけで回すための無料アプリです。何をして何をしないかを正直にまとめました。">
 <meta name="keywords" content="親子交流支援団体,面会交流 支援,共同養育 アプリ 士業,自治体 ひとり親支援,共同養育計画書 連絡方法">
@@ -63,7 +58,7 @@
       "description": "親子交流の支援団体・離婚を扱う士業・自治体の方に向けた、共同養育アプリ「はぐみぃ」の案内。支援や書面づくりが終わったあとを親だけで回すための無料の道具として、何をして何をしないかを整理しています。",
       "inLanguage": "ja",
       "datePublished": "2026-08-08",
-      "dateModified": "2026-09-04",
+      "dateModified": "2026-08-27",
       "isPartOf": { "@id": "https://tigerlabo.com/#organization" },
       "about": { "@id": "https://hugme.tigerlabo.com/#app" }
     },
@@ -260,7 +255,7 @@
     離婚・別居のあとに離れて暮らす親同士が、面会の予定と養育費の記録を、連絡先を交換せずにアプリの中だけで共有できます。無料です。人が間に入って連絡を代わりに行う支援は行いません。みなさんの支援や書面づくりが終わったあと、親だけで続けていく時間のための道具として作りました。
   </p>
 
-  <p class="byline">文責：株式会社タイガーラボ　／　最終更新：2026年9月4日</p>
+  <p class="byline">文責：株式会社タイガーラボ　／　最終更新：2026年8月8日</p>
 
   <div class="jumps">
     <span class="lbl">お立場に近いところから読んでください</span>
@@ -297,7 +292,7 @@
     <li>法律・心理・福祉に関する専門的な助言をすること</li>
   </ul>
 
-  <p>あわせて、<strong>誰とでも自由に文章をやり取りする掲示板は設けていません。</strong> 話し合いの道具ではなく、記録の置き場でいたいと考えているからです。子どものことを決める必要があるときのために、学校・通院・誕生日など<strong>話題ごとに区切ったチャット</strong>はありますが、<strong>お互いが同意したときだけ使え、どちらか一方の操作でいつでも止められます</strong>。言い合いの場が増えないように、意図してそうしています。</p>
+  <p>あわせて、<strong>自由に文章をやり取りする掲示板やチャットの機能も入れていません。</strong> 話し合いの道具ではなく、記録の置き場でいたいと考えているからです。言い合いの場が増えないように、意図してそうしています。</p>
 
   <div class="callout">
     はぐみぃは、専門家による相談・調停・支援に代わるものではありません。取り決めの中身や、もめごとの解決については、家庭裁判所・法テラス・弁護士・自治体の窓口など、専門の機関へおつなぎください。詳しくは<a href="/terms/">利用規約</a>をご覧ください。
@@ -574,22 +569,5 @@
   <div>© 2026 TIGERLABO Inc.</div>
 </footer>
 
-<script>
-/* ストアボタンの計測（2026-09-02・アプリグロースチーム）: ストアへのリンクが押された回数をGA4のイベント store_click に記録する。
-   個人情報・入力値は送らない（ページの住所はクエリ文字列を外して送る）。道具箱2ページは既存の同名イベントで計測済み。 */
-(function () {
-  var links = document.querySelectorAll('a[href*="apps.apple.com"], a[href*="play.google.com"]');
-  Array.prototype.forEach.call(links, function (a) {
-    a.addEventListener('click', function () {
-      if (typeof gtag === 'function') {
-        gtag('event', 'store_click', {
-          store: a.href.indexOf('apple.com') > -1 ? 'app_store' : 'google_play',
-          page_location: location.origin + location.pathname
-        });
-      }
-    });
-  });
-})();
-</script>
 </body>
 </html>

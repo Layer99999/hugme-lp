@@ -3,14 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- GA4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-G57V70ZJ66"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-G57V70ZJ66', { allow_google_signals: false, allow_ad_personalization_signals: false });
-</script>
+<meta name="apple-itunes-app" content="app-id=6782561944">
+<!-- 本番だけを計測。共通スクリプトで流入元とストアクリックを集計します。 -->
+<script src="../../assets/analytics.js"></script>
 <title>2026年の改正民法で共同養育はどう変わる？共同親権・法定養育費・親子交流の要点</title>
 <meta name="description" content="2026年4月1日施行の改正民法で、離婚後の共同養育はどう変わったのか。選択的共同親権・法定養育費（子1人月2万円）・親子交流の明確化など、公的資料をもとに要点をわかりやすくまとめました。">
 <meta name="keywords" content="改正民法 2026,共同親権,法定養育費,親子交流,面会交流,離婚後 共同養育">
@@ -302,22 +297,5 @@
   <div>© 2026 TIGERLABO Inc.</div>
 </footer>
 
-<script>
-/* ストアボタンの計測（2026-09-02・アプリグロースチーム）: ストアへのリンクが押された回数をGA4のイベント store_click に記録する。
-   個人情報・入力値は送らない（ページの住所はクエリ文字列を外して送る）。道具箱2ページは既存の同名イベントで計測済み。 */
-(function () {
-  var links = document.querySelectorAll('a[href*="apps.apple.com"], a[href*="play.google.com"]');
-  Array.prototype.forEach.call(links, function (a) {
-    a.addEventListener('click', function () {
-      if (typeof gtag === 'function') {
-        gtag('event', 'store_click', {
-          store: a.href.indexOf('apple.com') > -1 ? 'app_store' : 'google_play',
-          page_location: location.origin + location.pathname
-        });
-      }
-    });
-  });
-})();
-</script>
 </body>
 </html>

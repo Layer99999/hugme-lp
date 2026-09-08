@@ -3,14 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- GA4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-G57V70ZJ66"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-G57V70ZJ66', { allow_google_signals: false, allow_ad_personalization_signals: false });
-</script>
+<meta name="apple-itunes-app" content="app-id=6782561944">
+<!-- 本番だけを計測。共通スクリプトで流入元とストアクリックを集計します。 -->
+<script src="../../assets/analytics.js"></script>
 <title>養育費が未払いのときの対処｜履行勧告・差押え・法定養育費</title>
 <meta name="description" content="養育費が払われないときの動き方を、手順とともに整理しました。履行勧告・履行命令・強制執行（差押え）の違い、給料を差し押さえられる範囲、2026年4月に始まった法定養育費まで、公的資料をもとにまとめています。">
 <meta name="keywords" content="養育費 未払い,履行勧告,差押え,強制執行,法定養育費,養育費 払われない">
@@ -389,22 +384,5 @@
   <div>© 2026 TIGERLABO Inc.</div>
 </footer>
 
-<script>
-/* ストアボタンの計測（2026-09-02・アプリグロースチーム）: ストアへのリンクが押された回数をGA4のイベント store_click に記録する。
-   個人情報・入力値は送らない（ページの住所はクエリ文字列を外して送る）。道具箱2ページは既存の同名イベントで計測済み。 */
-(function () {
-  var links = document.querySelectorAll('a[href*="apps.apple.com"], a[href*="play.google.com"]');
-  Array.prototype.forEach.call(links, function (a) {
-    a.addEventListener('click', function () {
-      if (typeof gtag === 'function') {
-        gtag('event', 'store_click', {
-          store: a.href.indexOf('apple.com') > -1 ? 'app_store' : 'google_play',
-          page_location: location.origin + location.pathname
-        });
-      }
-    });
-  });
-})();
-</script>
 </body>
 </html>
