@@ -270,11 +270,7 @@
 </main>
 
 <style>
-  .footer-resources{max-width:800px;margin:0 auto 28px;padding:24px;border:1px solid #ecd9cf;border-radius:20px;background:linear-gradient(135deg,#fffaf6,#f8f3ed);text-align:left}
-  .footer-resources__head{text-align:center;margin-bottom:16px}
-  .footer-resources__label{display:inline-block;margin-bottom:6px;padding:4px 10px;border-radius:999px;background:#f3ded1;color:#8a4f3e;font-size:11px;font-weight:700;letter-spacing:.04em}
-  .footer-resources__title{margin:0;color:#2e2a27;font-size:20px;line-height:1.45}
-  .footer-resources__lead{margin:6px 0 0;color:var(--sub,#6f6862);font-size:13px;line-height:1.7}
+  .footer-resources{max-width:800px;margin:0 auto 28px;text-align:left}
   .footer-resources__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
   .footer-resource{display:flex;align-items:center;gap:14px;padding:16px;background:#fff;border:1px solid rgba(139,111,94,.16);border-radius:14px;text-decoration:none;box-shadow:0 4px 16px rgba(83,61,47,.07);transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
   .footer-resource:hover{transform:translateY(-2px);border-color:rgba(181,123,94,.4);box-shadow:0 8px 22px rgba(83,61,47,.11)}
@@ -284,26 +280,19 @@
   .footer-resource__logo--youtube{background:#fff1f3}
   .footer-resource__youtube-mark{position:relative;width:30px;height:21px;border-radius:6px;background:#ff0033}
   .footer-resource__youtube-mark::after{content:"";position:absolute;top:6px;left:12px;border-top:4.5px solid transparent;border-bottom:4.5px solid transparent;border-left:7px solid #fff}
-  .footer-resource__copy{min-width:0}
-  .footer-resource__name{display:block;color:#2e2a27;font-size:15px;font-weight:700;line-height:1.4}
-  .footer-resource__desc{display:block;margin-top:4px;color:var(--sub,#6f6862);font-size:12px;font-weight:400;line-height:1.6}
-  @media(max-width:620px){.footer-resources{margin-bottom:24px;padding:20px 16px}.footer-resources__grid{grid-template-columns:1fr}.footer-resource{padding:14px}.footer-resources__title{font-size:18px}}
+  .footer-resource__desc{display:block;min-width:0;color:var(--sub,#6f6862);font-size:13px;font-weight:400;line-height:1.7}
+  @media(max-width:620px){.footer-resources{margin-bottom:24px}.footer-resources__grid{grid-template-columns:1fr}.footer-resource{padding:14px}}
 </style>
 <footer>
-  <section class="footer-resources" aria-labelledby="footer-resources-title">
-    <div class="footer-resources__head">
-      <span class="footer-resources__label">アプリの理解をサポート</span>
-      <h2 class="footer-resources__title" id="footer-resources-title">はぐみぃを、もっとわかりやすく</h2>
-      <p class="footer-resources__lead">読むならnote、動画で見るならYouTubeをご利用ください。</p>
-    </div>
+  <section class="footer-resources" aria-label="はぐみぃを理解するための情報">
     <div class="footer-resources__grid">
-      <a class="footer-resource" href="https://note.com/tigerlabo" target="_blank" rel="noopener">
+      <a class="footer-resource" href="https://note.com/tigerlabo" target="_blank" rel="noopener" aria-label="note：面会交流・養育費・制度を、公的資料からやさしく整理">
         <span class="footer-resource__logo footer-resource__logo--note" aria-hidden="true">note</span>
-        <span class="footer-resource__copy"><span class="footer-resource__name">noteで読む</span><span class="footer-resource__desc">面会交流・養育費・制度を、公的資料からやさしく整理</span></span>
+        <span class="footer-resource__desc">面会交流・養育費・制度を、公的資料からやさしく整理</span>
       </a>
-      <a class="footer-resource" href="https://www.youtube.com/@hugme_jp" target="_blank" rel="noopener">
+      <a class="footer-resource" href="https://www.youtube.com/@hugme_jp" target="_blank" rel="noopener" aria-label="YouTube：はぐみぃの使い方と、子育てに役立つ短い解説">
         <span class="footer-resource__logo footer-resource__logo--youtube" aria-hidden="true"><span class="footer-resource__youtube-mark"></span></span>
-        <span class="footer-resource__copy"><span class="footer-resource__name">YouTubeで見る</span><span class="footer-resource__desc">はぐみぃの使い方と、子育てに役立つ短い解説</span></span>
+        <span class="footer-resource__desc">はぐみぃの使い方と、子育てに役立つ短い解説</span>
       </a>
     </div>
   </section>
