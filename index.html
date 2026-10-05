@@ -145,6 +145,11 @@
     },
     {
       "@type": "Question",
+      "name": "法務省の「親子交流支援団体等の一覧表」に載っていると聞きました。本当ですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "はい。はぐみぃは、法務省民事局がホームページで公表している「親子交流支援団体等（面会交流支援団体等）の一覧表」（令和8年9月版・東京都）に「共同養育アプリ はぐみぃ（運営：株式会社タイガーラボ）」として掲載されています。" }
+    },
+    {
+      "@type": "Question",
       "name": "はぐみぃは無料で使えますか？",
       "acceptedAnswer": { "@type": "Answer", "text": "はい、現在すべての機能を無料でご利用いただけます。課金機能はありません。" }
     },
@@ -272,12 +277,20 @@
   }
   .cta-row { display:flex; flex-direction:column; align-items:center; gap:12px; }
   .btn-store {
-    display:inline-flex; align-items:center; gap:10px; background:#111; color:#fff;
-    padding:14px 28px; border-radius:16px; font-weight:700; font-size:15px;
-    box-shadow:0 8px 20px rgba(0,0,0,0.15); transition:transform .15s ease;
+    display:inline-flex; align-items:center; gap:12px; color:#fff; text-align:left;
+    background:linear-gradient(135deg,#DB7A35 0%,#C25C25 100%);
+    padding:14px 28px 14px 20px; border-radius:16px; font-weight:700; font-size:15px;
+    min-width:320px; max-width:100%;
+    text-shadow:0 1px 1px rgba(120,50,10,0.25);
+    box-shadow:0 8px 20px rgba(200,98,42,0.28); transition:transform .15s ease, box-shadow .15s ease;
   }
-  .btn-store:hover { transform:translateY(-2px); }
-  .btn-store .sub { display:block; font-size:11px; font-weight:400; opacity:.8; }
+  .btn-store:hover { transform:translateY(-2px); box-shadow:0 12px 26px rgba(200,98,42,0.34); }
+  .btn-store .dl-ic {
+    flex:none; width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,0.22);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .btn-store .dl-ic svg { width:20px; height:20px; }
+  .btn-store .sub { display:block; font-size:11px; font-weight:400; opacity:.92; }
   .store-pair{display:flex; flex-wrap:wrap; justify-content:center; gap:12px}
   .price-note { font-size:13px; color:var(--sub); }
 
@@ -418,7 +431,8 @@
   .empathy-card {
     background:var(--card); border:1px solid var(--line); border-radius:16px; padding:24px 20px; text-align:center;
   }
-  .empathy-card .ic { font-size:28px; margin-bottom:12px; }
+  .empathy-card .ic { width:72px; height:72px; margin:0 auto 14px; }
+  .empathy-card .ic svg { width:100%; height:100%; display:block; }
   .empathy-card p { font-size:14px; color:var(--sub); }
 
   /* 差別化4カード */
@@ -439,10 +453,8 @@
   .feature-card {
     background:var(--card); border:1px solid var(--line); border-radius:16px; padding:28px;
   }
-  .feature-card .ic {
-    width:48px; height:48px; border-radius:14px; background:var(--green); opacity:.9;
-    display:flex; align-items:center; justify-content:center; font-size:22px; margin-bottom:16px; color:#fff;
-  }
+  .feature-card .ic { width:60px; height:60px; margin-bottom:16px; }
+  .feature-card .ic svg { width:100%; height:100%; display:block; }
   .feature-card h3 { font-size:17px; margin-bottom:8px; color:#2a2a2a; }
   .feature-card p { font-size:14px; color:var(--sub); }
 
@@ -486,6 +498,17 @@
   }
   .privacy-band h2 { font-size:20px; margin-bottom:12px; color:#2a2a2a; }
   .privacy-band p { font-size:14px; color:var(--sub); max-width:560px; margin:0 auto; }
+  .trust-line { display:inline-flex; align-items:center; gap:8px; margin-top:4px; font-size:13px; font-weight:700; color:#5B4A3C; background:#fff; border:1px solid var(--line); border-radius:999px; padding:7px 16px 7px 10px; }
+  .trust-line svg { flex:none; width:20px; height:20px; }
+  .trust-line:hover { border-color:var(--accent); }
+  @media (max-width:420px){ .trust-line { font-size:12px; padding:6px 12px 6px 8px; gap:6px; } .trust-line svg { width:18px; height:18px; } }
+  .moj-band { background:var(--card); border:1px solid var(--line); border-radius:20px; padding:32px 28px; display:flex; gap:24px; align-items:flex-start; }
+  .moj-band .seal { flex:none; width:64px; height:64px; }
+  .moj-band .tag { color:var(--accent-deep); font-weight:700; font-size:13px; letter-spacing:.05em; }
+  .moj-band h2 { font-size:clamp(19px,3.4vw,22px); line-height:1.6; margin:6px 0 10px; color:#2a2a2a; }
+  .moj-band p { font-size:14px; color:var(--sub); }
+  .moj-band .src { display:inline-block; margin-top:10px; font-size:14px; font-weight:700; }
+  @media (max-width:680px){ .moj-band { flex-direction:column; align-items:center; text-align:center; padding:28px 20px; } }
   .privacy-chips { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-top:20px; }
   .privacy-chips span {
     background:#fff; border:1px solid var(--line); padding:8px 16px; border-radius:999px; font-size:13px; color:#2a2a2a;
@@ -638,10 +661,11 @@
     <div class="hero-cta">
       <div class="cta-row">
         <div class="store-pair">
-          <a class="btn-store" href="https://apps.apple.com/jp/app/id6782561944?pt=129057504&ct=lp&mt=8"><span>📱</span><span>App Storeで無料ダウンロード<span class="sub">iPhone・iOS 15.1以上</span></span></a>
-          <a class="btn-store" href="https://play.google.com/store/apps/details?id=com.tigerlabo.hugme"><span>📱</span><span>Google Playで無料ダウンロード<span class="sub">Android 7.0以上</span></span></a>
+          <a class="btn-store" href="https://apps.apple.com/jp/app/id6782561944?pt=129057504&ct=lp&mt=8"><span class="dl-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="M7 10.5l5 5 5-5"/><path d="M5 19.5h14"/></svg></span><span>App Storeで無料ダウンロード<span class="sub">iPhone・iOS 15.1以上</span></span></a>
+          <a class="btn-store" href="https://play.google.com/store/apps/details?id=com.tigerlabo.hugme"><span class="dl-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="M7 10.5l5 5 5-5"/><path d="M5 19.5h14"/></svg></span><span>Google Playで無料ダウンロード<span class="sub">Android 7.0以上</span></span></a>
         </div>
         <span class="price-note">アプリ内課金なし・登録は数分で完了</span>
+        <a class="trust-line" href="#moj"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#EEF6EC"/><path d="M32 13l15 6v11c0 10-6.5 17.5-15 21-8.5-3.5-15-11-15-21V19z" fill="#fff" stroke="#5B4A3C" stroke-width="2.2" stroke-linejoin="round"/><path d="M25 32l5 5 9-10" fill="none" stroke="#7FB77E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>法務省「親子交流支援団体等の一覧表」に掲載</a>
       </div>
     </div>
   </div>
@@ -727,15 +751,15 @@
     </div>
     <div class="empathy-grid">
       <div class="empathy-card">
-        <div class="ic">📅</div>
+        <div class="ic" aria-hidden="true"><svg viewBox="0 0 72 72"><circle cx="36" cy="36" r="34" fill="#FFF1E3"/><rect x="17" y="21" width="30" height="27" rx="5" fill="#fff" stroke="#5B4A3C" stroke-width="2.2"/><path d="M17 30h30" stroke="#5B4A3C" stroke-width="2.2"/><path d="M24 17v7M40 17v7" stroke="#5B4A3C" stroke-width="2.2" stroke-linecap="round"/><circle cx="25" cy="37" r="2" fill="#E8894A"/><circle cx="32" cy="37" r="2" fill="#E8D9C8"/><circle cx="39" cy="37" r="2" fill="#E8D9C8"/><circle cx="25" cy="43" r="2" fill="#E8D9C8"/><circle cx="32" cy="43" r="2" fill="#E8894A"/><path d="M47 47c5 0 8-3 8-7" fill="none" stroke="#E8894A" stroke-width="2.2" stroke-linecap="round"/><path d="M52 41.5l3-2.5 2.5 3" fill="none" stroke="#E8894A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M55 52c-4 2.5-9 2-12-1" fill="none" stroke="#7FB77E" stroke-width="2.2" stroke-linecap="round"/><path d="M47 54l-4-3 1-3.5" fill="none" stroke="#7FB77E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <p>面会の日程を決めるたびに、メッセージのやり取りが何往復もする</p>
       </div>
       <div class="empathy-card">
-        <div class="ic">💬</div>
+        <div class="ic" aria-hidden="true"><svg viewBox="0 0 72 72"><circle cx="36" cy="36" r="34" fill="#EEF6EC"/><path d="M15 22a6 6 0 0 1 6-6h22a6 6 0 0 1 6 6v12a6 6 0 0 1-6 6H27l-7 6v-6.5A6 6 0 0 1 15 34z" fill="#fff" stroke="#5B4A3C" stroke-width="2.2" stroke-linejoin="round"/><path d="M22 25h20M22 31h11" stroke="#D8CBBB" stroke-width="2.2" stroke-linecap="round"/><path d="M36 31l3 0" stroke="#E8894A" stroke-width="2.2" stroke-linecap="round"/><path d="M33 44h17a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5h-2v5l-6-5h-9a5 5 0 0 1-5-5v-5a5 5 0 0 1 5-5z" fill="#FFF7EE" stroke="#E8894A" stroke-width="2.2" stroke-linejoin="round"/><circle cx="37" cy="51.5" r="1.8" fill="#E8894A"/><circle cx="42.5" cy="51.5" r="1.8" fill="#E8894A"/><circle cx="48" cy="51.5" r="1.8" fill="#E8894A"/><path d="M55 16c1.5 2.5 2.5 4 2.5 5.3a2.5 2.5 0 0 1-5 0c0-1.3 1-2.8 2.5-5.3z" fill="#9CC9E6"/></svg></div>
         <p>事務的な連絡のはずが、言葉選びに毎回気をつかってしまう</p>
       </div>
       <div class="empathy-card">
-        <div class="ic">📋</div>
+        <div class="ic" aria-hidden="true"><svg viewBox="0 0 72 72"><circle cx="36" cy="36" r="34" fill="#FFF1E3"/><path d="M20 16h26l6 6v34H20z" fill="#fff" stroke="#5B4A3C" stroke-width="2.2" stroke-linejoin="round"/><path d="M46 16v6h6" fill="none" stroke="#5B4A3C" stroke-width="2.2" stroke-linejoin="round"/><path d="M26 28h16M26 35h12M26 42h14" stroke="#D8CBBB" stroke-width="2.2" stroke-linecap="round"/><path d="M27 28l2 2 3.5-4" fill="none" stroke="#7FB77E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="50" cy="50" r="10" fill="#FFF7EE" stroke="#E8894A" stroke-width="2.2"/><path d="M47 47.5a3 3 0 1 1 4.2 2.8c-.9.4-1.2 1-1.2 1.8v.6" fill="none" stroke="#E8894A" stroke-width="2.2" stroke-linecap="round"/><circle cx="50" cy="55.5" r="1.3" fill="#E8894A"/></svg></div>
         <p>養育費を払った・払っていないが曖昧になり、あとで確認しづらい</p>
       </div>
     </div>
@@ -807,8 +831,8 @@
     </div>
     <div class="cta-row" style="margin-top:28px">
       <div class="store-pair">
-        <a class="btn-store" href="https://apps.apple.com/jp/app/id6782561944?pt=129057504&ct=lp&mt=8"><span>📱</span><span>App Storeで無料ダウンロード<span class="sub">iPhone・iOS 15.1以上</span></span></a>
-        <a class="btn-store" href="https://play.google.com/store/apps/details?id=com.tigerlabo.hugme"><span>📱</span><span>Google Playで無料ダウンロード<span class="sub">Android 7.0以上</span></span></a>
+        <a class="btn-store" href="https://apps.apple.com/jp/app/id6782561944?pt=129057504&ct=lp&mt=8"><span class="dl-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="M7 10.5l5 5 5-5"/><path d="M5 19.5h14"/></svg></span><span>App Storeで無料ダウンロード<span class="sub">iPhone・iOS 15.1以上</span></span></a>
+        <a class="btn-store" href="https://play.google.com/store/apps/details?id=com.tigerlabo.hugme"><span class="dl-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="M7 10.5l5 5 5-5"/><path d="M5 19.5h14"/></svg></span><span>Google Playで無料ダウンロード<span class="sub">Android 7.0以上</span></span></a>
       </div>
     </div>
   </div>
@@ -823,27 +847,27 @@
     </div>
     <div class="feature-grid">
       <div class="feature-card">
-        <div class="ic">📆</div>
+        <div class="ic" aria-hidden="true"><svg viewBox="0 0 72 72"><circle cx="36" cy="36" r="34" fill="#FFF1E3"/><rect x="18" y="20" width="36" height="32" rx="6" fill="#fff" stroke="#5B4A3C" stroke-width="2.2"/><path d="M18 30h36" stroke="#5B4A3C" stroke-width="2.2"/><path d="M26 16v8M46 16v8" stroke="#5B4A3C" stroke-width="2.2" stroke-linecap="round"/><path d="M26 38h4M34 38h4M42 38h4M26 45h4M34 45h4" stroke="#D8CBBB" stroke-width="2.6" stroke-linecap="round"/><circle cx="44" cy="45" r="4.2" fill="#E8894A"/></svg></div>
         <h3>面会スケジュール</h3>
         <p>週ごと・隔週・月ごとのパターンから面会予定を作成。カレンダーで先の予定までひと目で確認できます。</p>
       </div>
       <div class="feature-card">
-        <div class="ic">💰</div>
+        <div class="ic" aria-hidden="true"><svg viewBox="0 0 72 72"><circle cx="36" cy="36" r="34" fill="#EEF6EC"/><rect x="15" y="24" width="36" height="26" rx="5" fill="#fff" stroke="#5B4A3C" stroke-width="2.2"/><path d="M15 31h36" stroke="#5B4A3C" stroke-width="2.2"/><path d="M21 42h10" stroke="#D8CBBB" stroke-width="2.2" stroke-linecap="round"/><circle cx="50" cy="46" r="10" fill="#FFF7EE" stroke="#E8894A" stroke-width="2.2"/><path d="M46.5 41l3.5 4.5 3.5-4.5M50 45.5v6M46.8 47.5h6.4" fill="none" stroke="#E8894A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M41 22l3 3 6-6" fill="none" stroke="#7FB77E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <h3>養育費トラッキング</h3>
         <p>毎月の養育費を記録し、支払い済み・未払いを見える化。確認はアプリ内で完結し、記録はCSVで書き出せます。</p>
       </div>
       <div class="feature-card">
-        <div class="ic">💬</div>
+        <div class="ic" aria-hidden="true"><svg viewBox="0 0 72 72"><circle cx="36" cy="36" r="34" fill="#FFF1E3"/><path d="M14 23a6 6 0 0 1 6-6h20a6 6 0 0 1 6 6v10a6 6 0 0 1-6 6H26l-7 6v-6.3A6 6 0 0 1 14 33z" fill="#fff" stroke="#5B4A3C" stroke-width="2.2" stroke-linejoin="round"/><path d="M21 25h17M21 31h10" stroke="#D8CBBB" stroke-width="2.2" stroke-linecap="round"/><path d="M34 42h16a5 5 0 0 1 5 5v4a5 5 0 0 1-5 5h-1v5l-6-5h-9a5 5 0 0 1-5-5v-4a5 5 0 0 1 5-5z" fill="#FFF7EE" stroke="#E8894A" stroke-width="2.2" stroke-linejoin="round"/><path d="M42 47.2c-1.2-1.6-4-1-4 1.1 0 1.8 2.4 3.2 4 4.4 1.6-1.2 4-2.6 4-4.4 0-2.1-2.8-2.7-4-1.1z" fill="#E8894A"/></svg></div>
         <h3>子どものことだけのチャット</h3>
         <p>学校・通院・誕生日など、話題ごとにトピックを分けて話せます。お互いが同意したときだけ使え、やめたいときはどちらからでも止められます。</p>
       </div>
       <div class="feature-card">
-        <div class="ic">☁️</div>
+        <div class="ic" aria-hidden="true"><svg viewBox="0 0 72 72"><circle cx="36" cy="36" r="34" fill="#EEF6EC"/><path d="M24 46a9 9 0 0 1-1-17.9A12 12 0 0 1 46 26a8.5 8.5 0 0 1 3 16.5" fill="#fff" stroke="#5B4A3C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M29 50a8 8 0 0 0 13.5 2" fill="none" stroke="#E8894A" stroke-width="2.2" stroke-linecap="round"/><path d="M43.5 47.5l-1 4.6-4.6-1" fill="none" stroke="#E8894A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M43 42a8 8 0 0 0-13.5-2" fill="none" stroke="#7FB77E" stroke-width="2.2" stroke-linecap="round"/><path d="M28.5 44.5l1-4.6 4.6 1" fill="none" stroke="#7FB77E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <h3>クラウドで同期</h3>
         <p>入力した内容は安全に保存され、機種変更や別の端末でもログインすればそのまま続けられます。</p>
       </div>
       <div class="feature-card">
-        <div class="ic">🤍</div>
+        <div class="ic" aria-hidden="true"><svg viewBox="0 0 72 72"><circle cx="36" cy="36" r="34" fill="#FFF1E3"/><path d="M36 53c-9-6.5-16-12.5-16-20a8.5 8.5 0 0 1 16-4 8.5 8.5 0 0 1 16 4c0 7.5-7 13.5-16 20z" fill="#fff" stroke="#5B4A3C" stroke-width="2.2" stroke-linejoin="round"/><path d="M36 47c-5-3.8-9-7.3-9-11.3a4.6 4.6 0 0 1 9-1.6 4.6 4.6 0 0 1 9 1.6c0 4-4 7.5-9 11.3z" fill="#E8894A" opacity=".85"/><circle cx="53" cy="20" r="2" fill="#7FB77E"/><circle cx="19" cy="52" r="1.6" fill="#7FB77E"/></svg></div>
         <h3>あたたかいデザイン</h3>
         <p>白を基調にした、やさしく落ち着いた画面。むずかしい操作は必要ありません。</p>
       </div>
@@ -929,6 +953,20 @@
   </div>
 </section>
 
+<section id="moj">
+  <div class="wrap">
+    <div class="moj-band">
+      <div class="seal"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#EEF6EC"/><path d="M32 13l15 6v11c0 10-6.5 17.5-15 21-8.5-3.5-15-11-15-21V19z" fill="#fff" stroke="#5B4A3C" stroke-width="2.2" stroke-linejoin="round"/><path d="M25 32l5 5 9-10" fill="none" stroke="#7FB77E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div>
+        <span class="tag">公的機関の一覧への掲載</span>
+        <h2>法務省の「親子交流支援団体等の一覧表」に掲載されています</h2>
+        <p>はぐみぃは、法務省民事局がホームページで公表している「親子交流支援団体等（面会交流支援団体等）の一覧表」（令和8年9月版・東京都）に、「共同養育アプリ はぐみぃ（運営：株式会社タイガーラボ）」として掲載されています。この一覧表は、当事者だけでは親子交流（面会交流）を進めにくいときに、支援を探す方の参考として法務省が公表しているものです。</p>
+        <a class="src" href="https://www.moj.go.jp/MINJI/minji07_00286.html" target="_blank" rel="noopener">法務省「親子交流支援団体等の一覧表について」を見る →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section>
   <div class="wrap">
     <div class="privacy-band">
@@ -957,6 +995,10 @@
     <details>
       <summary>離婚後や別居中でも使えますか？</summary>
       <p>はい。はぐみぃは、離婚後・別居中で離れて暮らす親同士のためのアプリです。連絡先を交換せずに、面会予定と養育費をふたりで共有できます。</p>
+    </details>
+    <details>
+      <summary>法務省の「親子交流支援団体等の一覧表」に載っていると聞きました。本当ですか？</summary>
+      <p>はい。はぐみぃは、法務省民事局がホームページで公表している<a href="https://www.moj.go.jp/MINJI/minji07_00286.html" target="_blank" rel="noopener">「親子交流支援団体等（面会交流支援団体等）の一覧表」</a>（令和8年9月版・東京都）に「共同養育アプリ はぐみぃ（運営：株式会社タイガーラボ）」として掲載されています。</p>
     </details>
     <details>
       <summary>はぐみぃは無料で使えますか？</summary>
@@ -1103,8 +1145,8 @@
       <h2>今日から、ふたりで子育てを続ける</h2>
       <p>ダウンロードは無料。招待コードを送るところから始められます。</p>
       <div class="store-pair">
-        <a class="btn-store" href="https://apps.apple.com/jp/app/id6782561944?pt=129057504&ct=lp&mt=8"><span>📱</span><span>App Storeで無料ダウンロード<span class="sub">iPhone・iOS 15.1以上</span></span></a>
-        <a class="btn-store" href="https://play.google.com/store/apps/details?id=com.tigerlabo.hugme"><span>📱</span><span>Google Playで無料ダウンロード<span class="sub">Android 7.0以上</span></span></a>
+        <a class="btn-store" href="https://apps.apple.com/jp/app/id6782561944?pt=129057504&ct=lp&mt=8"><span class="dl-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="M7 10.5l5 5 5-5"/><path d="M5 19.5h14"/></svg></span><span>App Storeで無料ダウンロード<span class="sub">iPhone・iOS 15.1以上</span></span></a>
+        <a class="btn-store" href="https://play.google.com/store/apps/details?id=com.tigerlabo.hugme"><span class="dl-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="M7 10.5l5 5 5-5"/><path d="M5 19.5h14"/></svg></span><span>Google Playで無料ダウンロード<span class="sub">Android 7.0以上</span></span></a>
       </div>
     </div>
   </div>
