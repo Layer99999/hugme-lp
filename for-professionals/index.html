@@ -58,7 +58,7 @@
       "description": "親子交流の支援団体・離婚を扱う士業・自治体の方に向けた、共同養育アプリ「はぐみぃ」の案内。支援や書面づくりが終わったあとを親だけで回すための無料の道具として、何をして何をしないかを整理しています。",
       "inLanguage": "ja",
       "datePublished": "2026-08-08",
-      "dateModified": "2026-10-03",
+      "dateModified": "2026-10-05",
       "isPartOf": { "@id": "https://tigerlabo.com/#organization" },
       "about": { "@id": "https://hugme.tigerlabo.com/#app" }
     },
@@ -89,6 +89,11 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "法務省の「親子交流支援団体等の一覧表」に載っていますか。",
+      "acceptedAnswer": { "@type": "Answer", "text": "はい。法務省民事局がホームページで公表している「親子交流支援団体等（面会交流支援団体等）の一覧表」（令和8年9月版・東京都）に、「共同養育アプリ はぐみぃ（運営：株式会社タイガーラボ）」として掲載されています。" }
+    },
     {
       "@type": "Question",
       "name": "紹介料や謝礼はいただけますか。",
@@ -210,8 +215,14 @@
   .cta { background:linear-gradient(135deg,#FFF3E4,#F4EFE6); border-radius:24px; padding:30px 24px; text-align:center; margin:20px 0 8px; }
   .cta p { margin:6px 0; }
   .mail { display:inline-block; background:var(--accent); color:#fff; font-weight:700; font-size:15px; padding:13px 26px; border-radius:14px; text-decoration:none; margin:12px 0 6px; }
-  .btn-store { display:inline-flex; align-items:center; gap:10px; background:#111; color:#fff; padding:13px 24px; border-radius:16px; font-weight:700; font-size:14.5px; text-decoration:none; margin-top:8px; }
-  .btn-store .sub { display:block; font-size:11px; font-weight:400; opacity:.8; }
+  .btn-store { display:inline-flex; align-items:center; gap:12px; color:#fff; text-align:left; background:linear-gradient(135deg,#DB7A35 0%,#C25C25 100%); padding:13px 24px 13px 18px; border-radius:16px; font-weight:700; font-size:14.5px; text-decoration:none; margin-top:8px; text-shadow:0 1px 1px rgba(120,50,10,0.25); box-shadow:0 8px 20px rgba(200,98,42,0.28); min-width:300px; max-width:100%; }
+  .btn-store .dl-ic { flex:none; width:34px; height:34px; border-radius:50%; background:rgba(255,255,255,0.22); display:flex; align-items:center; justify-content:center; }
+  .btn-store .dl-ic svg { width:19px; height:19px; }
+  .btn-store .sub { display:block; font-size:11px; font-weight:400; opacity:.92; }
+  .moj-note { display:flex; gap:14px; align-items:flex-start; background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px 18px; margin:0 0 16px; font-size:14.5px; }
+  .moj-note svg { flex:none; width:44px; height:44px; }
+  .moj-note b { color:#2a2a2a; }
+  .moj-note a { font-weight:700; text-decoration:none; }
   .store-pair{display:flex; flex-wrap:wrap; justify-content:center; gap:12px}
   .mailnote { font-size:13px; color:var(--sub); }
   .links a { display:block; padding:12px 0; border-bottom:1px solid var(--line); text-decoration:none; color:#2a2a2a; font-weight:700; font-size:14.5px; }
@@ -255,7 +266,9 @@
     離婚・別居のあとに離れて暮らす親同士が、面会の予定と養育費の記録を、連絡先を交換せずにアプリの中だけで共有できます。無料です。人が間に入って連絡を代わりに行う支援は行いません。みなさんの支援や書面づくりが終わったあと、親だけで続けていく時間のための道具として作りました。
   </p>
 
-  <p class="byline">文責：株式会社タイガーラボ　／　最終更新：2026年10月3日</p>
+  <p class="byline">文責：株式会社タイガーラボ　／　最終更新：2026年10月5日</p>
+
+  <div class="moj-note"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#EEF6EC"/><path d="M32 13l15 6v11c0 10-6.5 17.5-15 21-8.5-3.5-15-11-15-21V19z" fill="#fff" stroke="#5B4A3C" stroke-width="2.2" stroke-linejoin="round"/><path d="M25 32l5 5 9-10" fill="none" stroke="#7FB77E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><div><b>法務省「親子交流支援団体等（面会交流支援団体等）の一覧表」に掲載されています。</b><br>法務省民事局がホームページで公表している一覧表（令和8年9月版・東京都）に、「共同養育アプリ はぐみぃ（運営：株式会社タイガーラボ）」として載っています。<br><a href="https://www.moj.go.jp/MINJI/minji07_00286.html" target="_blank" rel="noopener">法務省のページを見る →</a></div></div>
 
   <div class="jumps">
     <span class="lbl">お立場に近いところから読んでください</span>
@@ -430,7 +443,7 @@
 
   <h2 id="jisseki">実績とレビューは、まだありません</h2>
 
-  <p class="ans">正直に書きます。導入していただいた団体はまだありません。App Storeのレビューも0件です。利用者数は公開していません。ここに載せられる自慢が、ひとつもない状態です。</p>
+  <p class="ans">正直に書きます。導入していただいた団体はまだありません。App Storeのレビューも0件です。利用者数は公開していません。ここに載せられる導入の実績は、まだありません。</p>
 
   <p>iOS版を公開したのは2026年7月、Android版は2026年8月です。どちらも公開したばかりで、「みんな使っています」という言い方はできません。</p>
 
@@ -441,6 +454,7 @@
   <div class="tablewrap">
     <table>
       <tr><th>項目</th><th>いまの状態</th></tr>
+      <tr><td>法務省の一覧表への掲載</td><td>掲載あり（<a href="https://www.moj.go.jp/MINJI/minji07_00286.html" target="_blank" rel="noopener">親子交流支援団体等の一覧表</a>・令和8年9月版・東京都）</td></tr>
       <tr><td>導入していただいた団体・事務所・自治体</td><td>0件</td></tr>
       <tr><td>App Storeのレビュー</td><td>0件</td></tr>
       <tr><td>利用者数</td><td>公開していません</td></tr>
@@ -453,6 +467,10 @@
   <h2 id="faq">よくあるご質問</h2>
 
   <div class="faqbox">
+    <details>
+      <summary>法務省の「親子交流支援団体等の一覧表」に載っていますか。</summary>
+      <p>はい。法務省民事局がホームページで公表している<a href="https://www.moj.go.jp/MINJI/minji07_00286.html" target="_blank" rel="noopener">「親子交流支援団体等（面会交流支援団体等）の一覧表」</a>（令和8年9月版・東京都）に、「共同養育アプリ はぐみぃ（運営：株式会社タイガーラボ）」として掲載されています。</p>
+    </details>
     <details>
       <summary>紹介料や謝礼はいただけますか。</summary>
       <p>いただけません。紹介料・謝礼・成功報酬は一切お支払いしていませんし、今後もその予定はありません。紹介の対価を受け取れないお立場の方がいらっしゃいますし、お金が動くと勧める理由が濁ってしまうと考えているからです。そのかわり、合わないと思われたときはいつでも外していただけます。</p>
@@ -518,8 +536,8 @@
     <a class="mail" href="mailto:contact_hugme@tigerlabo.com">contact_hugme@tigerlabo.com へメールする</a>
     <p class="mailnote">表示名：はぐみぃ運営　／　返信は土日祝を除いて順次お送りします。<br>売り込みの電話や、繰り返しのメールをお送りすることはありません。</p>
     <div class="store-pair">
-      <a class="btn-store" href="https://apps.apple.com/jp/app/id6782561944?pt=129057504&ct=lp&mt=8"><span>📱</span><span>App Storeで無料ダウンロード<span class="sub">iPhone・iOS 15.1以上</span></span></a>
-      <a class="btn-store" href="https://play.google.com/store/apps/details?id=com.tigerlabo.hugme"><span>📱</span><span>Google Playで無料ダウンロード<span class="sub">Android 7.0以上</span></span></a>
+      <a class="btn-store" href="https://apps.apple.com/jp/app/id6782561944?pt=129057504&ct=lp&mt=8"><span class="dl-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="M7 10.5l5 5 5-5"/><path d="M5 19.5h14"/></svg></span><span>App Storeで無料ダウンロード<span class="sub">iPhone・iOS 15.1以上</span></span></a>
+      <a class="btn-store" href="https://play.google.com/store/apps/details?id=com.tigerlabo.hugme"><span class="dl-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="M7 10.5l5 5 5-5"/><path d="M5 19.5h14"/></svg></span><span>Google Playで無料ダウンロード<span class="sub">Android 7.0以上</span></span></a>
     </div>
   </div>
 
