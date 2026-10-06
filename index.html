@@ -250,6 +250,17 @@
     background:var(--accent); color:#fff; padding:9px 20px; border-radius:999px;
     font-weight:700; font-size:14px; white-space:nowrap;
   }
+  header.nav .nav-right { display:flex; align-items:center; gap:10px; }
+  header.nav .nav-press {
+    color:var(--text); border:1px solid rgba(139,111,94,.28); background:#fff; padding:8px 16px; border-radius:999px;
+    font-weight:700; font-size:13px; white-space:nowrap; text-decoration:none;
+  }
+  @media(max-width:480px){
+    header.nav { padding:16px 16px; }
+    header.nav .nav-right { gap:6px; }
+    header.nav .nav-press { padding:7px 11px; font-size:12px; }
+    header.nav .nav-cta { padding:8px 13px; font-size:13px; }
+  }
 
   /* ヒーロー */
   .hero {
@@ -553,7 +564,10 @@
     <img src="./assets/icon-256.png" alt="はぐみぃ 共同養育アプリのアイコン" width="36" height="36" fetchpriority="high">
     <span>はぐみぃ</span>
   </div>
-  <a class="nav-cta" href="#download">無料で入手</a>
+  <div class="nav-right">
+    <a class="nav-press" href="/press/">プレスリリース</a>
+    <a class="nav-cta" href="#download">無料で入手</a>
+  </div>
 </header>
 
 <main>
