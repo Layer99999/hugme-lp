@@ -14,6 +14,7 @@
 - [プライバシーポリシー](https://hugme.tigerlabo.com/privacy/): 個人情報の取り扱い
 - [利用規約](https://hugme.tigerlabo.com/terms/): 利用条件・本アプリの位置づけ
 - [支援団体・士業・自治体の方へ](https://hugme.tigerlabo.com/for-professionals/): 専門職向けの説明・導入の考え方
+- [お知らせ：法務省の一覧表に掲載されました](https://hugme.tigerlabo.com/press/2026-10-moj-list/): 2026年10月6日のプレスリリース。法務省「親子交流支援団体等（面会交流支援団体等）の一覧表」（令和8年9月版・東京都）への掲載
 - [サポート・よくある質問](https://hugme.tigerlabo.com/support/): 使い方・不具合・データの扱い・はじめかたのQ&A（10問）
 
 ## 無料の便利ツール（登録不要・ブラウザで完結）
