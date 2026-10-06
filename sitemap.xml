@@ -109,6 +109,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://hugme.tigerlabo.com/for-mediators/</loc>
+    <lastmod>2026-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://hugme.tigerlabo.com/press/2026-10-moj-list/</loc>
     <lastmod>2026-10-06</lastmod>
     <changefreq>yearly</changefreq>

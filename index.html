@@ -256,8 +256,8 @@
     font-weight:700; font-size:13px; white-space:nowrap; text-decoration:none;
   }
   @media(max-width:480px){
-    header.nav { padding:16px 16px; }
-    header.nav .nav-right { gap:6px; }
+    header.nav { padding:16px; flex-wrap:wrap; gap:12px; }
+    header.nav .nav-right { gap:6px; width:100%; justify-content:space-between; }
     header.nav .nav-press { padding:7px 11px; font-size:12px; }
     header.nav .nav-cta { padding:8px 13px; font-size:13px; }
   }
@@ -566,6 +566,7 @@
   </div>
   <div class="nav-right">
     <a class="nav-press" href="/press/">プレスリリース</a>
+    <a class="nav-press" href="/for-mediators/">調停員の皆様へ</a>
     <a class="nav-cta" href="#download">無料で入手</a>
   </div>
 </header>
