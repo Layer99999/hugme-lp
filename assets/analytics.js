@@ -13,6 +13,11 @@
   function contains(list, value) { return list.indexOf(value) !== -1; }
   function validatedCampaign(values) {
     var source = values.utm_source, result = {};
+    // Only the issued YouTube profile campaign may pass through the URL sanitizer.
+    if (source === 'youtube') {
+      if (values.utm_medium !== 'channel_profile' || values.utm_campaign !== 'profile_links' || values.utm_content !== 'lp') return result;
+      return {utm_source: 'youtube', utm_medium: 'channel_profile', utm_campaign: 'profile_links', utm_content: 'lp'};
+    }
     if (!contains(SOURCES, source)) return result;
     result.utm_source = source;
     if (contains(MEDIUMS, values.utm_medium)) result.utm_medium = values.utm_medium;
@@ -30,7 +35,7 @@
   }
   function normalizedPath(path) { return path.replace(/\/index\.html$/, '/'); }
   var path = normalizedPath(w.location.pathname);
-  var enabled = w.location.protocol === 'https:' && w.location.hostname === HOST && !w.location.port && contains(PAGES, path);
+  var enabled = w.location.protocol === 'https:' && w.location.hostname === HOST && !w.location.port && contains(PAGES, path) && new URLSearchParams(w.location.search).get('verify') !== '1';
   var entry = fromSearch(w.location.search);
   var explicitCampaign = new URLSearchParams(w.location.search).has('utm_source');
   if (enabled) {
