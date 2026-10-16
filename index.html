@@ -565,6 +565,7 @@
     <span>はぐみぃ</span>
   </div>
   <div class="nav-right">
+    <a class="nav-press" href="#news">お知らせ</a>
     <a class="nav-press" href="/press/">プレスリリース</a>
     <a class="nav-press" href="/for-mediators/">調停員の皆様へ</a>
     <a class="nav-cta" href="#download">無料で入手</a>
@@ -701,7 +702,7 @@
   </div>
 </section>
 
-<section class="shots-sec">
+<section class="shots-sec" id="features">
   <div class="wrap">
     <div class="section-head">
       <span class="tag">画面で見る</span>
@@ -745,7 +746,7 @@
   </div>
 </section>
 
-<section>
+<section id="why">
   <div class="wrap">
     <div class="section-head">
       <span class="tag">いま、共同養育アプリが必要な理由</span>
@@ -781,7 +782,7 @@
   </div>
 </section>
 
-<section>
+<section id="reasons">
   <div class="wrap">
     <div class="section-head">
       <span class="tag">はぐみぃが助けになる理由</span>
@@ -821,7 +822,7 @@
   </div>
 </section>
 
-<section>
+<section id="compare">
   <div class="wrap">
     <div class="section-head">
       <span class="tag">これまでのやり方と、何が変わる？</span>
@@ -853,7 +854,7 @@
   </div>
 </section>
 
-<section>
+<section id="functions">
   <div class="wrap">
     <div class="section-head">
       <span class="tag">主な機能｜面会調整・養育費管理</span>
@@ -890,7 +891,7 @@
   </div>
 </section>
 
-<section>
+<section id="choose">
   <div class="wrap">
     <div class="section-head">
       <span class="tag">選び方｜共同養育アプリ・面会交流のスケジュール管理アプリ</span>
@@ -935,7 +936,7 @@
   </div>
 </section>
 
-<section>
+<section id="steps">
   <div class="wrap">
     <div class="section-head">
       <span class="tag">使い方</span>
@@ -1019,7 +1020,7 @@
 </section>
 <!-- news:end -->
 
-<section>
+<section id="privacy">
   <div class="wrap">
     <div class="privacy-band">
       <h2>プライバシーへの配慮</h2>
@@ -1111,7 +1112,7 @@
   </div>
 </section>
 
-<section>
+<section id="learn">
   <div class="wrap">
     <div class="section-head">
       <span class="tag">もっと知る｜共同養育ガイド</span>
@@ -1274,5 +1275,111 @@
   });
 })();
 </script>
+<!-- hm-pagenav:start（ページ内メニュー。PC は左の目次、スマホは右上の三本線。2026-10-16） -->
+<style>
+  .hm-toc { position:fixed; top:96px; left:max(16px, calc((100vw - 960px) / 2 - 196px)); width:172px; z-index:40; display:none; }
+  .hm-toc-title { font-size:12px; font-weight:700; color:#8a7f76; letter-spacing:.06em; margin:0 0 8px 12px; }
+  .hm-toc a, .hm-panel nav a { display:block; color:#4a4440; text-decoration:none; font-size:13px; line-height:1.5; padding:7px 12px; border-left:2px solid #f0e8dd; }
+  .hm-toc a:hover { color:#E8894A; }
+  .hm-toc a.is-current { color:#D9772F; font-weight:700; border-left-color:#F4A261; background:#FBF3E8; border-radius:0 8px 8px 0; }
+  @media (min-width:1240px){ .hm-toc { display:block; } }
+  .hm-burger { position:fixed; top:14px; right:14px; z-index:60; width:46px; height:46px; border-radius:14px; border:1px solid rgba(139,111,94,.28); background:rgba(255,255,255,.96); box-shadow:0 4px 14px rgba(83,61,47,.12); display:none; align-items:center; justify-content:center; cursor:pointer; padding:0; }
+  .hm-burger span, .hm-burger span::before, .hm-burger span::after { display:block; width:20px; height:2px; border-radius:2px; background:#4a4440; position:relative; content:""; }
+  .hm-burger span::before { position:absolute; top:-6px; left:0; }
+  .hm-burger span::after { position:absolute; top:6px; left:0; }
+  body.hm-show-burger .hm-burger { display:flex; }
+  @media (max-width:760px){
+    .hm-burger { display:flex; }
+    header.nav { padding-right:76px; flex-wrap:nowrap; }
+    header.nav .nav-press { display:none; }
+    header.nav .nav-right { width:auto; }
+  }
+  .hm-backdrop { position:fixed; inset:0; background:rgba(40,30,22,.32); z-index:70; opacity:0; pointer-events:none; transition:opacity .2s ease; }
+  .hm-panel { position:fixed; top:0; right:0; bottom:0; width:min(320px, 86vw); background:#FFFCF7; z-index:80; transform:translateX(100%); transition:transform .22s ease; overflow-y:auto; padding:18px 18px 32px; box-shadow:-8px 0 24px rgba(83,61,47,.14); }
+  body.hm-open .hm-backdrop { opacity:1; pointer-events:auto; }
+  body.hm-open .hm-panel { transform:none; }
+  .hm-panel-head { display:flex; align-items:center; justify-content:space-between; margin-bottom:10px; }
+  .hm-panel-head strong { font-size:15px; color:#2a2a2a; }
+  .hm-close { width:40px; height:40px; border:none; background:transparent; font-size:26px; line-height:1; color:#6a6a6a; cursor:pointer; }
+  .hm-panel h3 { font-size:12px; font-weight:700; color:#8a7f76; letter-spacing:.06em; margin:16px 0 6px 12px; }
+  .hm-panel nav a { font-size:15px; padding:11px 12px; border-left:none; border-bottom:1px solid #f0e8dd; }
+  .hm-panel nav a:last-child { border-bottom:none; }
+  .hm-panel .hm-dl { display:block; margin-top:18px; text-align:center; background:#F4A261; color:#fff; font-weight:700; border-radius:999px; padding:12px; text-decoration:none; }
+  @media (prefers-reduced-motion: reduce){ .hm-panel, .hm-backdrop { transition:none; } }
+  section[id], #faq { scroll-margin-top:16px; }
+  @media (max-width:760px){ section[id], #faq { scroll-margin-top:72px; } }
+</style>
+<nav class="hm-toc" aria-label="このページの目次">
+  <p class="hm-toc-title">このページの目次</p>
+  <a href="#video">紹介動画</a>
+  <a href="#features">アプリでできること</a>
+  <a href="#why">必要な理由</a>
+  <a href="#reasons">助けになる理由</a>
+  <a href="#compare">これまでとの違い</a>
+  <a href="#functions">主な機能</a>
+  <a href="#choose">アプリの選び方</a>
+  <a href="#steps">始めるまでの3ステップ</a>
+  <a href="#moj">法務省の一覧表への掲載</a>
+  <a href="#news">最新のお知らせ</a>
+  <a href="#privacy">プライバシーへの配慮</a>
+  <a href="#faq">よくある質問</a>
+  <a href="#learn">共同養育ガイド</a>
+  <a href="#download">ダウンロード</a>
+</nav>
+<button class="hm-burger" type="button" aria-label="メニューを開く" aria-controls="hm-panel" aria-expanded="false"><span></span></button>
+<div class="hm-backdrop" hidden></div>
+<div class="hm-panel" id="hm-panel" role="dialog" aria-modal="true" aria-label="メニュー" hidden>
+  <div class="hm-panel-head"><strong>メニュー</strong><button class="hm-close" type="button" aria-label="メニューを閉じる">×</button></div>
+  <h3>このページ</h3>
+  <nav>
+    <a href="#video">紹介動画</a>
+    <a href="#features">アプリでできること</a>
+    <a href="#why">必要な理由</a>
+    <a href="#reasons">助けになる理由</a>
+    <a href="#compare">これまでとの違い</a>
+    <a href="#functions">主な機能</a>
+    <a href="#choose">アプリの選び方</a>
+    <a href="#steps">始めるまでの3ステップ</a>
+    <a href="#moj">法務省の一覧表への掲載</a>
+    <a href="#news">最新のお知らせ</a>
+    <a href="#privacy">プライバシーへの配慮</a>
+    <a href="#faq">よくある質問</a>
+    <a href="#learn">共同養育ガイド</a>
+  </nav>
+  <h3>ほかのページ</h3>
+  <nav>
+    <a href="/news/">お知らせの一覧</a>
+    <a href="/press/">プレスリリース</a>
+    <a href="/for-mediators/">調停員の皆様へ</a>
+    <a href="/for-professionals/">支援団体・士業・自治体の方へ</a>
+    <a href="/guide/">共同養育ガイド</a>
+    <a href="/support/">サポート・よくある質問</a>
+  </nav>
+  <a class="hm-dl" href="#download">無料でダウンロード</a>
+</div>
+<script>
+(function(){
+  var body=document.body, burger=document.querySelector('.hm-burger'), panel=document.getElementById('hm-panel'), back=document.querySelector('.hm-backdrop');
+  if(!burger||!panel||!back) return;
+  function open(){ panel.hidden=false; back.hidden=false; requestAnimationFrame(function(){ body.classList.add('hm-open'); }); burger.setAttribute('aria-expanded','true'); var c=panel.querySelector('.hm-close'); if(c) c.focus(); }
+  function close(){ body.classList.remove('hm-open'); burger.setAttribute('aria-expanded','false'); setTimeout(function(){ if(!body.classList.contains('hm-open')){ panel.hidden=true; back.hidden=true; } },230); }
+  burger.addEventListener('click',open);
+  back.addEventListener('click',close);
+  panel.querySelector('.hm-close').addEventListener('click',function(){ close(); burger.focus(); });
+  panel.addEventListener('click',function(e){ if(e.target.closest('a')) close(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&body.classList.contains('hm-open')){ close(); burger.focus(); } });
+  // 左の目次が出ない幅のパソコン（761〜1239px）では、上のタブが画面の外に出たら三本線を出す
+  var head=document.querySelector('header.nav');
+  function onScroll(){ var w=window.innerWidth; var show=w>760&&w<1240&&head&&head.getBoundingClientRect().bottom<0; body.classList.toggle('hm-show-burger',!!show); }
+  window.addEventListener('scroll',onScroll,{passive:true}); window.addEventListener('resize',onScroll); onScroll();
+  // 左の目次で、いま見ている場所に色を付ける
+  var links=[].slice.call(document.querySelectorAll('.hm-toc a'));
+  if(!('IntersectionObserver' in window)||!links.length) return;
+  var map={}; links.forEach(function(a){ map[a.getAttribute('href').slice(1)]=a; });
+  var io=new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting){ links.forEach(function(a){ a.classList.remove('is-current'); }); var a=map[en.target.id]; if(a) a.classList.add('is-current'); } }); },{rootMargin:'-40% 0px -55% 0px'});
+  Object.keys(map).forEach(function(id){ var el=document.getElementById(id); if(el) io.observe(el); });
+})();
+</script>
+<!-- hm-pagenav:end -->
 </body>
 </html>
