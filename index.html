@@ -1275,39 +1275,54 @@
   });
 })();
 </script>
-<!-- hm-pagenav:start（ページ内メニュー。PC は左の目次、スマホは右上の三本線。2026-10-16） -->
+<!-- hm-pagenav:start（ページ内メニュー。ヘッダーは上に固定、PC は左の目次、1239px 以下は右上の三本線。2026-10-16） -->
 <style>
-  .hm-toc { position:fixed; top:96px; left:max(16px, calc((100vw - 960px) / 2 - 196px)); width:172px; z-index:40; display:none; }
+  /* ヘッダーを上に固定する（中身は今までどおり 960px の幅にそろえ、背景だけ横いっぱいに敷く） */
+  header.nav { position:sticky; top:0; z-index:50; max-width:none; background:rgba(255,252,247,.97); -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px); padding-left:max(24px, calc((100vw - 912px) / 2)); padding-right:max(24px, calc((100vw - 912px) / 2)); transition:box-shadow .2s ease; }
+  body.hm-scrolled header.nav { box-shadow:0 2px 12px rgba(83,61,47,.10); }
+  section[id], #faq { scroll-margin-top:92px; }
+  header.nav .nav-press { position:relative; }
+  header.nav .nav-press[href="#news"], header.nav .nav-press[href="/press/"] { border:1.5px solid #F4A261; color:#D9772F; background:#FFF4EA; }
+  .hm-new { display:inline-block; margin-left:6px; padding:1px 6px; border-radius:999px; background:#E8574A; color:#fff; font-size:10px; font-weight:800; letter-spacing:.04em; line-height:1.5; vertical-align:middle; }
+  .hm-new[hidden] { display:none; }
+  header.nav .nav-press .hm-new { position:absolute; top:-8px; right:-6px; margin:0; }
+  .hm-toc { position:fixed; top:104px; left:max(16px, calc((100vw - 960px) / 2 - 196px)); width:172px; z-index:40; display:none; }
   .hm-toc-title { font-size:12px; font-weight:700; color:#8a7f76; letter-spacing:.06em; margin:0 0 8px 12px; }
-  .hm-toc a, .hm-panel nav a { display:block; color:#4a4440; text-decoration:none; font-size:13px; line-height:1.5; padding:7px 12px; border-left:2px solid #f0e8dd; }
+  .hm-toc a { display:block; color:#4a4440; text-decoration:none; font-size:13px; line-height:1.5; padding:7px 12px; border-left:2px solid #f0e8dd; }
   .hm-toc a:hover { color:#E8894A; }
   .hm-toc a.is-current { color:#D9772F; font-weight:700; border-left-color:#F4A261; background:#FBF3E8; border-radius:0 8px 8px 0; }
   @media (min-width:1240px){ .hm-toc { display:block; } }
-  .hm-burger { position:fixed; top:14px; right:14px; z-index:60; width:46px; height:46px; border-radius:14px; border:1px solid rgba(139,111,94,.28); background:rgba(255,255,255,.96); box-shadow:0 4px 14px rgba(83,61,47,.12); display:none; align-items:center; justify-content:center; cursor:pointer; padding:0; }
+  .hm-burger { position:fixed; top:20px; right:14px; z-index:60; width:44px; height:44px; border-radius:14px; border:1px solid rgba(139,111,94,.28); background:#fff; display:none; align-items:center; justify-content:center; cursor:pointer; padding:0; }
   .hm-burger span, .hm-burger span::before, .hm-burger span::after { display:block; width:20px; height:2px; border-radius:2px; background:#4a4440; position:relative; content:""; }
   .hm-burger span::before { position:absolute; top:-6px; left:0; }
   .hm-burger span::after { position:absolute; top:6px; left:0; }
-  body.hm-show-burger .hm-burger { display:flex; }
-  @media (max-width:760px){
+  @media (max-width:1239px){
     .hm-burger { display:flex; }
-    header.nav { padding-right:76px; flex-wrap:nowrap; }
-    header.nav .nav-press { display:none; }
-    header.nav .nav-right { width:auto; }
+    header.nav { padding-right:max(74px, calc((100vw - 912px) / 2)); }
+  }
+  @media (max-width:760px){
+    header.nav { padding:12px 64px 12px 12px; flex-wrap:nowrap; gap:6px; }
+    header.nav .brand span { display:none; }
+    header.nav .brand img { width:32px; height:32px; }
+    header.nav .nav-right { width:auto; gap:5px; }
+    header.nav .nav-press[href="/for-mediators/"] { display:none; }
+    header.nav .nav-press { padding:6px 8px; font-size:11px; }
+    header.nav .nav-cta { padding:7px 10px; font-size:11px; }
+    .hm-burger { top:9px; right:10px; width:42px; height:42px; }
+    section[id], #faq { scroll-margin-top:80px; }
   }
   .hm-backdrop { position:fixed; inset:0; background:rgba(40,30,22,.32); z-index:70; opacity:0; pointer-events:none; transition:opacity .2s ease; }
-  .hm-panel { position:fixed; top:0; right:0; bottom:0; width:min(320px, 86vw); background:#FFFCF7; z-index:80; transform:translateX(100%); transition:transform .22s ease; overflow-y:auto; padding:18px 18px 32px; box-shadow:-8px 0 24px rgba(83,61,47,.14); }
+  .hm-panel { position:fixed; top:0; right:0; bottom:0; width:min(300px, 84vw); background:#FFFCF7; z-index:80; transform:translateX(100%); transition:transform .22s ease; overflow-y:auto; padding:16px 16px 28px; box-shadow:-8px 0 24px rgba(83,61,47,.14); }
   body.hm-open .hm-backdrop { opacity:1; pointer-events:auto; }
   body.hm-open .hm-panel { transform:none; }
-  .hm-panel-head { display:flex; align-items:center; justify-content:space-between; margin-bottom:10px; }
+  .hm-panel-head { display:flex; align-items:center; justify-content:space-between; margin-bottom:6px; }
   .hm-panel-head strong { font-size:15px; color:#2a2a2a; }
   .hm-close { width:40px; height:40px; border:none; background:transparent; font-size:26px; line-height:1; color:#6a6a6a; cursor:pointer; }
-  .hm-panel h3 { font-size:12px; font-weight:700; color:#8a7f76; letter-spacing:.06em; margin:16px 0 6px 12px; }
-  .hm-panel nav a { font-size:15px; padding:11px 12px; border-left:none; border-bottom:1px solid #f0e8dd; }
+  .hm-panel nav a { display:flex; align-items:center; gap:12px; color:#3a3a3a; text-decoration:none; font-size:15px; padding:13px 8px; border-bottom:1px solid #f0e8dd; }
   .hm-panel nav a:last-child { border-bottom:none; }
-  .hm-panel .hm-dl { display:block; margin-top:18px; text-align:center; background:#F4A261; color:#fff; font-weight:700; border-radius:999px; padding:12px; text-decoration:none; }
-  @media (prefers-reduced-motion: reduce){ .hm-panel, .hm-backdrop { transition:none; } }
-  section[id], #faq { scroll-margin-top:16px; }
-  @media (max-width:760px){ section[id], #faq { scroll-margin-top:72px; } }
+  .hm-ic { flex:none; width:20px; height:20px; fill:none; stroke:#E8894A; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+  .hm-panel .hm-dl { display:block; margin-top:16px; text-align:center; background:#F4A261; color:#fff; font-weight:700; border-radius:999px; padding:12px; text-decoration:none; }
+  @media (prefers-reduced-motion: reduce){ .hm-panel, .hm-backdrop, header.nav { transition:none; } }
 </style>
 <nav class="hm-toc" aria-label="このページの目次">
   <p class="hm-toc-title">このページの目次</p>
@@ -1330,30 +1345,15 @@
 <div class="hm-backdrop" hidden></div>
 <div class="hm-panel" id="hm-panel" role="dialog" aria-modal="true" aria-label="メニュー" hidden>
   <div class="hm-panel-head"><strong>メニュー</strong><button class="hm-close" type="button" aria-label="メニューを閉じる">×</button></div>
-  <h3>このページ</h3>
   <nav>
-    <a href="#video">紹介動画</a>
-    <a href="#features">アプリでできること</a>
-    <a href="#why">必要な理由</a>
-    <a href="#reasons">助けになる理由</a>
-    <a href="#compare">これまでとの違い</a>
-    <a href="#functions">主な機能</a>
-    <a href="#choose">アプリの選び方</a>
-    <a href="#steps">始めるまでの3ステップ</a>
-    <a href="#moj">法務省の一覧表への掲載</a>
-    <a href="#news">最新のお知らせ</a>
-    <a href="#privacy">プライバシーへの配慮</a>
-    <a href="#faq">よくある質問</a>
-    <a href="#learn">共同養育ガイド</a>
-  </nav>
-  <h3>ほかのページ</h3>
-  <nav>
-    <a href="/news/">お知らせの一覧</a>
-    <a href="/press/">プレスリリース</a>
-    <a href="/for-mediators/">調停員の皆様へ</a>
-    <a href="/for-professionals/">支援団体・士業・自治体の方へ</a>
-    <a href="/guide/">共同養育ガイド</a>
-    <a href="/support/">サポート・よくある質問</a>
+    <a href="#news"><svg class="hm-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg><span class="hm-label">最新のお知らせ</span><span class="hm-new" data-new="news" hidden>NEW</span></a>
+    <a href="/press/"><svg class="hm-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg><span class="hm-label">プレスリリース</span><span class="hm-new" data-new="press" hidden>NEW</span></a>
+    <a href="#video"><svg class="hm-ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg><span class="hm-label">紹介動画</span></a>
+    <a href="#functions"><svg class="hm-ic" viewBox="0 0 24 24" aria-hidden="true"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg><span class="hm-label">主な機能</span></a>
+    <a href="#faq"><svg class="hm-ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg><span class="hm-label">よくある質問</span></a>
+    <a href="#learn"><svg class="hm-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span class="hm-label">共同養育ガイド</span></a>
+    <a href="/for-mediators/"><svg class="hm-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg><span class="hm-label">調停員の皆様へ</span></a>
+    <a href="/for-professionals/"><svg class="hm-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span class="hm-label">支援団体・士業・自治体の方へ</span></a>
   </nav>
   <a class="hm-dl" href="#download">無料でダウンロード</a>
 </div>
@@ -1368,10 +1368,23 @@
   panel.querySelector('.hm-close').addEventListener('click',function(){ close(); burger.focus(); });
   panel.addEventListener('click',function(e){ if(e.target.closest('a')) close(); });
   document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&body.classList.contains('hm-open')){ close(); burger.focus(); } });
-  // 左の目次が出ない幅のパソコン（761〜1239px）では、上のタブが画面の外に出たら三本線を出す
-  var head=document.querySelector('header.nav');
-  function onScroll(){ var w=window.innerWidth; var show=w>760&&w<1240&&head&&head.getBoundingClientRect().bottom<0; body.classList.toggle('hm-show-burger',!!show); }
-  window.addEventListener('scroll',onScroll,{passive:true}); window.addEventListener('resize',onScroll); onScroll();
+  // 固定したヘッダーに、スクロールしたら薄い影を付ける
+  function onScroll(){ body.classList.toggle('hm-scrolled', window.scrollY>4); }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  // NEW のマーク：お知らせ（announcements.json）とプレスリリース（/press/ の先頭の日付）が、公開から7日以内なら出す
+  var hp=document.querySelector('header.nav .nav-press[href="/press/"]'), hn=document.querySelector('header.nav .nav-press[href="#news"]');
+  [[hn,'news'],[hp,'press']].forEach(function(x){ if(x[0]&&!x[0].querySelector('.hm-new')){ var b=document.createElement('span'); b.className='hm-new'; b.setAttribute('data-new',x[1]); b.hidden=true; b.textContent='NEW'; x[0].appendChild(b); } });
+  var t=new Date(); var today=new Date(t.getFullYear(),t.getMonth(),t.getDate());
+  function isNew(ymd){ if(!ymd) return false; var p=ymd.split('-').map(Number); var d=new Date(p[0],p[1]-1,p[2]); var days=(today-d)/86400000; return days>=0&&days<=7; }
+  function mark(kind,ymd){ if(!isNew(ymd)) return; document.querySelectorAll('.hm-new[data-new="'+kind+'"]').forEach(function(el){ el.hidden=false; }); }
+  var pad=function(n){ return (n<10?'0':'')+n; };
+  var todayYmd=today.getFullYear()+'-'+pad(today.getMonth()+1)+'-'+pad(today.getDate());
+  fetch('/announcements.json',{cache:'no-cache'}).then(function(r){ return r.ok?r.json():null; }).then(function(j){
+    var a=(j&&j.announcements)||[]; var latest=a.map(function(x){ return x&&x.date; }).filter(function(d){ return /^\d{4}-\d{2}-\d{2}$/.test(d||'')&&d<=todayYmd; }).sort().pop(); mark('news',latest);
+  }).catch(function(){});
+  fetch('/press/',{cache:'no-cache'}).then(function(r){ return r.ok?r.text():''; }).then(function(h){
+    var m=/class="pr-date">(\d{4})年(\d{1,2})月(\d{1,2})日/.exec(h||''); if(m) mark('press', m[1]+'-'+pad(+m[2])+'-'+pad(+m[3]));
+  }).catch(function(){});
   // 左の目次で、いま見ている場所に色を付ける
   var links=[].slice.call(document.querySelectorAll('.hm-toc a'));
   if(!('IntersectionObserver' in window)||!links.length) return;
