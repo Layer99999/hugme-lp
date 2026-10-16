@@ -1275,7 +1275,7 @@
   });
 })();
 </script>
-<!-- hm-pagenav:start（ページ内メニュー。ヘッダーは上に固定、PC は左の目次、1239px 以下は右上の三本線。2026-10-16） -->
+<!-- hm-pagenav:start（ページ内メニュー。ヘッダーは上に固定、PC は左の目次、1379px 以下は右上の三本線。2026-10-16） -->
 <style>
   /* ヘッダーを上に固定する（中身は今までどおり 960px の幅にそろえ、背景だけ横いっぱいに敷く） */
   header.nav { position:sticky; top:0; z-index:50; max-width:none; background:rgba(255,252,247,.97); -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px); padding-left:max(24px, calc((100vw - 912px) / 2)); padding-right:max(24px, calc((100vw - 912px) / 2)); transition:box-shadow .2s ease; }
@@ -1286,17 +1286,21 @@
   .hm-new { display:inline-block; margin-left:6px; padding:1px 6px; border-radius:999px; background:#E8574A; color:#fff; font-size:10px; font-weight:800; letter-spacing:.04em; line-height:1.5; vertical-align:middle; }
   .hm-new[hidden] { display:none; }
   header.nav .nav-press .hm-new { position:absolute; top:-8px; right:-6px; margin:0; }
-  .hm-toc { position:fixed; top:104px; left:max(16px, calc((100vw - 960px) / 2 - 196px)); width:172px; z-index:40; display:none; }
+  .hm-toc { position:fixed; top:100px; left:max(16px, calc((100vw - 960px) / 2 - 212px)); width:200px; max-height:calc(100vh - 116px); overflow-y:auto; z-index:40; display:none; }
   .hm-toc-title { font-size:12px; font-weight:700; color:#8a7f76; letter-spacing:.06em; margin:0 0 8px 12px; }
-  .hm-toc a { display:block; color:#4a4440; text-decoration:none; font-size:13px; line-height:1.5; padding:7px 12px; border-left:2px solid #f0e8dd; }
+  .hm-toc-group { font-size:11.5px; font-weight:700; color:#B07A52; margin:12px 0 2px 12px; }
+  .hm-toc a { display:flex; align-items:center; gap:8px; color:#4a4440; text-decoration:none; font-size:13px; line-height:1.45; padding:6px 10px; border-left:2px solid #f0e8dd; }
+  .hm-toc .hm-ic { width:16px; height:16px; }
+  .hm-toc .hm-new { margin-left:2px; }
+  .hm-toc a span:not(.hm-new) { white-space:nowrap; }
   .hm-toc a:hover { color:#E8894A; }
   .hm-toc a.is-current { color:#D9772F; font-weight:700; border-left-color:#F4A261; background:#FBF3E8; border-radius:0 8px 8px 0; }
-  @media (min-width:1240px){ .hm-toc { display:block; } }
+  @media (min-width:1380px){ .hm-toc { display:block; } }
   .hm-burger { position:fixed; top:20px; right:14px; z-index:60; width:44px; height:44px; border-radius:14px; border:1px solid rgba(139,111,94,.28); background:#fff; display:none; align-items:center; justify-content:center; cursor:pointer; padding:0; }
   .hm-burger span, .hm-burger span::before, .hm-burger span::after { display:block; width:20px; height:2px; border-radius:2px; background:#4a4440; position:relative; content:""; }
   .hm-burger span::before { position:absolute; top:-6px; left:0; }
   .hm-burger span::after { position:absolute; top:6px; left:0; }
-  @media (max-width:1239px){
+  @media (max-width:1379px){
     .hm-burger { display:flex; }
     header.nav { padding-right:max(74px, calc((100vw - 912px) / 2)); }
   }
@@ -1326,20 +1330,25 @@
 </style>
 <nav class="hm-toc" aria-label="このページの目次">
   <p class="hm-toc-title">このページの目次</p>
-  <a href="#video">紹介動画</a>
-  <a href="#features">アプリでできること</a>
-  <a href="#why">必要な理由</a>
-  <a href="#reasons">助けになる理由</a>
-  <a href="#compare">これまでとの違い</a>
-  <a href="#functions">主な機能</a>
-  <a href="#choose">アプリの選び方</a>
-  <a href="#steps">始めるまでの3ステップ</a>
-  <a href="#moj">法務省の一覧表への掲載</a>
-  <a href="#news">最新のお知らせ</a>
-  <a href="#privacy">プライバシーへの配慮</a>
-  <a href="#faq">よくある質問</a>
-  <a href="#learn">共同養育ガイド</a>
-  <a href="#download">ダウンロード</a>
+  <p class="hm-toc-group">はぐみぃを知る</p>
+  <a href="#video"><svg class="hm-ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg><span>紹介動画</span></a>
+  <a href="#features"><svg class="hm-ic" viewBox="0 0 24 24" aria-hidden="true"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></svg><span>アプリでできること</span></a>
+  <p class="hm-toc-group">なぜ必要か</p>
+  <a href="#why"><svg class="hm-ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg><span>必要な理由</span></a>
+  <a href="#reasons"><svg class="hm-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg><span>助けになる理由</span></a>
+  <a href="#compare"><svg class="hm-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg><span>これまでとの違い</span></a>
+  <p class="hm-toc-group">機能と始め方</p>
+  <a href="#functions"><svg class="hm-ic" viewBox="0 0 24 24" aria-hidden="true"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg><span>主な機能</span></a>
+  <a href="#choose"><svg class="hm-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/></svg><span>アプリの選び方</span></a>
+  <a href="#steps"><svg class="hm-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 12h11"/><path d="M10 18h11"/><path d="M10 6h11"/><path d="M4 10h2"/><path d="M4 6h1v4"/><path d="M6 18H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg><span>始めるまでの3ステップ</span></a>
+  <p class="hm-toc-group">安心と最新情報</p>
+  <a href="#moj"><svg class="hm-ic" viewBox="0 0 24 24" aria-hidden="true"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg><span>法務省の一覧表への掲載</span></a>
+  <a href="#news"><svg class="hm-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg><span>最新のお知らせ</span><span class="hm-new" data-new="news" hidden>NEW</span></a>
+  <a href="#privacy"><svg class="hm-ic" viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><span>プライバシーへの配慮</span></a>
+  <p class="hm-toc-group">もっと知る</p>
+  <a href="#faq"><svg class="hm-ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg><span>よくある質問</span></a>
+  <a href="#learn"><svg class="hm-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span>共同養育ガイド</span></a>
+  <a href="#download"><svg class="hm-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg><span>ダウンロード</span></a>
 </nav>
 <button class="hm-burger" type="button" aria-label="メニューを開く" aria-controls="hm-panel" aria-expanded="false"><span></span></button>
 <div class="hm-backdrop" hidden></div>
