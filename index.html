@@ -560,10 +560,10 @@
 <body>
 
 <header class="nav">
-  <div class="brand">
+  <a class="brand" href="/" aria-label="はぐみぃ トップページへ">
     <img src="./assets/icon-256.png" alt="はぐみぃ 共同養育アプリのアイコン" width="36" height="36" fetchpriority="high">
     <span>はぐみぃ</span>
-  </div>
+  </a>
   <div class="nav-right">
     <a class="nav-press" href="#news">お知らせ</a>
     <a class="nav-press" href="/press/">プレスリリース</a>
@@ -1376,7 +1376,12 @@
   [[hn,'news'],[hp,'press']].forEach(function(x){ if(x[0]&&!x[0].querySelector('.hm-new')){ var b=document.createElement('span'); b.className='hm-new'; b.setAttribute('data-new',x[1]); b.hidden=true; b.textContent='NEW'; x[0].appendChild(b); } });
   var t=new Date(); var today=new Date(t.getFullYear(),t.getMonth(),t.getDate());
   function isNew(ymd){ if(!ymd) return false; var p=ymd.split('-').map(Number); var d=new Date(p[0],p[1]-1,p[2]); var days=(today-d)/86400000; return days>=0&&days<=7; }
-  function mark(kind,ymd){ if(!isNew(ymd)) return; document.querySelectorAll('.hm-new[data-new="'+kind+'"]').forEach(function(el){ el.hidden=false; }); }
+  // 一度開いたら、その端末では NEW を出さない（どの日付まで見たかを端末に覚える。新しいものが出たらまた出す）
+  var latestOf={};
+  function seenOf(kind){ try{ return localStorage.getItem('hm-seen-'+kind)||''; }catch(e){ return ''; } }
+  function mark(kind,ymd){ latestOf[kind]=ymd; if(!isNew(ymd)||seenOf(kind)>=ymd) return; document.querySelectorAll('.hm-new[data-new="'+kind+'"]').forEach(function(el){ el.hidden=false; }); }
+  function markSeen(kind){ var ymd=latestOf[kind]; if(ymd){ try{ localStorage.setItem('hm-seen-'+kind, ymd); }catch(e){} } document.querySelectorAll('.hm-new[data-new="'+kind+'"]').forEach(function(el){ el.hidden=true; }); }
+  document.addEventListener('click',function(e){ var a=e.target.closest&&e.target.closest('a[href]'); if(!a) return; var h=a.getAttribute('href'); if(h==='#news'||h==='/news/'||/^\/news\/#/.test(h)) markSeen('news'); else if(h==='/press/'||/^\/press\//.test(h)) markSeen('press'); });
   var pad=function(n){ return (n<10?'0':'')+n; };
   var todayYmd=today.getFullYear()+'-'+pad(today.getMonth()+1)+'-'+pad(today.getDate());
   fetch('/announcements.json',{cache:'no-cache'}).then(function(r){ return r.ok?r.json():null; }).then(function(j){
