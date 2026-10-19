@@ -274,7 +274,15 @@
     content:""; position:absolute; bottom:-140px; left:-120px; width:360px; height:360px;
     background:radial-gradient(circle, rgba(127,183,126,0.20), transparent 70%); border-radius:50%;
   }
-  .hero .inner { position:relative; max-width:640px; margin:0 auto; }
+  .hero-art { position:absolute; inset:0; z-index:0; pointer-events:none; overflow:hidden; }
+  .hero-video { position:absolute; left:0; width:100%; object-fit:cover; object-position:center 60%; opacity:0; transition:opacity 1s ease; }
+  .hero-video.on { opacity:.5; }
+  .hero-still { position:absolute; width:220px; height:auto; opacity:0; transition:opacity 1.6s ease; }
+  .hero-still.on { opacity:.3; }
+  @media (min-width: 900px) {
+    .hero-video { top:0; height:100%; }
+  }
+  .hero .inner { position:relative; z-index:1; max-width:640px; margin:0 auto; }
   .eyebrow {
     display:inline-block; background:var(--card); border:1px solid var(--line); color:var(--accent-deep);
     font-size:13px; font-weight:700; padding:6px 16px; border-radius:999px; margin-bottom:20px;
@@ -575,6 +583,7 @@
 <main>
 
 <section class="hero">
+  <div class="hero-art" aria-hidden="true"><video class="hero-video" muted playsinline preload="none"></video><img class="hero-still" src="/assets/hero-family-still.webp" alt="" width="600" height="470" loading="lazy" decoding="async"></div>
   <div class="inner hero-grid">
     <div class="hero-copy">
       <span class="eyebrow">離婚のあとを、ひとりで抱えない｜無料の共同養育アプリ</span>
@@ -1248,6 +1257,7 @@
   <div>© 2026 TIGERLABO Inc.</div>
 </footer>
 
+<script src="/assets/hero-family.js" defer></script>
 <script>
 (function(){
   var ids=['dt-visits','dt-pay','dt-chat','dt-home'], i=0, timer=null;
