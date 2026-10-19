@@ -702,6 +702,39 @@
   </div>
 </section>
 
+<!-- news:start（scripts/build-lp-news.mjs が書き出す。手で直さない） -->
+<section id="news">
+  <style>
+    #news .news-box { background:var(--card); border:1px solid var(--line); border-radius:20px; padding:26px 28px; }
+    #news .news-box h2 { font-size:clamp(19px,3.4vw,22px); margin:0 0 6px; color:#2a2a2a; }
+    #news .news-row { display:block; padding:14px 0; border-bottom:1px solid var(--line); text-decoration:none; color:#2a2a2a; }
+    #news .news-row-meta { display:flex; align-items:center; gap:10px; font-size:13px; color:var(--sub); }
+    #news .news-row-label { font-size:12px; font-weight:700; color:var(--accent-deep); background:#FBF3E8; border-radius:999px; padding:1px 10px; }
+    #news .news-row-label.law { color:#4E7F4D; background:#EEF6EC; }
+    #news .news-row-title { display:block; font-weight:700; font-size:15px; line-height:1.7; margin-top:4px; }
+    #news .news-row:hover .news-row-title { color:var(--accent-deep); }
+    #news .news-all { display:inline-block; margin-top:14px; font-size:14px; font-weight:700; }
+    @media (max-width:680px){ #news .news-box { padding:22px 18px; } }
+  </style>
+  <div class="wrap">
+    <div class="news-box">
+      <h2>最新のお知らせ</h2>
+      <div>
+        <a class="news-row" href="/news/#law-2026-10-court-custody-results">
+          <span class="news-row-meta"><span class="news-row-label law">法令・制度</span><time datetime="2026-10-19">2026年10月19日</time></span>
+          <span class="news-row-title">離婚後に親権者を「父母の双方」に変えた例が、4か月で461件ありました</span>
+        </a>
+        <a class="news-row" href="/news/#law-2026-10-torikime-rate">
+          <span class="news-row-meta"><span class="news-row-label law">法令・制度</span><time datetime="2026-10-16">2026年10月16日</time></span>
+          <span class="news-row-title">離婚届の集計で、親子交流や養育費を取り決めた割合が75%に上がりました</span>
+        </a>
+      </div>
+      <a class="news-all" href="/news/">お知らせをすべて見る →</a>
+    </div>
+  </div>
+</section>
+<!-- news:end -->
+
 <section class="shots-sec" id="features">
   <div class="wrap">
     <div class="section-head">
@@ -982,43 +1015,6 @@
     </div>
   </div>
 </section>
-
-<!-- news:start（scripts/build-lp-news.mjs が書き出す。手で直さない） -->
-<section id="news">
-  <style>
-    #news .news-box { background:var(--card); border:1px solid var(--line); border-radius:20px; padding:26px 28px; }
-    #news .news-box h2 { font-size:clamp(19px,3.4vw,22px); margin:0 0 6px; color:#2a2a2a; }
-    #news .news-row { display:block; padding:14px 0; border-bottom:1px solid var(--line); text-decoration:none; color:#2a2a2a; }
-    #news .news-row-meta { display:flex; align-items:center; gap:10px; font-size:13px; color:var(--sub); }
-    #news .news-row-label { font-size:12px; font-weight:700; color:var(--accent-deep); background:#FBF3E8; border-radius:999px; padding:1px 10px; }
-    #news .news-row-label.law { color:#4E7F4D; background:#EEF6EC; }
-    #news .news-row-title { display:block; font-weight:700; font-size:15px; line-height:1.7; margin-top:4px; }
-    #news .news-row:hover .news-row-title { color:var(--accent-deep); }
-    #news .news-all { display:inline-block; margin-top:14px; font-size:14px; font-weight:700; }
-    @media (max-width:680px){ #news .news-box { padding:22px 18px; } }
-  </style>
-  <div class="wrap">
-    <div class="news-box">
-      <h2>最新のお知らせ</h2>
-      <div>
-        <a class="news-row" href="/news/#law-2026-10-torikime-rate">
-          <span class="news-row-meta"><span class="news-row-label law">法令・制度</span><time datetime="2026-10-16">2026年10月16日</time></span>
-          <span class="news-row-title">離婚届の集計で、親子交流や養育費を取り決めた割合が75%に上がりました</span>
-        </a>
-        <a class="news-row" href="/news/#law-2026-10-joint-custody-stats">
-          <span class="news-row-meta"><span class="news-row-label law">法令・制度</span><time datetime="2026-10-16">2026年10月16日</time></span>
-          <span class="news-row-title">4月に親が離婚した子どものうち、24.7%が共同親権になりました</span>
-        </a>
-        <a class="news-row" href="/news/#announce-moj-list-2026-09">
-          <span class="news-row-meta"><span class="news-row-label">お知らせ</span><time datetime="2026-10-06">2026年10月6日</time></span>
-          <span class="news-row-title">法務省の「親子交流支援団体等の一覧表」に掲載されました</span>
-        </a>
-      </div>
-      <a class="news-all" href="/news/">お知らせをすべて見る →</a>
-    </div>
-  </div>
-</section>
-<!-- news:end -->
 
 <section id="privacy">
   <div class="wrap">
