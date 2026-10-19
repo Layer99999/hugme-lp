@@ -1,5 +1,5 @@
 // 冒頭の背景：パパ・ママ・3〜4歳の娘が湖のある丘を手をつないで駆け、3人で輪になって宙に浮かんで回る水彩の動画（約10秒・1回だけ）。
-// 動画は最後に薄く消え、そのあとダウンロードのボタンの右に、3人が湖を眺める静かな絵を薄く残す。
+// 動画は最後に薄く消え、そのあと3人の静かな絵を薄く出す。静かな絵は約20秒ごとに、ゆっくり現れては消える。
 // 動きを減らす設定の人には動画を流さず、静かな絵だけを出す。動画はボタンのあたりが画面に入ってから読み込む。
 (function () {
   var hero = document.querySelector('.hero');
@@ -20,7 +20,7 @@
     video.style.height = Math.max(160, b.t - p.b) + 'px';
   }
   // 静止画：パソコンはデモのスマホの左の縁を中心に、ママの頭がスマホに隠れない高さで置く（文字の後ろに隠れてもよい）
-  //         スマホはデモのスマホの真下、右の端に小さく置く
+  //         スマホは画面の横幅いっぱいに、下の辺を無料ダウンロードのボタンのすぐ上にそろえて置く
   function placeStill() {
     if (!still) return;
     var phone = hero.querySelector('.hero-demo .phone') || hero.querySelector('.hero-demo');
@@ -31,9 +31,10 @@
       still.style.left = (p.l - w / 2) + 'px';
       still.style.top = (p.b + 10 - h * 0.27) + 'px'; // 絵の上から27%がママの頭の上端
     } else {
-      w = Math.min(240, p.w * 0.6); h = w * 470 / 600;
-      still.style.left = (p.w - w) + 'px';
-      still.style.top = (p.b - h * 0.2) + 'px';
+      var btn = hero.querySelector('.hero-cta .btn-store');
+      w = p.w; h = w * 470 / 600;
+      still.style.left = '0px';
+      still.style.top = ((btn ? rel(btn).t : p.b + h) - h) + 'px'; // 下の辺を無料ダウンロードのボタンのすぐ上に
     }
     still.style.width = w + 'px';
   }
