@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="apple-itunes-app" content="app-id=6782561944">
+<!-- 本番だけを計測。共通スクリプトで流入元とストアクリックを集計します。 -->
+<script src="../../assets/analytics.js"></script>
+<title>公営住宅の家賃は、収入で決まります。ひとり親だけにある控除を入れて、いくらになるか計算してみた</title>
+<meta name="description" content="公営住宅（県営住宅・市営住宅など）の家賃は、入る人の収入で決まります。公営住宅法施行令の条文から、家賃算定基礎額の8段階、「政令月収」の計算のしかた、ひとり親だけにある35万円の控除を入れた年収別の基礎額、入居の収入基準と家賃の減免までを順に追いました。">
+<link rel="canonical" href="https://hugme.tigerlabo.com/column/kouei-yachin/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://hugme.tigerlabo.com/column/kouei-yachin/">
+<meta property="og:title" content="公営住宅の家賃は、収入で決まります。ひとり親だけにある控除を入れて、いくらになるか計算してみた">
+<meta property="og:description" content="公営住宅法施行令の条文を引いて、家賃の決め方を順に追いました。ひとり親の35万円の控除を入れると、年収300万円で基礎額が1万1千円下がります。">
+<meta property="og:site_name" content="はぐみぃ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://hugme.tigerlabo.com/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://hugme.tigerlabo.com/assets/og-image.png">
+<link rel="icon" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/icon.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://tigerlabo.com/#organization",
+      "name": "株式会社タイガーラボ",
+      "alternateName": ["TIGERLABO", "TigerLabo", "Tigerlabo Inc."],
+      "url": "https://tigerlabo.com",
+      "logo": "https://tigerlabo.com/assets/logo.png",
+      "sameAs": ["https://map.yahoo.co.jp/v3/place/VBGxuHJFPOM", "https://note.com/tigerlabo", "https://www.youtube.com/@hugme_jp"]
+    },
+    {
+      "@type": "Article",
+      "@id": "https://hugme.tigerlabo.com/column/kouei-yachin/#article",
+      "isPartOf": { "@id": "https://hugme.tigerlabo.com/column/kouei-yachin/#webpage" },
+      "headline": "公営住宅の家賃は、収入で決まります。ひとり親だけにある控除を入れて、いくらになるか計算してみた",
+      "description": "公営住宅法施行令の条文をもとに、公営住宅の家賃の決め方（家賃算定基礎額の8段階と4つの数値）、政令月収の計算、ひとり親の35万円の控除を入れた年収別の基礎額、入居の収入基準、家賃の減免を整理する。",
+      "inLanguage": "ja",
+      "datePublished": "2026-09-27",
+      "dateModified": "2026-09-27",
+      "author": { "@id": "https://tigerlabo.com/#organization" },
+      "publisher": { "@id": "https://tigerlabo.com/#organization" },
+      "mainEntityOfPage": { "@id": "https://hugme.tigerlabo.com/column/kouei-yachin/#webpage" },
+      "about": "公営住宅の家賃の決め方と、ひとり親の控除"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://hugme.tigerlabo.com/column/kouei-yachin/#webpage",
+      "url": "https://hugme.tigerlabo.com/column/kouei-yachin/",
+      "name": "公営住宅の家賃は、収入で決まります。ひとり親だけにある控除を入れて、いくらになるか計算してみた",
+      "inLanguage": "ja",
+      "isPartOf": { "@id": "https://tigerlabo.com/#organization" },
+      "primaryImageOfPage": "https://hugme.tigerlabo.com/assets/og-image.png"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://hugme.tigerlabo.com/column/kouei-yachin/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "はぐみぃ", "item": "https://hugme.tigerlabo.com/" },
+        { "@type": "ListItem", "position": 2, "name": "離婚後の子育て役立つ情報コラム", "item": "https://hugme.tigerlabo.com/column/" },
+        { "@type": "ListItem", "position": 3, "name": "公営住宅の家賃の計算", "item": "https://hugme.tigerlabo.com/column/kouei-yachin/" }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+  :root{
+    --bg:#FFFCF7; --card:#ffffff; --text:#3a3a3a; --sub:#6a6a6a;
+    --accent:#F4A261; --accent-deep:#D9772F; --green:#7FB77E; --line:#f0e8dd; --soft:#FBF3E8;
+    --maxw:760px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg); color:var(--text); font-family:-apple-system,"Hiragino Maru Gothic ProN","Hiragino Sans",sans-serif; line-height:1.95; -webkit-font-smoothing:antialiased; overflow-x:hidden}
+  a{color:var(--accent-deep)}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 22px}
+  header.nav{display:flex; align-items:center; justify-content:space-between; max-width:960px; margin:0 auto; padding:18px 22px}
+  header.nav .brand{display:flex; align-items:center; gap:10px}
+  header.nav .brand img{width:34px; height:34px; border-radius:9px}
+  header.nav .brand span{font-weight:700; font-size:17px; color:#2a2a2a}
+  header.nav .nav-cta{background:var(--accent); color:#fff; padding:8px 18px; border-radius:999px; font-weight:700; font-size:13px; text-decoration:none; white-space:nowrap}
+  header.nav .nav-right { display:flex; align-items:center; gap:10px; }
+  header.nav .nav-press { color:#2a2a2a; border:1px solid rgba(139,111,94,.28); background:#fff; padding:7px 15px; border-radius:999px; font-weight:700; font-size:13px; white-space:nowrap; text-decoration:none; }
+  @media(max-width:480px){ header.nav { padding-left:16px; padding-right:16px; } header.nav .nav-right { gap:6px; } header.nav .nav-press { padding:7px 11px; font-size:12px; } header.nav .nav-cta { padding:8px 13px; } }
+  .crumb{max-width:var(--maxw); margin:0 auto; padding:16px 22px 0; font-size:12.5px; color:var(--sub)}
+  .crumb a{color:var(--sub); text-decoration:none}
+  .crumb span{margin:0 7px; opacity:.5}
+  main{padding:8px 0 40px}
+  .eyebrow{display:inline-block; background:var(--card); border:1px solid var(--line); color:var(--accent-deep); font-size:12px; font-weight:700; padding:5px 14px; border-radius:999px; margin:20px 0 16px}
+  h1{font-size:clamp(24px,4.5vw,33px); line-height:1.5; font-weight:800; color:#2a2a2a; margin-bottom:20px}
+  .lead{background:var(--soft); border:1px solid var(--line); border-radius:16px; padding:20px 22px; font-size:15.5px; color:#3a3a3a; margin-bottom:16px}
+  .byline{font-size:12.5px; color:var(--sub); margin-bottom:26px}
+  h2{font-size:clamp(20px,3.6vw,25px); color:#2a2a2a; line-height:1.5; margin:46px 0 6px; padding-top:22px; border-top:1px solid var(--line); font-weight:800}
+  h3{font-size:17px; color:#2a2a2a; margin:28px 0 6px; font-weight:700}
+  .ans{font-size:15.5px; color:#3a3a3a; margin:14px 0 10px; font-weight:600}
+  p{font-size:15px; color:var(--text); margin:12px 0}
+  strong,b{color:#2a2a2a}
+  ul,ol{margin:14px 0 14px 2px}
+  li{margin:8px 0 8px 22px; font-size:15px}
+  .fig{margin:22px 0; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 12px 12px}
+  .fig figcaption{font-size:12.5px; color:var(--sub); line-height:1.7; margin-top:8px}
+  .tablewrap{overflow-x:auto; border:1px solid var(--line); border-radius:14px; margin:18px 0}
+  table{border-collapse:collapse; width:100%; min-width:480px; background:var(--card); font-size:14px}
+  th,td{padding:12px 14px; text-align:left; border-bottom:1px solid var(--line); vertical-align:top}
+  thead th{background:var(--soft); color:#2a2a2a; font-weight:700; font-size:13px}
+  tbody tr:last-child td{border-bottom:none}
+  td b{color:var(--accent-deep)}
+  .callout{background:#F1F7F0; border-left:4px solid var(--green); border-radius:0 12px 12px 0; padding:16px 18px; margin:20px 0; font-size:14.5px; color:#3a3a3a}
+  .cta{background:linear-gradient(135deg,#FFF3E4,#F4EFE6); border-radius:20px; padding:28px 24px; margin:32px 0; text-align:center}
+  .cta p{margin:0 0 16px; font-size:15px; color:#3a3a3a}
+  .btn-store{display:inline-flex; align-items:center; gap:9px; background:#111; color:#fff; padding:13px 24px; border-radius:14px; font-weight:700; font-size:14.5px; text-decoration:none; box-shadow:0 8px 20px rgba(0,0,0,0.14)}
+  .btn-store .sub{display:block; font-size:10.5px; font-weight:400; opacity:.8}
+  .store-pair{display:flex; flex-wrap:wrap; justify-content:center; gap:12px}
+  details{background:var(--card); border:1px solid var(--line); border-radius:13px; padding:16px 18px; margin-bottom:11px}
+  summary{font-weight:700; font-size:14.5px; cursor:pointer; color:#2a2a2a; list-style:none}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"＋"; float:right; color:var(--accent-deep)}
+  details[open] summary::after{content:"－"}
+  details p{margin-top:11px; font-size:14px; color:var(--sub)}
+  .sources{font-size:12.5px; color:var(--sub); margin:24px 0; padding-top:16px; border-top:1px solid var(--line)}
+  .sources a{color:var(--sub)}
+  .related{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:22px; margin:28px 0}
+  .related h2{border:none; padding:0; margin:0 0 14px; font-size:17px}
+  .related a{display:block; padding:11px 0; border-bottom:1px solid var(--line); text-decoration:none; color:#2a2a2a; font-weight:700; font-size:14.5px}
+  .related a:last-child{border-bottom:none}
+  .related a span{color:var(--accent-deep)}
+  .disclaimer{font-size:12.5px; color:var(--sub); background:var(--soft); border-radius:12px; padding:14px 16px; margin:22px 0}
+  footer{padding:36px 22px 56px; text-align:center; color:var(--sub); font-size:12px}
+  footer .flinks{display:flex; gap:18px; justify-content:center; margin-bottom:14px; flex-wrap:wrap}
+  footer .flinks a{color:var(--sub); font-weight:600; text-decoration:none}
+  blockquote{background:var(--card); border-left:4px solid var(--accent); border-radius:0 12px 12px 0; padding:14px 18px; margin:16px 0; font-size:14.5px; color:#3a3a3a}
+  .src{font-size:12.5px; color:var(--sub); margin:6px 0 14px}
+  .src a{color:var(--sub)}
+  .notelink{background:var(--soft); border:1px solid var(--line); border-radius:14px; padding:14px 18px; margin:24px 0; font-size:14px}
+  .reflist{font-size:13px; color:var(--sub)}
+  .reflist li{font-size:13px; overflow-wrap:anywhere}
+  .reflist a{color:var(--sub)}
+</style>
+
+</head>
+<body>
+
+<header class="nav">
+  <a class="brand" href="/" style="text-decoration:none">
+    <img src="/assets/icon-256.png" alt="はぐみぃ 共同養育アプリのアイコン" width="34" height="34">
+    <span>はぐみぃ</span>
+  </a>
+  <div class="nav-right">
+    <a class="nav-press" href="/press/">プレスリリース</a>
+    <a class="nav-cta" href="/#download">無料で入手</a>
+  </div>
+</header>
+
+<nav class="crumb" aria-label="パンくず">
+  <a href="/">はぐみぃ</a><span>›</span><a href="/column/">離婚後の子育て役立つ情報コラム</a><span>›</span>公営住宅の家賃の計算
+</nav>
+
+<main>
+  <article class="wrap">
+    <span class="eyebrow">お役立ちコラム｜住宅</span>
+    <h1>公営住宅の家賃は、収入で決まります。ひとり親だけにある控除を入れて、いくらになるか計算してみた</h1>
+    <p class="byline">文責：株式会社タイガーラボ 編集部　｜　公開日：2026年9月27日</p>
+
+    <p>離婚して家を出るとき、いちばん重いのが家賃だと思います。収入は減るのに、住むところは確保しないといけない。</p>
+    <p>公営住宅（県営住宅・市営住宅など）は、家賃が収入に応じて決まります。民間の賃貸と違って、相場ではなく、入る人の収入で金額が変わる仕組みです。</p>
+    <p>ただ、「収入に応じて」としか案内されないので、自分だといくらになるのかが分かりません。しかも、ここでいう「収入」は年収のことではありません。</p>
+    <p>今回は、家賃の決め方を定めている公営住宅法施行令の条文を全部引いて、計算の順番を追いました。ひとり親には専用の控除があり、そのぶん家賃の段階が下がります。そこも計算しています。</p>
+
+    <h2>家賃は、基礎になる額に4つの数値を掛けて決まる</h2>
+    <p>まず、全体の形です。公営住宅法施行令の第二条に、こう書かれています。</p>
+    <blockquote>「公営住宅の毎月の家賃は、家賃算定基礎額に次に掲げる数値を乗じた額（当該額が近傍同種の住宅の家賃の額を超える場合にあつては、近傍同種の住宅の家賃の額）とする。」</blockquote>
+    <p>「家賃算定基礎額」という額があって、それに数値を掛けていく。掛ける数値は4つで、条文にはこう並んでいます。</p>
+    <ul>
+      <li>その市町村の土地の値段による数値（0.7以上1.6以下）</li>
+      <li>部屋の広さを65平方メートルで割った数値</li>
+      <li>建ってからの年数に応じた数値（1以下）</li>
+      <li>設備や周りの環境による数値（0.5以上1.3以下）</li>
+    </ul>
+    <p>広さの数値は、条文ではこう書かれています。</p>
+    <blockquote>「当該公営住宅（その公営住宅が共同住宅である場合にあつては、当該公営住宅の共用部分以外の部分に限る。）の床面積の合計を六十五平方メートルで除した数値」</blockquote>
+    <p>65平方メートルより狭ければ1より小さくなるので、家賃は下がります。古い建物も、年数の数値で下がります。</p>
+    <p>つまり、収入で決まるのは「基礎になる額」までで、そこから先は建物ごとの事情で上下します。同じ収入でも、どの住宅に入るかで家賃は変わる、ということです。</p>
+
+    <h2>基礎になる額は、政令の表で8段階</h2>
+    <p>では、その家賃算定基礎額はいくらなのか。同じ第二条の第2項に、表があります。左が収入、右が基礎額です。</p>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>収入</th><th>基礎額</th></tr></thead>
+        <tbody>
+          <tr><td>10万4千円以下</td><td>3万4千400円</td></tr>
+          <tr><td>10万4千円超〜12万3千円</td><td>3万9千700円</td></tr>
+          <tr><td>12万3千円超〜13万9千円</td><td>4万5千400円</td></tr>
+          <tr><td>13万9千円超〜15万8千円</td><td>5万1千200円</td></tr>
+          <tr><td>15万8千円超〜18万6千円</td><td>5万8千500円</td></tr>
+          <tr><td>18万6千円超〜21万4千円</td><td>6万7千500円</td></tr>
+          <tr><td>21万4千円超〜25万9千円</td><td>7万9千円</td></tr>
+          <tr><td>25万9千円超</td><td>9万1千100円</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>いちばん下でも3万4千400円か、と思うかもしれません。ただ、ここに前の章の数値を掛けます。たとえば、広さ50平方メートルの部屋なら 50÷65＝約0.77 です。年数や立地の数値も掛かるので、実際の家賃はこれよりかなり低くなることが多くなります。</p>
+    <p>なお、計算した家賃に100円未満の端数が出たときの扱いも決まっています。同じ政令の第十六条で、切り捨てです。</p>
+
+    <h2>ここでいう「収入」は、年収ではありません</h2>
+    <p>表の左側にある「10万4千円」といった数字。これは月給のことでも、年収を12で割った額でもありません。</p>
+    <p>政令の第一条に、計算のしかたが書かれています。まず所得金額（給与なら、源泉徴収票の「給与所得控除後の金額」にあたる額）を出して、そこから決められた額を引き、最後に12で割ります。</p>
+    <p>引ける額が、条文に並んでいます。</p>
+    <ul>
+      <li>給与や年金の収入がある人　1人につき10万円</li>
+      <li>同居している家族や扶養親族　1人につき38万円</li>
+      <li>70歳以上の配偶者や老人扶養親族　1人につき10万円</li>
+      <li>16歳以上23歳未満の扶養親族　1人につき25万円</li>
+      <li>障害者　1人につき27万円（特別障害者は40万円）</li>
+      <li>寡婦　1人につき27万円</li>
+      <li>ひとり親　1人につき35万円</li>
+    </ul>
+    <p>この「12で割る」という手順が大事です。年収が高く見えても、控除を引いてから12で割るので、表の左側の数字はかなり小さくなります。</p>
+
+    <h2>ひとり親には、35万円の控除があります</h2>
+    <p>いまの一覧の最後です。条文をそのまま引きます。</p>
+    <blockquote>「入居者又は同居者に所得税法第二条第一項第三十一号に規定するひとり親がある場合には、そのひとり親一人につき三十五万円」</blockquote>
+    <p>ひとり親であることそのものに、35万円の控除がつきます。寡婦の27万円より8万円多い額です。</p>
+    <p>これが月の収入にどう効くか。35万円を12で割ると、2万9千166円です。つまり、ひとり親というだけで、表を見るときの数字が月2万9千円ほど下がります。</p>
+    <p>前の章の表は、段階の幅が1万6千円から2万8千円くらいです。2万9千円下がるということは、たいていの場合、段階がひとつかふたつ下がることになります。</p>
+
+    <h2>ここから計算。年収別にいくらになるのか</h2>
+    <p>ひとり親で、子どもが1人（扶養親族1人）の場合で計算しました。給与収入だけの前提です。比べるために、同じ収入でひとり親の控除がない場合も並べます。</p>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>年収</th><th>政令月収</th><th>基礎額</th><th>控除がなければ</th></tr></thead>
+        <tbody>
+          <tr><td>年収250万円</td><td>7万円</td><td>3万4千400円</td><td>差は出ません（最下段）</td></tr>
+          <tr><td>年収300万円</td><td>9万9千167円</td><td>3万4千400円</td><td>4万5千400円</td></tr>
+          <tr><td>年収350万円</td><td>12万8千333円</td><td>4万5千400円</td><td>5万1千200円</td></tr>
+          <tr><td>年収400万円</td><td>16万833円</td><td>5万8千500円</td><td>6万7千500円</td></tr>
+          <tr><td>年収450万円</td><td>19万4千167円</td><td>6万7千500円</td><td>7万9千円</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <figure class="fig">
+      <svg viewBox="0 0 360 386" role="img" aria-labelledby="fig1t fig1d" style="width:100%;max-width:560px;height:auto;display:block;margin:0 auto">
+        <title id="fig1t">ひとり親の控除で、家賃の基礎になる額はどこまで下がるか</title>
+        <desc id="fig1d">子どもが1人、給与収入だけの場合。年収250万円から450万円まで、ひとり親の控除がない場合とある場合の基礎額を横棒で比べた図。</desc>
+        <style>.lb{font:700 13px sans-serif;fill:#2a2a2a} .df{font:700 12px sans-serif;fill:#D9772F} .vs{font:12px sans-serif;fill:#6a6a6a} .va{font:700 12px sans-serif;fill:#3E7A3D} .lg{font:12px sans-serif;fill:#3a3a3a}</style>
+        <text x="16" y="22" style="font:700 15px sans-serif;fill:#2a2a2a">家賃の基礎になる額（月額）</text>
+        <rect x="16" y="34" width="12" height="10" rx="3" fill="#E9DFD2"/><text x="34" y="43" class="lg">控除なし</text>
+        <rect x="106" y="34" width="12" height="10" rx="3" fill="#7FB77E"/><text x="124" y="43" class="lg">ひとり親の控除35万円あり</text>
+        <text x="16" y="76" class="lb">年収250万円</text>
+        <text x="344" y="76" text-anchor="end" class="df">差なし</text>
+        <rect x="16" y="84" width="90.3" height="13" rx="4" fill="#E9DFD2"/><text x="112.3" y="95" class="vs">3万4千400円</text>
+        <rect x="16" y="101" width="90.3" height="13" rx="4" fill="#7FB77E"/><text x="112.3" y="112" class="va">3万4千400円</text>
+        <text x="16" y="142" class="lb">年収300万円</text>
+        <text x="344" y="142" text-anchor="end" class="df">1万1千円下がる</text>
+        <rect x="16" y="150" width="119.2" height="13" rx="4" fill="#E9DFD2"/><text x="141.2" y="161" class="vs">4万5千400円</text>
+        <rect x="16" y="167" width="90.3" height="13" rx="4" fill="#7FB77E"/><text x="112.3" y="178" class="va">3万4千400円</text>
+        <text x="16" y="208" class="lb">年収350万円</text>
+        <text x="344" y="208" text-anchor="end" class="df">5千800円下がる</text>
+        <rect x="16" y="216" width="134.4" height="13" rx="4" fill="#E9DFD2"/><text x="156.4" y="227" class="vs">5万1千200円</text>
+        <rect x="16" y="233" width="119.2" height="13" rx="4" fill="#7FB77E"/><text x="141.2" y="244" class="va">4万5千400円</text>
+        <text x="16" y="274" class="lb">年収400万円</text>
+        <text x="344" y="274" text-anchor="end" class="df">9千円下がる</text>
+        <rect x="16" y="282" width="177.2" height="13" rx="4" fill="#E9DFD2"/><text x="199.2" y="293" class="vs">6万7千500円</text>
+        <rect x="16" y="299" width="153.6" height="13" rx="4" fill="#7FB77E"/><text x="175.6" y="310" class="va">5万8千500円</text>
+        <text x="16" y="340" class="lb">年収450万円</text>
+        <text x="344" y="340" text-anchor="end" class="df">1万1千500円下がる</text>
+        <rect x="16" y="348" width="207.4" height="13" rx="4" fill="#E9DFD2"/><text x="229.4" y="359" class="vs">7万9千円</text>
+        <rect x="16" y="365" width="177.2" height="13" rx="4" fill="#7FB77E"/><text x="199.2" y="376" class="va">6万7千500円</text>
+      </svg>
+      <figcaption>子どもが1人（扶養親族1人）、給与収入だけの場合の目安です。数字は上の表と同じで、実際の家賃は、ここに立地・広さ・築年数・設備の数値を掛けて決まります。図：はぐみぃ編集部</figcaption>
+    </figure>
+    <p>年収300万円では1万1千円、450万円では1万1千500円、基礎になる額が下がります。年収300万円の場合、ひとり親の控除があることで、基礎額が4万5千400円ではなく3万4千400円になります。</p>
+    <p>年収250万円の場合は、控除があってもなくても最下段なので差は出ません。低い収入のときは、もともといちばん下の段にいるからです。</p>
+    <p class="src">※給与所得控除は所得税法第二十八条の式で計算しました。収入660万円未満の場合は、法律上は別表という表で求めるので、上の数字は目安です。</p>
+
+    <h2>入れるかどうかの基準も、政令に書いてある</h2>
+    <p>そもそも申し込めるのか。公営住宅法の第二十三条に、条件が2つ書かれています。ひとつは収入、もうひとつはこれです。</p>
+    <blockquote>「現に住宅に困窮していることが明らかであること。」</blockquote>
+    <p>収入のほうの金額は、政令の第六条にあります。</p>
+    <ul>
+      <li>原則　15万8千円</li>
+      <li>特に居住の安定を図る必要がある場合として条例で定める場合　25万9千円（この額以下で自治体が条例で決める）</li>
+    </ul>
+    <p>さきほどの計算だと、年収400万円のひとり親（子1人）で政令月収16万833円でした。原則の15万8千円をわずかに超えますが、条例の定め方によっては対象に入ります。ここは自治体ごとに違うので、窓口で確かめてください。</p>
+    <p>大事なのは、ひとり親の控除35万円が入った後の数字で判定されるということです。年収だけを見て「うちは無理だ」と決めないでください。</p>
+
+    <h2>「住宅に困窮」の中身も、条文に並んでいます</h2>
+    <p>「住宅に困窮」と言われても、自分が当てはまるのか分かりにくいと思います。これも政令の第七条に、6つ並んでいます。そのうちのひとつがこれです。</p>
+    <blockquote>「住宅がないために勤務場所から著しく遠隔の地に居住を余儀なくされている者又は収入に比して著しく過大な家賃の支払を余儀なくされている者」</blockquote>
+    <p>「収入に比して著しく過大な家賃」。いまの家賃が収入に対して重すぎる、という状態も条文に入っています。</p>
+    <p>ほかにも、他の世帯と同居して生活上の不便を受けている人、立退きを求められて行き先がない人などが挙げられています。離婚して実家に身を寄せている、家を出たいが出られない、という状態も、相談する理由になります。</p>
+
+    <h2>家賃が払えなくなったときは、減免の定めがあります</h2>
+    <p>入居したあとの話も書いておきます。公営住宅法の第十六条に、こうあります。</p>
+    <blockquote>「病気にかかつていることその他特別の事情がある場合において必要があると認めるときは、家賃を減免することができる。」</blockquote>
+    <p>仕事を失った、病気になった、収入が急に減った。そういうときは、黙って滞納する前に窓口に相談してください。減免や徴収猶予の仕組みがあります。</p>
+    <p>なお、家賃は毎年、収入の申告に基づいて決め直されます。収入が下がった年は、申告すれば家賃も下がります。逆に、申告をしないと近傍同種の住宅の家賃（＝相場の家賃）になってしまう、という定めもあります。申告の書類は必ず出してください。</p>
+
+    <p>住まいを借りるためのお金については、こちらに書きました。</p>
+    <p><a href="https://note.com/tigerlabo/n/nb0edb3f88593" target="_blank" rel="noopener">離婚したいけれど、住むところがない。家賃を12か月、無利子で借りられる制度があります</a></p>
+    <p>お金のシリーズは、こちらにまとめています。</p>
+    <ul>
+      <li><a href="https://note.com/tigerlabo/n/n18eb2a85e213" target="_blank" rel="noopener">ひとり親が使えるお金の制度を、2026年度の金額で並べてみる（養育費との関係も）</a></li>
+      <li><a href="https://note.com/tigerlabo/n/n0aadf20f4ec7" target="_blank" rel="noopener">ひとり親が減らせるお金の一覧。保育料・給食費・国民年金・国保の「いくらまでなら対象か」を計算してみた</a></li>
+      <li><a href="https://note.com/tigerlabo/n/n05b2c18ac6e9" target="_blank" rel="noopener">子どもの大学で、返さなくていいお金の一覧。授業料の減免と給付型奨学金は、4年でいくらになるか計算してみた</a></li>
+    </ul>
+
+    <p>今回引いた資料は、こちらで公開されています。</p>
+    <ul class="reflist">
+      <li><a href="https://laws.e-gov.go.jp/law/326CO0000000240" target="_blank" rel="noopener">公営住宅法施行令（e-Gov法令検索）</a></li>
+      <li><a href="https://laws.e-gov.go.jp/law/326AC1000000193" target="_blank" rel="noopener">公営住宅法（e-Gov法令検索）</a></li>
+    </ul>
+
+    <h3>相談したいとき</h3>
+    <ul>
+      <li>お住まいの都道府県の住宅供給公社、または住宅課（県営住宅）</li>
+      <li>お住まいの市区町村の住宅課（市営住宅・町営住宅）</li>
+      <li>お住まいの市区町村のひとり親家庭の相談窓口</li>
+    </ul>
+    <div class="callout">※いま安全が心配な状況にある方へ。DV相談ナビ #8008、児童相談所虐待対応ダイヤル 189、緊急のときは 110 です。</div>
+
+    <h3>参考にした資料</h3>
+    <ul class="reflist">
+      <li>公営住宅法施行令 第一条・第二条・第六条・第七条・第十六条</li>
+      <li>公営住宅法 第十六条・第二十三条</li>
+      <li>所得税法 第二十八条（給与所得控除）</li>
+    </ul>
+
+    <div class="disclaimer">
+      ※この記事は一般的な説明で、個別の事案についての助言ではありません。家賃の額は政令の条文をもとにした計算で、実際の家賃は住宅ごとの立地・広さ・築年数・設備の数値を掛けて決まるため、上の基礎額そのものにはなりません。入居の収入基準や募集の方法、ひとり親世帯の扱いは自治体の条例で定められており、地域によって異なります。ここに書いた内容は2026年9月時点のものです。
+    </div>
+
+    <p class="notelink">この記事は note でも公開しています。<a href="https://note.com/tigerlabo/n/nc195ee6fabbe" target="_blank" rel="noopener">note で読む</a></p>
+
+    <div class="related">
+      <h2>関連するページ</h2>
+      <a href="/column/">離婚後の子育て役立つ情報コラム 一覧 <span>→</span></a>
+      <a href="/youikuhi-keisan/">養育費かんたん計算（法定養育費もならべて見る） <span>→</span></a>
+      <a href="/guide/">共同養育ガイド <span>→</span></a>
+      <a href="/">はぐみぃ（共同養育アプリ）について <span>→</span></a>
+    </div>
+
+    <div class="cta">
+      <p><b>離れて暮らす親どうしの、予定と記録をアプリで共有するなら</b></p>
+      <p>はぐみぃは、面会の日程調整と養育費の記録を、電話番号やLINEを交換せずに続けられる共同養育アプリです。iPhone・Androidの両方で無料で使えます。</p>
+      <div class="store-pair">
+        <a class="btn-store" href="https://apps.apple.com/jp/app/id6782561944?pt=129057504&ct=lp&mt=8"><span>📱</span><span>App Storeで無料ダウンロード<span class="sub">iPhone・iOS 15.1以上</span></span></a>
+        <a class="btn-store" href="https://play.google.com/store/apps/details?id=com.tigerlabo.hugme"><span>📱</span><span>Google Playで無料ダウンロード<span class="sub">Android 7.0以上</span></span></a>
+      </div>
+    </div>
+  </article>
+</main>
+
+<style>
+  .footer-resources{max-width:800px;margin:0 auto 28px;text-align:left}
+  .footer-resources__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .footer-resource{display:flex;align-items:center;gap:14px;padding:16px;background:#fff;border:1px solid rgba(139,111,94,.16);border-radius:14px;text-decoration:none;box-shadow:0 4px 16px rgba(83,61,47,.07);transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+  .footer-resource:hover{transform:translateY(-2px);border-color:rgba(181,123,94,.4);box-shadow:0 8px 22px rgba(83,61,47,.11)}
+  .footer-resource:focus-visible{outline:3px solid rgba(181,123,94,.3);outline-offset:3px}
+  .footer-resource__logo{display:flex;flex:0 0 48px;align-items:center;justify-content:center;width:48px;height:48px;border-radius:13px;background:#fff}
+  .footer-resource__logo--note{border:1px solid #e5e5e5;color:#111;font-size:14px;font-weight:800;letter-spacing:-.04em}
+  .footer-resource__logo--youtube{background:#fff1f3}
+  .footer-resource__youtube-mark{position:relative;width:30px;height:21px;border-radius:6px;background:#ff0033}
+  .footer-resource__youtube-mark::after{content:"";position:absolute;top:6px;left:12px;border-top:4.5px solid transparent;border-bottom:4.5px solid transparent;border-left:7px solid #fff}
+  .footer-resource__desc{display:block;min-width:0;color:var(--sub,#6f6862);font-size:13px;font-weight:400;line-height:1.7}
+  @media(max-width:620px){.footer-resources{margin-bottom:24px}.footer-resources__grid{grid-template-columns:1fr}.footer-resource{padding:14px}}
+</style>
+<footer>
+  <section class="footer-resources" aria-label="はぐみぃを理解するための情報">
+    <div class="footer-resources__grid">
+      <a class="footer-resource" href="https://note.com/tigerlabo" target="_blank" rel="noopener" aria-label="note：面会交流・養育費・制度を、公的資料からやさしく整理">
+        <span class="footer-resource__logo footer-resource__logo--note" aria-hidden="true">note</span>
+        <span class="footer-resource__desc">面会交流・養育費・制度を、公的資料からやさしく整理</span>
+      </a>
+      <a class="footer-resource" href="https://www.youtube.com/@hugme_jp" target="_blank" rel="noopener" aria-label="YouTube：はぐみぃの使い方と、子育てに役立つ短い解説">
+        <span class="footer-resource__logo footer-resource__logo--youtube" aria-hidden="true"><span class="footer-resource__youtube-mark"></span></span>
+        <span class="footer-resource__desc">はぐみぃの使い方と、子育てに役立つ短い解説</span>
+      </a>
+    </div>
+  </section>
+  <div class="flinks">
+    <a href="/">はぐみぃトップ</a>
+    <a href="/guide/">共同養育ガイド</a>
+    <a href="/column/">お役立ちコラム</a>
+    <a href="/support/">サポート・お問い合わせ</a>
+    <a href="/for-professionals/">支援団体・士業・自治体の方へ</a>
+    <a href="/privacy/">プライバシーポリシー</a>
+    <a href="/terms/">利用規約</a>
+    <a href="/support/#operator">運営会社：株式会社タイガーラボ</a>
+  </div>
+  <div>運営：株式会社タイガーラボ　最終更新：2026年9月27日</div>
+  <div>© 2026 TIGERLABO Inc.</div>
+</footer>
+
+<script src="/assets/site-nav.js" defer></script>
+</body>
+</html>
