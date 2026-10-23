@@ -133,6 +133,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://hugme.tigerlabo.com/column/kouei-nyukyo/</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://hugme.tigerlabo.com/column/kouei-yachin/</loc>
     <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
