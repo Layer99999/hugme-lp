@@ -4,28 +4,31 @@
       "id": "law-2026-10-court-custody-results",
       "date": "2026-10-19",
       "category": "law",
-      "headline": "離婚後に親権者を「父母の双方」に変えた例が、4か月で461件ありました",
+      "headline": "離婚後に親権者を「父母の双方」に変えた例が、制度開始後4ヶ月間で461件",
       "body": "法務省によると、2026年4月から7月に全国の家庭裁判所で終わった親権者を変える手続きのうち、461件（33.6%）で父母の双方が親権者になりました。共同親権が始まる前は、離婚後の親権者は父か母の一方だけでした。親権者の変更は、父母が合意していても家庭裁判所の手続きが必要です。",
       "source": "法務省",
-      "url": "https://www.moj.go.jp/MINJI/minji07_00156.html"
+      "url": "https://www.moj.go.jp/MINJI/minji07_00156.html",
+      "theme": "親権"
     },
     {
       "id": "law-2026-10-torikime-rate",
       "date": "2026-10-16",
       "category": "law",
-      "headline": "離婚届の集計で、親子交流や養育費を取り決めた割合が75%に上がりました",
+      "headline": "離婚届の集計で、親子交流や養育費を取り決めた割合が75%に上昇",
       "body": "法務大臣が10月9日の記者会見で、離婚届のチェック欄の集計結果を報告しました。2026年4月から6月までに、親子交流や養育費を取り決めていた割合は75%でした。これまでは6割ほどでした。新しく設けた子育ての分担の欄も、取り決めた割合が7割を超えました。詳しくは法務省の会見の概要をご覧ください。",
       "source": "法務省",
-      "url": "https://www.moj.go.jp/hisho/kouhou/hisho08_01182.html"
+      "url": "https://www.moj.go.jp/hisho/kouhou/hisho08_01182.html",
+      "theme": "面会"
     },
     {
       "id": "law-2026-10-joint-custody-stats",
       "date": "2026-10-16",
       "category": "law",
-      "headline": "4月に親が離婚した子どものうち、24.7%が共同親権になりました",
+      "headline": "4月に親が離婚した子どものうち、25%が共同親権に",
       "body": "共同親権を選べるようになった2026年4月の数字を、厚生労働省が人口動態統計（速報の概数）で公表しました。この月に親が離婚した未成年の子ども12,558人のうち、父母の双方が親権を持つ子どもは3,103人で、24.7%でした。母が親権を持つ子どもは67.3%、父は7.8%でした。",
       "source": "厚生労働省",
-      "url": "https://www.mhlw.go.jp/toukei/saikin/hw/jinkou/geppo/m2026/04.html"
+      "url": "https://www.mhlw.go.jp/toukei/saikin/hw/jinkou/geppo/m2026/04.html",
+      "theme": "親権"
     },
     {
       "id": "announce-moj-list-2026-09",
@@ -34,7 +37,8 @@
       "title": "【お知らせ】法務省の「親子交流支援団体等の一覧表」に掲載されました",
       "headline": "法務省の「親子交流支援団体等の一覧表」に掲載されました",
       "body": "法務省民事局が公表している「親子交流支援団体等（面会交流支援団体等）の一覧表」（令和8年9月）に、「共同養育アプリ はぐみぃ」が掲載されました。",
-      "url": "https://hugme.tigerlabo.com/press/2026-10-moj-list/"
+      "url": "https://hugme.tigerlabo.com/press/2026-10-moj-list/",
+      "theme": "プレスリリース"
     }
   ]
 }
