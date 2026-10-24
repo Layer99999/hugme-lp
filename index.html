@@ -110,7 +110,8 @@
         "面会・養育費のリマインダー通知",
         "話題ごとにトピックを分けて話せるチャット（自由に書けるのはお互いが同意したとき。同意の前でも子どものことは定型文で質問できる。相手のメッセージに「はい」「確認します」の返事を付けられる）",
         "お二人が同意したときだけ使える音声通話（電話番号を伝えずに話せる。「面会の前日と当日だけ」の設定にも合わせて動く。録音はしない）",
-        "これまでの面会・養育費の記録の取り込み（表のファイル・写真・文章をスマホの中で読み取り、確かめてから記録。手で1件ずつの記録も可）",
+        "これまでの面会・養育費の記録の取り込み（表のファイル・写真・文章をスマホの中で読み取り、確かめてから記録。手で1件ずつの記録も可。無料）",
+        "返事に迷ったときのAIによる返信の候補（無料・1日3回・月10回まで。その話題の直近10件までのメッセージを、呼び名を伏せて委託先のAIに送る。選んだ候補は入力欄に入るだけで、直してから送る）",
         "クラウド同期とデータのCSV書き出し"
       ],
       "keywords": "共同養育, 面会調整, 面会交流, 養育費 管理, 離婚後の子育て, 親同士 連絡 アプリ",
@@ -153,7 +154,7 @@
     {
       "@type": "Question",
       "name": "はぐみぃは無料で使えますか？",
-      "acceptedAnswer": { "@type": "Answer", "text": "はい、すべての機能を無料でご利用いただけます。広告は表示しません。アプリ内課金はなく、チャットの文字数制限もありません。" }
+      "acceptedAnswer": { "@type": "Answer", "text": "はい、すべての機能を無料でご利用いただけます。これまでの記録の取り込みも、AIによる返信の候補（1日3回・月10回まで）も無料です。広告は表示しません。アプリ内課金はなく、チャットの文字数制限もありません。" }
     },
     {
       "@type": "Question",
@@ -194,6 +195,11 @@
       "@type": "Question",
       "name": "これまでの面会や養育費の記録を取り込めますか？",
       "acceptedAnswer": { "@type": "Answer", "text": "できます。表のファイル（Excel・CSV）、写真、メモやLINEの文章から、日付や金額などをスマホの中で読み取ります。ファイルや写真そのものは送りません。読み取った内容は、確かめてから記録します。記録した内容は、ほかの記録と同じようにクラウドの控えに保存されます。手で1件ずつ記録することもできます。" }
+    },
+    {
+      "@type": "Question",
+      "name": "AIで返信の候補を作れますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "できます。チャットで相手のメッセージへの返事に迷ったときに「AIで候補を作る」を押すと、返信の候補が出ます。選んだ候補は入力欄に入るだけなので、直してから送れます。無料で、1日3回・月10回まで使えます。候補を作るときは、その話題の直近10件までのメッセージを送ります。相手のメッセージも含まれます。お子さまとお二人の呼び名は伏せてから、委託先のAI（Anthropic社のClaude）に送ります。はぐみぃのサーバーには保存しません。けがや事故などの緊急の連絡では、AIは使わず、定型文の候補だけを出します。この機能は、通知設定の「チャットの送り方」からいつでもオフにできます。" }
     },
     {
       "@type": "Question",
@@ -898,9 +904,10 @@
           <tr><td>予定・支払いの忘れ</td><td class="old">自分で管理するしかない</td><td class="new">面会・支払いを<b>リマインダー通知</b></td></tr>
           <tr><td>やり取りの保全</td><td class="old">チャットや記憶に散らばる</td><td class="new">面会予定と記録を<b>アプリ内に一元保存</b></td></tr>
           <tr><td>子どものことの相談</td><td class="old">LINEや電話。話が過去のことへ広がりやすい</td><td class="new">話題ごとに分けて話す<b>チャット</b>（自由に書くのはお互いの同意のあと）</td></tr>
+          <tr><td>返事に迷うとき</td><td class="old">ひとりで文面を考え、送るまでに時間がかかる</td><td class="new"><b>AIで返信の候補</b>を作れる（無料・1日3回・月10回まで）</td></tr>
           <tr><td>声で話したいとき</td><td class="old">電話はいつでもかかってきて、番号も知られる</td><td class="new"><b>お二人が同意したとき</b>だけ使える通話。「面会の前日と当日だけ」にも絞れる</td></tr>
-          <tr><td>これまでの記録</td><td class="old">メモやLINEに散らばり、まとめ直すのが大変</td><td class="new">表のファイル・写真・文章から<b>取り込み</b>。読み取りはスマホの中だけ</td></tr>
-          <tr><td>費用</td><td class="old">—</td><td class="new"><b>無料</b>（広告なし・アプリ内課金なし・チャット文字数制限なし）</td></tr>
+          <tr><td>これまでの記録</td><td class="old">メモやLINEに散らばり、まとめ直すのが大変</td><td class="new">表のファイル・写真・文章から<b>取り込み</b>（無料）。読み取りはスマホの中だけ</td></tr>
+          <tr><td>費用</td><td class="old">—</td><td class="new"><b>無料</b>（記録の取り込みもAIの返信の候補も無料。広告なし・アプリ内課金なし・チャット文字数制限なし）</td></tr>
         </tbody>
       </table>
     </div>
@@ -918,7 +925,7 @@
     <div class="section-head">
       <span class="tag">主な機能｜面会調整・養育費管理</span>
       <h2>子育てに必要なことだけを、シンプルに</h2>
-      <p>はぐみぃの機能は、面会スケジュール・養育費トラッキング・チャット・音声通話・過去の記録の取り込み・クラウド同期・あたたかいデザインの7つ。共同養育に必要なことだけに絞っています。</p>
+      <p>はぐみぃの機能は、面会スケジュール・養育費トラッキング・チャット・AIによる返信の候補・音声通話・過去の記録の取り込み・クラウド同期・あたたかいデザインの8つです。共同養育に必要なことだけに絞っています。どの機能も無料で、記録の取り込みやAIによる返信の候補にもお金はかかりません。</p>
     </div>
     <div class="feature-grid">
       <div class="feature-card">
@@ -937,22 +944,27 @@
         <p>学校・通院・誕生日など、話題ごとにトピックを分けて話せます。自由に書けるのはお互いが同意したときで、やめたいときはどちらからでも止められます。同意の前でも、子どものことは定型文で質問できます。相手のメッセージには「はい」「確認します」の返事を付けられます。</p>
       </div>
       <div class="feature-card">
-        <div class="ic" aria-hidden="true"><svg viewBox="0 0 72 72"><circle cx="36" cy="36" r="34" fill="#EEF6EC"/><path d="M24 17h7l3 9-4.5 3a24 24 0 0 0 11.5 11.5l3-4.5 9 3v7a4 4 0 0 1-4 4C33 50 22 39 20 21a4 4 0 0 1 4-4z" fill="#fff" stroke="#5B4A3C" stroke-width="2.2" stroke-linejoin="round"/><path d="M42 20a10 10 0 0 1 9 9" fill="none" stroke="#E8894A" stroke-width="2.2" stroke-linecap="round"/><path d="M42 13a17 17 0 0 1 16 16" fill="none" stroke="#E8894A" stroke-width="2.2" stroke-linecap="round"/><circle cx="53" cy="55" r="2" fill="#7FB77E"/></svg></div>
+        <div class="ic" aria-hidden="true"><svg viewBox="0 0 72 72"><circle cx="36" cy="36" r="34" fill="#EEF6EC"/><path d="M15 24a6 6 0 0 1 6-6h24a6 6 0 0 1 6 6v12a6 6 0 0 1-6 6H29l-8 6.5V42a6 6 0 0 1-6-6z" fill="#fff" stroke="#5B4A3C" stroke-width="2.2" stroke-linejoin="round"/><path d="M22 27h16M22 33h10" stroke="#D8CBBB" stroke-width="2.2" stroke-linecap="round"/><path d="M51 40l1.8 4.2L57 46l-4.2 1.8L51 52l-1.8-4.2L45 46l4.2-1.8z" fill="#E8894A"/><path d="M58 29l1 2.3 2.3 1-2.3 1-1 2.3-1-2.3-2.3-1 2.3-1z" fill="#7FB77E"/><path d="M38 57h15" stroke="#E8894A" stroke-width="2.2" stroke-linecap="round"/></svg></div>
+        <h3>返事に迷ったら、AIで候補を作る</h3>
+        <p>相手のメッセージに何と返せばいいか迷ったときは、「AIで候補を作る」を押すと返信の候補が出ます。選んだ候補は入力欄に入るだけなので、直してから送れます。無料で、1日3回・月10回まで使えます。お子さまとお二人の呼び名は伏せてからAIに送り、はぐみぃのサーバーには保存しません。</p>
+      </div>
+      <div class="feature-card">
+        <div class="ic" aria-hidden="true"><svg viewBox="0 0 72 72"><circle cx="36" cy="36" r="34" fill="#FFF1E3"/><path d="M24 17h7l3 9-4.5 3a24 24 0 0 0 11.5 11.5l3-4.5 9 3v7a4 4 0 0 1-4 4C33 50 22 39 20 21a4 4 0 0 1 4-4z" fill="#fff" stroke="#5B4A3C" stroke-width="2.2" stroke-linejoin="round"/><path d="M42 20a10 10 0 0 1 9 9" fill="none" stroke="#E8894A" stroke-width="2.2" stroke-linecap="round"/><path d="M42 13a17 17 0 0 1 16 16" fill="none" stroke="#E8894A" stroke-width="2.2" stroke-linecap="round"/><circle cx="53" cy="55" r="2" fill="#7FB77E"/></svg></div>
         <h3>同意したときだけの音声通話</h3>
         <p>お二人が同意したときだけ使える音声通話です。電話番号を伝えずに話せます。「面会の前日と当日だけ」の設定にも合わせて動きます。通話は録音しません。</p>
       </div>
       <div class="feature-card">
-        <div class="ic" aria-hidden="true"><svg viewBox="0 0 72 72"><circle cx="36" cy="36" r="34" fill="#FFF1E3"/><path d="M16 15h20l6 6v19H16z" fill="#fff" stroke="#5B4A3C" stroke-width="2.2" stroke-linejoin="round"/><path d="M36 15v6h6" fill="none" stroke="#5B4A3C" stroke-width="2.2" stroke-linejoin="round"/><path d="M21 25h12M21 31h15" stroke="#D8CBBB" stroke-width="2.2" stroke-linecap="round"/><path d="M28 44c0 6 4 9 10 9h3" fill="none" stroke="#E8894A" stroke-width="2.2" stroke-linecap="round"/><path d="M38 49l4 4-4 4" fill="none" stroke="#E8894A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><rect x="45" y="40" width="13" height="21" rx="3" fill="#FFF7EE" stroke="#5B4A3C" stroke-width="2.2"/><path d="M48.5 50l2 2 4-4.5" fill="none" stroke="#7FB77E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="ic" aria-hidden="true"><svg viewBox="0 0 72 72"><circle cx="36" cy="36" r="34" fill="#EEF6EC"/><path d="M16 15h20l6 6v19H16z" fill="#fff" stroke="#5B4A3C" stroke-width="2.2" stroke-linejoin="round"/><path d="M36 15v6h6" fill="none" stroke="#5B4A3C" stroke-width="2.2" stroke-linejoin="round"/><path d="M21 25h12M21 31h15" stroke="#D8CBBB" stroke-width="2.2" stroke-linecap="round"/><path d="M28 44c0 6 4 9 10 9h3" fill="none" stroke="#E8894A" stroke-width="2.2" stroke-linecap="round"/><path d="M38 49l4 4-4 4" fill="none" stroke="#E8894A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><rect x="45" y="40" width="13" height="21" rx="3" fill="#FFF7EE" stroke="#5B4A3C" stroke-width="2.2"/><path d="M48.5 50l2 2 4-4.5" fill="none" stroke="#7FB77E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <h3>これまでの記録を取り込む</h3>
-        <p>これまでの面会や養育費の記録を、表のファイル（Excel・CSV）、写真、メモやLINEの文章から読み取れます。読み取りはスマホの中だけで行い、確かめてから記録します。手で1件ずつ記録することもできます。</p>
+        <p>これまでの面会や養育費の記録を、表のファイル（Excel・CSV）、写真、メモやLINEの文章から読み取れます。読み取りはスマホの中だけで行い、確かめてから記録します。手で1件ずつ記録することもできます。取り込みは無料です。</p>
       </div>
       <div class="feature-card">
-        <div class="ic" aria-hidden="true"><svg viewBox="0 0 72 72"><circle cx="36" cy="36" r="34" fill="#EEF6EC"/><path d="M24 46a9 9 0 0 1-1-17.9A12 12 0 0 1 46 26a8.5 8.5 0 0 1 3 16.5" fill="#fff" stroke="#5B4A3C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M29 50a8 8 0 0 0 13.5 2" fill="none" stroke="#E8894A" stroke-width="2.2" stroke-linecap="round"/><path d="M43.5 47.5l-1 4.6-4.6-1" fill="none" stroke="#E8894A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M43 42a8 8 0 0 0-13.5-2" fill="none" stroke="#7FB77E" stroke-width="2.2" stroke-linecap="round"/><path d="M28.5 44.5l1-4.6 4.6 1" fill="none" stroke="#7FB77E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="ic" aria-hidden="true"><svg viewBox="0 0 72 72"><circle cx="36" cy="36" r="34" fill="#FFF1E3"/><path d="M24 46a9 9 0 0 1-1-17.9A12 12 0 0 1 46 26a8.5 8.5 0 0 1 3 16.5" fill="#fff" stroke="#5B4A3C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M29 50a8 8 0 0 0 13.5 2" fill="none" stroke="#E8894A" stroke-width="2.2" stroke-linecap="round"/><path d="M43.5 47.5l-1 4.6-4.6-1" fill="none" stroke="#E8894A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M43 42a8 8 0 0 0-13.5-2" fill="none" stroke="#7FB77E" stroke-width="2.2" stroke-linecap="round"/><path d="M28.5 44.5l1-4.6 4.6 1" fill="none" stroke="#7FB77E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <h3>クラウドで同期</h3>
         <p>入力した内容は安全に保存され、機種変更や別の端末でもログインすればそのまま続けられます。</p>
       </div>
       <div class="feature-card">
-        <div class="ic" aria-hidden="true"><svg viewBox="0 0 72 72"><circle cx="36" cy="36" r="34" fill="#FFF1E3"/><path d="M36 53c-9-6.5-16-12.5-16-20a8.5 8.5 0 0 1 16-4 8.5 8.5 0 0 1 16 4c0 7.5-7 13.5-16 20z" fill="#fff" stroke="#5B4A3C" stroke-width="2.2" stroke-linejoin="round"/><path d="M36 47c-5-3.8-9-7.3-9-11.3a4.6 4.6 0 0 1 9-1.6 4.6 4.6 0 0 1 9 1.6c0 4-4 7.5-9 11.3z" fill="#E8894A" opacity=".85"/><circle cx="53" cy="20" r="2" fill="#7FB77E"/><circle cx="19" cy="52" r="1.6" fill="#7FB77E"/></svg></div>
+        <div class="ic" aria-hidden="true"><svg viewBox="0 0 72 72"><circle cx="36" cy="36" r="34" fill="#EEF6EC"/><path d="M36 53c-9-6.5-16-12.5-16-20a8.5 8.5 0 0 1 16-4 8.5 8.5 0 0 1 16 4c0 7.5-7 13.5-16 20z" fill="#fff" stroke="#5B4A3C" stroke-width="2.2" stroke-linejoin="round"/><path d="M36 47c-5-3.8-9-7.3-9-11.3a4.6 4.6 0 0 1 9-1.6 4.6 4.6 0 0 1 9 1.6c0 4-4 7.5-9 11.3z" fill="#E8894A" opacity=".85"/><circle cx="53" cy="20" r="2" fill="#7FB77E"/><circle cx="19" cy="52" r="1.6" fill="#7FB77E"/></svg></div>
         <h3>あたたかいデザイン</h3>
         <p>白を基調にした、やさしく落ち着いた画面。むずかしい操作は必要ありません。</p>
       </div>
@@ -1056,7 +1068,7 @@
   <div class="wrap">
     <div class="privacy-band">
       <h2>プライバシーへの配慮</h2>
-      <p>位置情報と連絡先は使いません。写真は、ご自身で選んだものだけを使います。お子さまのアイコン用に選んだ1枚は、相手の画面にも表示されます。過去の記録を取り込むための写真は、スマホの中で文字を読み取るだけで、送信しません。マイクは、音声通話のあいだだけ使います。入力いただいた情報は、ご本人とグループでつながった相手だけが見られるよう保護されています。アプリ内からいつでもアカウントとデータを削除できます（相手と共有した記録は、相手の記録として残ります）。</p>
+      <p>位置情報と連絡先は使いません。写真は、ご自身で選んだものだけを使います。お子さまのアイコン用に選んだ1枚は、相手の画面にも表示されます。過去の記録を取り込むための写真は、スマホの中で文字を読み取るだけで、送信しません。マイクは、音声通話のあいだだけ使います。チャットで「AIで候補を作る」を押したときだけ、その話題の直近10件までのメッセージを、呼び名を伏せて委託先のAIに送ります（はぐみぃのサーバーには保存しません）。この場合を除き、入力いただいた情報は、ご本人とグループでつながった相手だけが見られるよう保護されています。アプリ内からいつでもアカウントとデータを削除できます（相手と共有した記録は、相手の記録として残ります）。</p>
       <div class="privacy-chips">
         <span>位置情報を取得しない</span>
         <span>連絡先を取得しない</span>
@@ -1088,7 +1100,7 @@
     </details>
     <details>
       <summary>はぐみぃは無料で使えますか？</summary>
-      <p>はい、すべての機能を無料でご利用いただけます。広告は表示しません。アプリ内課金はなく、チャットの文字数制限もありません。</p>
+      <p>はい、すべての機能を無料でご利用いただけます。これまでの記録の取り込みも、AIによる返信の候補（1日3回・月10回まで）も無料です。広告は表示しません。アプリ内課金はなく、チャットの文字数制限もありません。</p>
     </details>
     <details>
       <summary>相手の連絡先（電話番号やLINE）を交換する必要はありますか？</summary>
@@ -1121,6 +1133,10 @@
     <details>
       <summary>これまでの面会や養育費の記録を取り込めますか？</summary>
       <p>できます。表のファイル（Excel・CSV）、写真、メモやLINEの文章から、日付や金額などをスマホの中で読み取ります。ファイルや写真そのものは送りません。読み取った内容は、確かめてから記録します。記録した内容は、ほかの記録と同じようにクラウドの控えに保存されます。手で1件ずつ記録することもできます。</p>
+    </details>
+    <details>
+      <summary>AIで返信の候補を作れますか？</summary>
+      <p>できます。チャットで相手のメッセージへの返事に迷ったときに「AIで候補を作る」を押すと、返信の候補が出ます。選んだ候補は入力欄に入るだけなので、直してから送れます。無料で、1日3回・月10回まで使えます。候補を作るときは、その話題の直近10件までのメッセージを送ります。相手のメッセージも含まれます。お子さまとお二人の呼び名は伏せてから、委託先のAI（Anthropic社のClaude）に送ります。はぐみぃのサーバーには保存しません。けがや事故などの緊急の連絡では、AIは使わず、定型文の候補だけを出します。この機能は、通知設定の「チャットの送り方」からいつでもオフにできます。</p>
     </details>
     <details>
       <summary>位置情報や連絡先、写真にアクセスされますか？</summary>
