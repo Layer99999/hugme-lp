@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["5975XVFY5B.com.hugme.app"],
+        "components": [
+          { "/": "/invite", "comment": "招待リンク（コードは # のうしろ）" },
+          { "/": "/invite/", "comment": "招待リンク（コードは # のうしろ）" }
+        ]
+      }
+    ]
+  }
+}
