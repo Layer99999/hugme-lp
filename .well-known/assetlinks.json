@@ -1,0 +1,10 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.tigerlabo.hugme",
+      "sha256_cert_fingerprints": ["19:61:3B:77:C8:6D:ED:52:C5:72:79:2D:AA:B4:15:BF:A7:2B:24:9A:81:97:94:73:D7:1A:C5:C7:7E:B1:5A:6A"]
+    }
+  }
+]
