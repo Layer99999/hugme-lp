@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>面会の提案への返事｜はぐみぃ（共同養育アプリ）</title>
+<meta name="description" content="共同養育アプリ「はぐみぃ」から届いた面会の提案に、アプリを入れずに返事ができるページです。">
+<meta name="robots" content="noindex,nofollow">
+<meta name="referrer" content="no-referrer">
+<meta property="og:type" content="website">
+<meta property="og:title" content="面会の提案が届いています">
+<meta property="og:description" content="共同養育アプリ「はぐみぃ」から届いた面会の提案です。リンクを開いて返事ができます。">
+<meta property="og:site_name" content="はぐみぃ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://hugme.tigerlabo.com/assets/og-image.png">
+<link rel="icon" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/icon.png">
+<!-- 返事用の合言葉は URL の # のうしろにだけ置く（サーバーへ送られない）。このページでは計測のタグを読み込まない。 -->
+<!-- 呼ぶのは Supabase の関数2つだけ（peek_request_link・respond_via_link）。鍵はアプリと同じ公開前提の匿名キー。 -->
+<style>
+  :root { --bg:#FFFCF7; --card:#ffffff; --text:#3a3a3a; --sub:#6a6a6a; --accent:#F4A261; --accent-deep:#D9772F; --green:#7FB77E; --green-deep:#4E8A4D; --line:#f0e8dd; --soft:#FBF3E8; --soft-green:#EEF6EC; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--text); font-family:-apple-system,"Hiragino Maru Gothic ProN","Hiragino Sans",sans-serif; line-height:1.85; -webkit-font-smoothing:antialiased; }
+  a { color:var(--accent-deep); }
+  .navbar { display:flex; align-items:center; max-width:560px; margin:0 auto; padding:18px 16px; }
+  .navbar .brand { display:flex; align-items:center; gap:10px; text-decoration:none; }
+  .navbar .brand img { width:34px; height:34px; border-radius:9px; }
+  .navbar .brand span { font-weight:700; font-size:17px; color:#2a2a2a; }
+  main { max-width:560px; margin:0 auto; padding:0 16px 32px; }
+  h1 { font-size:22px; line-height:1.5; margin:8px 0 10px; color:#2a2a2a; }
+  .lead { font-size:14px; color:var(--sub); margin-bottom:22px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:22px 20px; margin-bottom:16px; }
+  .step { font-size:13px; font-weight:700; color:var(--accent-deep); margin-bottom:6px; }
+  .card h2 { font-size:17px; margin-bottom:10px; color:#2a2a2a; }
+  .card p { font-size:14px; }
+  dl.detail { font-size:14px; }
+  dl.detail dt { font-size:12px; color:var(--sub); margin-top:10px; }
+  dl.detail dt:first-child { margin-top:0; }
+  dl.detail dd { font-size:15px; font-weight:700; color:#2a2a2a; white-space:pre-wrap; word-break:break-word; }
+  dl.detail dd.msg { font-weight:400; background:var(--soft); border-radius:12px; padding:10px 12px; margin-top:4px; }
+  .was { font-size:13px; color:var(--sub); font-weight:400; }
+  .cands { display:flex; flex-direction:column; gap:8px; margin-top:6px; }
+  .cand { display:flex; align-items:center; gap:10px; border:1.5px solid var(--line); border-radius:12px; padding:12px; cursor:pointer; font-size:15px; font-weight:700; }
+  .cand input { width:20px; height:20px; accent-color:var(--accent); flex:none; }
+  .cand.on { border-color:var(--accent); background:var(--soft); }
+  .btn { display:block; width:100%; text-align:center; text-decoration:none; font-weight:700; font-size:15px; border-radius:12px; padding:14px 12px; border:0; cursor:pointer; font-family:inherit; }
+  .btn:disabled { opacity:.5; cursor:default; }
+  .btn-main { background:var(--accent); color:#fff; }
+  .btn-ok { background:var(--green); color:#fff; }
+  .btn-sub { background:#fff; color:var(--accent-deep); border:1.5px solid var(--accent); margin-top:10px; }
+  .choice { display:grid; grid-template-columns:1fr; gap:10px; }
+  .preview { font-size:13px; color:var(--sub); background:var(--soft-green); border-radius:12px; padding:10px 12px; margin:12px 0; }
+  .preview b { color:var(--green-deep); }
+  textarea { width:100%; min-height:84px; border:1.5px solid var(--line); border-radius:12px; padding:10px 12px; font-family:inherit; font-size:15px; line-height:1.6; resize:vertical; background:#fff; color:var(--text); }
+  .count { text-align:right; font-size:12px; color:var(--sub); }
+  .stores { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:12px; }
+  .stores .btn { font-size:14px; }
+  .note { font-size:12px; color:var(--sub); margin-top:10px; }
+  .err { color:#B5523A; font-size:13px; margin-top:8px; min-height:1.4em; }
+  .hidden { display:none; }
+  footer { text-align:center; color:var(--sub); font-size:12px; margin-top:28px; }
+  footer a { color:var(--sub); }
+</style>
+</head>
+<body>
+<header class="navbar">
+  <a class="brand" href="/"><img src="/assets/icon.png" alt=""><span>はぐみぃ</span></a>
+</header>
+<main>
+  <!-- 読み込み中 -->
+  <section id="v-loading">
+    <h1>面会の提案を読み込んでいます</h1>
+    <p class="lead">少しお待ちください。</p>
+  </section>
+
+  <!-- 提案の表示と返事 -->
+  <section id="v-form" class="hidden">
+    <h1 id="f-title">面会の提案が届いています</h1>
+    <p class="lead">共同養育アプリ「はぐみぃ」を使っている相手からの提案です。アプリを入れなくても、このページから1回だけ返事ができます。</p>
+
+    <div class="card">
+      <h2>提案の内容</h2>
+      <dl class="detail" id="f-detail"></dl>
+    </div>
+
+    <div class="card hidden" id="f-cands-card">
+      <div class="step">日にちを選ぶ</div>
+      <h2>都合のよい候補を1つ選んでください</h2>
+      <div class="cands" id="f-cands" role="radiogroup" aria-label="候補日"></div>
+    </div>
+
+    <div class="card">
+      <h2>返事をする</h2>
+      <div class="choice">
+        <button class="btn btn-ok" id="b-accept" type="button">この内容でよい（承認）</button>
+        <button class="btn btn-sub" id="b-decline" type="button">別の日でお願いしたい（お断り）</button>
+      </div>
+
+      <div id="confirm" class="hidden">
+        <div id="decline-box" class="hidden" style="margin-top:14px">
+          <label for="comment" style="font-size:13px; font-weight:700">相手への一言（任意・100字まで）</label>
+          <textarea id="comment" maxlength="100" placeholder="例：その週は難しいので、翌週の土曜日はいかがでしょうか"></textarea>
+          <div class="count"><span id="count">0</span> / 100</div>
+        </div>
+        <p class="preview" id="preview"></p>
+        <button class="btn btn-main" id="b-send" type="button">返事を送る</button>
+        <div class="err" id="send-err" role="alert"></div>
+        <p class="note">送った返事は取り消せません。このリンクは1回だけ使えます。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 送ったあと -->
+  <section id="v-done" class="hidden">
+    <h1>返事を送りました</h1>
+    <p class="lead" id="done-lead"></p>
+    <div class="card">
+      <h2>アプリを入れると、もっと楽になります</h2>
+      <p>アプリを入れると、面会の予定・養育費・チャットを同じ画面で見られます（無料・広告なし）。</p>
+      <div class="stores">
+        <a class="btn btn-main" href="https://apps.apple.com/app/id6782561944">iPhone の方</a>
+        <a class="btn btn-main" href="https://play.google.com/store/apps/details?id=com.tigerlabo.hugme">Android の方</a>
+      </div>
+      <p class="note">相手から招待コードを受け取っている場合は、アプリの最初の画面の「招待コードをお持ちの方はこちら」から参加できます。</p>
+    </div>
+  </section>
+
+  <!-- 使えないリンク -->
+  <section id="v-error" class="hidden">
+    <h1 id="e-title">このリンクは使えません</h1>
+    <p class="lead" id="e-body"></p>
+    <div class="card">
+      <h2>はぐみぃについて</h2>
+      <p>はぐみぃは、離れて暮らす親どうしが、子どもの面会や養育費のやり取りをするための無料のアプリです。広告の表示やアプリ内課金はありません。</p>
+      <div class="stores">
+        <a class="btn btn-main" href="https://apps.apple.com/app/id6782561944">iPhone の方</a>
+        <a class="btn btn-main" href="https://play.google.com/store/apps/details?id=com.tigerlabo.hugme">Android の方</a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>
+  <a href="/">はぐみぃについて</a>　<a href="/privacy/">プライバシーポリシー</a>　<a href="/terms/">利用規約</a>
+  <p style="margin-top:8px">株式会社タイガーラボ</p>
+</footer>
+<script>
+(function () {
+  // アプリ（App.js の SUPABASE_URL・SUPABASE_ANON_KEY）と同じ接続先と、公開前提の匿名キー
+  var SUPABASE_URL = 'https://watgwittlryecgynhelq.supabase.co';
+  var SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndhdGd3aXR0bHJ5ZWNneW5oZWxxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODIwMzI2OTQsImV4cCI6MjA5NzYwODY5NH0.s3LVRrWDLRdGE5KvVu-Q_qbrZeC8lv70mF6Ilr3MhWY';
+
+  // 目的の id と表示名（App.js の VISIT_PURPOSE_REASONS と REQUEST_TYPES の reasons に合わせる）
+  var REASONS = {
+    regular: '定例面会', birthday: '誕生日・記念日', school_event: '学校・保育園の行事', season: '季節の行事',
+    child_health: '子どもの体調・通院', child_request: '子ども本人の希望', family_event: '家族・親族の予定',
+    makeup: '前回の振替', work: '自分の仕事の都合', access: 'アクセスの利便性', child_comfort: '子どもが過ごしやすい場所',
+    weather: '天候・季節の事情', safety: '安全面の配慮', one_time: '一度きりの事情', child_routine: '子どもの生活リズム',
+    travel: '移動時間の関係', schedule_conflict: '予定が重なった', no_longer_needed: '不要になった', other: 'その他'
+  };
+  var TITLES = {
+    newVisit: '新しい面会の提案が届いています', editVisit: '面会の変更の相談が届いています',
+    reschedule: '面会日の変更の相談が届いています', changeLocation: '送迎・面会場所の変更の相談が届いています',
+    changeTime: '面会の時間帯の変更の相談が届いています', deleteVisit: '面会の取りやめの相談が届いています'
+  };
+  var RECUR = { weekly: '毎週', biweekly: '隔週', monthly: '毎月', monthlyNth: '毎月' };
+  var WEEK = ['日', '月', '火', '水', '木', '金', '土'];
+
+  var $ = function (id) { return document.getElementById(id); };
+  function show(id) { ['v-loading', 'v-form', 'v-done', 'v-error'].forEach(function (k) { $(k).classList.toggle('hidden', k !== id); }); window.scrollTo(0, 0); }
+
+  function fail(reason) {
+    var t = {
+      expired: ['このリンクは期限が切れています', 'リンクの期限（届いてから14日）が過ぎました。お手数ですが、相手に新しいリンクを送ってもらってください。'],
+      used: ['この提案には返事が済んでいます', 'このリンクからは、すでに返事が送られています。リンクは1回だけ使えます。'],
+      closed: ['この提案は締め切られています', '相手が提案を取り下げたか、ほかの方法で返事が済んでいます。'],
+      notfound: ['このリンクは使えません', 'リンクが見つかりませんでした。届いたリンクを最後まで正しく開いているか、お確かめください。'],
+      invalid: ['このリンクは使えません', 'リンクの形が正しくありません。届いたリンクを最後まで正しく開いているか、お確かめください。'],
+      network: ['読み込めませんでした', '通信がつながりませんでした。電波のよい場所で、ページを開き直してください。']
+    }[reason] || ['このリンクは使えません', 'お手数ですが、相手に新しいリンクを送ってもらってください。'];
+    $('e-title').textContent = t[0];
+    $('e-body').textContent = t[1];
+    show('v-error');
+  }
+
+  function rpc(name, args) {
+    return fetch(SUPABASE_URL + '/rest/v1/rpc/' + name, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', apikey: SUPABASE_ANON_KEY, Authorization: 'Bearer ' + SUPABASE_ANON_KEY },
+      body: JSON.stringify(args),
+      referrerPolicy: 'no-referrer',
+      cache: 'no-store'
+    }).then(function (res) { if (!res.ok) throw new Error('http ' + res.status); return res.json(); });
+  }
+
+  // 'YYYY-MM-DD' → '11月3日（日）'。形が違えばそのまま返す
+  function fmtDate(s) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(s || '');
+    if (!m) return s || '';
+    var d = new Date(Date.UTC(+m[1], +m[2] - 1, +m[3]));
+    var thisYear = new Date().getFullYear();
+    return (+m[1] !== thisYear ? m[1] + '年' : '') + (+m[2]) + '月' + (+m[3]) + '日（' + WEEK[d.getUTCDay()] + '）';
+  }
+  function fmtTime(s) { return /^\d{1,2}:\d{2}$/.test(s || '') ? s : ''; }
+  // 開始〜終了をひとつの文に。同じ日なら日付を繰り返さない
+  function fmtRange(sd, st, ed, et) {
+    if (!sd) return '';
+    var a = fmtDate(sd) + (fmtTime(st) ? ' ' + st : '');
+    if (ed && ed !== sd) return a + ' 〜 ' + fmtDate(ed) + (fmtTime(et) ? ' ' + et : '');
+    return a + (fmtTime(et) ? ' 〜 ' + et : '');
+  }
+  function reasonLabel(id) {
+    if (!id) return '';
+    return String(id).split('+').map(function (x) { return REASONS[x]; }).filter(Boolean).join('＋');
+  }
+  function addRow(dl, label, value, cls) {
+    if (!value) return;
+    var dt = document.createElement('dt'); dt.textContent = label;
+    var dd = document.createElement('dd'); dd.textContent = value; if (cls) dd.className = cls;
+    dl.appendChild(dt); dl.appendChild(dd);
+  }
+
+  // 合言葉は # のうしろ（例：/r/#<64文字>）。16進数の64文字だけを受け付ける
+  var raw = (location.hash || '').replace(/^#/, '');
+  try { raw = decodeURIComponent(raw); } catch (e) { raw = ''; }
+  var token = raw.trim().toLowerCase();
+  if (!/^[0-9a-f]{64}$/.test(token)) { fail('invalid'); return; }
+
+  var req = null;
+  var action = null;   // 'accept' | 'decline'
+  var chosen = null;   // 候補の番号
+
+  rpc('peek_request_link', { p_token: token }).then(function (r) {
+    if (!r || r.ok !== true) { fail(r && r.reason); return; }
+    req = r;
+    render();
+    show('v-form');
+  }).catch(function () { fail('network'); });
+
+  function render() {
+    $('f-title').textContent = TITLES[req.type] || '面会の提案が届いています';
+    var dl = $('f-detail');
+    var cands = Array.isArray(req.candidates) ? req.candidates : [];
+    var cv = req.currentVisit;
+    if (cv && cv.startDate) addRow(dl, '対象の予定（いまの予定）', fmtRange(cv.startDate, cv.startTime, cv.endDate, cv.endTime) + (cv.location ? '\n' + cv.location : ''));
+
+    if (req.type === 'deleteVisit') {
+      addRow(dl, '相談の内容', 'この予定を取りやめたい');
+    } else if (req.type === 'reschedule') {
+      addRow(dl, '新しい日にち', fmtDate(req.newDate));
+    } else if (req.type === 'changeTime') {
+      addRow(dl, '新しい時間', fmtTime(req.newTime || req.newStartTime) + (fmtTime(req.newEndTime) ? ' 〜 ' + req.newEndTime : ''));
+    } else if (cands.length < 2) {
+      addRow(dl, '日時', fmtRange(req.newStartDate, req.newStartTime, req.newEndDate, req.newEndTime));
+    } else {
+      addRow(dl, '日時', '候補が' + cands.length + 'つあります（下で選んでください）');
+    }
+    if (req.type === 'changeLocation') {
+      addRow(dl, '新しい場所', req.newLocation);
+    } else if (req.type === 'newVisit' || req.type === 'editVisit') {
+      if (req.locationByPartner) addRow(dl, '場所', 'あなたに決めてほしい、という提案です。場所は、承認のあとに相手と相談してください。');
+      else addRow(dl, '場所', req.newLocation && req.newLocation !== '未定' ? req.newLocation : (req.type === 'newVisit' ? '未定' : ''));
+    }
+    if (req.recurFreq && req.recurFreq !== 'none') addRow(dl, 'くり返し', (RECUR[req.recurFreq] || 'くり返し') + 'の予定として提案されています');
+    addRow(dl, '目的・理由', reasonLabel(req.reason));
+    addRow(dl, '相手からの一言', req.message, 'msg');
+
+    if (req.type === 'newVisit' || req.type === 'editVisit') {
+      if (cands.length >= 2) {
+        $('f-cands-card').classList.remove('hidden');
+        var box = $('f-cands');
+        cands.forEach(function (c, i) {
+          var lab = document.createElement('label'); lab.className = 'cand';
+          var inp = document.createElement('input'); inp.type = 'radio'; inp.name = 'cand'; inp.value = String(i);
+          inp.addEventListener('change', function () {
+            chosen = i;
+            Array.prototype.forEach.call(box.children, function (el) { el.classList.toggle('on', el === lab); });
+            updatePreview();
+          });
+          var span = document.createElement('span'); span.textContent = '候補' + (i + 1) + '　' + fmtRange(c.startDate, c.startTime, c.endDate, c.endTime);
+          lab.appendChild(inp); lab.appendChild(span); box.appendChild(lab);
+        });
+      } else if (cands.length === 1) {
+        chosen = 0;
+      }
+    }
+    if (req.type === 'deleteVisit') {
+      $('b-accept').textContent = '取りやめてよい（承認）';
+      $('b-decline').textContent = '予定どおり会いたい（お断り）';
+    } else if (req.type !== 'newVisit') {
+      $('b-decline').textContent = 'いまの予定のままがよい（お断り）';
+    }
+  }
+
+  // 改行は空白にし、ほかの制御文字は除いて100字まで（サーバーでも制御文字を除く。見せた文と届く文をそろえる）
+  function cleanComment(v) { return String(v || '').replace(/[\r\n\t]+/g, ' ').replace(/[\u0000-\u001F\u007F]/g, '').trim().slice(0, 100); }
+  function needsChoice() { return Array.isArray(req.candidates) && req.candidates.length >= 2; }
+
+  function updatePreview() {
+    var p = $('preview'); var err = $('send-err'); err.textContent = '';
+    if (action === 'accept') {
+      if (needsChoice() && chosen === null) { p.innerHTML = ''; p.textContent = '上の候補から日にちを1つ選んでください。'; $('b-send').disabled = true; return; }
+      var c = needsChoice() ? req.candidates[chosen] : null;
+      p.innerHTML = '';
+      p.appendChild(document.createTextNode('相手の画面には、'));
+      var b = document.createElement('b'); b.textContent = '「承認しました」' + (c ? '（' + fmtRange(c.startDate, c.startTime, c.endDate, c.endTime) + '）' : ''); p.appendChild(b);
+      p.appendChild(document.createTextNode(' と届きます。'));
+      $('b-send').disabled = false;
+    } else if (action === 'decline') {
+      var t = cleanComment($('comment').value);
+      p.innerHTML = '';
+      p.appendChild(document.createTextNode('相手の画面には、'));
+      var b2 = document.createElement('b'); b2.textContent = '「お断りしました」' + (t ? '「' + t + '」' : ''); p.appendChild(b2);
+      p.appendChild(document.createTextNode(' と届きます。'));
+      $('b-send').disabled = false;
+    }
+  }
+
+  function pick(a) {
+    action = a;
+    $('confirm').classList.remove('hidden');
+    $('decline-box').classList.toggle('hidden', a !== 'decline');
+    $('b-accept').classList.toggle('btn-ok', a === 'accept'); $('b-accept').classList.toggle('btn-sub', a !== 'accept');
+    $('b-decline').classList.toggle('btn-ok', a === 'decline'); $('b-decline').classList.toggle('btn-sub', a !== 'decline');
+    updatePreview();
+    $('confirm').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+  $('b-accept').addEventListener('click', function () { pick('accept'); });
+  $('b-decline').addEventListener('click', function () { pick('decline'); });
+  $('comment').addEventListener('input', function () { $('count').textContent = String($('comment').value.length); updatePreview(); });
+
+  var sending = false;
+  $('b-send').addEventListener('click', function () {
+    if (sending || !action) return;
+    if (action === 'accept' && needsChoice() && chosen === null) { updatePreview(); return; }
+    // 制御文字（改行を含む）は送らない。サーバーでも同じように除く
+    var comment = action === 'decline' ? cleanComment($('comment').value) : '';
+    sending = true; $('b-send').disabled = true; $('b-send').textContent = '送っています…';
+    rpc('respond_via_link', {
+      p_token: token,
+      p_action: action,
+      p_candidate: action === 'accept' && Array.isArray(req.candidates) && req.candidates.length >= 1 ? (chosen === null ? 0 : chosen) : null,
+      p_comment: comment || null
+    }).then(function (r) {
+      if (r && r.ok === true) {
+        $('done-lead').textContent = r.status === 'accepted'
+          ? '承認の返事を相手に送りました。相手のアプリに届きます。'
+          : 'お断りの返事を相手に送りました。相手のアプリに届きます。';
+        show('v-done');
+        return;
+      }
+      if (r && (r.reason === 'expired' || r.reason === 'used' || r.reason === 'closed' || r.reason === 'notfound')) { fail(r.reason); return; }
+      $('send-err').textContent = '送れませんでした。内容を確かめて、もう一度お試しください。';
+      sending = false; $('b-send').disabled = false; $('b-send').textContent = '返事を送る';
+    }).catch(function () {
+      $('send-err').textContent = '通信がつながりませんでした。電波のよい場所で、もう一度お試しください。';
+      sending = false; $('b-send').disabled = false; $('b-send').textContent = '返事を送る';
+    });
+  });
+})();
+</script>
+</body>
+</html>
