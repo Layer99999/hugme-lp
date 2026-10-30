@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="apple-itunes-app" content="app-id=6782561944">
+<!-- scripts/build-lp-flow.mjs が書き出す（中身の正本は forourkids/usage-flow.js）。手で直さない。 -->
+<script src="../assets/analytics.js"></script>
+<title>はぐみぃの利用までの流れ｜初期設定から面会・養育費・チャットまで画面つきで解説</title>
+<meta name="description" content="共同養育アプリ「はぐみぃ」を、ダウンロードしてから使い始めるまでの流れを、実際の画面でまとめました。初期設定、相手の招き方、面会交流の予定の提案、養育費の記録、チャット、お知らせの読み方、運営への意見の送り方。PDF でも保存できます。">
+<link rel="canonical" href="https://hugme.tigerlabo.com/start/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hugme.tigerlabo.com/start/">
+<meta property="og:title" content="はぐみぃの利用までの流れ（画面つき）">
+<meta property="og:description" content="初期設定から、面会交流・養育費・チャット・お知らせ・運営への意見まで、実際の画面で順に説明します。PDF でも保存できます。">
+<meta property="og:site_name" content="はぐみぃ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://hugme.tigerlabo.com/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://hugme.tigerlabo.com/assets/og-image.png">
+<link rel="icon" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/icon.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://tigerlabo.com/#organization",
+      "name": "株式会社タイガーラボ",
+      "alternateName": [
+        "TIGERLABO",
+        "TigerLabo",
+        "Tigerlabo Inc."
+      ],
+      "url": "https://tigerlabo.com",
+      "logo": "https://tigerlabo.com/assets/logo.png"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://hugme.tigerlabo.com/start/#webpage",
+      "url": "https://hugme.tigerlabo.com/start/",
+      "name": "はぐみぃの利用までの流れ",
+      "description": "共同養育アプリ「はぐみぃ」を、ダウンロードしてから使い始めるまでの流れを、実際の画面でまとめました。初期設定、相手の招き方、面会交流の予定の提案、養育費の記録、チャット、お知らせの読み方、運営への意見の送り方。PDF でも保存できます。",
+      "inLanguage": "ja",
+      "isPartOf": {
+        "@id": "https://tigerlabo.com/#organization"
+      },
+      "dateModified": "2026-10-30",
+      "about": {
+        "@type": "MobileApplication",
+        "name": "はぐみぃ",
+        "operatingSystem": "iOS, Android",
+        "applicationCategory": "LifestyleApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "JPY"
+        }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "はぐみぃ",
+          "item": "https://hugme.tigerlabo.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "利用までの流れ",
+          "item": "https://hugme.tigerlabo.com/start/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+  :root{ --bg:#FFFCF7; --card:#ffffff; --text:#3a3a3a; --sub:#6a6a6a; --accent:#F4A261; --accent-deep:#D9772F; --green:#3FA372; --line:#f0e8dd; --soft:#FBF3E8; --rose:#F2667C; }
+  *{box-sizing:border-box; margin:0; padding:0}
+  body{background:var(--bg); color:var(--text); font-family:-apple-system,"Hiragino Maru Gothic ProN","Hiragino Sans",sans-serif; line-height:1.9; -webkit-font-smoothing:antialiased; overflow-x:hidden}
+  a{color:var(--accent-deep); text-decoration:none}
+  .wrap{max-width:1040px; margin:0 auto; padding:0 22px}
+  header.nav{display:flex; align-items:center; justify-content:space-between; max-width:960px; margin:0 auto; padding:18px 22px}
+  header.nav .brand{display:flex; align-items:center; gap:10px}
+  header.nav .brand img{width:34px; height:34px; border-radius:9px}
+  header.nav .brand span{font-weight:700; font-size:17px; color:#2a2a2a}
+  header.nav .nav-cta{background:var(--accent); color:#fff; padding:8px 18px; border-radius:999px; font-weight:700; font-size:13px; white-space:nowrap}
+  .crumb{max-width:1040px; margin:0 auto; padding:16px 22px 0; font-size:12.5px; color:var(--sub)}
+  .crumb a{color:var(--sub)}
+  .crumb span{margin:0 7px; opacity:.5}
+  .head{text-align:center; padding:36px 22px 8px; max-width:680px; margin:0 auto}
+  .head .eyebrow{display:inline-block; background:var(--card); border:1px solid var(--line); color:var(--accent-deep); font-size:12px; font-weight:700; padding:5px 14px; border-radius:999px; margin-bottom:16px}
+  .head h1{font-size:clamp(24px,4.5vw,32px); color:#2a2a2a; font-weight:800; margin-bottom:14px; line-height:1.5}
+  .head p{font-size:15px; color:var(--sub)}
+  .pdf{display:inline-flex; align-items:center; gap:10px; margin-top:22px; background:var(--accent); color:#fff; padding:13px 26px; border-radius:999px; font-weight:700; font-size:15px; box-shadow:0 8px 20px rgba(217,119,47,.22)}
+  .pdf svg{width:20px; height:20px; fill:none; stroke:#fff; stroke-width:2; stroke-linecap:round; stroke-linejoin:round}
+  .pdf-note{display:block; margin-top:10px; font-size:12.5px; color:var(--sub)}
+  .toc{display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin:30px auto 0; max-width:820px; padding:0 22px; list-style:none}
+  .toc a{display:inline-block; background:#fff; border:1px solid var(--line); color:#3a3a3a; border-radius:999px; padding:7px 15px; font-size:13.5px; font-weight:600}
+  .toc a b{color:var(--accent-deep); margin-right:6px}
+  .toc a:hover{border-color:var(--accent)}
+  .flow{margin:56px 0 0; scroll-margin-top:92px}
+  .flow-head{display:flex; align-items:center; gap:12px}
+  .flow-head .no{flex:none; width:36px; height:36px; border-radius:50%; background:var(--sec); color:#fff; font-weight:800; font-size:17px; display:flex; align-items:center; justify-content:center}
+  .flow-head h2{font-size:clamp(20px,3.6vw,24px); color:#2a2a2a; line-height:1.4}
+  .flow .lead{font-size:14.5px; color:var(--sub); margin:10px 0 0; max-width:720px}
+  .track-wrap{position:relative; margin-top:18px}
+  .track{display:flex; gap:16px; overflow-x:auto; scroll-snap-type:x mandatory; scroll-padding-left:2px; padding:4px 2px 18px; list-style:none; -webkit-overflow-scrolling:touch; scrollbar-width:thin; scrollbar-color:#e7d9c8 transparent}
+  .track:focus-visible{outline:3px solid rgba(244,162,97,.45); outline-offset:4px; border-radius:12px}
+  .step{flex:0 0 232px; scroll-snap-align:start; background:var(--card); border:1px solid var(--line); border-radius:20px; padding:16px 16px 18px; display:flex; flex-direction:column}
+  .step .label{font-size:15px; font-weight:700; color:#7A5C48; line-height:1.5; min-height:46px}
+  .step .label span{display:block; font-size:12px; color:var(--sec); letter-spacing:.04em}
+  .step img{display:block; width:100%; max-width:200px; height:auto; margin:10px auto 0; border-radius:18px; border:1px solid var(--line); background:#fff}
+  .step .text{font-size:13.5px; color:#4a4a4a; line-height:1.85; margin-top:12px}
+  .nav{position:absolute; top:42%; z-index:2; width:44px; height:44px; border-radius:50%; border:1px solid var(--line); background:#fff; box-shadow:0 6px 16px rgba(83,61,47,.12); cursor:pointer; display:flex; align-items:center; justify-content:center}
+  .nav svg{width:22px; height:22px; fill:none; stroke:var(--accent-deep); stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round}
+  .nav.prev{left:-14px} .nav.next{right:-14px}
+  .nav[hidden]{display:none}
+  .hint{display:none; font-size:12.5px; color:var(--sub); margin-top:2px}
+  @media (max-width:720px){ .nav{display:none} .hint{display:block} .step{flex-basis:76vw; max-width:280px} }
+  .fict{font-size:12.5px; color:var(--sub); margin:40px 0 0; text-align:center}
+  .cta{text-align:center; background:linear-gradient(135deg,#FFF3E4,#F4EFE6); border-radius:22px; padding:40px 24px; margin:40px 0}
+  .cta h2{font-size:20px; color:#2a2a2a; margin-bottom:10px}
+  .cta p{color:var(--sub); font-size:14px; margin-bottom:22px}
+  .btn-store{display:inline-flex; align-items:center; gap:9px; background:#111; color:#fff; padding:13px 26px; border-radius:14px; font-weight:700; font-size:14.5px; box-shadow:0 8px 20px rgba(0,0,0,0.14)}
+  .btn-store .sub{display:block; font-size:10.5px; font-weight:400; opacity:.8}
+  .store-pair{display:flex; flex-wrap:wrap; justify-content:center; gap:12px}
+  footer{padding:36px 22px 56px; text-align:center; color:var(--sub); font-size:12px}
+  footer .flinks{display:flex; gap:18px; justify-content:center; margin-bottom:14px; flex-wrap:wrap}
+  footer .flinks a{color:var(--sub); font-weight:600}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <a class="brand" href="/" style="text-decoration:none">
+    <img src="/assets/icon-256.png" alt="はぐみぃ 共同養育アプリのアイコン" width="34" height="34">
+    <span>はぐみぃ</span>
+  </a>
+  <a class="nav-cta" href="/#download">無料で入手</a>
+</header>
+
+<nav class="crumb" aria-label="パンくず">
+  <a href="/">はぐみぃ</a><span>›</span>利用までの流れ
+</nav>
+
+<div class="head">
+  <span class="eyebrow">使い方</span>
+  <h1>はぐみぃの利用までの流れ</h1>
+  <p>ダウンロードしてから、面会交流・養育費・チャットを使い始めるまでを、実際の画面で7つの流れ・37の手順にまとめました。ピンクの枠が、押す場所です。</p>
+  <a class="pdf" href="hugme-riyou-no-nagare.pdf" download data-cta="flow_pdf"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>PDFをダウンロード</a>
+  <span class="pdf-note">A4横・7ページ。印刷して手元に置いておけます。</span>
+</div>
+
+<ol class="toc" aria-label="この流れの目次">
+  <li><a href="#start"><b>1</b>はじめての設定</a></li>
+  <li><a href="#visit"><b>2</b>面会交流</a></li>
+  <li><a href="#payment"><b>3</b>養育費</a></li>
+  <li><a href="#chat"><b>4</b>チャット</a></li>
+  <li><a href="#info"><b>5</b>お知らせを読む</a></li>
+  <li><a href="#feedback"><b>6</b>運営への意見を送る</a></li>
+  <li><a href="#more"><b>7</b>あわせて使うと便利な機能</a></li>
+</ol>
+
+<main class="wrap">
+
+  <section class="flow" id="start" aria-labelledby="h-start" style="--sec:#E08A3E">
+    <div class="flow-head">
+      <span class="no" aria-hidden="true">1</span>
+      <h2 id="h-start">はじめての設定</h2>
+    </div>
+    <p class="lead">ダウンロードしてから使い始めるまでの流れです。相手を招くのはあとからでもよく、ひとりで使い始められます。</p>
+    <p class="hint">横にずらすと、次の手順が見られます。</p>
+    <div class="track-wrap">
+      <button class="nav prev" type="button" aria-label="前の手順へ" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+      <ol class="track" tabindex="0" aria-label="はじめての設定の手順（横にスクロールできます）">
+        <li class="step">
+          <p class="label"><span>手順1</span>アプリを開く</p>
+          <img src="img/s01-welcome.webp" width="480" height="1043" loading="eager" decoding="async" alt="アプリを開くの画面。はぐみぃを開くと、できることの紹介が出ます。「次へ」で読み進めます。招待コードをもらった方は、下の「招待コードをお持ちの方はこちら」から進みます。">
+          <p class="text">はぐみぃを開くと、できることの紹介が出ます。「次へ」で読み進めます。招待コードをもらった方は、下の「招待コードをお持ちの方はこちら」から進みます。</p>
+        </li>
+        <li class="step">
+          <p class="label"><span>手順2</span>アカウントを作る</p>
+          <img src="img/s02-account.webp" width="480" height="1043" loading="eager" decoding="async" alt="アカウントを作るの画面。メールアドレスとパスワードでアカウントを作ると、機種を変えても記録を引き継げます。あとで作る場合は「アカウントなしで始める」を押します。">
+          <p class="text">メールアドレスとパスワードでアカウントを作ると、機種を変えても記録を引き継げます。あとで作る場合は「アカウントなしで始める」を押します。</p>
+        </li>
+        <li class="step">
+          <p class="label"><span>手順3</span>子どもとあなたのことを入れる</p>
+          <img src="img/s03-profile.webp" width="480" height="1043" loading="eager" decoding="async" alt="子どもとあなたのことを入れるの画面。子どもの呼び名を入れ、あなたがママかパパかを選んで「はじめる」を押します。誕生日や性別は、あとからでも入れられます。">
+          <p class="text">子どもの呼び名を入れ、あなたがママかパパかを選んで「はじめる」を押します。誕生日や性別は、あとからでも入れられます。</p>
+        </li>
+        <li class="step">
+          <p class="label"><span>手順4</span>相手を招くか選ぶ</p>
+          <img src="img/s04-invite-prompt.webp" width="480" height="1043" loading="lazy" decoding="async" alt="相手を招くか選ぶの画面。相手を招くと、面会の予定や養育費の記録を同じ画面で見られます。今すぐでなくても、「あとで」を選んでひとりで使い始められます。">
+          <p class="text">相手を招くと、面会の予定や養育費の記録を同じ画面で見られます。今すぐでなくても、「あとで」を選んでひとりで使い始められます。</p>
+        </li>
+        <li class="step">
+          <p class="label"><span>手順5</span>招待コードを送る</p>
+          <img src="img/s05-group.webp" width="480" height="1043" loading="lazy" decoding="async" alt="招待コードを送るの画面。左上の三本線を押してメニューを開き、「相手を招待・グループ」を押します。グループを作って招待コードを発行すると、共有の画面からそのまま相手に送れます。相手を招くにはアカウントが必要です。">
+          <p class="text">左上の三本線を押してメニューを開き、「相手を招待・グループ」を押します。グループを作って招待コードを発行すると、共有の画面からそのまま相手に送れます。相手を招くにはアカウントが必要です。</p>
+        </li>
+        <li class="step">
+          <p class="label"><span>手順6</span>ホームで今を確かめる</p>
+          <img src="img/s07-home-summary.webp" width="480" height="1043" loading="lazy" decoding="async" alt="ホームで今を確かめるの画面。ホームには、次の面会、確認を待っていること、今月のまとめが並びます。下のタブで、面会・養育費・チャット・情報に移れます。">
+          <p class="text">ホームには、次の面会、確認を待っていること、今月のまとめが並びます。下のタブで、面会・養育費・チャット・情報に移れます。</p>
+        </li>
+      </ol>
+      <button class="nav next" type="button" aria-label="次の手順へ"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+    </div>
+  </section>
+
+  <section class="flow" id="visit" aria-labelledby="h-visit" style="--sec:#E08A3E">
+    <div class="flow-head">
+      <span class="no" aria-hidden="true">2</span>
+      <h2 id="h-visit">面会交流</h2>
+    </div>
+    <p class="lead">面会の予定を相手に提案し、承認されたら確定します。当日の連絡と、終わったあとの記録もここでできます。</p>
+    <p class="hint">横にずらすと、次の手順が見られます。</p>
+    <div class="track-wrap">
+      <button class="nav prev" type="button" aria-label="前の手順へ" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+      <ol class="track" tabindex="0" aria-label="面会交流の手順（横にスクロールできます）">
+        <li class="step">
+          <p class="label"><span>手順1</span>面会を追加する</p>
+          <img src="img/v01-visits-empty.webp" width="480" height="1043" loading="lazy" decoding="async" alt="面会を追加するの画面。下のタブの「面会」を開き、右上の「面会を追加」を押します。">
+          <p class="text">下のタブの「面会」を開き、右上の「面会を追加」を押します。</p>
+        </li>
+        <li class="step">
+          <p class="label"><span>手順2</span>日時と場所を入れる</p>
+          <img src="img/v02-propose-top.webp" width="480" height="1043" loading="lazy" decoding="async" alt="日時と場所を入れるの画面。日にちと時間、場所を入れます。毎週や隔週など、繰り返しの予定もまとめて作れます。">
+          <p class="text">日にちと時間、場所を入れます。毎週や隔週など、繰り返しの予定もまとめて作れます。</p>
+        </li>
+        <li class="step">
+          <p class="label"><span>手順3</span>目的と送り迎えを決める</p>
+          <img src="img/v03-propose-mid.webp" width="480" height="1043" loading="lazy" decoding="async" alt="目的と送り迎えを決めるの画面。面会の目的と、送りと迎えの担当を選びます。担当を先に決めておくと、当日の確認が片方に寄りません。">
+          <p class="text">面会の目的と、送りと迎えの担当を選びます。担当を先に決めておくと、当日の確認が片方に寄りません。</p>
+        </li>
+        <li class="step">
+          <p class="label"><span>手順4</span>相手に依頼を送る</p>
+          <img src="img/v04-propose-bottom.webp" width="480" height="1043" loading="lazy" decoding="async" alt="相手に依頼を送るの画面。持ち物やひとことを添えて「依頼を送る」を押します。相手が承認すると予定が確定します。相手が参加する前は、そのまま確定します。">
+          <p class="text">持ち物やひとことを添えて「依頼を送る」を押します。相手が承認すると予定が確定します。相手が参加する前は、そのまま確定します。</p>
+        </li>
+        <li class="step">
+          <p class="label"><span>手順5</span>予定の一覧を見る</p>
+          <img src="img/v05-visit-list.webp" width="480" height="1043" loading="lazy" decoding="async" alt="予定の一覧を見るの画面。確定した予定が月ごとに並びます。予定を押すと詳しい内容が開きます。「変更」や「削除」もここからできます。">
+          <p class="text">確定した予定が月ごとに並びます。予定を押すと詳しい内容が開きます。「変更」や「削除」もここからできます。</p>
+        </li>
+        <li class="step">
+          <p class="label"><span>手順6</span>当日の連絡と記録</p>
+          <img src="img/v07-visit-detail.webp" width="480" height="1043" loading="lazy" decoding="async" alt="当日の連絡と記録の画面。予定の「履歴・実施記録を見る」から詳しい画面を開きます。「向かっています」「着きました」などを押すと、すぐ相手に届きます。終わったら「実施済み」か「中止」を記録します。">
+          <p class="text">予定の「履歴・実施記録を見る」から詳しい画面を開きます。「向かっています」「着きました」などを押すと、すぐ相手に届きます。終わったら「実施済み」か「中止」を記録します。</p>
+        </li>
+        <li class="step">
+          <p class="label"><span>手順7</span>子どもの感想とメモ</p>
+          <img src="img/v08-visit-after.webp" width="480" height="1043" loading="lazy" decoding="async" alt="子どもの感想とメモの画面。スマホを子どもに渡して、楽しかったことを絵で選んでもらえます。子どもの感想とひとことメモは、あなただけに見えます。">
+          <p class="text">スマホを子どもに渡して、楽しかったことを絵で選んでもらえます。子どもの感想とひとことメモは、あなただけに見えます。</p>
+        </li>
+      </ol>
+      <button class="nav next" type="button" aria-label="次の手順へ"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+    </div>
+  </section>
+
+  <section class="flow" id="payment" aria-labelledby="h-payment" style="--sec:#3FA372">
+    <div class="flow-head">
+      <span class="no" aria-hidden="true">3</span>
+      <h2 id="h-payment">養育費</h2>
+    </div>
+    <p class="lead">取り決めた金額と支払日を入れておくと、毎月の送金と受け取りを、ふたりで同じ記録として残せます。</p>
+    <p class="hint">横にずらすと、次の手順が見られます。</p>
+    <div class="track-wrap">
+      <button class="nav prev" type="button" aria-label="前の手順へ" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+      <ol class="track" tabindex="0" aria-label="養育費の手順（横にスクロールできます）">
+        <li class="step">
+          <p class="label"><span>手順1</span>取り決めを入れる</p>
+          <img src="img/p01-setup.webp" width="480" height="1043" loading="lazy" decoding="async" alt="取り決めを入れるの画面。下のタブの「養育費」で、支払う日、金額、支払う人を選んで保存します。振込日が月によってずれるときは、支払日の幅も決めておけます。">
+          <p class="text">下のタブの「養育費」で、支払う日、金額、支払う人を選んで保存します。振込日が月によってずれるときは、支払日の幅も決めておけます。</p>
+        </li>
+        <li class="step">
+          <p class="label"><span>手順2</span>今月の分を確かめる</p>
+          <img src="img/p02-month.webp" width="480" height="1043" loading="lazy" decoding="async" alt="今月の分を確かめるの画面。今月の分が届いたかどうかが、いちばん上に出ます。支払う側は「送金を記録する」、受け取る側は届いたら「確認」を押します。">
+          <p class="text">今月の分が届いたかどうかが、いちばん上に出ます。支払う側は「送金を記録する」、受け取る側は届いたら「確認」を押します。</p>
+        </li>
+        <li class="step">
+          <p class="label"><span>手順3</span>受け取りを記録する</p>
+          <img src="img/p03-record.webp" width="480" height="1043" loading="lazy" decoding="async" alt="受け取りを記録するの画面。相手が参加する前は、受け取った側が自分で記録できます。何月分か、金額、受け取った日を確かめて「受け取りました」を押します。">
+          <p class="text">相手が参加する前は、受け取った側が自分で記録できます。何月分か、金額、受け取った日を確かめて「受け取りました」を押します。</p>
+        </li>
+        <li class="step">
+          <p class="label"><span>手順4</span>確認済みになる</p>
+          <img src="img/p04-confirmed.webp" width="480" height="1043" loading="lazy" decoding="async" alt="確認済みになるの画面。確認が済むと「確認済み」になり、次の支払日まで何日あるかが出ます。これまでの累計と履歴も同じ画面で見返せ、履歴は表計算用に書き出せます。">
+          <p class="text">確認が済むと「確認済み」になり、次の支払日まで何日あるかが出ます。これまでの累計と履歴も同じ画面で見返せ、履歴は表計算用に書き出せます。</p>
+        </li>
+      </ol>
+      <button class="nav next" type="button" aria-label="次の手順へ"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+    </div>
+  </section>
+
+  <section class="flow" id="chat" aria-labelledby="h-chat" style="--sec:#E08A3E">
+    <div class="flow-head">
+      <span class="no" aria-hidden="true">4</span>
+      <h2 id="h-chat">チャット</h2>
+    </div>
+    <p class="lead">子どものことを、話題ごとに分けて話し合えます。自由に書いて話し合うには、相手との同意が必要です。返事に迷ったときは、AIに返信の候補を作ってもらえます。</p>
+    <p class="hint">横にずらすと、次の手順が見られます。</p>
+    <div class="track-wrap">
+      <button class="nav prev" type="button" aria-label="前の手順へ" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+      <ol class="track" tabindex="0" aria-label="チャットの手順（横にスクロールできます）">
+        <li class="step">
+          <p class="label"><span>手順1</span>相手に同意を依頼する</p>
+          <img src="img/c00-consent.webp" width="480" height="1043" loading="lazy" decoding="async" alt="相手に同意を依頼するの画面。下のタブの「チャット」で「相手に同意を依頼する」を押します。相手が同意すると使えるようになります。同意の前でも、子どものことは定型文で質問できます。">
+          <p class="text">下のタブの「チャット」で「相手に同意を依頼する」を押します。相手が同意すると使えるようになります。同意の前でも、子どものことは定型文で質問できます。</p>
+        </li>
+        <li class="step">
+          <p class="label"><span>手順2</span>話題を作る</p>
+          <img src="img/c01-new-topic.webp" width="480" height="1043" loading="lazy" decoding="async" alt="話題を作るの画面。「新規チャット」を押し、学校や健康など、話したいことの種類を選びます。題名を付けて「はじめる」を押します。">
+          <p class="text">「新規チャット」を押し、学校や健康など、話したいことの種類を選びます。題名を付けて「はじめる」を押します。</p>
+        </li>
+        <li class="step">
+          <p class="label"><span>手順3</span>定型文から選ぶ</p>
+          <img src="img/c02-topic-templates.webp" width="480" height="1043" loading="lazy" decoding="async" alt="定型文から選ぶの画面。話題に合った定型文が出ます。押すと入力欄に入り、そのまま送るか、書き足してから送れます。">
+          <p class="text">話題に合った定型文が出ます。押すと入力欄に入り、そのまま送るか、書き足してから送れます。</p>
+        </li>
+        <li class="step">
+          <p class="label"><span>手順4</span>送って、返事を待つ</p>
+          <img src="img/c03-sent.webp" width="480" height="1043" loading="lazy" decoding="async" alt="送って、返事を待つの画面。送った文には、相手が読んだかどうかが出ます。送ってから30分以内で、相手がまだ読んでいなければ「送信取消」で取り消せます。">
+          <p class="text">送った文には、相手が読んだかどうかが出ます。送ってから30分以内で、相手がまだ読んでいなければ「送信取消」で取り消せます。</p>
+        </li>
+        <li class="step">
+          <p class="label"><span>手順5</span>AIに返信の候補を作ってもらう</p>
+          <img src="img/c04-ai-button.webp" width="480" height="1043" loading="lazy" decoding="async" alt="AIに返信の候補を作ってもらうの画面。相手からの文への返事に迷ったら、定型文の下の「AIで候補を作る」を押します。初めて押したときは、何をAIに送るかの説明が出るので、読んでから「候補を作る」を押します。アカウントでログインしているときに使えます。">
+          <p class="text">相手からの文への返事に迷ったら、定型文の下の「AIで候補を作る」を押します。初めて押したときは、何をAIに送るかの説明が出るので、読んでから「候補を作る」を押します。アカウントでログインしているときに使えます。</p>
+        </li>
+        <li class="step">
+          <p class="label"><span>手順6</span>候補を選び、直してから送る</p>
+          <img src="img/c05-ai-candidates.webp" width="480" height="1043" loading="lazy" decoding="async" alt="候補を選び、直してから送るの画面。AIが返事の候補を3つまで作ります。押すと入力欄に入るので、自分の言葉に直してから送ります。無料で、1日3回、月10回まで使えます。使わないときは、メニューの「通知設定」でオフにできます。">
+          <p class="text">AIが返事の候補を3つまで作ります。押すと入力欄に入るので、自分の言葉に直してから送ります。無料で、1日3回、月10回まで使えます。使わないときは、メニューの「通知設定」でオフにできます。</p>
+        </li>
+      </ol>
+      <button class="nav next" type="button" aria-label="次の手順へ"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+    </div>
+  </section>
+
+  <section class="flow" id="info" aria-labelledby="h-info" style="--sec:#E08A3E">
+    <div class="flow-head">
+      <span class="no" aria-hidden="true">5</span>
+      <h2 id="h-info">お知らせを読む</h2>
+    </div>
+    <p class="lead">はぐみぃからのお知らせ、法令や制度の新しい動き、離婚後の子育てに役立つコラムを、アプリの中で読めます。</p>
+    <p class="hint">横にずらすと、次の手順が見られます。</p>
+    <div class="track-wrap">
+      <button class="nav prev" type="button" aria-label="前の手順へ" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+      <ol class="track" tabindex="0" aria-label="お知らせを読むの手順（横にスクロールできます）">
+        <li class="step">
+          <p class="label"><span>手順1</span>「情報」のタブを開く</p>
+          <img src="img/i01-info-list.webp" width="480" height="1043" loading="lazy" decoding="async" alt="「情報」のタブを開くの画面。下のタブの「情報」を開くと、新しいものから順に並びます。まだ読んでいないものには、オレンジの丸が付きます。">
+          <p class="text">下のタブの「情報」を開くと、新しいものから順に並びます。まだ読んでいないものには、オレンジの丸が付きます。</p>
+        </li>
+        <li class="step">
+          <p class="label"><span>手順2</span>種類で絞り込む</p>
+          <img src="img/i02-info-notice.webp" width="480" height="1043" loading="lazy" decoding="async" alt="種類で絞り込むの画面。上の「コラム」「法令・制度」「お知らせ」を押すと、その種類だけを表示します。">
+          <p class="text">上の「コラム」「法令・制度」「お知らせ」を押すと、その種類だけを表示します。</p>
+        </li>
+        <li class="step">
+          <p class="label"><span>手順3</span>全文を読む</p>
+          <img src="img/i03-info-open.webp" width="480" height="1043" loading="lazy" decoding="async" alt="全文を読むの画面。読みたいものを押すと全文が開きます。「詳しく見る」が出ているものは、そこから詳しいページも開けます。">
+          <p class="text">読みたいものを押すと全文が開きます。「詳しく見る」が出ているものは、そこから詳しいページも開けます。</p>
+        </li>
+      </ol>
+      <button class="nav next" type="button" aria-label="次の手順へ"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+    </div>
+  </section>
+
+  <section class="flow" id="feedback" aria-labelledby="h-feedback" style="--sec:#E08A3E">
+    <div class="flow-head">
+      <span class="no" aria-hidden="true">6</span>
+      <h2 id="h-feedback">運営への意見を送る</h2>
+    </div>
+    <p class="lead">使いにくいところや、ほしい機能を、アプリから運営に直接送れます。いただいた声は、次の改善に使います。</p>
+    <p class="hint">横にずらすと、次の手順が見られます。</p>
+    <div class="track-wrap">
+      <button class="nav prev" type="button" aria-label="前の手順へ" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+      <ol class="track" tabindex="0" aria-label="運営への意見を送るの手順（横にスクロールできます）">
+        <li class="step">
+          <p class="label"><span>手順1</span>メニューを開く</p>
+          <img src="img/m01-menu.webp" width="480" height="1043" loading="lazy" decoding="async" alt="メニューを開くの画面。左上の三本線を押してメニューを開き、「設定」の中の「運営への要望・利用者の声」を押します。">
+          <p class="text">左上の三本線を押してメニューを開き、「設定」の中の「運営への要望・利用者の声」を押します。</p>
+        </li>
+        <li class="step">
+          <p class="label"><span>手順2</span>書いて送る</p>
+          <img src="img/f02-feedback-filled.webp" width="480" height="1043" loading="lazy" decoding="async" alt="書いて送るの画面。「運営への要望」を選び、思ったことをそのまま書いて「送信する」を押します。お名前やメールアドレスは送られません。">
+          <p class="text">「運営への要望」を選び、思ったことをそのまま書いて「送信する」を押します。お名前やメールアドレスは送られません。</p>
+        </li>
+      </ol>
+      <button class="nav next" type="button" aria-label="次の手順へ"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+    </div>
+  </section>
+
+  <section class="flow" id="more" aria-labelledby="h-more" style="--sec:#E08A3E">
+    <div class="flow-head">
+      <span class="no" aria-hidden="true">7</span>
+      <h2 id="h-more">あわせて使うと便利な機能</h2>
+    </div>
+    <p class="lead">面会や養育費を続けていくうえで、知っておくと安心な機能です。どこを押すと開くかを、機能ごとに画面で示します。</p>
+    <p class="hint">横にずらすと、次の手順が見られます。</p>
+    <div class="track-wrap">
+      <button class="nav prev" type="button" aria-label="前の手順へ" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+      <ol class="track" tabindex="0" aria-label="あわせて使うと便利な機能の手順（横にスクロールできます）">
+        <li class="step">
+          <p class="label"><span>手順1</span>メニューを開く</p>
+          <img src="img/m00-open-menu.webp" width="480" height="1043" loading="lazy" decoding="async" alt="メニューを開くの画面。通知設定、取り決めの一覧、アカウント・引き継ぎは、メニューから開きます。左上の三本線を押すと、メニューが出ます。">
+          <p class="text">通知設定、取り決めの一覧、アカウント・引き継ぎは、メニューから開きます。左上の三本線を押すと、メニューが出ます。</p>
+        </li>
+        <li class="step">
+          <p class="label"><span>手順2</span>通知設定を開く</p>
+          <img src="img/r01-path-menu.webp" width="480" height="1043" loading="lazy" decoding="async" alt="通知設定を開くの画面。メニューの「設定」の中にある「通知設定」を押します。">
+          <p class="text">メニューの「設定」の中にある「通知設定」を押します。</p>
+        </li>
+        <li class="step">
+          <p class="label"><span>手順3</span>通知を必要なものだけにする</p>
+          <img src="img/r01-notify.webp" width="480" height="1043" loading="lazy" decoding="async" alt="通知を必要なものだけにするの画面。面会の前日や3時間前のお知らせ、相手からの依頼や返事の通知を、右のスイッチで入れたり切ったりできます。AIの返信候補を使うかどうかも、この画面で切り替えます。">
+          <p class="text">面会の前日や3時間前のお知らせ、相手からの依頼や返事の通知を、右のスイッチで入れたり切ったりできます。AIの返信候補を使うかどうかも、この画面で切り替えます。</p>
+        </li>
+        <li class="step">
+          <p class="label"><span>手順4</span>取り決めの一覧を開く</p>
+          <img src="img/r03-path-menu.webp" width="480" height="1043" loading="lazy" decoding="async" alt="取り決めの一覧を開くの画面。メニューの「使う」の中にある「取り決めの一覧」を押します。">
+          <p class="text">メニューの「使う」の中にある「取り決めの一覧」を押します。</p>
+        </li>
+        <li class="step">
+          <p class="label"><span>手順5</span>決めたことを見返す</p>
+          <img src="img/r03-agreements.webp" width="480" height="1043" loading="lazy" decoding="async" alt="決めたことを見返すの画面。養育費の金額や支払日、チャットの決まりなど、これまでに決めたことが1か所にまとまっています。">
+          <p class="text">養育費の金額や支払日、チャットの決まりなど、これまでに決めたことが1か所にまとまっています。</p>
+        </li>
+        <li class="step">
+          <p class="label"><span>手順6</span>アカウント・引き継ぎを開く</p>
+          <img src="img/r02-path-menu.webp" width="480" height="1043" loading="lazy" decoding="async" alt="アカウント・引き継ぎを開くの画面。メニューの「設定」の中にある「アカウント・引き継ぎ」を押します。">
+          <p class="text">メニューの「設定」の中にある「アカウント・引き継ぎ」を押します。</p>
+        </li>
+        <li class="step">
+          <p class="label"><span>手順7</span>機種変更に備える</p>
+          <img src="img/r02-backup.webp" width="480" height="1043" loading="lazy" decoding="async" alt="機種変更に備えるの画面。メールアドレスとパスワードを入れて「新規登録」を押しておくと、新しいスマホでログインするだけで同じ記録を使えます。">
+          <p class="text">メールアドレスとパスワードを入れて「新規登録」を押しておくと、新しいスマホでログインするだけで同じ記録を使えます。</p>
+        </li>
+        <li class="step">
+          <p class="label"><span>手順8</span>鈴の印を押す</p>
+          <img src="img/n00-path-bell.webp" width="480" height="1043" loading="lazy" decoding="async" alt="鈴の印を押すの画面。届いた通知は、画面の右上にある鈴の印を押すと開きます。">
+          <p class="text">届いた通知は、画面の右上にある鈴の印を押すと開きます。</p>
+        </li>
+        <li class="step">
+          <p class="label"><span>手順9</span>届いた通知を見返す</p>
+          <img src="img/n01-notif-center.webp" width="480" height="1043" loading="lazy" decoding="async" alt="届いた通知を見返すの画面。返事を待っている依頼や、面会の前日のお知らせが、まとめて並びます。中身を見ると、自動で既読になります。">
+          <p class="text">返事を待っている依頼や、面会の前日のお知らせが、まとめて並びます。中身を見ると、自動で既読になります。</p>
+        </li>
+      </ol>
+      <button class="nav next" type="button" aria-label="次の手順へ"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+    </div>
+  </section>
+  <p class="fict">画面の写真は、架空の名前と予定を入れて撮ったものです。お使いの端末やアプリの版によって、表示が少し違うことがあります。<br>同じ内容は、アプリのメニューの「利用までの流れ（画面つき）」でも見られます。</p>
+
+  <div class="cta" id="download">
+    <h2>連絡先を交換せず、ふたりで子育てを続ける</h2>
+    <p>面会の日程調整と養育費の管理を、アプリの中だけで共有できます。ダウンロードは無料です。</p>
+    <div class="store-pair">
+      <a class="btn-store" href="https://apps.apple.com/jp/app/id6782561944?pt=129057504&ct=lp&mt=8"><span>📱</span><span>App Storeで無料ダウンロード<span class="sub">iPhone・iOS 15.1以上</span></span></a>
+      <a class="btn-store" href="https://play.google.com/store/apps/details?id=com.tigerlabo.hugme"><span>📱</span><span>Google Playで無料ダウンロード<span class="sub">Android 7.0以上</span></span></a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="flinks">
+    <a href="/">はぐみぃトップ</a>
+    <a href="/guide/">共同養育ガイド</a>
+    <a href="/column/">お役立ちコラム</a>
+    <a href="/support/">サポート・お問い合わせ</a>
+    <a href="/privacy/">プライバシーポリシー</a>
+    <a href="/terms/">利用規約</a>
+    <a href="/support/#operator">運営会社：株式会社タイガーラボ</a>
+  </div>
+  <div>運営：株式会社タイガーラボ　最終更新：2026年10月30日</div>
+  <div>© 2026 TIGERLABO Inc.</div>
+</footer>
+
+<script>
+// 横スクロールの「前へ」「次へ」（PC のとき）。端まで行ったら、その向きのボタンを隠す。
+document.querySelectorAll('.track-wrap').forEach(function (w) {
+  var t = w.querySelector('.track'), p = w.querySelector('.prev'), n = w.querySelector('.next');
+  var step = function () { var s = t.querySelector('.step'); return s ? s.getBoundingClientRect().width + 16 : 240; };
+  var upd = function () { p.hidden = t.scrollLeft < 8; n.hidden = t.scrollLeft + t.clientWidth > t.scrollWidth - 8; };
+  p.addEventListener('click', function () { t.scrollBy({ left: -step() * 2, behavior: 'smooth' }); });
+  n.addEventListener('click', function () { t.scrollBy({ left: step() * 2, behavior: 'smooth' }); });
+  t.addEventListener('scroll', upd, { passive: true }); window.addEventListener('resize', upd); upd();
+});
+</script>
+<script src="/assets/site-nav.js" defer></script>
+</body>
+</html>

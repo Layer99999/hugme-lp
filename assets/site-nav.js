@@ -46,6 +46,7 @@
     ['/press/', 'megaphone', 'プレスリリース', 'press'],
     [T('#video'), 'play', '紹介動画'],
     [T('#functions'), 'grid', '主な機能'],
+    ['/start/', 'steps', '利用までの流れ'],
     [T('#faq'), 'help', 'よくある質問'],
     ['/guide/', 'book', '共同養育ガイド'],
     ['/column/', 'file', 'お役立ちコラム'],
