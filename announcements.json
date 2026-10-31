@@ -1,6 +1,15 @@
 {
   "announcements": [
     {
+      "id": "law-2026-10-pension-childcare-exemption",
+      "date": "2026-10-31",
+      "category": "law",
+      "headline": "2026年10月から、1歳までの子を育てる自営業などの親は国民年金保険料が免除になりました",
+      "body": "日本年金機構によると、自営業や無職の方などの国民年金第1号被保険者で、1歳までの子を育てる実父母・養父母は、届け出ると所得に関係なく保険料が免除されます。免除の期間は、納めたものとして老齢基礎年金に反映されます。子と同じ住所であることが条件です。届け出は市区町村の国民年金の窓口か、マイナポータルでできます。",
+      "source": "日本年金機構",
+      "url": "https://www.nenkin.go.jp/service/kokunen/menjo/ikujimenjo.html"
+    },
+    {
       "id": "law-2026-10-court-custody-results",
       "date": "2026-10-19",
       "category": "law",
