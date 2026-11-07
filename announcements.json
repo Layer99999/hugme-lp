@@ -1,6 +1,16 @@
 {
   "announcements": [
     {
+      "id": "law-2026-11-joint-custody-stats-june",
+      "date": "2026-11-04",
+      "category": "law",
+      "headline": "2026年6月に親が離婚した子どものうち、20%が共同親権になりました",
+      "body": "厚生労働省が人口動態統計（速報の概数）で、2026年6月の数字を公表しました。この月に親が離婚した未成年の子ども11,424人のうち、父母の双方が親権を持つ子どもは2,252人で、19.7%でした。母が親権を持つ子どもは71.9%、父は8.4%でした。共同親権を選べるようになった4月は24.7%、5月は21.5%でした。",
+      "source": "厚生労働省",
+      "url": "https://www.mhlw.go.jp/toukei/saikin/hw/jinkou/geppo/m2026/06.html",
+      "theme": "親権"
+    },
+    {
       "id": "law-2026-10-pension-childcare-exemption",
       "date": "2026-10-31",
       "category": "law",
