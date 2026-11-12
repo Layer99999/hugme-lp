@@ -325,75 +325,141 @@
 
   /* ── このページで足した部品 ── */
   #calcform[hidden]{display:none}
-  details.calcdetail{background:transparent; border:1px solid var(--line); border-radius:12px; padding:12px 16px; margin:30px 0 0}
-  details.calcdetail + details.calcdetail{margin-top:10px}
+  /* 全体の行間と余白を詰める（2026年11月12日 Shinyaさん指示） */
+  body{line-height:1.75}
+  main{padding:4px 0 28px}
+  .crumb{padding-top:10px}
+  .eyebrow{margin:12px 0 10px}
+  h1{margin-bottom:12px; line-height:1.4}
+  h2{margin:32px 0 4px; padding-top:18px; line-height:1.45}
+  h3{margin:20px 0 4px}
+  p{margin:8px 0}
+  .ans{margin:8px 0 8px; line-height:1.7}
+  ul,ol{margin:8px 0 8px 2px}
+  li{margin:4px 0 4px 22px}
+  .tablewrap{margin:12px 0}
+  th,td{padding:9px 12px; line-height:1.6}
+  .callout{padding:12px 15px; margin:14px 0}
+  .cta{padding:22px 20px; margin:24px 0}
+  .cta p{margin:0 0 12px}
+  details{padding:12px 15px; margin-bottom:8px}
+  details p{margin-top:8px; line-height:1.7}
+  summary{display:flex; justify-content:space-between; align-items:flex-start; gap:10px; line-height:1.55}
+  summary::after{float:none; flex:none}
+  .sources{margin:18px 0; padding-top:12px; line-height:1.7}
+  .related{padding:16px 18px; margin:20px 0}
+  .related h2{margin:0 0 8px}
+  .related a{padding:8px 0}
+  .disclaimer{padding:12px 14px; margin:16px 0; line-height:1.7}
+  footer{padding:26px 22px 40px}
+  .calc{padding:18px 18px; margin:16px 0}
+  .calc .hint{margin:0 0 12px; line-height:1.65}
+  .cbox{padding:11px 13px}
+  .cbox .v{margin:2px 0 4px; line-height:1.4}
+  .cbox .d{line-height:1.6}
+  .r-note{margin:6px 0 0; line-height:1.65}
+  .r-warn{padding:10px 13px; margin-top:10px; line-height:1.65}
+  .r-warn .wl + .wl{margin-top:8px}
+  .r-dir{margin-bottom:4px}
+  h1 .nb, .byline .nb{display:inline-block}
+  h1 .h1sub{display:block; font-size:.72em; line-height:1.55; margin-top:6px; color:#3a3a3a}
+  .lead{padding:13px 16px; font-size:13.5px; line-height:1.7; margin-bottom:12px}
+  /* 控除の表：スマホでは1行を1枚の札にして縦に並べる */
+  @media (max-width:600px){
+    h1{font-size:23px}
+    .byline .sep{display:none}
+    .byline .nb{margin-right:14px}
+    .byline{line-height:1.7; margin-bottom:18px}
+    .lead{padding:11px 14px; font-size:13px; line-height:1.65}
+    .wrap{padding:0 18px}
+    .calc{padding:16px 15px}
+    .results .rcard{padding:14px 14px}
+    h2{margin-top:26px; padding-top:16px}
+    table.stack{min-width:0; display:block}
+    table.stack thead{display:none}
+    table.stack tbody, table.stack tr, table.stack td{display:block}
+    table.stack tr{padding:10px 14px; border-bottom:1px solid var(--line)}
+    table.stack tr:last-child{border-bottom:none}
+    table.stack td{padding:0; border:none}
+    table.stack td:first-child, table.stack td:nth-child(2){white-space:normal}
+    table.stack td:first-child{font-weight:800; font-size:15px; color:#2a2a2a; margin-bottom:4px}
+    table.stack td:nth-child(2){margin-bottom:4px}
+    table.stack td:nth-child(2) br{display:none}
+    table.stack td:nth-child(2) b{margin-right:14px}
+    table.stack td[data-l]:not(:first-child)::before{content:attr(data-l); display:block; font-size:11.5px; font-weight:700; color:var(--sub)}
+    table.hayami th, table.hayami td{padding:6px 8px; font-size:13px}
+    table.hayami .thsub{display:block; margin:0; line-height:1.4}
+  }
+  details.calcdetail{background:transparent; border:1px solid var(--line); border-radius:12px; padding:10px 14px; margin:20px 0 0}
+  details.calcdetail + details.calcdetail{margin-top:8px}
   details.calcdetail > summary{font-size:13px; font-weight:700; color:var(--sub)}
   .calcdetail dl{margin:10px 0 2px}
-  .calcdetail dt{font-size:12.5px; font-weight:700; color:#3a3a3a; margin-top:10px}
-  .calcdetail dd{font-size:12.5px; color:var(--sub); line-height:1.8; margin:2px 0 0}
+  .calcdetail dt{font-size:12.5px; font-weight:700; color:#3a3a3a; margin-top:8px}
+  .calcdetail dd{font-size:12.5px; color:var(--sub); line-height:1.65; margin:1px 0 0}
   .calcdetail dd a{color:var(--sub)}
-  .seido{display:flex; flex-direction:column; gap:8px; margin:8px 0 6px}
-  details.sitem{margin:0; padding:13px 15px; border-radius:12px}
-  .sitem summary{display:flex; flex-wrap:wrap; align-items:center; gap:6px 10px; padding-right:22px; position:relative; font-size:14.5px}
+  .seido{display:flex; flex-direction:column; gap:6px; margin:6px 0 4px}
+  details.sitem{margin:0; padding:10px 14px; border-radius:12px}
+  .sitem summary{display:flex; flex-wrap:wrap; justify-content:flex-start; align-items:center; gap:6px 10px; padding-right:22px; position:relative; font-size:14.5px}
   .sitem summary::after{position:absolute; right:0; top:0; float:none}
   .sname{font-weight:700; color:#2a2a2a}
   .stag{font-size:11.5px; font-weight:700; color:#4d7f4c; background:#F1F7F0; border-radius:99px; padding:2px 10px; white-space:nowrap}
-  .sitem p{font-size:14px; color:#3a3a3a; margin:10px 0 0}
+  .sitem p{font-size:14px; color:#3a3a3a; margin:7px 0 0; line-height:1.7}
   .sitem p.swhere{font-size:13px} .sitem p.ssrc{font-size:12px; color:var(--sub)} .sitem p.ssrc a{color:var(--sub)}
-  .slist h3{margin-top:26px}
-  .slead{font-size:13px; color:var(--sub); margin:0 0 6px}
-  details.smore{background:transparent; border:1.5px dashed var(--line); border-radius:12px; padding:12px 14px; margin:8px 0 0}
+  .slist h3{margin-top:18px}
+  .slead{font-size:13px; color:var(--sub); margin:0 0 4px; line-height:1.6}
+  details.smore{background:transparent; border:1.5px dashed var(--line); border-radius:12px; padding:10px 14px; margin:6px 0 0}
   details.smore > summary{font-size:13.5px; color:var(--accent-deep)}
   details.smore > .seido{margin-top:12px}
-  .chiplabel{font-size:12.5px; font-weight:700; color:var(--sub); margin:16px 0 6px}
-  .chips{display:flex; flex-wrap:wrap; gap:8px; margin:0 0 6px}
-  .chip{font:inherit; font-size:13px; font-weight:700; color:#3a3a3a; background:#fff; border:1.5px solid var(--line); border-radius:99px; padding:7px 14px; cursor:pointer; line-height:1.4}
+  .chiplabel{font-size:12.5px; font-weight:700; color:var(--sub); margin:12px 0 4px}
+  .chips{display:flex; flex-wrap:wrap; gap:6px; margin:0 0 4px}
+  .chip{font:inherit; font-size:13px; font-weight:700; color:#3a3a3a; background:#fff; border:1.5px solid var(--line); border-radius:99px; padding:6px 13px; cursor:pointer; line-height:1.4}
   .chip.on{background:var(--green); border-color:var(--green); color:#fff}
   .chip:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
   @media print{ .chips, .chiplabel{display:none !important} }
-  .condbar{display:flex; gap:14px; align-items:center; justify-content:space-between; flex-wrap:wrap; background:#F1F7F0; border:1.5px solid var(--green); border-radius:16px; padding:14px 16px; margin:26px 0 0}
+  .condbar{display:flex; gap:14px; align-items:center; justify-content:space-between; flex-wrap:wrap; background:#F1F7F0; border:1.5px solid var(--green); border-radius:16px; padding:12px 14px; margin:18px 0 0}
   .condlabel{font-size:12px; font-weight:700; color:#4d7f4c}
   #condText{font-size:13.5px; color:#2a2a2a; line-height:1.7}
   .btn-edit{background:#fff; border:2px solid var(--accent); color:var(--accent-deep); padding:11px 18px; font-size:14.5px; white-space:nowrap}
-  .condbar + .results{margin-top:14px}
+  .condbar + .results{margin-top:10px}
   @media (max-width:600px){ .condbar{flex-direction:column; align-items:stretch} .btn-edit{width:100%} }
   @media print{ .condbar{display:none !important} }
-  .progress{height:6px; background:var(--line); border-radius:99px; overflow:hidden; margin-bottom:14px}
+  .progress{height:6px; background:var(--line); border-radius:99px; overflow:hidden; margin-bottom:10px}
   .progress div{height:100%; background:var(--accent); border-radius:99px; transition:width .25s}
   .stepno{font-size:12.5px; color:var(--accent-deep); font-weight:700; margin:0 0 4px}
-  #wiz h2{border:none; padding:0; margin:0 0 8px; font-size:20px; line-height:1.55; outline:none}
-  .qbody{margin-top:14px}
-  .choices{display:flex; flex-direction:column; gap:10px}
-  .choice{display:flex; align-items:center; gap:12px; background:var(--soft); border:1.5px solid var(--line); border-radius:14px; padding:14px 16px; cursor:pointer; font-size:15.5px; font-weight:700; color:#2a2a2a; line-height:1.5}
+  #wiz h2{border:none; padding:0; margin:0 0 6px; font-size:19px; line-height:1.45; outline:none}
+  .qbody{margin-top:10px}
+  .choices{display:flex; flex-direction:column; gap:8px}
+  .choice{display:flex; align-items:center; gap:12px; background:var(--soft); border:1.5px solid var(--line); border-radius:14px; padding:11px 14px; cursor:pointer; font-size:15px; font-weight:700; color:#2a2a2a; line-height:1.45}
   .choice input{width:20px; height:20px; accent-color:var(--accent-deep); flex:none}
   .choice.on{border-color:var(--accent); background:#FFF3E4}
   .choice small{display:block; font-size:12.5px; font-weight:400; color:var(--sub)}
-  .sub{margin-top:16px}
+  .sub{margin-top:12px}
   .sub[hidden]{display:none}
   .agegrid{display:grid; grid-template-columns:1fr 1fr; gap:10px}
   .agecell{display:block; margin-bottom:10px}
   .agecell span{display:block; font-size:12.5px; color:var(--sub); font-weight:600; margin-bottom:4px}
-  .err{color:#B3261E; font-size:13.5px; min-height:1.2em; margin:10px 0 0}
+  .err{color:#B3261E; font-size:13.5px; min-height:1.2em; margin:6px 0 0}
   .navbtns{display:grid; grid-template-columns:auto 1fr; gap:10px; align-items:center; margin-top:8px}
   .navbtns .btn-main{width:100%}
+  .navbtns.first{grid-template-columns:1fr}
   .calc .hint[hidden]{display:none}
-  .results{display:flex; flex-direction:column; gap:18px; margin:26px 0 0}
-  .rcard{background:var(--card); border:1px solid var(--line); border-radius:20px; padding:22px 20px}
+  .results{display:flex; flex-direction:column; gap:12px; margin:18px 0 0}
+  .rcard{background:var(--card); border:1px solid var(--line); border-radius:20px; padding:16px 18px}
   .rcard.main{border:2px solid var(--accent)}
   .rcard.green{border-left:6px solid var(--green)}
-  .rcard > h2{border:none; padding:0; margin:0 0 10px; font-size:18px}
-  .rcard h3{font-size:15px; margin:18px 0 4px}
+  .rcard > h2{border:none; padding:0; margin:0 0 6px; font-size:17.5px}
+  .rcard h3{font-size:15px; margin:12px 0 2px}
   .rcard p{font-size:14.5px}
   .rcard .callout{font-size:14px}
   .rcard p.r-amount{margin:2px 0 4px; font-size:clamp(28px,7vw,40px)}
   .rcard p.r-dir{font-size:15px}
   table.kv{min-width:0}
   table.kv th{width:42%; font-weight:700; color:#2a2a2a; background:var(--soft)}
-  .zgrid{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:14px 0}
+  .zgrid{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:10px 0}
   .zcase .t{font-size:13.5px; color:#2a2a2a; line-height:1.6; margin-bottom:8px}
-  .zrow{border-top:1px solid var(--line); padding:9px 0 7px}
+  .zrow{border-top:1px solid var(--line); padding:7px 0 5px}
   .zwho{font-size:12px; color:var(--sub); font-weight:700}
-  .zval{font-size:14.5px; color:#2a2a2a; font-weight:700; line-height:1.7}
+  .zval{font-size:14.5px; color:#2a2a2a; font-weight:700; line-height:1.55}
   .zval .thsub{font-weight:400}
   .thsub{display:block; font-size:12px; font-weight:400; color:var(--sub); line-height:1.6; margin-top:2px}
   .sumgrid{display:grid; grid-template-columns:1fr; gap:12px}
@@ -402,8 +468,16 @@
   .opt{border:none; background:transparent; padding:0; margin:8px 0 0}
   .kidrow{grid-template-columns:auto 1fr 1.4fr auto}
   table.hayami{min-width:0}
-  .hayami th, .hayami td{padding:11px 10px}
-  .steps3{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:18px 0}
+  .hayami th, .hayami td{padding:6px 12px; line-height:1.55}
+  .hayami .thsub{display:inline; margin:0 0 0 8px}
+  .tablewrap.tight{margin:10px 0}
+  p.cmp{font-size:14px; line-height:1.65; margin:6px 0}
+  p.ans.cmp{font-size:15px; line-height:1.65; margin:0 0 6px}
+  table.stack th, table.stack td{padding:8px 14px; line-height:1.6}
+  table.stack td:first-child, table.stack td:nth-child(2){white-space:nowrap}
+  table.stack td:nth-child(2) br{display:none}
+  table.stack td:nth-child(2) b{margin-right:12px}
+  .steps3{display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:12px 0}
   .steps3 .cbox .v{font-size:16px}
   @media (max-width:600px){ .zgrid{grid-template-columns:1fr} .steps3{grid-template-columns:1fr} .kidrow{grid-template-columns:1fr auto} }
   @media print{
@@ -435,14 +509,13 @@
 <main>
   <article class="wrap">
     <span class="eyebrow">無料ツール｜登録不要・広告なし</span>
-    <h1>離婚後の子育てのお金 まとめて計算<br>― 養育費と手当の目安が、質問に答えるだけで分かる</h1>
+    <h1><span class="nb">離婚後の子育てのお金</span> <span class="nb">まとめて計算</span><span class="h1sub"><span class="nb">養育費と手当の目安が、</span><span class="nb">質問に答えるだけで分かる</span></span></h1>
 
     <div class="lead">
       <b>年収や子どもの年齢、同居する家族の状況などを順に入力すると、養育費の目安と、児童扶養手当・児童手当の月額の目安をまとめて確認できます。</b>
       養育費は裁判所の算定方式、児童扶養手当は政令の計算式にもとづいて算出します。ひとり親控除や扶養控除による税負担の違いと、あわせて確認したい公的な制度も表示します。
       入力した内容が外部に送信されることはありません。
     </div>
-    <p class="byline">文責：株式会社タイガーラボ 編集部　｜　公開日：2026年11月12日　｜　数値の最終確認日：2026年11月12日</p>
     <div class="printonly" id="printCond"></div>
 
     <!-- ── 質問（JavaScript が動くときだけ表示） ── -->
@@ -505,9 +578,9 @@
     </div>
 
     <h2 id="hayami">年収別の早見表（子ども1人の場合）</h2>
-    <p class="ans">5歳の子ども1人と暮らす親の年収別に、養育費の目安と児童扶養手当の月額をまとめました。</p>
-    <p>離れて暮らす親の年収を500万円（給与所得）、子どもと暮らす親も給与所得とし、養育費は目安の中央値を受け取る前提で計算しています。児童扶養手当は2026年4月分以降の金額です。このほか、児童手当が月額10,000円支給されます。</p>
-    <div class="tablewrap"><table class="hayami">
+    <p class="ans cmp">5歳の子ども1人と暮らす親の年収別に、養育費の目安と児童扶養手当の月額をまとめました。</p>
+    <p class="cmp">離れて暮らす親の年収を500万円（給与所得）、子どもと暮らす親も給与所得とし、養育費は目安の中央値を受け取る前提で計算しています。児童扶養手当は2026年4月分以降の金額です。このほか、児童手当が月額10,000円支給されます。</p>
+    <div class="tablewrap tight"><table class="hayami">
       <thead><tr><th>子どもと暮らす親の年収</th><th>養育費の目安（月額）</th><th>児童扶養手当（月額）</th></tr></thead>
       <tbody>
         <tr><td>100万円</td><td>4〜6万円</td><td>48,050円<span class="thsub">全部支給</span></td></tr>
@@ -518,15 +591,15 @@
         <tr><td>600万円</td><td>2〜4万円</td><td>対象外</td></tr>
       </tbody>
     </table></div>
-    <p>児童扶養手当は、子どもと暮らす親の年収が高いほど、また受け取る養育費が多いほど減額されます。条件が異なる場合は、ページ上部の質問に答えて計算してください。</p>
+    <p class="cmp">児童扶養手当は、子どもと暮らす親の年収が高いほど、また受け取る養育費が多いほど減額されます。条件が異なる場合は、ページ上部の質問に答えて計算してください。</p>
 
     <h2 id="fuyou">扶養と控除のしくみ</h2>
     <p class="ans">子どもを所得税の扶養親族として申告できるのは、父母のどちらか一方に限られます。どちらが申告するかによって、ひとり親控除と扶養控除の適用を受ける人が変わります。</p>
-    <div class="tablewrap"><table>
+    <div class="tablewrap tight"><table class="stack">
       <thead><tr><th>控除</th><th>控除額</th><th>主な要件</th></tr></thead>
       <tbody>
-        <tr><td>ひとり親控除</td><td>所得税 <b>35万円</b><br>住民税 <b>30万円</b></td><td>生計を一にする子がいること、合計所得金額が500万円以下であること、事実婚の相手がいないこと。対象となる子は、ほかの人の扶養親族になっていない子に限られます。</td></tr>
-        <tr><td>扶養控除</td><td>所得税 <b>38万円</b><br>住民税 <b>33万円</b></td><td>その年の12月31日時点で16歳以上の扶養親族がいること。15歳以下の子どもは対象外です。</td></tr>
+        <tr><td>ひとり親控除</td><td data-l="控除額">所得税 <b>35万円</b><br>住民税 <b>30万円</b></td><td data-l="主な要件">生計を一にする子がいること、合計所得金額が500万円以下であること、事実婚の相手がいないこと。対象となる子は、ほかの人の扶養親族になっていない子に限られます。</td></tr>
+        <tr><td>扶養控除</td><td data-l="控除額">所得税 <b>38万円</b><br>住民税 <b>33万円</b></td><td data-l="主な要件">その年の12月31日時点で16歳以上の扶養親族がいること。15歳以下の子どもは対象外です。</td></tr>
       </tbody>
     </table></div>
     <p>35万円や38万円は所得から差し引かれる金額であり、同額が還付されるわけではありません。実際の軽減額は、控除額に税率を乗じた金額が目安となります。</p>
@@ -1010,12 +1083,13 @@
   /** 一覧の HTML。attr を指定すると、その属性に関係する制度だけをすべて表示する。
       指定しないときは、分類ごとに先頭5件を表示し、残りを折りたたむ（期限のある手続きはすべて表示）。 */
   function listHtml(items, attr) {
+    var sel = !attr ? [] : (typeof attr === 'string' ? [attr] : attr);
     var h = '', n = 0;
     GROUPS.forEach(function (gp) {
-      var its = items.filter(function (it) { return it.g === gp.id && (!attr || it.attr.indexOf(attr) >= 0); });
+      var its = items.filter(function (it) { return it.g === gp.id && (!sel.length || sel.some(function (a) { return it.attr.indexOf(a) >= 0; })); });
       if (!its.length) return;
       n += its.length;
-      var all = !!attr || gp.id === 'kigen' || its.length <= TOP;
+      var all = !!sel.length || gp.id === 'kigen' || its.length <= TOP;
       var head = all ? its : its.slice(0, TOP), rest = all ? [] : its.slice(TOP);
       h += '<h3>' + gp.title + '（' + its.length + '件）</h3><p class="slead">' + (rest.length ? 'まず確認したい' + TOP + '件を表示しています。' : gp.lead) + '</p>' +
         '<div class="seido">' + head.map(itemHtml).join('') + '</div>' +
@@ -1026,11 +1100,13 @@
   }
   /** 絞り込みのボタン。items の中に1件以上ある属性だけを出す */
   function chipsHtml(items, cur, hide) {
-    var h = '<div class="chips" role="group" aria-label="状況で絞り込む"><button type="button" class="chip' + (!cur ? ' on' : '') + '" data-attr="">すべて</button>';
+    var sel = !cur ? [] : (typeof cur === 'string' ? [cur] : cur);
+    var h = '<div class="chips" role="group" aria-label="状況で絞り込む（複数選べます）"><button type="button" class="chip' + (!sel.length ? ' on' : '') + '" aria-pressed="' + (!sel.length) + '" data-attr="">すべて</button>';
     ATTRS.forEach(function (a) {
       if (hide && hide.indexOf(a[0]) >= 0) return;
       if (!items.some(function (it) { return it.attr.indexOf(a[0]) >= 0; })) return;
-      h += '<button type="button" class="chip' + (cur === a[0] ? ' on' : '') + '" data-attr="' + a[0] + '">' + a[1] + '</button>';
+      var on = sel.indexOf(a[0]) >= 0;
+      h += '<button type="button" class="chip' + (on ? ' on' : '') + '" aria-pressed="' + on + '" data-attr="' + a[0] + '">' + a[1] + '</button>';
     });
     return h + '</div>';
   }
@@ -1153,7 +1229,7 @@
       '<p class="stepno">質問 ' + (step + 1) + ' / ' + STEPS.length + '</p>' +
       '<h2 id="qtitle" tabindex="-1">' + st.title + '</h2>' + (st.lead ? '<p class="hint">' + st.lead + '</p>' : '') +
       '<div class="qbody">' + st.body() + '</div><p class="err" id="qerr" role="alert"></p>' +
-      '<div class="navbtns">' + (step > 0 ? '<button type="button" class="btn btn-sub" id="prevBtn">戻る</button>' : '<span></span>') +
+      '<div class="navbtns' + (step > 0 ? '' : ' first') + '">' + (step > 0 ? '<button type="button" class="btn btn-sub" id="prevBtn">戻る</button>' : '') +
       '<button type="button" class="btn btn-main" id="nextBtn">' + (step === STEPS.length - 1 ? '結果を見る' : '次へ') + '</button></div>';
     $('nextBtn').addEventListener('click', next);
     if (step > 0) $('prevBtn').addEventListener('click', function () { STEPS[step].read(); step--; show(); focusTitle(); });
@@ -1181,15 +1257,18 @@
 
   /* ── 制度の一覧（上位5件＋そのほか、状況で絞り込むボタン） ── */
   function mountSeido(el, items, before, after, hide) {
-    var cur = '';
+    var cur = [];
     function draw() {
-      el.innerHTML = (before || '') + '<p class="chiplabel">状況に合わせて絞り込む</p>' + window.HugmeSeido.chipsHtml(items, cur, hide) +
+      el.innerHTML = (before || '') + '<p class="chiplabel">状況に合わせて絞り込む（複数選べます）</p>' + window.HugmeSeido.chipsHtml(items, cur, hide) +
         '<div class="slist">' + window.HugmeSeido.listHtml(items, cur) + '</div>' + (after || '');
     }
     el.onclick = function (e) {
       var b = e.target.closest ? e.target.closest('.chip') : null;
       if (!b) return;
-      cur = b.getAttribute('data-attr'); draw();
+      var a = b.getAttribute('data-attr'), i = cur.indexOf(a);
+      if (!a) cur = []; else if (i >= 0) cur.splice(i, 1); else cur.push(a);
+      draw();
+      var nb = el.querySelector('.chip[data-attr="' + a + '"]'); if (nb) nb.focus({ preventScroll: true });
     };
     draw();
   }
@@ -1343,5 +1422,7 @@
 
 </script>
 
+<!-- 共通のヘッダーとメニュー（読み込めないときは上の元のヘッダーのまま） -->
+<script src="/assets/site-nav.js" defer></script>
 </body>
 </html>

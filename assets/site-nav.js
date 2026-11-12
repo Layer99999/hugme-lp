@@ -27,6 +27,7 @@
     file: '<path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/>',
     download: '<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/>',
     scale: '<path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/>',
+    calc: '<rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/>',
     users: '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>'
   };
   var svg = function (k) { return '<svg class="hm-ic" viewBox="0 0 24 24" aria-hidden="true">' + IC[k] + '</svg>'; };
@@ -44,6 +45,7 @@
   var MENU = [
     [T('#news'), 'bell', '最新のお知らせ', 'news'],
     ['/press/', 'megaphone', 'プレスリリース', 'press'],
+    ['/okane-keisan/', 'calc', '養育費と手当の計算'],
     [T('#video'), 'play', '紹介動画'],
     [T('#functions'), 'grid', '主な機能'],
     ['/start/', 'steps', '利用までの流れ'],
@@ -66,6 +68,8 @@
     '.hm-hbtns{display:flex;align-items:center;gap:10px;}',
     '.hm-pill{position:relative;display:inline-block;color:#3a3a3a;border:1px solid rgba(139,111,94,.28);background:#fff;padding:8px 16px;border-radius:999px;font-weight:700;font-size:13px;white-space:nowrap;}',
     '.hm-pill.hm-strong{border:1.5px solid #F4A261;color:#D9772F;background:#FFF4EA;}',
+    '.hm-pill.hm-tool{border:1.5px solid #7FB77E;color:#3f7a3e;background:#F1F7F0;}',
+    '@media (min-width:761px) and (max-width:900px){.hm-hrow{padding-left:16px;padding-right:16px;}.hm-hbtns{gap:6px;}.hm-hbtns .hm-pill{padding:8px 11px;font-size:12.5px;}}',
     '.hm-cta{display:inline-block;background:#F4A261;color:#fff !important;padding:9px 20px;border-radius:999px;font-weight:700;font-size:14px;white-space:nowrap;}',
     '.hm-new{display:inline-block;margin-left:6px;padding:1px 6px;border-radius:999px;background:#E8574A;color:#fff;font-size:10px;font-weight:800;letter-spacing:.04em;line-height:1.5;vertical-align:middle;}',
     '.hm-new[hidden]{display:none;}',
@@ -97,6 +101,7 @@
     '  .hm-cta{padding:8px 14px;font-size:13px;}',
     '  .hm-burger{width:40px;height:40px;}',
     '  .hm-sub{display:flex;gap:6px;padding:0 12px 10px;max-width:960px;margin:0 auto;}',
+    '  .hm-sub{flex-wrap:wrap;}',
     '  .hm-sub .hm-pill{flex:1 1 auto;text-align:center;padding:6px 6px;font-size:12px;}',
     '  [id]{scroll-margin-top:118px;}',
     '}',
@@ -110,6 +115,7 @@
     '.hm-panel nav a{display:flex;align-items:center;gap:12px;color:#3a3a3a;text-decoration:none;font-size:15px;padding:13px 8px;border-bottom:1px solid #f0e8dd;}',
     '.hm-panel nav a:last-child{border-bottom:none;}',
     '.hm-panel .hm-dl{display:block;margin-top:16px;text-align:center;background:#F4A261;color:#fff;font-weight:700;border-radius:999px;padding:12px;text-decoration:none;}',
+    '@media (max-width:380px){.hm-sub .hm-pill{font-size:11.5px;padding:6px 4px;}.hm-sub{gap:5px;}}',
     '@media (prefers-reduced-motion:reduce){.hm-panel,.hm-backdrop,.hm-header{transition:none;}}'
   ].join('\n');
 
@@ -120,7 +126,8 @@
     var old = document.querySelector('body > header.nav') || document.querySelector('body > nav.navbar') || document.querySelector('header.nav, nav.navbar');
     var pills = '<a class="hm-pill hm-strong" href="' + T('#news') + '">お知らせ' + NEWB('news') + '</a>' +
       '<a class="hm-pill hm-strong" href="/press/">プレスリリース' + NEWB('press') + '</a>' +
-      '<a class="hm-pill" href="/for-mediators/">調停員の皆様へ</a>';
+      '<a class="hm-pill" href="/for-mediators/">調停員の皆様へ</a>' +
+      '<a class="hm-pill hm-tool" href="/okane-keisan/" aria-label="養育費と手当の目安を計算する">お金の計算</a>';
     var h = document.createElement('header');
     h.className = 'hm-header';
     h.innerHTML =
