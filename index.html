@@ -233,8 +233,8 @@
     },
     {
       "@type": "Question",
-      "name": "アプリを入れなくても使える、無料の便利ツールはありますか？（養育費の計算・面会予定表）",
-      "acceptedAnswer": { "@type": "Answer", "text": "2つあります。いずれもブラウザだけで動き、登録もアプリのインストールも不要で無料です。（1）養育費かんたん計算（https://hugme.tigerlabo.com/youikuhi-keisan/）＝裁判所の算定表にもとづく目安と、2026年4月に始まった法定養育費をならべて表示します。（2）面会交流の予定表テンプレート（https://hugme.tigerlabo.com/menkai-yoteihyo/）＝法務省が例示している項目から選ぶだけで、A4 1枚に印刷できる予定表になります。どちらも入力した内容はブラウザの中だけで計算し、外部へ送信していません（利用状況の集計として、ページを開いたこと・計算したことだけを記録しています）。" }
+      "name": "アプリを入れなくても使える、無料の便利ツールはありますか？（養育費と手当の計算・面会予定表）",
+      "acceptedAnswer": { "@type": "Answer", "text": "3つあります。いずれもブラウザだけで動き、登録もアプリのインストールも不要で無料です。（1）養育費かんたん計算（https://hugme.tigerlabo.com/youikuhi-keisan/）＝裁判所の算定表にもとづく目安と、2026年4月に始まった法定養育費をならべて表示します。（2）面会交流の予定表テンプレート（https://hugme.tigerlabo.com/menkai-yoteihyo/）＝法務省が例示している項目から選ぶだけで、A4 1枚に印刷できる予定表になります。（3）離婚後の子育てのお金 まとめて計算（https://hugme.tigerlabo.com/okane-keisan/）＝質問に順に答えると、養育費の目安と、児童扶養手当・児童手当の月額の目安をまとめて確認できます。いずれも入力した内容はブラウザの中だけで計算し、外部へ送信していません（利用状況の集計として、ページを開いたこと・計算したことだけを記録しています）。" }
     }
   ]
 }
@@ -278,6 +278,40 @@
     header.nav .nav-right { gap:6px; width:100%; justify-content:space-between; }
     header.nav .nav-press { padding:7px 11px; font-size:12px; }
     header.nav .nav-cta { padding:8px 13px; font-size:13px; }
+  }
+
+  header.nav .nav-tool {
+    background:#fff; color:var(--accent-deep); border:1.5px solid var(--accent); padding:7.5px 16px; border-radius:999px;
+    font-weight:700; font-size:13px; white-space:nowrap; text-decoration:none;
+  }
+  header.nav .nav-tool .s { display:none; }
+  @media (max-width: 720px) {
+    header.nav { flex-wrap:wrap; gap:12px; }
+    header.nav .nav-right { width:100%; flex-wrap:wrap; justify-content:flex-end; gap:8px; }
+    header.nav .nav-tool .l { display:none; }
+    header.nav .nav-tool .s { display:inline; }
+  }
+  @media (max-width: 480px) {
+    header.nav .nav-right { flex-wrap:wrap; justify-content:flex-end; }
+    header.nav .nav-tool { padding:7px 11px; font-size:12px; }
+  }
+  /* 計算ページへの案内の帯 */
+  .tool-band { padding:20px 24px 8px; }
+  .tool-band a {
+    display:flex; align-items:center; justify-content:space-between; gap:18px; max-width:912px; margin:0 auto;
+    background:#fff; border:2px solid var(--green); border-radius:20px; padding:20px 24px;
+    box-shadow:0 8px 22px rgba(127,183,126,0.18); transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .tool-band a:hover { transform:translateY(-2px); box-shadow:0 12px 28px rgba(127,183,126,0.26); }
+  .tool-band .k { display:inline-block; font-size:12px; font-weight:700; color:#4f8a4e; background:#eef6ee; border-radius:999px; padding:3px 10px; }
+  .tool-band .t { display:block; font-size:18px; font-weight:800; color:#2a2a2a; line-height:1.5; margin:8px 0 4px; }
+  .tool-band .d { display:block; font-size:13.5px; color:var(--sub); line-height:1.7; }
+  .tool-band .go { flex:0 0 auto; background:var(--green); color:#fff; font-weight:700; font-size:15px; padding:12px 22px; border-radius:999px; white-space:nowrap; }
+  @media (max-width: 640px) {
+    .tool-band { padding:16px 16px 8px; }
+    .tool-band a { flex-direction:column; align-items:stretch; padding:18px 18px; gap:14px; }
+    .tool-band .t { font-size:16.5px; }
+    .tool-band .go { text-align:center; }
   }
 
   /* ヒーロー */
@@ -608,6 +642,7 @@
     <a class="nav-press" href="#news">お知らせ</a>
     <a class="nav-press" href="/press/">プレスリリース</a>
     <a class="nav-press" href="/for-mediators/">調停員の皆様へ</a>
+    <a class="nav-tool" href="/okane-keisan/" aria-label="養育費と手当の目安を計算する"><span class="l">養育費・手当を計算</span><span class="s">お金の計算</span></a>
     <a class="nav-cta" href="#download">無料で入手</a>
   </div>
 </header>
@@ -736,6 +771,17 @@
       </div>
     </div>
   </div>
+</section>
+
+<section class="tool-band" aria-label="無料の計算ツール">
+  <a href="/okane-keisan/">
+    <span>
+      <span class="k">無料ツール｜登録不要</span>
+      <span class="t">養育費と手当の目安を、まとめて計算</span>
+      <span class="d">年収や子どもの年齢などの質問に答えると、養育費の目安と、児童扶養手当・児童手当の月額の目安を確認できます。</span>
+    </span>
+    <span class="go">計算してみる →</span>
+  </a>
 </section>
 
 <section class="video-sec" id="video">
@@ -1188,8 +1234,8 @@
       <p>4つを比べてください。（1）連絡先を交換せずに使えるか（2）相手が未参加でも始められるか（3）日本の制度（養育費算定表・2026年4月施行の改正民法）を前提にしているか（4）料金。海外製のアプリは機能が豊富でも日本の制度を前提にしていないことがあり、月額料金がかかるものは続ける前提だと負担になります。裁判所への提出を前提とした改ざん防止つきの記録が必要な場合は、はぐみぃではなく別の手段を検討してください。</p>
     </details>
     <details>
-      <summary>アプリを入れなくても使える、無料の便利ツールはありますか？（養育費の計算・面会予定表）</summary>
-      <p>2つあります。いずれもブラウザだけで動き、登録もアプリのインストールも不要で無料です。（1）<a href="/youikuhi-keisan/">養育費かんたん計算</a>＝裁判所の算定表にもとづく目安と、2026年4月に始まった法定養育費をならべて表示します。（2）<a href="/menkai-yoteihyo/">面会交流の予定表テンプレート</a>＝法務省が例示している項目から選ぶだけで、A4 1枚に印刷できる予定表になります。どちらも入力した内容はブラウザの中だけで計算し、外部へ送信していません（利用状況の集計として、ページを開いたこと・計算したことだけを記録しています）。</p>
+      <summary>アプリを入れなくても使える、無料の便利ツールはありますか？（養育費と手当の計算・面会予定表）</summary>
+      <p>3つあります。いずれもブラウザだけで動き、登録もアプリのインストールも不要で無料です。（1）<a href="/youikuhi-keisan/">養育費かんたん計算</a>＝裁判所の算定表にもとづく目安と、2026年4月に始まった法定養育費をならべて表示します。（2）<a href="/menkai-yoteihyo/">面会交流の予定表テンプレート</a>＝法務省が例示している項目から選ぶだけで、A4 1枚に印刷できる予定表になります。（3）<a href="/okane-keisan/">離婚後の子育てのお金 まとめて計算</a>＝質問に順に答えると、養育費の目安と、児童扶養手当・児童手当の月額の目安をまとめて確認できます。いずれも入力した内容はブラウザの中だけで計算し、外部へ送信していません（利用状況の集計として、ページを開いたこと・計算したことだけを記録しています）。</p>
     </details>
   </div>
 </section>
@@ -1206,6 +1252,12 @@
         <span class="k">無料の便利ツール</span>
         <h3>養育費かんたん計算（算定表の目安と法定養育費）</h3>
         <p>裁判所の算定表にもとづく目安を、2026年4月に始まった法定養育費とならべて表示します。</p>
+        <span class="more">使ってみる →</span>
+      </a>
+      <a class="guide-card" href="/okane-keisan/">
+        <span class="k">無料の便利ツール</span>
+        <h3>離婚後の子育てのお金 まとめて計算</h3>
+        <p>質問に答えるだけで、養育費と手当の目安をまとめて確認できます。</p>
         <span class="more">使ってみる →</span>
       </a>
       <a class="guide-card" href="/menkai-yoteihyo/">

@@ -1,0 +1,1347 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="apple-itunes-app" content="app-id=6782561944">
+<!-- 本番だけを計測。共通スクリプトで流入元とストアクリックを集計します。 -->
+<script src="../assets/analytics.js"></script>
+<title>離婚後の子育てのお金 まとめて計算｜養育費・児童扶養手当・税の控除</title>
+<meta name="description" content="年収や子どもの年齢、同居する家族の状況などの質問に順に答えると、養育費の目安と、児童扶養手当・児童手当の月額の目安をまとめて確認できます。裁判所の算定方式と政令の計算式にもとづく無料ツールです。登録不要。">
+<link rel="canonical" href="https://hugme.tigerlabo.com/okane-keisan/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hugme.tigerlabo.com/okane-keisan/">
+<meta property="og:title" content="離婚後の子育てのお金 まとめて計算｜養育費・児童扶養手当・税の控除">
+<meta property="og:description" content="質問に順に答えるだけで、養育費の目安と、児童扶養手当・児童手当の月額の目安をまとめて確認できます。無料・登録不要。">
+<meta property="og:site_name" content="はぐみぃ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://hugme.tigerlabo.com/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://hugme.tigerlabo.com/assets/og-image.png">
+<link rel="icon" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/icon.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://tigerlabo.com/#organization",
+      "name": "株式会社タイガーラボ",
+      "url": "https://tigerlabo.com",
+      "logo": "https://tigerlabo.com/assets/logo.png"
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://hugme.tigerlabo.com/okane-keisan/#tool",
+      "name": "離婚後の子育てのお金 まとめて計算",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "inLanguage": "ja",
+      "description": "年収や子どもの年齢、同居する家族の状況などの質問に順に答えると、養育費の目安と、児童扶養手当・児童手当の月額の目安、ひとり親控除と扶養控除による税負担の違いをまとめて計算するツール。",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "JPY"
+      },
+      "publisher": {
+        "@id": "https://tigerlabo.com/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://hugme.tigerlabo.com/okane-keisan/#webpage",
+      "url": "https://hugme.tigerlabo.com/okane-keisan/",
+      "name": "離婚後の子育てのお金 まとめて計算｜養育費・児童扶養手当・税の控除",
+      "inLanguage": "ja",
+      "datePublished": "2026-11-12",
+      "dateModified": "2026-11-12",
+      "author": {
+        "@id": "https://tigerlabo.com/#organization"
+      },
+      "publisher": {
+        "@id": "https://tigerlabo.com/#organization"
+      },
+      "mainEntity": {
+        "@id": "https://hugme.tigerlabo.com/okane-keisan/#tool"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://hugme.tigerlabo.com/okane-keisan/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "はぐみぃ",
+          "item": "https://hugme.tigerlabo.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "離婚後の子育てのお金 まとめて計算",
+          "item": "https://hugme.tigerlabo.com/okane-keisan/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://hugme.tigerlabo.com/okane-keisan/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "入力した内容は、外部に送信されますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "送信されません。計算はすべてお使いのブラウザ内で行われます。アクセス解析では計算が完了した事実のみを記録し、入力した数値や計算結果は記録していません。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "表示された金額を、そのまま受け取れますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "表示される金額は一般的な目安です。養育費は父母の協議や家庭裁判所の手続きで決まり、児童扶養手当は市区町村が、税額は税務署が決定します。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "養育費を受け取ると、児童扶養手当は減りますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "受け取った養育費の8割が、児童扶養手当の所得の計算に算入されます。一部支給に該当する場合、養育費が月額1万円増えると、手当は月額2,530円または2,540円減少します（子ども1人の場合）。所得が全部支給の範囲内であれば、手当は変わりません。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "実家で両親と同居している場合、児童扶養手当は受給できますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "同居する父母、祖父母、きょうだいなどの所得が一定額以上の場合、児童扶養手当は支給されません。扶養親族がいない場合の限度額は、所得236万円です。同居の実態や世帯の状況によって判断が異なるため、お住まいの市区町村にご確認ください。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "子どもの扶養親族の申告は、どちらの親がするのが有利ですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "税率、所得、子どもの年齢や人数によって異なるため、このページでは判定していません。2つのケースの控除額と軽減額の目安を掲載していますので、父母で話し合う際の参考としてご活用ください。個別のケースは税務署にご確認ください。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "健康保険の扶養と、税の扶養は同じですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "別の制度です。所得税の扶養親族と健康保険の被扶養者は、それぞれ異なる法律で定められています。このページで扱っているのは、所得税と住民税の扶養です。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "手当はどこで申請しますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "児童扶養手当と児童手当は、お住まいの市区町村の窓口で申請します。児童扶養手当は、認定請求をした月の翌月分から支給されます。"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+
+  :root{
+    --bg:#FFFCF7; --card:#ffffff; --text:#3a3a3a; --sub:#6a6a6a;
+    --accent:#F4A261; --accent-deep:#D9772F; --green:#7FB77E; --line:#f0e8dd; --soft:#FBF3E8;
+    --maxw:760px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg); color:var(--text); font-family:-apple-system,"Hiragino Maru Gothic ProN","Hiragino Sans",sans-serif; line-height:1.95; -webkit-font-smoothing:antialiased; overflow-x:hidden}
+  a{color:var(--accent-deep)}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 22px}
+  header.nav{display:flex; align-items:center; justify-content:space-between; max-width:960px; margin:0 auto; padding:18px 22px}
+  header.nav .brand{display:flex; align-items:center; gap:10px}
+  header.nav .brand img{width:34px; height:34px; border-radius:9px}
+  header.nav .brand span{font-weight:700; font-size:17px; color:#2a2a2a}
+  header.nav .nav-cta{background:var(--accent); color:#fff; padding:8px 18px; border-radius:999px; font-weight:700; font-size:13px; text-decoration:none; white-space:nowrap}
+  .crumb{max-width:var(--maxw); margin:0 auto; padding:16px 22px 0; font-size:12.5px; color:var(--sub)}
+  .crumb a{color:var(--sub); text-decoration:none}
+  .crumb span{margin:0 7px; opacity:.5}
+  main{padding:8px 0 40px}
+  .eyebrow{display:inline-block; background:var(--card); border:1px solid var(--line); color:var(--accent-deep); font-size:12px; font-weight:700; padding:5px 14px; border-radius:999px; margin:20px 0 16px}
+  h1{font-size:clamp(24px,4.5vw,33px); line-height:1.5; font-weight:800; color:#2a2a2a; margin-bottom:20px}
+  .lead{background:var(--soft); border:1px solid var(--line); border-radius:16px; padding:20px 22px; font-size:15.5px; color:#3a3a3a; margin-bottom:16px}
+  .byline{font-size:12.5px; color:var(--sub); margin-bottom:26px}
+  h2{font-size:clamp(20px,3.6vw,25px); color:#2a2a2a; line-height:1.5; margin:46px 0 6px; padding-top:22px; border-top:1px solid var(--line); font-weight:800}
+  h3{font-size:17px; color:#2a2a2a; margin:28px 0 6px; font-weight:700}
+  .ans{font-size:15.5px; color:#3a3a3a; margin:14px 0 10px; font-weight:600}
+  p{font-size:15px; color:var(--text); margin:12px 0}
+  strong,b{color:#2a2a2a}
+  ul,ol{margin:14px 0 14px 2px}
+  li{margin:8px 0 8px 22px; font-size:15px}
+  .tablewrap{overflow-x:auto; border:1px solid var(--line); border-radius:14px; margin:18px 0}
+  table{border-collapse:collapse; width:100%; min-width:420px; background:var(--card); font-size:14px}
+  th,td{padding:12px 14px; text-align:left; border-bottom:1px solid var(--line); vertical-align:top}
+  thead th{background:var(--soft); color:#2a2a2a; font-weight:700; font-size:13px}
+  tbody tr:last-child td{border-bottom:none}
+  td b{color:var(--accent-deep)}
+  .callout{background:#F1F7F0; border-left:4px solid var(--green); border-radius:0 12px 12px 0; padding:16px 18px; margin:20px 0; font-size:14.5px; color:#3a3a3a}
+  .cta{background:linear-gradient(135deg,#FFF3E4,#F4EFE6); border-radius:20px; padding:28px 24px; margin:32px 0; text-align:center}
+  .cta p{margin:0 0 16px; font-size:15px; color:#3a3a3a}
+  .btn-store{display:inline-flex; align-items:center; gap:9px; background:#111; color:#fff; padding:13px 24px; border-radius:14px; font-weight:700; font-size:14.5px; text-decoration:none; box-shadow:0 8px 20px rgba(0,0,0,0.14)}
+  .btn-store .sub{display:block; font-size:10.5px; font-weight:400; opacity:.8}
+  .store-pair{display:flex; flex-wrap:wrap; justify-content:center; gap:12px}
+  details{background:var(--card); border:1px solid var(--line); border-radius:13px; padding:16px 18px; margin-bottom:11px}
+  summary{font-weight:700; font-size:14.5px; cursor:pointer; color:#2a2a2a; list-style:none}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"＋"; float:right; color:var(--accent-deep)}
+  details[open] summary::after{content:"－"}
+  details p{margin-top:11px; font-size:14px; color:var(--sub)}
+  .sources{font-size:12.5px; color:var(--sub); margin:24px 0; padding-top:16px; border-top:1px solid var(--line)}
+  .sources a{color:var(--sub)}
+  .related{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:22px; margin:28px 0}
+  .related h2{border:none; padding:0; margin:0 0 14px; font-size:17px}
+  .related a{display:block; padding:11px 0; border-bottom:1px solid var(--line); text-decoration:none; color:#2a2a2a; font-weight:700; font-size:14.5px}
+  .related a:last-child{border-bottom:none}
+  .related a span{color:var(--accent-deep)}
+  .disclaimer{font-size:12.5px; color:var(--sub); background:var(--soft); border-radius:12px; padding:14px 16px; margin:22px 0}
+  footer{padding:36px 22px 56px; text-align:center; color:var(--sub); font-size:12px}
+  footer .flinks{display:flex; gap:18px; justify-content:center; margin-bottom:14px; flex-wrap:wrap}
+  footer .flinks a{color:var(--sub); font-weight:600; text-decoration:none}
+
+  /* ── 計算フォーム ───────────────────────────── */
+  .calc{background:var(--card); border:1px solid var(--line); border-radius:20px; padding:24px 22px; margin:26px 0}
+  .calc h2{border:none; padding:0; margin:0 0 6px; font-size:19px}
+  .calc .hint{font-size:13px; color:var(--sub); margin:0 0 18px}
+  fieldset{border:none; margin:0 0 20px}
+  legend{font-weight:700; font-size:15px; color:#2a2a2a; margin-bottom:10px}
+  .parents{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+  .pcard{background:var(--soft); border:1px solid var(--line); border-radius:14px; padding:14px 15px}
+  .pcard .who{font-weight:700; font-size:14.5px; color:#2a2a2a; margin-bottom:8px}
+  label.f{display:block; font-size:12.5px; color:var(--sub); margin:10px 0 4px; font-weight:600}
+  input[type=number], select{
+    width:100%; font:inherit; font-size:15px; padding:10px 12px; border:1px solid var(--line);
+    border-radius:11px; background:#fff; color:var(--text); -webkit-appearance:none; appearance:none;
+  }
+  select{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8'><path d='M1 1l5 5 5-5' fill='none' stroke='%23999' stroke-width='2'/></svg>"); background-repeat:no-repeat; background-position:right 12px center}
+  input[type=number]:focus, select:focus{outline:2px solid var(--accent); outline-offset:1px}
+  .unit{display:flex; align-items:center; gap:8px}
+  .unit input{flex:1}
+  .unit span{font-size:13px; color:var(--sub); white-space:nowrap}
+  .kids{display:flex; flex-direction:column; gap:10px}
+  .kidrow{display:grid; grid-template-columns:auto 1fr 1fr auto; gap:9px; align-items:center; background:var(--soft); border:1px solid var(--line); border-radius:12px; padding:10px 12px}
+  .kidrow .n{font-size:13px; font-weight:700; color:var(--sub); white-space:nowrap}
+  .kidrow select{font-size:14px; padding:8px 10px}
+  .btn{font:inherit; font-weight:700; border:none; border-radius:12px; cursor:pointer; padding:12px 20px; font-size:14.5px}
+  .btn-sub{background:#fff; border:1px solid var(--line); color:var(--accent-deep); padding:9px 15px; font-size:13.5px}
+  .btn-x{background:transparent; border:none; color:var(--sub); font-size:18px; cursor:pointer; line-height:1; padding:4px 6px}
+  .btn-main{background:var(--accent); color:#fff; width:100%; padding:15px; font-size:16px; box-shadow:0 6px 16px rgba(244,162,97,.35)}
+  .btn-main:hover{background:var(--accent-deep)}
+  .rowbtns{display:flex; gap:10px; flex-wrap:wrap; margin-top:6px}
+
+  /* ── 結果 ───────────────────────────────── */
+  #result[hidden]{display:none}
+  .resultbox{background:var(--card); border:2px solid var(--accent); border-radius:20px; padding:26px 22px; margin:26px 0 0}
+  .r-label{font-size:13px; color:var(--sub); font-weight:700}
+  .r-amount{font-size:clamp(30px,7vw,44px); font-weight:800; color:var(--accent-deep); line-height:1.3; margin:6px 0 4px; letter-spacing:-.01em}
+  .r-dir{font-size:15px; font-weight:700; color:#2a2a2a; margin-bottom:10px}
+  .r-note{font-size:13.5px; color:var(--sub); margin:8px 0 0}
+  .r-warn{background:#FFF6EA; border:1px solid var(--line); border-radius:12px; padding:12px 14px; font-size:13.5px; color:#3a3a3a; margin-top:14px}
+  .r-warn .wl{display:block}
+  .r-warn .wl + .wl{margin-top:13px}
+  .compare2{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:18px 0 0}
+  .cbox{border:1px solid var(--line); border-radius:14px; padding:14px 15px; background:var(--soft)}
+  .cbox .t{font-size:12.5px; color:var(--sub); font-weight:700}
+  .cbox .v{font-size:21px; font-weight:800; color:#2a2a2a; margin:4px 0 6px}
+  .cbox .d{font-size:12.5px; color:var(--sub); line-height:1.75}
+  .next3{counter-reset:n; list-style:none; margin:16px 0 0; padding:0}
+  .next3 li{counter-increment:n; list-style:none; margin:0 0 12px; padding:14px 16px 14px 52px; position:relative; background:var(--soft); border:1px solid var(--line); border-radius:14px; font-size:14.5px}
+  .next3 li::before{content:counter(n); position:absolute; left:14px; top:13px; width:26px; height:26px; border-radius:50%; background:var(--accent); color:#fff; font-weight:800; font-size:13px; display:flex; align-items:center; justify-content:center}
+  .next3 li b{display:block; color:#2a2a2a; margin-bottom:2px}
+  .versionbox{font-size:12.5px; color:var(--sub); background:var(--soft); border:1px solid var(--line); border-radius:12px; padding:13px 15px; margin:18px 0 0; line-height:1.85}
+  .versionbox a{color:var(--sub)}
+  .breakdown{margin-top:16px}
+  .breakdown .bd-in{display:flex; align-items:center; gap:9px; flex-wrap:wrap; font-size:14px; color:var(--sub)}
+  .breakdown .bd-in input{width:92px; flex:none}
+  #bdTable{min-width:0}
+  #bdTable th, #bdTable td{padding:10px 10px; font-size:13.5px}
+  .noscript{background:#FFF6EA; border:1px solid var(--line); border-radius:12px; padding:14px 16px; font-size:14px}
+
+  @media (max-width:600px){
+    .parents{grid-template-columns:1fr}
+    .compare2{grid-template-columns:1fr}
+    .kidrow{grid-template-columns:1fr auto; grid-template-areas:"n x" "age age" "carer carer"; row-gap:8px}
+    .kidrow .n{grid-area:n}
+    .kidrow .btn-x{grid-area:x; justify-self:end}
+    .kidrow .k-age{grid-area:age}
+    .kidrow .k-carer{grid-area:carer}
+  }
+
+  /* ── 印刷（A4 1枚） ─────────────────────────── */
+  @media print{
+    @page{size:A4; margin:9mm}
+    body{background:#fff; font-size:9pt; line-height:1.42; color:#000}
+    /* 既定で全部隠し、話し合いに持っていく分だけ出す */
+    header.nav, .crumb, footer, main .wrap > *{display:none !important}
+    main .wrap > h1, main .wrap > #result, main .wrap > .disclaimer, main .wrap > .printonly{display:block !important}
+    #result .breakdown, #result .cta, #result .sharerow, #result #shareMsg, #result .noprint{display:none !important}
+    main{padding:0}
+    .wrap{max-width:none; padding:0}
+    h1{font-size:13.5pt; line-height:1.35; margin:0 0 4pt; border-bottom:.75pt solid #999; padding-bottom:3pt}
+    h1 br{display:none}
+    #result h2{font-size:11pt; margin:5pt 0 2pt; padding-top:3pt; border-top:.5pt solid #ccc}
+    #result p{font-size:8.5pt; margin:3pt 0}
+    .printonly{font-size:8pt; color:#333; margin:0 0 5pt}
+    .resultbox{border:1pt solid #666; border-radius:5pt; padding:6pt 8pt; margin:0; break-inside:avoid}
+    .r-label{font-size:8.5pt}
+    .r-dir{font-size:10pt; margin-bottom:2pt}
+    .r-amount{font-size:21pt; color:#000; margin:1pt 0}
+    .r-note{font-size:8.5pt; color:#333}
+    .cbox .v{color:#000; font-size:14pt; margin:2pt 0 3pt}
+    .cbox .t{font-size:8.5pt}
+    .cbox .d{font-size:7.5pt; line-height:1.35}
+    .compare2{grid-template-columns:1fr 1fr; gap:5pt; margin-top:5pt}
+    .cbox{padding:5pt 6pt}
+    .cbox,.next3 li,.versionbox,.r-warn{background:#fff; border:.5pt solid #999; break-inside:avoid}
+    .r-warn{font-size:7pt; padding:4pt 6pt; margin-top:4pt; line-height:1.3}
+    .r-warn .wl + .wl{margin-top:2.5pt}
+    .r-warn ul{margin:3pt 0 0}
+    .r-warn li{font-size:7pt; margin:0.5pt 0 0.5pt 13pt}
+    .next3{margin-top:6pt}
+    .next3 li{padding:3pt 6pt 3pt 22pt; margin-bottom:2pt; font-size:8pt; line-height:1.35}
+    .next3 li::before{background:#555; width:15pt; height:15pt; font-size:8pt; left:6pt; top:5pt}
+    #result .printline{display:block !important; font-size:7.5pt; line-height:1.35; margin:5pt 0 0; padding:4pt 6pt; border:.5pt solid #999; border-radius:4pt}
+    .versionbox{font-size:7.5pt; padding:4pt 6pt; margin-top:5pt; line-height:1.4}
+    .disclaimer{background:#fff; border:.5pt solid #999; font-size:7.5pt; line-height:1.4; margin:5pt 0 0; padding:4pt 6pt}
+    a{color:#000; text-decoration:none}
+  }
+  .printonly, .printline{display:none}
+
+  /* ── このページで足した部品 ── */
+  #calcform[hidden]{display:none}
+  details.calcdetail{background:transparent; border:1px solid var(--line); border-radius:12px; padding:12px 16px; margin:30px 0 0}
+  details.calcdetail + details.calcdetail{margin-top:10px}
+  details.calcdetail > summary{font-size:13px; font-weight:700; color:var(--sub)}
+  .calcdetail dl{margin:10px 0 2px}
+  .calcdetail dt{font-size:12.5px; font-weight:700; color:#3a3a3a; margin-top:10px}
+  .calcdetail dd{font-size:12.5px; color:var(--sub); line-height:1.8; margin:2px 0 0}
+  .calcdetail dd a{color:var(--sub)}
+  .seido{display:flex; flex-direction:column; gap:8px; margin:8px 0 6px}
+  details.sitem{margin:0; padding:13px 15px; border-radius:12px}
+  .sitem summary{display:flex; flex-wrap:wrap; align-items:center; gap:6px 10px; padding-right:22px; position:relative; font-size:14.5px}
+  .sitem summary::after{position:absolute; right:0; top:0; float:none}
+  .sname{font-weight:700; color:#2a2a2a}
+  .stag{font-size:11.5px; font-weight:700; color:#4d7f4c; background:#F1F7F0; border-radius:99px; padding:2px 10px; white-space:nowrap}
+  .sitem p{font-size:14px; color:#3a3a3a; margin:10px 0 0}
+  .sitem p.swhere{font-size:13px} .sitem p.ssrc{font-size:12px; color:var(--sub)} .sitem p.ssrc a{color:var(--sub)}
+  .slist h3{margin-top:26px}
+  .slead{font-size:13px; color:var(--sub); margin:0 0 6px}
+  details.smore{background:transparent; border:1.5px dashed var(--line); border-radius:12px; padding:12px 14px; margin:8px 0 0}
+  details.smore > summary{font-size:13.5px; color:var(--accent-deep)}
+  details.smore > .seido{margin-top:12px}
+  .chiplabel{font-size:12.5px; font-weight:700; color:var(--sub); margin:16px 0 6px}
+  .chips{display:flex; flex-wrap:wrap; gap:8px; margin:0 0 6px}
+  .chip{font:inherit; font-size:13px; font-weight:700; color:#3a3a3a; background:#fff; border:1.5px solid var(--line); border-radius:99px; padding:7px 14px; cursor:pointer; line-height:1.4}
+  .chip.on{background:var(--green); border-color:var(--green); color:#fff}
+  .chip:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+  @media print{ .chips, .chiplabel{display:none !important} }
+  .condbar{display:flex; gap:14px; align-items:center; justify-content:space-between; flex-wrap:wrap; background:#F1F7F0; border:1.5px solid var(--green); border-radius:16px; padding:14px 16px; margin:26px 0 0}
+  .condlabel{font-size:12px; font-weight:700; color:#4d7f4c}
+  #condText{font-size:13.5px; color:#2a2a2a; line-height:1.7}
+  .btn-edit{background:#fff; border:2px solid var(--accent); color:var(--accent-deep); padding:11px 18px; font-size:14.5px; white-space:nowrap}
+  .condbar + .results{margin-top:14px}
+  @media (max-width:600px){ .condbar{flex-direction:column; align-items:stretch} .btn-edit{width:100%} }
+  @media print{ .condbar{display:none !important} }
+  .progress{height:6px; background:var(--line); border-radius:99px; overflow:hidden; margin-bottom:14px}
+  .progress div{height:100%; background:var(--accent); border-radius:99px; transition:width .25s}
+  .stepno{font-size:12.5px; color:var(--accent-deep); font-weight:700; margin:0 0 4px}
+  #wiz h2{border:none; padding:0; margin:0 0 8px; font-size:20px; line-height:1.55; outline:none}
+  .qbody{margin-top:14px}
+  .choices{display:flex; flex-direction:column; gap:10px}
+  .choice{display:flex; align-items:center; gap:12px; background:var(--soft); border:1.5px solid var(--line); border-radius:14px; padding:14px 16px; cursor:pointer; font-size:15.5px; font-weight:700; color:#2a2a2a; line-height:1.5}
+  .choice input{width:20px; height:20px; accent-color:var(--accent-deep); flex:none}
+  .choice.on{border-color:var(--accent); background:#FFF3E4}
+  .choice small{display:block; font-size:12.5px; font-weight:400; color:var(--sub)}
+  .sub{margin-top:16px}
+  .sub[hidden]{display:none}
+  .agegrid{display:grid; grid-template-columns:1fr 1fr; gap:10px}
+  .agecell{display:block; margin-bottom:10px}
+  .agecell span{display:block; font-size:12.5px; color:var(--sub); font-weight:600; margin-bottom:4px}
+  .err{color:#B3261E; font-size:13.5px; min-height:1.2em; margin:10px 0 0}
+  .navbtns{display:grid; grid-template-columns:auto 1fr; gap:10px; align-items:center; margin-top:8px}
+  .navbtns .btn-main{width:100%}
+  .calc .hint[hidden]{display:none}
+  .results{display:flex; flex-direction:column; gap:18px; margin:26px 0 0}
+  .rcard{background:var(--card); border:1px solid var(--line); border-radius:20px; padding:22px 20px}
+  .rcard.main{border:2px solid var(--accent)}
+  .rcard.green{border-left:6px solid var(--green)}
+  .rcard > h2{border:none; padding:0; margin:0 0 10px; font-size:18px}
+  .rcard h3{font-size:15px; margin:18px 0 4px}
+  .rcard p{font-size:14.5px}
+  .rcard .callout{font-size:14px}
+  .rcard p.r-amount{margin:2px 0 4px; font-size:clamp(28px,7vw,40px)}
+  .rcard p.r-dir{font-size:15px}
+  table.kv{min-width:0}
+  table.kv th{width:42%; font-weight:700; color:#2a2a2a; background:var(--soft)}
+  .zgrid{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:14px 0}
+  .zcase .t{font-size:13.5px; color:#2a2a2a; line-height:1.6; margin-bottom:8px}
+  .zrow{border-top:1px solid var(--line); padding:9px 0 7px}
+  .zwho{font-size:12px; color:var(--sub); font-weight:700}
+  .zval{font-size:14.5px; color:#2a2a2a; font-weight:700; line-height:1.7}
+  .zval .thsub{font-weight:400}
+  .thsub{display:block; font-size:12px; font-weight:400; color:var(--sub); line-height:1.6; margin-top:2px}
+  .sumgrid{display:grid; grid-template-columns:1fr; gap:12px}
+  .opt{margin-top:10px}
+  .opt summary{font-size:13px; font-weight:600; color:var(--accent-deep)}
+  .opt{border:none; background:transparent; padding:0; margin:8px 0 0}
+  .kidrow{grid-template-columns:auto 1fr 1.4fr auto}
+  table.hayami{min-width:0}
+  .hayami th, .hayami td{padding:11px 10px}
+  .steps3{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:18px 0}
+  .steps3 .cbox .v{font-size:16px}
+  @media (max-width:600px){ .zgrid{grid-template-columns:1fr} .steps3{grid-template-columns:1fr} .kidrow{grid-template-columns:1fr auto} }
+  @media print{
+    #result .rcard{border:.5pt solid #999; border-radius:5pt; padding:5pt 7pt; break-inside:avoid}
+    #result .results{gap:5pt; margin:0}
+    #result .rcard > h2{font-size:10.5pt; margin:0 0 2pt; border:none; padding:0}
+    #result .rcard h3{font-size:9pt; margin:4pt 0 1pt}
+    #result table{font-size:8pt; min-width:0}
+    #result th, #result td{padding:2pt 4pt}
+    #result details, #result .rowbtns{display:none !important}
+    .tablewrap{border:none; margin:2pt 0; overflow:visible}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <a class="brand" href="/" style="text-decoration:none">
+    <img src="/assets/icon-256.png" alt="はぐみぃ 共同養育アプリのアイコン" width="34" height="34" fetchpriority="high">
+    <span>はぐみぃ</span>
+  </a>
+  <a class="nav-cta" href="/#download">無料で入手</a>
+</header>
+
+<nav class="crumb" aria-label="パンくず">
+  <a href="/">はぐみぃ</a><span>›</span>離婚後の子育てのお金 まとめて計算
+</nav>
+
+<main>
+  <article class="wrap">
+    <span class="eyebrow">無料ツール｜登録不要・広告なし</span>
+    <h1>離婚後の子育てのお金 まとめて計算<br>― 養育費と手当の目安が、質問に答えるだけで分かる</h1>
+
+    <div class="lead">
+      <b>年収や子どもの年齢、同居する家族の状況などを順に入力すると、養育費の目安と、児童扶養手当・児童手当の月額の目安をまとめて確認できます。</b>
+      養育費は裁判所の算定方式、児童扶養手当は政令の計算式にもとづいて算出します。ひとり親控除や扶養控除による税負担の違いと、あわせて確認したい公的な制度も表示します。
+      入力した内容が外部に送信されることはありません。
+    </div>
+    <p class="byline">文責：株式会社タイガーラボ 編集部　｜　公開日：2026年11月12日　｜　数値の最終確認日：2026年11月12日</p>
+    <div class="printonly" id="printCond"></div>
+
+    <!-- ── 質問（JavaScript が動くときだけ表示） ── -->
+    <section class="calc" id="calcform" hidden>
+      <div id="wiz"></div>
+      <p class="hint" style="margin:16px 0 0">所要時間は2分ほどです。氏名や住所の入力は不要です。</p>
+    </section>
+    <noscript><div class="noscript">質問に答えて計算する機能は、JavaScript を有効にするとご利用いただけます。年収別の早見表と制度の一覧、計算の前提は、このページの下部でご覧いただけます。</div></noscript>
+
+    <!-- ── 結果 ── -->
+    <section id="result" hidden>
+      <div class="condbar">
+        <div><div class="condlabel">入力した条件</div><div id="condText"></div></div>
+        <button type="button" class="btn btn-edit" id="btnEditTop">条件を変更して計算し直す</button>
+      </div>
+      <div class="results">
+        <div class="rcard main">
+          <h2>計算結果のまとめ</h2>
+          <div class="sumgrid" id="rSum"></div>
+        </div>
+        <div class="rcard">
+          <h2>1. 養育費の目安</h2>
+          <div id="rYouikuhi"></div>
+        </div>
+        <div class="rcard green">
+          <h2>2. 児童扶養手当と児童手当の目安</h2>
+          <div id="rTeate"></div>
+        </div>
+        <div class="rcard">
+          <h2>3. 扶養親族の申告による税負担の違い</h2>
+          <div id="rZei"></div>
+        </div>
+        <div class="rcard green">
+          <h2>4. あわせて確認したい制度と手続き</h2>
+          <div id="rSeido"></div>
+        </div>
+      </div>
+      <div class="rowbtns" style="margin:18px 0 0">
+        <button type="button" class="btn btn-sub" id="btnEdit">条件を変更して計算し直す</button>
+        <button type="button" class="btn btn-sub" id="btnPrint">結果を印刷する</button>
+      </div>
+
+      <div class="cta">
+        <p><b>毎月の養育費の受け渡しは、アプリで記録できます。</b><br>
+        支払う側が記録し、受け取る側が確認する仕組みのため、認識の食い違いを防げます。連絡先を交換する必要はありません。利用料、広告、アプリ内課金は一切ありません。</p>
+        <div class="store-pair">
+          <a class="btn-store" href="https://apps.apple.com/jp/app/id6782561944?ppid=2c3b7dc2-6631-41e0-96ac-0792be52f79b&pt=129057504&ct=lp&mt=8" data-store="ios"><span>📱</span><span>App Storeで無料ダウンロード<span class="sub">iPhone・iOS 15.1以上</span></span></a>
+          <a class="btn-store" href="https://play.google.com/store/apps/details?id=com.tigerlabo.hugme" data-store="android"><span>📱</span><span>Google Playで無料ダウンロード<span class="sub">Android 7.0以上</span></span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── ここから下は、JavaScript が動かなくても読める本文 ── -->
+    <h2 id="wakaru">このページで分かること</h2>
+    <p class="ans">養育費、手当、税の控除は、それぞれ所管する機関も算定のルールも異なります。このページでは、同じ条件から3つを続けて計算し、互いの関係が分かる形で表示します。</p>
+    <div class="steps3">
+      <div class="cbox"><div class="t">1. 養育費</div><div class="v">算定表にもとづく目安</div><div class="d">父母の年収と、子どもの人数・年齢から算出する標準的な月額です。法定養育費（子ども1人につき月額2万円）もあわせて表示します。</div></div>
+      <div class="cbox"><div class="t">2. 手当</div><div class="v">月額の目安</div><div class="d">児童扶養手当は、所得と受け取る養育費の8割をもとに算出します。児童手当は、子どもの年齢と人数で決まります。</div></div>
+      <div class="cbox"><div class="t">3. 税の控除</div><div class="v">2つのケースを比較</div><div class="d">子どもをどちらの親の扶養親族として申告するかによって、ひとり親控除と扶養控除の適用がどう変わるかを示します。</div></div>
+    </div>
+
+    <h2 id="hayami">年収別の早見表（子ども1人の場合）</h2>
+    <p class="ans">5歳の子ども1人と暮らす親の年収別に、養育費の目安と児童扶養手当の月額をまとめました。</p>
+    <p>離れて暮らす親の年収を500万円（給与所得）、子どもと暮らす親も給与所得とし、養育費は目安の中央値を受け取る前提で計算しています。児童扶養手当は2026年4月分以降の金額です。このほか、児童手当が月額10,000円支給されます。</p>
+    <div class="tablewrap"><table class="hayami">
+      <thead><tr><th>子どもと暮らす親の年収</th><th>養育費の目安（月額）</th><th>児童扶養手当（月額）</th></tr></thead>
+      <tbody>
+        <tr><td>100万円</td><td>4〜6万円</td><td>48,050円<span class="thsub">全部支給</span></td></tr>
+        <tr><td>200万円</td><td>4〜6万円</td><td>33,520円<span class="thsub">一部支給</span></td></tr>
+        <tr><td>300万円</td><td>4〜6万円</td><td>15,040円<span class="thsub">一部支給</span></td></tr>
+        <tr><td>400万円</td><td>2〜4万円</td><td>対象外</td></tr>
+        <tr><td>500万円</td><td>2〜4万円</td><td>対象外</td></tr>
+        <tr><td>600万円</td><td>2〜4万円</td><td>対象外</td></tr>
+      </tbody>
+    </table></div>
+    <p>児童扶養手当は、子どもと暮らす親の年収が高いほど、また受け取る養育費が多いほど減額されます。条件が異なる場合は、ページ上部の質問に答えて計算してください。</p>
+
+    <h2 id="fuyou">扶養と控除のしくみ</h2>
+    <p class="ans">子どもを所得税の扶養親族として申告できるのは、父母のどちらか一方に限られます。どちらが申告するかによって、ひとり親控除と扶養控除の適用を受ける人が変わります。</p>
+    <div class="tablewrap"><table>
+      <thead><tr><th>控除</th><th>控除額</th><th>主な要件</th></tr></thead>
+      <tbody>
+        <tr><td>ひとり親控除</td><td>所得税 <b>35万円</b><br>住民税 <b>30万円</b></td><td>生計を一にする子がいること、合計所得金額が500万円以下であること、事実婚の相手がいないこと。対象となる子は、ほかの人の扶養親族になっていない子に限られます。</td></tr>
+        <tr><td>扶養控除</td><td>所得税 <b>38万円</b><br>住民税 <b>33万円</b></td><td>その年の12月31日時点で16歳以上の扶養親族がいること。15歳以下の子どもは対象外です。</td></tr>
+      </tbody>
+    </table></div>
+    <p>35万円や38万円は所得から差し引かれる金額であり、同額が還付されるわけではありません。実際の軽減額は、控除額に税率を乗じた金額が目安となります。</p>
+    <p>離れて暮らす親であっても、養育費を継続して支払っているなど、子どもと生計を一にしていれば、扶養親族として申告できます。一方、子ども全員が離れて暮らす親の扶養親族になると、子どもと暮らす親がひとり親控除を受けられなくなる場合があります。年末調整や確定申告の前に、どちらが申告するかを父母の間で確認しておくと安心です。</p>
+    <p>共同親権の場合のひとり親控除の取り扱いについては、国税庁の見解を確認できていないため、このページでは掲載していません。個別のケースは、勤務先の年末調整の担当者または税務署にご確認ください。</p>
+
+    <h2 id="seido">離婚後に確認したい制度の一覧</h2>
+    <p class="ans">養育費や手当のほかにも、離婚後の暮らしを支える公的な制度があります。給付や貸付、負担の軽減、期限のある手続き、相談窓口の4つに分けて、34件を掲載しています。分類ごとに、対象となる方の範囲が広い制度から順に並べています。</p>
+    <p>ひとり親を対象とする制度を中心にまとめました。対象となるかどうかは、所得や世帯の状況、お住まいの自治体によって異なります。各制度の内容は2026年11月時点のものです。</p>
+<div id="seidoAll"><div class="slist"><h3>受給・貸付の制度（12件）</h3><p class="slead">まず確認したい5件を表示しています。</p><div class="seido"><details class="sitem"><summary><span class="sname">就学援助</span><span class="stag">小・中学生</span></summary><p>小学生・中学生の学用品費や給食費、修学旅行費などを市区町村が援助する制度です。認定の基準は自治体によって異なります。</p><p class="swhere"><b>窓口</b>　学校、または市区町村の教育委員会</p><p class="ssrc">出典：<a href="https://www.mext.go.jp/a_menu/shotou/career/05010502/017.htm" target="_blank" rel="noopener">文部科学省</a></p></details><details class="sitem"><summary><span class="sname">高等学校等就学支援金</span><span class="stag">高校生</span></summary><p>高校の授業料を支援する制度で、2026年度から所得制限がなくなりました。支給の上限は、公立が年額11万8,800円、私立（全日制）が年額45万7,200円です。</p><p class="swhere"><b>窓口</b>　在学する学校を通じて申請</p><p class="ssrc">出典：<a href="https://www.mext.go.jp/a_menu/shotou/mushouka/index.htm" target="_blank" rel="noopener">文部科学省</a></p></details><details class="sitem"><summary><span class="sname">自立支援教育訓練給付金</span><span class="stag">資格取得</span></summary><p>ひとり親が対象の講座を受講し修了すると、受講料の6割（上限20万円。専門的な講座は上限が引き上げられます）が支給されます。受講開始前に自治体から講座の指定を受ける必要があります。</p><p class="swhere"><b>窓口</b>　市区町村のひとり親家庭支援窓口</p><p class="ssrc">出典：<a href="https://www.cfa.go.jp/policies/hitori-oya/jiritsu-shien-kyuufukin/" target="_blank" rel="noopener">こども家庭庁</a></p></details><details class="sitem"><summary><span class="sname">高等職業訓練促進給付金</span><span class="stag">資格取得</span></summary><p>ひとり親が看護師や保育士などの資格取得を目指して養成機関で学ぶ間、月額10万円（住民税課税世帯は月額7万500円）が支給されます。児童扶養手当の受給者と同程度の所得であることが要件です。</p><p class="swhere"><b>窓口</b>　市区町村のひとり親家庭支援窓口</p><p class="ssrc">出典：<a href="https://www.cfa.go.jp/policies/hitori-oya/syokugyou-kunren/" target="_blank" rel="noopener">こども家庭庁</a></p></details><details class="sitem"><summary><span class="sname">母子父子寡婦福祉資金貸付金</span><span class="stag">貸付</span></summary><p>子どもの進学費用や転居費用、生活資金などを、無利子または低利で借りられる制度です。修学資金や就学支度資金など12種類の資金があります。</p><p class="swhere"><b>窓口</b>　都道府県・市の福祉事務所など</p><p class="ssrc">出典：<a href="https://www.cfa.go.jp/policies/hitori-oya/" target="_blank" rel="noopener">こども家庭庁</a></p></details></div><details class="smore"><summary>そのほかの受給・貸付の制度を表示する（7件）</summary><div class="seido"><details class="sitem"><summary><span class="sname">高校生等奨学給付金</span><span class="stag">高校生</span></summary><p>教科書費や教材費など、授業料以外の教育費を支援する返済不要の給付金です。2026年度から、対象が年収約490万円未満の世帯に拡大されました。就学支援金とは別に申請が必要です。</p><p class="swhere"><b>窓口</b>　在学する学校、または都道府県</p><p class="ssrc">出典：<a href="https://www.mext.go.jp/content/20260616-mxt_shuukyo03-100002595_18.pdf" target="_blank" rel="noopener">文部科学省</a></p></details><details class="sitem"><summary><span class="sname">高等教育の修学支援新制度</span><span class="stag">大学・専門学校への進学</span></summary><p>大学や専門学校の授業料等の減免と、返済不要の給付型奨学金を組み合わせた国の制度です。子どもが3人以上の世帯は、所得にかかわらず授業料等の減免を受けられる場合があります。</p><p class="swhere"><b>窓口</b>　進学先の学校、高校在学中は高校を通じて予約申込</p><p class="ssrc">出典：<a href="https://www.mext.go.jp/kyufu/" target="_blank" rel="noopener">文部科学省</a></p></details><details class="sitem"><summary><span class="sname">ひとり親家庭住宅支援資金貸付</span><span class="stag">住まい</span></summary><p>児童扶養手当の受給者などが就職に向けて取り組む間、家賃を月額7万円まで、原則12か月、無利子で借りられます。就職して1年間就労を続けると、返済が免除されます。</p><p class="swhere"><b>窓口</b>　都道府県・指定都市の窓口</p><p class="ssrc">出典：<a href="https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/0a870592-1814-4b21-bf56-16f06080c594/49ffc01c/20260423_policies_hitori-oya_105.pdf" target="_blank" rel="noopener">こども家庭庁</a></p></details><details class="sitem"><summary><span class="sname">国の教育ローン（日本政策金融公庫）</span><span class="stag">進学費用の貸付</span></summary><p>高校や大学、専門学校などの入学金・授業料に充てられる公的な融資で、子ども1人につき350万円まで借りられます。母子家庭・父子家庭は、基準金利から0.4%の引き下げと、保証料の軽減を受けられます。利用には審査があり、世帯年収の上限が設けられています。</p><p class="swhere"><b>窓口</b>　日本政策金融公庫</p><p class="ssrc">出典：<a href="https://www.jfc.go.jp/n/finance/ippan/sim.html" target="_blank" rel="noopener">日本政策金融公庫</a></p></details><details class="sitem"><summary><span class="sname">特別児童扶養手当・障害児福祉手当</span><span class="stag">子どもに障害がある場合</span></summary><p>障害のある20歳未満の子どもを養育する父母などに支給される手当です。2026年4月分以降の月額は、特別児童扶養手当が1級5万8,450円・2級3万8,930円、障害児福祉手当が1万6,560円です。いずれも所得制限があります。</p><p class="swhere"><b>窓口</b>　市区町村の窓口</p><p class="ssrc">出典：<a href="https://www.mhlw.go.jp/bunya/shougaihoken/jidou/huyou.html" target="_blank" rel="noopener">厚生労働省</a></p></details><details class="sitem"><summary><span class="sname">生活福祉資金貸付制度</span><span class="stag">貸付</span></summary><p>所得の少ない世帯が、子どもの進学費用や当面の生活費を借りられる制度です。教育支援資金は無利子で利用できます。</p><p class="swhere"><b>窓口</b>　市区町村の社会福祉協議会</p><p class="ssrc">出典：<a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/seikatsuhogo/seikatsu-fukushi-shikin1/kashitsukejoken.html" target="_blank" rel="noopener">厚生労働省</a></p></details><details class="sitem"><summary><span class="sname">生活保護</span><span class="stag">生活に困ったとき</span></summary><p>世帯の収入が国の定める最低生活費に満たない場合に、不足分が保護費として支給される制度です。資産や働く能力、ほかの制度の活用が前提となります。申請の前に相談することもできます。</p><p class="swhere"><b>窓口</b>　お住まいの地域を所管する福祉事務所</p><p class="ssrc">出典：<a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/seikatsuhogo/seikatuhogo/index.html" target="_blank" rel="noopener">厚生労働省</a></p></details></div></details><h3>負担を軽減する制度（9件）</h3><p class="slead">まず確認したい5件を表示しています。</p><div class="seido"><details class="sitem"><summary><span class="sname">ひとり親家庭等医療費助成</span><span class="stag">医療費</span></summary><p>ひとり親家庭の親と子どもの医療費の自己負担分を、自治体が助成する制度です。対象や助成の内容は自治体によって異なります。</p><p class="swhere"><b>窓口</b>　市区町村の窓口</p><p class="ssrc">出典：<a href="https://www.soumu.go.jp/main_content/001084750.pdf" target="_blank" rel="noopener">総務省</a></p></details><details class="sitem"><summary><span class="sname">子どもの医療費助成</span><span class="stag">医療費</span></summary><p>すべての市区町村が、子どもの医療費の助成を実施しています。対象年齢や自己負担の有無は自治体によって異なるため、転居の際は改めて確認が必要です。</p><p class="swhere"><b>窓口</b>　市区町村の窓口</p><p class="ssrc">出典：<a href="https://www.cfa.go.jp/policies/boshihoken/kodomoiryouhityousa-r7/" target="_blank" rel="noopener">こども家庭庁</a></p></details><details class="sitem"><summary><span class="sname">幼児教育・保育の無償化と保育料の軽減</span><span class="stag">未就学児</span></summary><p>3歳から5歳までの保育料は無償です。0歳から2歳までは住民税非課税世帯が無償となるほか、ひとり親世帯は所得に応じて保育料が軽減されます。</p><p class="swhere"><b>窓口</b>　市区町村の保育担当窓口</p><p class="ssrc">出典：<a href="https://www.cfa.go.jp/policies/kokoseido/mushouka/" target="_blank" rel="noopener">こども家庭庁</a></p></details><details class="sitem"><summary><span class="sname">国民健康保険料の軽減</span><span class="stag">国民健康保険に加入する方</span></summary><p>世帯の所得が一定額以下の場合、保険料の均等割・平等割が7割・5割・2割のいずれかで軽減されます。未就学児の均等割は5割軽減されます。保険料の額は市区町村によって異なります。</p><p class="swhere"><b>窓口</b>　市区町村の国民健康保険担当窓口</p><p class="ssrc">出典：<a href="https://www.mhlw.go.jp/stf/newpage_21517.html" target="_blank" rel="noopener">厚生労働省</a></p></details><details class="sitem"><summary><span class="sname">国民年金保険料の免除・納付猶予</span><span class="stag">国民年金に加入する方</span></summary><p>前年の所得が一定額以下の場合、申請により国民年金保険料の全額または一部が免除されます。本人、配偶者、世帯主の前年所得が審査の対象となります。</p><p class="swhere"><b>窓口</b>　市区町村の国民年金担当窓口、または年金事務所</p><p class="ssrc">出典：<a href="https://www.nenkin.go.jp/service/kokunen/menjo/20150428.html" target="_blank" rel="noopener">日本年金機構</a></p></details></div><details class="smore"><summary>そのほかの負担を軽減する制度を表示する（4件）</summary><div class="seido"><details class="sitem"><summary><span class="sname">保育所・放課後児童クラブの優先的な取り扱い</span><span class="stag">保育・学童</span></summary><p>保育所の入所や放課後児童クラブの利用にあたっては、ひとり親家庭に特別の配慮をするよう法律で定められています。選考での取り扱いは市区町村によって異なります。</p><p class="swhere"><b>窓口</b>　市区町村の保育・学童保育の担当窓口</p><p class="ssrc">出典：<a href="https://laws.e-gov.go.jp/law/339AC0000000129" target="_blank" rel="noopener">母子及び父子並びに寡婦福祉法 第28条</a></p></details><details class="sitem"><summary><span class="sname">公営住宅の優先入居</span><span class="stag">住まい</span></summary><p>都道府県営・市区町村営の公営住宅では、ひとり親世帯を入居者の選考で優先的に取り扱う場合があります。取り扱いは自治体によって異なります。</p><p class="swhere"><b>窓口</b>　都道府県・市区町村の住宅担当窓口</p><p class="ssrc">出典：<a href="https://www.mlit.go.jp/jutakukentiku/house/jutakukentiku_house_tk3_000096.html" target="_blank" rel="noopener">国土交通省</a></p></details><details class="sitem"><summary><span class="sname">国民年金保険料の育児期間の免除</span><span class="stag">1歳未満の子ども</span></summary><p>2026年10月に始まった制度です。国民年金の第1号被保険者が1歳未満の子どもを養育している場合、所得にかかわらず保険料が免除され、免除期間は保険料を納付したものとして年金額に反映されます。</p><p class="swhere"><b>窓口</b>　市区町村の国民年金担当窓口、または年金事務所</p><p class="ssrc">出典：<a href="https://www.nenkin.go.jp/service/kokunen/menjo/ikujimenjo.html" target="_blank" rel="noopener">日本年金機構</a></p></details><details class="sitem"><summary><span class="sname">JR通勤定期乗車券の割引</span><span class="stag">児童扶養手当の受給世帯</span></summary><p>児童扶養手当を受給している世帯の方は、JRの通勤定期乗車券を割引価格で購入できます。市区町村の窓口で証明書の交付を受けたうえで、駅で購入します。</p><p class="swhere"><b>窓口</b>　市区町村の児童扶養手当担当窓口</p><p class="ssrc">出典：<a href="https://www.cao.go.jp/bunken-suishin/teianbosyu/doc/r07/shi_98_cfa_23.pdf" target="_blank" rel="noopener">内閣府（地方分権改革の提案資料）</a></p></details></div></details><h3>期限のある手続き（6件）</h3><p class="slead">離婚後、一定の期間内に届出や請求が必要な手続きです。</p><div class="seido"><details class="sitem"><summary><span class="sname">離婚後も婚姻中の氏を名乗る届出</span><span class="stag">離婚の日から3か月以内</span></summary><p>離婚後も婚姻中の氏を引き続き名乗る場合は、離婚の日から3か月以内に市区町村へ届け出ます。</p><p class="swhere"><b>窓口</b>　本籍地または所在地の市区町村</p><p class="ssrc">出典：<a href="https://laws.e-gov.go.jp/law/322AC0000000224" target="_blank" rel="noopener">戸籍法 第77条の2</a></p></details><details class="sitem"><summary><span class="sname">国民健康保険・国民年金の切り替え</span><span class="stag">14日以内</span></summary><p>元配偶者の健康保険の被扶養者や、国民年金の第3号被保険者だった方は、離婚後に国民健康保険への加入と国民年金の種別変更の届出が必要です。届出の期限は、いずれも14日以内と定められています。</p><p class="swhere"><b>窓口</b>　市区町村の窓口</p><p class="ssrc">出典：<a href="https://laws.e-gov.go.jp/law/333M50000100053" target="_blank" rel="noopener">国民健康保険法施行規則 第3条</a></p></details><details class="sitem"><summary><span class="sname">年金分割の請求</span><span class="stag">離婚の時期により2年または5年</span></summary><p>婚姻期間中の厚生年金の記録を、元夫婦の間で分割できる制度です。2026年4月1日以降に離婚した場合、請求期限は離婚の翌日から5年以内です。 2026年3月31日までに離婚した場合、請求期限は離婚の翌日から2年以内です。</p><p class="swhere"><b>窓口</b>　年金事務所</p><p class="ssrc">出典：<a href="https://www.nenkin.go.jp/service/jukyu/seido/kyotsu/rikon/20140421-04.html" target="_blank" rel="noopener">日本年金機構</a></p></details><details class="sitem"><summary><span class="sname">財産分与の請求</span><span class="stag">離婚の時期により2年または5年</span></summary><p>婚姻中に夫婦で築いた財産の分与を、家庭裁判所に請求できます。2026年4月1日以降に離婚した場合、請求できる期間は、離婚した日の翌日から5年です。 2026年3月31日までに離婚した場合、請求できる期間は、離婚した日の翌日から2年です。</p><p class="swhere"><b>窓口</b>　家庭裁判所</p><p class="ssrc">出典：<a href="https://www.courts.go.jp/saiban/syurui/syurui_kazi/kazi_07_04/index.html" target="_blank" rel="noopener">裁判所</a></p></details><details class="sitem"><summary><span class="sname">子の氏の変更許可</span><span class="stag">期限なし</span></summary><p>子どもの氏を、ともに暮らす親の氏に変更する場合は、家庭裁判所の許可が必要です。申立ての費用は、子ども1人につき収入印紙800円と郵便切手です。</p><p class="swhere"><b>窓口</b>　子どもの住所地の家庭裁判所</p><p class="ssrc">出典：<a href="https://www.courts.go.jp/saiban/syurui/syurui_kazi/kazi_06_07/index.html" target="_blank" rel="noopener">裁判所</a></p></details><details class="sitem"><summary><span class="sname">養育費の取り決めの文書化</span><span class="stag">養育費が未定の方</span></summary><p>2026年4月から、養育費の取り決めを父母の間で文書にしておけば、公正証書などがなくても差押えを申し立てられるようになりました。優先的に回収できる額は、子ども1人につき月額8万円までです。</p><p class="swhere"><b>窓口</b>　父母の間で作成。公証役場で公正証書にすることもできます</p><p class="ssrc">出典：<a href="https://www.moj.go.jp/content/001449160.pdf" target="_blank" rel="noopener">法務省</a></p></details></div><h3>相談できる窓口（7件）</h3><p class="slead">まず確認したい5件を表示しています。</p><div class="seido"><details class="sitem"><summary><span class="sname">養育費・親子交流相談支援センター</span><span class="stag">養育費・親子交流</span></summary><p>養育費や親子交流の取り決め方、支払いが滞った場合の手続きについて、電話やメールで相談できます。こども家庭庁の委託事業です。電話番号は0120-965-419（携帯電話からは03-3980-4108）です。</p><p class="swhere"><b>窓口</b>　電話・メールで相談</p><p class="ssrc">出典：<a href="https://www.youikuhi-soudan.jp/" target="_blank" rel="noopener">養育費・親子交流相談支援センター</a></p></details><details class="sitem"><summary><span class="sname">法テラス（日本司法支援センター）</span><span class="stag">法律相談</span></summary><p>収入と資産が一定の基準以下の場合、弁護士や司法書士による無料の法律相談（1回30分、同じ問題につき3回まで）を利用でき、依頼する際の費用の立替えも受けられます。</p><p class="swhere"><b>窓口</b>　法テラス・サポートダイヤル 0570-078374</p><p class="ssrc">出典：<a href="https://www.houterasu.or.jp/site/soudan-tatekae/goriyounonagare.html" target="_blank" rel="noopener">法テラス</a></p></details><details class="sitem"><summary><span class="sname">母子家庭等就業・自立支援センター</span><span class="stag">仕事</span></summary><p>ひとり親を対象に、就業相談や就業支援講習会、就業情報の提供を行う窓口です。養育費に関する相談にも対応しています。</p><p class="swhere"><b>窓口</b>　都道府県・指定都市・中核市の窓口</p><p class="ssrc">出典：<a href="https://www.cfa.go.jp/policies/hitori-oya/syuugyou-jiritsu-center" target="_blank" rel="noopener">こども家庭庁</a></p></details><details class="sitem"><summary><span class="sname">家庭裁判所の養育費請求調停・履行勧告</span><span class="stag">養育費</span></summary><p>養育費について父母の協議がまとまらない場合は、家庭裁判所に調停を申し立てることができます。費用は子ども1人につき収入印紙1,200円と郵便切手です。調停などで決まった養育費が支払われない場合は、無料の履行勧告を申し出ることもできます。</p><p class="swhere"><b>窓口</b>　相手方の住所地の家庭裁判所</p><p class="ssrc">出典：<a href="https://www.courts.go.jp/saiban/syurui/syurui_kazi/kazi_07_07/index.html" target="_blank" rel="noopener">裁判所</a></p></details><details class="sitem"><summary><span class="sname">養育費の取り決めにかかる費用の補助</span><span class="stag">自治体の制度</span></summary><p>養育費に関する公正証書の作成費用や、保証会社と契約する際の保証料を補助している自治体があります。国の事業を活用して自治体が実施しているもので、実施の有無と補助額は自治体によって異なります。</p><p class="swhere"><b>窓口</b>　市区町村のひとり親家庭支援窓口</p><p class="ssrc">出典：<a href="https://www.cfa.go.jp/policies/hitori-oya/9116d150" target="_blank" rel="noopener">こども家庭庁</a></p></details></div><details class="smore"><summary>そのほかの相談できる窓口を表示する（2件）</summary><div class="seido"><details class="sitem"><summary><span class="sname">ひとり親家庭等日常生活支援事業</span><span class="stag">暮らし</span></summary><p>修学や病気などで一時的に家事や保育の支援が必要になった場合に、家庭生活支援員の派遣を受けられます。実施の有無と利用者負担は自治体によって異なります。</p><p class="swhere"><b>窓口</b>　市区町村のひとり親家庭支援窓口</p><p class="ssrc">出典：<a href="https://www.cfa.go.jp/policies/hitori-oya/hitorioya-seikatsu-shien/" target="_blank" rel="noopener">こども家庭庁</a></p></details><details class="sitem"><summary><span class="sname">親子交流支援団体の一覧</span><span class="stag">親子交流</span></summary><p>父母だけでは子どもの受け渡しや日程の調整が難しい場合に、親子交流を支援する民間団体があります。法務省が、掲載を希望した団体の一覧を公表しています。</p><p class="swhere"><b>窓口</b>　各支援団体</p><p class="ssrc">出典：<a href="https://www.moj.go.jp/MINJI/minji07_00286.html" target="_blank" rel="noopener">法務省</a></p></details></div></details></div></div>
+
+    <h2 id="faq">よくある質問</h2>
+    <details><summary>入力した内容は、外部に送信されますか？</summary><p>送信されません。計算はすべてお使いのブラウザ内で行われます。アクセス解析では計算が完了した事実のみを記録し、入力した数値や計算結果は記録していません。</p></details>
+    <details><summary>表示された金額を、そのまま受け取れますか？</summary><p>表示される金額は一般的な目安です。養育費は父母の協議や家庭裁判所の手続きで決まり、児童扶養手当は市区町村が、税額は税務署が決定します。</p></details>
+    <details><summary>養育費を受け取ると、児童扶養手当は減りますか？</summary><p>受け取った養育費の8割が、児童扶養手当の所得の計算に算入されます。一部支給に該当する場合、養育費が月額1万円増えると、手当は月額2,530円または2,540円減少します（子ども1人の場合）。所得が全部支給の範囲内であれば、手当は変わりません。</p></details>
+    <details><summary>実家で両親と同居している場合、児童扶養手当は受給できますか？</summary><p>同居する父母、祖父母、きょうだいなどの所得が一定額以上の場合、児童扶養手当は支給されません。扶養親族がいない場合の限度額は、所得236万円です。同居の実態や世帯の状況によって判断が異なるため、お住まいの市区町村にご確認ください。</p></details>
+    <details><summary>子どもの扶養親族の申告は、どちらの親がするのが有利ですか？</summary><p>税率、所得、子どもの年齢や人数によって異なるため、このページでは判定していません。2つのケースの控除額と軽減額の目安を掲載していますので、父母で話し合う際の参考としてご活用ください。個別のケースは税務署にご確認ください。</p></details>
+    <details><summary>健康保険の扶養と、税の扶養は同じですか？</summary><p>別の制度です。所得税の扶養親族と健康保険の被扶養者は、それぞれ異なる法律で定められています。このページで扱っているのは、所得税と住民税の扶養です。</p></details>
+    <details><summary>手当はどこで申請しますか？</summary><p>児童扶養手当と児童手当は、お住まいの市区町村の窓口で申請します。児童扶養手当は、認定請求をした月の翌月分から支給されます。</p></details>
+
+    <details class="calcdetail" id="konkyo">
+      <summary>計算方法の詳細</summary>
+      <dl>
+        <dt>養育費</dt>
+        <dd>裁判所の養育費算定表（令和元年版）の基礎となっている標準算定方式で計算しています。手順は<a href="/youikuhi-keisan/">養育費かんたん計算</a>で解説しています。</dd>
+        <dt>児童扶養手当（2026年4月分以降）</dt>
+        <dd>全部支給は子ども1人で月額48,050円、2人目以降は1人につき11,350円の加算です。判定には、前年の所得に養育費の8割を加え、8万円（給与所得者はさらに10万円）を控除した額を用います。子ども1人の場合、この額が107万円未満で全部支給、246万円未満で一部支給となり、子どもが1人増えるごとに基準が38万円上がります。一部支給の額は、政令で定める計算式により所得に応じて減額されます。</dd>
+        <dt>児童手当</dt>
+        <dd>3歳未満は月額15,000円、3歳から高校生年代までは月額10,000円、第3子以降は月額30,000円です。所得制限はありません。</dd>
+        <dt>所得税・住民税</dt>
+        <dd>2026年分の税制にもとづき、国税庁が示す計算式と速算表（復興特別所得税を含む）で計算しています。住民税の所得割は税率10%です。</dd>
+        <dt id="youikuhi-teate">養育費と児童扶養手当の関係</dt>
+        <dd>受け取った養育費は、8割が児童扶養手当の所得に算入されます。一部支給に該当する場合、養育費が月額1万円増えると、手当は月額2,530円または2,540円減少します（子ども1人の場合）。全部支給の範囲内であれば、手当は変わりません。</dd>
+      </dl>
+    </details>
+
+    <details class="calcdetail" id="zentei">
+      <summary>計算の前提と留意点</summary>
+      <dl>
+        <dt>養育費</dt>
+        <dd>算定表の対象は子ども3人までです。父母がそれぞれ子どもと暮らしている場合の表はありません。</dd>
+        <dt>児童扶養手当</dt>
+        <dd>前年も同じ年収だったものとして計算しています。離婚した年や収入が大きく変動した年は、実際の支給額との差が大きくなります。公的年金を受け取っている場合の減額と、受給開始から5年を経過した場合の減額は反映していません。同居する家族の所得による支給制限は、所得236万円を基準に判定しています。</dd>
+        <dt>児童手当</dt>
+        <dd>18歳の年度末を過ぎた22歳までのきょうだいがいる場合の数え方には対応していません。</dd>
+        <dt>所得税・住民税</dt>
+        <dd>社会保険料が未入力の場合は、年収の15%と仮定しています。この割合は当社が設定した仮定であり、法令で定められた数値ではありません。住宅ローン控除、医療費控除、生命保険料控除、寄附金控除などは反映していません。</dd>
+        <dt>子どもの年齢</dt>
+        <dd>12月31日時点の満年齢を基準としています。年度の変わり目では、手当の対象が実際と1年ずれることがあります。</dd>
+      </dl>
+    </details>
+
+    <p class="sources">出典：裁判所「平成30年度司法研究（養育費，婚姻費用の算定に関する実証的研究）の報告について」（<a href="https://www.courts.go.jp/toukei_siryou/siryo/H30shihou_houkoku/index.html" target="_blank" rel="noopener">courts.go.jp</a>）／法務省「父母の離婚後の子の養育に関するルールが改正されました」（<a href="https://www.moj.go.jp/content/001449160.pdf" target="_blank" rel="noopener">moj.go.jp・PDF</a>）／こども家庭庁「児童扶養手当について」（<a href="https://www.cfa.go.jp/policies/hitori-oya/fuyou-teate" target="_blank" rel="noopener">cfa.go.jp</a>）／児童扶養手当法 第3条・第4条・第10条・第13条の2（<a href="https://laws.e-gov.go.jp/law/336AC0000000238" target="_blank" rel="noopener">e-Gov法令検索</a>）／児童扶養手当法施行令 第2条の2・第2条の4・第4条（<a href="https://laws.e-gov.go.jp/law/336CO0000000405" target="_blank" rel="noopener">e-Gov法令検索</a>）／こども家庭庁「児童手当制度のご案内」（<a href="https://www.cfa.go.jp/policies/kokoseido/jidouteate/annai" target="_blank" rel="noopener">cfa.go.jp</a>）／国税庁 タックスアンサー No.1171 ひとり親控除（<a href="https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1171.htm" target="_blank" rel="noopener">nta.go.jp</a>）・No.1180 扶養控除（<a href="https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1180.htm" target="_blank" rel="noopener">nta.go.jp</a>）・No.1410 給与所得控除（<a href="https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1410.htm" target="_blank" rel="noopener">nta.go.jp</a>）・No.2260 所得税の税率（<a href="https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/2260.htm" target="_blank" rel="noopener">nta.go.jp</a>）／国税庁 質疑応答事例「生計を一にするかどうかの判定（養育費の負担）」（<a href="https://www.nta.go.jp/law/shitsugi/shotoku/05/65.htm" target="_blank" rel="noopener">nta.go.jp</a>）／国税庁「令和8年分 年末調整のしかた」（<a href="https://www.nta.go.jp/publication/pamph/gensen/nencho2026/01.htm" target="_blank" rel="noopener">nta.go.jp</a>）／総務省「個人住民税」（<a href="https://www.soumu.go.jp/main_sosiki/jichi_zeisei/czaisei/czaisei_seido/150790_06.html" target="_blank" rel="noopener">soumu.go.jp</a>）。数値の最終確認日：2026年11月12日。</p>
+
+    <div class="related">
+      <h2>関連ページ</h2>
+      <a href="/youikuhi-keisan/">養育費かんたん計算（子どもごとの内訳・印刷） <span>→</span></a>
+      <a href="/guide/hitorioya-shien-matome/">ひとり親が使える公的支援・手当まとめ <span>→</span></a>
+      <a href="/guide/yoiku-hi-soba-jukyu/">養育費の相場はいくら？算定表の見方 <span>→</span></a>
+      <a href="/guide/rikon-torikime-checklist/">離婚時に決めることチェックリスト <span>→</span></a>
+      <a href="/">はぐみぃ（共同養育アプリ）について <span>→</span></a>
+    </div>
+
+    <div class="disclaimer">
+      このページの計算結果は一般的な目安であり、個別の事情に応じた判断を示すものではありません。<br>
+      計算は、裁判所、こども家庭庁、国税庁などの公表資料と、法令に定められた計算式にもとづいています。実際の養育費は父母の協議や家庭裁判所の手続きで決まり、手当の額は市区町村が、税額は税務署が決定します。取り決めや申請、申告にあたっては、市区町村のひとり親家庭支援窓口、税務署、家庭裁判所、法テラス、弁護士、養育費・親子交流相談支援センターなどの専門機関にご相談ください。
+    </div>
+  </article>
+</main>
+
+<style>
+  .footer-resources{max-width:800px;margin:0 auto 28px;text-align:left}
+  .footer-resources__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .footer-resource{display:flex;align-items:center;gap:14px;padding:16px;background:#fff;border:1px solid rgba(139,111,94,.16);border-radius:14px;text-decoration:none;box-shadow:0 4px 16px rgba(83,61,47,.07);transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+  .footer-resource:hover{transform:translateY(-2px);border-color:rgba(181,123,94,.4);box-shadow:0 8px 22px rgba(83,61,47,.11)}
+  .footer-resource:focus-visible{outline:3px solid rgba(181,123,94,.3);outline-offset:3px}
+  .footer-resource__logo{display:flex;flex:0 0 48px;align-items:center;justify-content:center;width:48px;height:48px;border-radius:13px;background:#fff}
+  .footer-resource__logo--note{border:1px solid #e5e5e5;color:#111;font-size:14px;font-weight:800;letter-spacing:-.04em}
+  .footer-resource__logo--youtube{background:#fff1f3}
+  .footer-resource__youtube-mark{position:relative;width:30px;height:21px;border-radius:6px;background:#ff0033}
+  .footer-resource__youtube-mark::after{content:"";position:absolute;top:6px;left:12px;border-top:4.5px solid transparent;border-bottom:4.5px solid transparent;border-left:7px solid #fff}
+  .footer-resource__desc{display:block;min-width:0;color:var(--sub,#6f6862);font-size:13px;font-weight:400;line-height:1.7}
+  @media(max-width:620px){.footer-resources{margin-bottom:24px}.footer-resources__grid{grid-template-columns:1fr}.footer-resource{padding:14px}}
+</style>
+<footer>
+  <section class="footer-resources" aria-label="はぐみぃを理解するための情報">
+    <div class="footer-resources__grid">
+      <a class="footer-resource" href="https://note.com/tigerlabo" target="_blank" rel="noopener" aria-label="note：面会交流・養育費・制度を、公的資料からやさしく整理">
+        <span class="footer-resource__logo footer-resource__logo--note" aria-hidden="true">note</span>
+        <span class="footer-resource__desc">面会交流・養育費・制度を、公的資料からやさしく整理</span>
+      </a>
+      <a class="footer-resource" href="https://www.youtube.com/@hugme_jp" target="_blank" rel="noopener" aria-label="YouTube：はぐみぃの使い方と、子育てに役立つ短い解説">
+        <span class="footer-resource__logo footer-resource__logo--youtube" aria-hidden="true"><span class="footer-resource__youtube-mark"></span></span>
+        <span class="footer-resource__desc">はぐみぃの使い方と、子育てに役立つ短い解説</span>
+      </a>
+    </div>
+  </section>
+  <div class="flinks">
+    <a href="/">はぐみぃトップ</a>
+    <a href="/guide/">共同養育ガイド</a>
+    <a href="/support/">サポート・お問い合わせ</a>
+    <a href="/for-professionals/">支援団体・士業・自治体の方へ</a>
+    <a href="/privacy/">プライバシーポリシー</a>
+    <a href="/terms/">利用規約</a>
+    <a href="/support/#operator">運営会社：株式会社タイガーラボ</a>
+  </div>
+  <div>運営：株式会社タイガーラボ　最終更新：2026年9月2日</div>
+  <div>© 2026 TIGERLABO Inc.</div>
+</footer>
+
+<script>
+/* 離婚後の子育てのお金 まとめて計算 ― 計算の部品（画面に依存しない）
+   数字の出どころは「計算の根拠の対応表.md」に1行ずつ書いてある。数字を変えるときは対応表も直す。
+   金額の単位は、養育費の式だけ「万円」、それ以外は「円」。 */
+(function (root) {
+  'use strict';
+
+  /* ── 1. 養育費（裁判所の標準算定方式。既存の「養育費かんたん計算」と同じ式・同じ数字） ── */
+  var KYUYO = [[75,.54],[100,.50],[125,.46],[175,.44],[275,.43],[525,.42],[725,.41],[1325,.40],[1475,.39],[2000,.38]];
+  var JIEI  = [[66,.61],[82,.60],[98,.59],[256,.58],[349,.57],[392,.56],[496,.55],[563,.54],[784,.53],[942,.52],[1046,.51],[1179,.50],[1482,.49],[1567,.48]];
+  var IDX_YOUNG = 62, IDX_OLD = 85;
+
+  function kiso(man, jiei) {
+    var t = jiei ? JIEI : KYUYO, i;
+    if (man <= 0) return 0;
+    for (i = 0; i < t.length; i++) { if (man <= t[i][0]) return man * t[i][1]; }
+    return man * t[t.length - 1][1];
+  }
+  function band(v) {
+    if (v < 1) return [0, 1];
+    if (v < 2) return [1, 2];
+    var lo = Math.floor(v / 2) * 2;
+    return [lo, lo + 2];
+  }
+  function monthly(xa, xb, z, za) {
+    if (xa <= 0 || z <= 0) return 0;
+    if (!za) {
+      var xbEff = Math.min(xb, xa);
+      return (xa * z / (100 + z)) * xa / (xa + xbEff) / 12;
+    }
+    return (xa * z / (100 + z + za)) * xa / (xa + xb) / 12;
+  }
+  function idxOf(age) { return age >= 15 ? IDX_OLD : IDX_YOUNG; }
+
+  /** 養育費の目安。p.a / p.b = {man:年収(万円), jiei:bool}、kids = [{age, carer:'a'|'b'}]
+      返り値 payer は 'a'（あなたが支払う）か 'b'。amount は月額（万円）。 */
+  function youikuhi(a, b, kids) {
+    var zA = 0, zB = 0;
+    kids.forEach(function (k) { if (k.carer === 'a') zA += idxOf(k.age); else zB += idxOf(k.age); });
+    var xa = kiso(a.man, a.jiei), xb = kiso(b.man, b.jiei);
+    var split = zA > 0 && zB > 0, payer = 'a', amount = 0;
+    if (split) {
+      var net = monthly(xa, xb, zB, zA) - monthly(xb, xa, zA, zB);
+      payer = net >= 0 ? 'a' : 'b'; amount = Math.abs(net);
+    } else if (zB > 0) { payer = 'a'; amount = monthly(xa, xb, zB, 0); }
+    else if (zA > 0) { payer = 'b'; amount = monthly(xb, xa, zA, 0); }
+    return { payer: payer, amount: amount, band: band(amount), split: split };
+  }
+
+  /* ── 2. 給与所得（国税庁 No.1410 のページにある計算式をそのまま） ── */
+  function base4k(x) { return Math.trunc(x / 4000) * 4000; }
+  /** 令和8年分・令和9年分（2026年分の所得税に使う） */
+  function kyuyoShotokuR08(x) {
+    if (x <= 740999) return 0;
+    if (x < 2191000) return x - 740000;
+    if (x < 2193000) return 1451000;
+    if (x < 2196000) return 1453000;
+    if (x < 2200000) return 1456000;
+    if (x < 3600000) return Math.trunc(base4k(x) * 7 / 10) - 80000;
+    if (x < 6600000) return Math.trunc(base4k(x) * 8 / 10) - 440000;
+    if (x < 8500000) return Math.floor(x * 9 / 10) - 1100000;
+    return x - 1950000;
+  }
+  /** 令和7年分（2025年の所得。2026年11月分からの児童扶養手当の判定に使う） */
+  function kyuyoShotokuR07(x) {
+    if (x <= 650999) return 0;
+    if (x < 1900000) return x - 650000;
+    if (x < 3600000) return Math.trunc(base4k(x) * 7 / 10) - 80000;
+    if (x < 6600000) return Math.trunc(base4k(x) * 8 / 10) - 440000;
+    if (x < 8500000) return Math.floor(x * 9 / 10) - 1100000;
+    return x - 1950000;
+  }
+
+  /* ── 3. 所得税・住民税（2026年分） ── */
+  var KISO_MAX_GOUKEI = 23500000;   // この額を超える合計所得は計算の対象外にする
+  /** 所得税の基礎控除（令和8・9年分。国税庁「令和8年分 年末調整のしかた」3ページ） */
+  function kisoKojoR08(goukei) {
+    if (goukei <= 4890000) return 1040000;
+    if (goukei <= 6550000) return 670000;
+    return 620000;
+  }
+  var SOKUSAN = [[1949000,.05,0],[3299000,.10,97500],[6949000,.20,427500],[8999000,.23,636000],[17999000,.33,1536000],[39999000,.40,2796000],[Infinity,.45,4796000]];
+  /** 所得税と復興特別所得税（2.1%）の合計。kazei は課税される所得金額 */
+  function shotokuzei(kazei) {
+    var k = Math.floor(Math.max(0, kazei) / 1000) * 1000, i;
+    if (k <= 0) return 0;
+    for (i = 0; i < SOKUSAN.length; i++) {
+      if (k <= SOKUSAN[i][0]) return Math.floor((k * SOKUSAN[i][1] - SOKUSAN[i][2]) * 1.021);
+    }
+    return 0;
+  }
+  function zeiritsu(kazei) {
+    var k = Math.floor(Math.max(0, kazei) / 1000) * 1000, i;
+    if (k <= 0) return 0;
+    for (i = 0; i < SOKUSAN.length; i++) { if (k <= SOKUSAN[i][0]) return SOKUSAN[i][1]; }
+    return 0;
+  }
+  var HITORIOYA = { shotoku: 350000, jumin: 300000, limit: 5000000 };   // No.1171／地方税法314条の2
+  var FUYO = { shotoku: 380000, jumin: 330000, minAge: 16 };            // No.1180／地方税法314条の2（16〜18歳）
+  var JUMIN_KISO = 430000, JUMIN_RATE = 0.10, JUMIN_HIKAZEI_HITORIOYA = 1350000;
+  var SHAHO_RATE_KARI = 0.15;   // 社会保険料を入れなかったときの仮置き（原典なし。画面と対応表に「仮定」と書く）
+
+  /** 親1人ぶんの所得の土台。p = {yen:年収(円), jiei:bool, shaho:社会保険料(円)またはnull} */
+  function shotokuBase(p) {
+    var goukei = p.jiei ? Math.max(0, p.yen) : kyuyoShotokuR08(p.yen);
+    var shaho = (p.shaho === null || p.shaho === undefined) ? Math.round(p.yen * SHAHO_RATE_KARI) : p.shaho;
+    return { goukei: goukei, shaho: shaho, shahoKari: (p.shaho === null || p.shaho === undefined),
+             over: goukei > KISO_MAX_GOUKEI };
+  }
+  /** 控除を当てはめたときの、所得税（復興特別所得税を含む）と住民税の所得割の軽くなる目安 */
+  function keigen(base, kojoShotoku, kojoJumin, hitorioya) {
+    var kazei0 = base.goukei - base.shaho - kisoKojoR08(base.goukei);
+    var s = shotokuzei(kazei0) - shotokuzei(kazei0 - kojoShotoku);
+    var jk0 = Math.max(0, base.goukei - base.shaho - JUMIN_KISO);
+    var j = Math.floor(Math.min(jk0, kojoJumin) * JUMIN_RATE);
+    var hikazei = !!hitorioya && base.goukei <= JUMIN_HIKAZEI_HITORIOYA;
+    return { shotoku: s, jumin: j, juminHikazei: hikazei, ritsu: zeiritsu(kazei0) };
+  }
+  /** 税の2つの場合を並べる。carerOf = 子ども全員を主にみている親（'a'/'b'）。双方がみている場合は null を返す。 */
+  function zei(a, b, kids, opt) {
+    var nA = kids.filter(function (k) { return k.carer === 'a'; }).length;
+    if (nA > 0 && nA < kids.length) return null;
+    var carer = nA > 0 ? 'a' : 'b';
+    var pc = carer === 'a' ? a : b, po = carer === 'a' ? b : a;
+    var bc = shotokuBase(pc), bo = shotokuBase(po);
+    var n16 = kids.filter(function (k) { return k.age >= FUYO.minAge; }).length;
+    var hOK = bc.goukei <= HITORIOYA.limit && !(opt && opt.jijitsukon);   // 事実婚の相手がいると、ひとり親控除の対象外（No.1171）
+    // 場合1：子ども全員が、主にみている親の扶養親族
+    var c1 = keigen(bc, (hOK ? HITORIOYA.shotoku : 0) + n16 * FUYO.shotoku, (hOK ? HITORIOYA.jumin : 0) + n16 * FUYO.jumin, hOK);
+    // 場合2：子ども全員が、もう一方の親の扶養親族
+    var o2 = keigen(bo, n16 * FUYO.shotoku, n16 * FUYO.jumin, false);
+    return { carer: carer, n16: n16, hitorioyaOK: hOK, baseCarer: bc, baseOther: bo,
+      case1: { carer: c1, carerKojo: { hitorioya: hOK ? HITORIOYA.shotoku : 0, fuyo: n16 * FUYO.shotoku }, other: { shotoku: 0, jumin: 0 } },
+      case2: { carer: { shotoku: 0, jumin: 0 }, other: o2, otherKojo: { fuyo: n16 * FUYO.shotoku } } };
+  }
+
+  /* ── 4. 児童扶養手当（令和8年4月からの額。児童扶養手当法施行令 第2条の2・第2条の4・第4条） ── */
+  var TEATE = { full: 48050, add: 11350, k1: 0.0264029, k2: 0.0040719,
+                l1: 690000, l2: 2080000, per: 380000, perTokutei: 530000,
+                kyuyoMinus: 100000, ichiritsu: 80000, youikuhiRate: 0.8, maxAge: 18 };
+  function round10(v) { var r = v % 10; return r < 5 ? v - r : v - r + 10; }   // 5円未満切捨て・5円以上は10円に切上げ
+  /** p = {yen, jiei}（前年の年収。入力した年収が前年も同じだったと置く）、
+      kids = この親がみている子どもの年齢の配列、youikuhiNen = 受け取った養育費の年額（円）、
+      tokutei = 16〜18歳の子どものうち、この親の所得税の扶養親族になっている人数 */
+  function jidoFuyoTeate(p, ages, youikuhiNen, tokutei) {
+    var target = ages.filter(function (g) { return g <= TEATE.maxAge; });
+    var n = target.length;
+    if (!n) return { n: 0, kubun: 'なし', monthly: 0 };
+    var base = p.jiei ? Math.max(0, p.yen) : Math.max(0, kyuyoShotokuR07(p.yen) - TEATE.kyuyoMinus);
+    var yk = Math.round(youikuhiNen * TEATE.youikuhiRate);
+    var shotoku = Math.max(0, base + yk - TEATE.ichiritsu);
+    var t = Math.min(tokutei || 0, n);
+    var plus = (n - t) * TEATE.per + t * TEATE.perTokutei;
+    var l1 = TEATE.l1 + plus, l2 = TEATE.l2 + plus;
+    var out = { n: n, shotoku: shotoku, base: base, youikuhi80: yk, l1: l1, l2: l2 };
+    if (shotoku >= l2) { out.kubun = '対象外'; out.monthly = 0; return out; }
+    if (shotoku < l1) { out.kubun = '全部支給'; out.monthly = TEATE.full + (n - 1) * TEATE.add; return out; }
+    var d = shotoku - l1;
+    var kihon = TEATE.full - (round10(Math.floor(d * TEATE.k1)) + 10);
+    var kasan = TEATE.add - (round10(Math.floor(d * TEATE.k2)) + 10);
+    out.kubun = '一部支給'; out.monthly = kihon + (n - 1) * kasan; out.kihon = kihon; out.kasan = kasan;
+    return out;
+  }
+
+  /** 同居する扶養義務者（子どもと暮らす親の父母・祖父母・きょうだいなど）の所得による制限。
+      児童扶養手当法 第10条、施行令 第2条の4第7項。扶養親族がいないものとして 236万円で判定する。
+      yen = その人の年収、jiei = 自営かどうか。限度額以上なら true（手当は支給されない） */
+  var GIMUSHA_LIMIT = 2360000;
+  function fuyoGimushaOver(yen, jiei) {
+    var base = jiei ? Math.max(0, yen) : Math.max(0, kyuyoShotokuR07(yen) - TEATE.kyuyoMinus);
+    var shotoku = Math.max(0, base - TEATE.ichiritsu);
+    return { shotoku: shotoku, limit: GIMUSHA_LIMIT, over: shotoku >= GIMUSHA_LIMIT };
+  }
+
+  /* ── 5. 児童手当（こども家庭庁「児童手当制度のご案内」） ── */
+  /** ages = 同じ親がみている子どもの年齢。年齢が上の子から数えて3人目以降は月30,000円 */
+  function jidoTeate(ages) {
+    var s = ages.filter(function (g) { return g <= 18; }).sort(function (x, y) { return y - x; });
+    return s.reduce(function (t, g, i) { return t + (i >= 2 ? 30000 : (g < 3 ? 15000 : 10000)); }, 0);
+  }
+
+  var api = { kiso: kiso, band: band, monthly: monthly, youikuhi: youikuhi,
+    kyuyoShotokuR08: kyuyoShotokuR08, kyuyoShotokuR07: kyuyoShotokuR07, kisoKojoR08: kisoKojoR08,
+    shotokuzei: shotokuzei, shotokuBase: shotokuBase, keigen: keigen, zei: zei,
+    jidoFuyoTeate: jidoFuyoTeate, jidoTeate: jidoTeate, fuyoGimushaOver: fuyoGimushaOver,
+    C: { TEATE: TEATE, HITORIOYA: HITORIOYA, FUYO: FUYO, SHAHO_RATE_KARI: SHAHO_RATE_KARI, KISO_MAX_GOUKEI: KISO_MAX_GOUKEI } };
+  if (typeof module !== 'undefined' && module.exports) module.exports = api; else root.HugmeCalc = api;
+})(typeof window !== 'undefined' ? window : this);
+
+</script>
+<script>
+/* あわせて確認したい制度の一覧。数字と条件の出どころは「制度の一覧の対応表.md」に書いてある。
+   when は、結果の画面でこの制度を表示する条件の名前（ui.js の WHEN を参照）。'all' は常に表示。 */
+(function (root) {
+  'use strict';
+  var GROUPS = [
+    { id: 'kane', title: '受給・貸付の制度', lead: '子どもの教育費や、資格取得・住まいを支える給付と貸付です。' },
+    { id: 'keigen', title: '負担を軽減する制度', lead: '保険料や保育料、医療費などの負担が軽減される制度です。' },
+    { id: 'kigen', title: '期限のある手続き', lead: '離婚後、一定の期間内に届出や請求が必要な手続きです。' },
+    { id: 'soudan', title: '相談できる窓口', lead: '養育費や仕事、暮らしについて相談できる公的な窓口です。' }
+  ];
+  var LIST = [
+    /* ── 受給・貸付 ── */
+    { g: 'kane', when: 'shochu', name: '就学援助', tag: '小・中学生',
+      text: '小学生・中学生の学用品費や給食費、修学旅行費などを市区町村が援助する制度です。認定の基準は自治体によって異なります。',
+      where: '学校、または市区町村の教育委員会', src: '文部科学省', url: 'https://www.mext.go.jp/a_menu/shotou/career/05010502/017.htm' },
+    { g: 'kane', when: 'koko', name: '高等学校等就学支援金', tag: '高校生',
+      text: '高校の授業料を支援する制度で、2026年度から所得制限がなくなりました。支給の上限は、公立が年額11万8,800円、私立（全日制）が年額45万7,200円です。',
+      where: '在学する学校を通じて申請', src: '文部科学省', url: 'https://www.mext.go.jp/a_menu/shotou/mushouka/index.htm' },
+    { g: 'kane', when: 'koko', name: '高校生等奨学給付金', tag: '高校生',
+      text: '教科書費や教材費など、授業料以外の教育費を支援する返済不要の給付金です。2026年度から、対象が年収約490万円未満の世帯に拡大されました。就学支援金とは別に申請が必要です。',
+      where: '在学する学校、または都道府県', src: '文部科学省', url: 'https://www.mext.go.jp/content/20260616-mxt_shuukyo03-100002595_18.pdf' },
+    { g: 'kane', when: 'shingaku', name: '高等教育の修学支援新制度', tag: '大学・専門学校への進学',
+      text: '大学や専門学校の授業料等の減免と、返済不要の給付型奨学金を組み合わせた国の制度です。子どもが3人以上の世帯は、所得にかかわらず授業料等の減免を受けられる場合があります。',
+      where: '進学先の学校、高校在学中は高校を通じて予約申込', src: '文部科学省', url: 'https://www.mext.go.jp/kyufu/' },
+    { g: 'kane', when: 'all', name: '自立支援教育訓練給付金', tag: '資格取得',
+      text: 'ひとり親が対象の講座を受講し修了すると、受講料の6割（上限20万円。専門的な講座は上限が引き上げられます）が支給されます。受講開始前に自治体から講座の指定を受ける必要があります。',
+      where: '市区町村のひとり親家庭支援窓口', src: 'こども家庭庁', url: 'https://www.cfa.go.jp/policies/hitori-oya/jiritsu-shien-kyuufukin/' },
+    { g: 'kane', when: 'all', name: '高等職業訓練促進給付金', tag: '資格取得',
+      text: 'ひとり親が看護師や保育士などの資格取得を目指して養成機関で学ぶ間、月額10万円（住民税課税世帯は月額7万500円）が支給されます。児童扶養手当の受給者と同程度の所得であることが要件です。',
+      where: '市区町村のひとり親家庭支援窓口', src: 'こども家庭庁', url: 'https://www.cfa.go.jp/policies/hitori-oya/syokugyou-kunren/' },
+    { g: 'kane', when: 'all', name: '母子父子寡婦福祉資金貸付金', tag: '貸付',
+      text: '子どもの進学費用や転居費用、生活資金などを、無利子または低利で借りられる制度です。修学資金や就学支度資金など12種類の資金があります。',
+      where: '都道府県・市の福祉事務所など', src: 'こども家庭庁', url: 'https://www.cfa.go.jp/policies/hitori-oya/' },
+    { g: 'kane', when: 'teate', name: 'ひとり親家庭住宅支援資金貸付', tag: '住まい',
+      text: '児童扶養手当の受給者などが就職に向けて取り組む間、家賃を月額7万円まで、原則12か月、無利子で借りられます。就職して1年間就労を続けると、返済が免除されます。',
+      where: '都道府県・指定都市の窓口', src: 'こども家庭庁', url: 'https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/0a870592-1814-4b21-bf56-16f06080c594/49ffc01c/20260423_policies_hitori-oya_105.pdf' },
+    { g: 'kane', when: 'all', name: '特別児童扶養手当・障害児福祉手当', tag: '子どもに障害がある場合',
+      text: '障害のある20歳未満の子どもを養育する父母などに支給される手当です。2026年4月分以降の月額は、特別児童扶養手当が1級5万8,450円・2級3万8,930円、障害児福祉手当が1万6,560円です。いずれも所得制限があります。',
+      where: '市区町村の窓口', src: '厚生労働省', url: 'https://www.mhlw.go.jp/bunya/shougaihoken/jidou/huyou.html' },
+    { g: 'kane', when: 'all', name: '生活福祉資金貸付制度', tag: '貸付',
+      text: '所得の少ない世帯が、子どもの進学費用や当面の生活費を借りられる制度です。教育支援資金は無利子で利用できます。',
+      where: '市区町村の社会福祉協議会', src: '厚生労働省', url: 'https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/seikatsuhogo/seikatsu-fukushi-shikin1/kashitsukejoken.html' },
+
+    { g: 'kane', when: 'koko', name: '国の教育ローン（日本政策金融公庫）', tag: '進学費用の貸付',
+      text: '高校や大学、専門学校などの入学金・授業料に充てられる公的な融資で、子ども1人につき350万円まで借りられます。母子家庭・父子家庭は、基準金利から0.4%の引き下げと、保証料の軽減を受けられます。利用には審査があり、世帯年収の上限が設けられています。',
+      where: '日本政策金融公庫', src: '日本政策金融公庫', url: 'https://www.jfc.go.jp/n/finance/ippan/sim.html' },
+    { g: 'kane', when: 'all', name: '生活保護', tag: '生活に困ったとき',
+      text: '世帯の収入が国の定める最低生活費に満たない場合に、不足分が保護費として支給される制度です。資産や働く能力、ほかの制度の活用が前提となります。申請の前に相談することもできます。',
+      where: 'お住まいの地域を所管する福祉事務所', src: '厚生労働省', url: 'https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/seikatsuhogo/seikatuhogo/index.html' },
+
+    /* ── 負担の軽減 ── */
+    { g: 'keigen', when: 'kokunen', name: '国民年金保険料の免除・納付猶予', tag: '国民年金に加入する方',
+      text: '前年の所得が一定額以下の場合、申請により国民年金保険料の全額または一部が免除されます。本人、配偶者、世帯主の前年所得が審査の対象となります。',
+      where: '市区町村の国民年金担当窓口、または年金事務所', src: '日本年金機構', url: 'https://www.nenkin.go.jp/service/kokunen/menjo/20150428.html' },
+    { g: 'keigen', when: 'ikuji', name: '国民年金保険料の育児期間の免除', tag: '1歳未満の子ども',
+      text: '2026年10月に始まった制度です。国民年金の第1号被保険者が1歳未満の子どもを養育している場合、所得にかかわらず保険料が免除され、免除期間は保険料を納付したものとして年金額に反映されます。',
+      where: '市区町村の国民年金担当窓口、または年金事務所', src: '日本年金機構', url: 'https://www.nenkin.go.jp/service/kokunen/menjo/ikujimenjo.html' },
+    { g: 'keigen', when: 'kokunen', name: '国民健康保険料の軽減', tag: '国民健康保険に加入する方',
+      text: '世帯の所得が一定額以下の場合、保険料の均等割・平等割が7割・5割・2割のいずれかで軽減されます。未就学児の均等割は5割軽減されます。保険料の額は市区町村によって異なります。',
+      where: '市区町村の国民健康保険担当窓口', src: '厚生労働省', url: 'https://www.mhlw.go.jp/stf/newpage_21517.html' },
+    { g: 'keigen', when: 'hoiku', name: '幼児教育・保育の無償化と保育料の軽減', tag: '未就学児',
+      text: '3歳から5歳までの保育料は無償です。0歳から2歳までは住民税非課税世帯が無償となるほか、ひとり親世帯は所得に応じて保育料が軽減されます。',
+      where: '市区町村の保育担当窓口', src: 'こども家庭庁', url: 'https://www.cfa.go.jp/policies/kokoseido/mushouka/' },
+    { g: 'keigen', when: 'all', name: 'ひとり親家庭等医療費助成', tag: '医療費',
+      text: 'ひとり親家庭の親と子どもの医療費の自己負担分を、自治体が助成する制度です。対象や助成の内容は自治体によって異なります。',
+      where: '市区町村の窓口', src: '総務省', url: 'https://www.soumu.go.jp/main_content/001084750.pdf' },
+    { g: 'keigen', when: 'all', name: '子どもの医療費助成', tag: '医療費',
+      text: 'すべての市区町村が、子どもの医療費の助成を実施しています。対象年齢や自己負担の有無は自治体によって異なるため、転居の際は改めて確認が必要です。',
+      where: '市区町村の窓口', src: 'こども家庭庁', url: 'https://www.cfa.go.jp/policies/boshihoken/kodomoiryouhityousa-r7/' },
+    { g: 'keigen', when: 'all', name: '公営住宅の優先入居', tag: '住まい',
+      text: '都道府県営・市区町村営の公営住宅では、ひとり親世帯を入居者の選考で優先的に取り扱う場合があります。取り扱いは自治体によって異なります。',
+      where: '都道府県・市区町村の住宅担当窓口', src: '国土交通省', url: 'https://www.mlit.go.jp/jutakukentiku/house/jutakukentiku_house_tk3_000096.html' },
+    { g: 'keigen', when: 'hoikuGakudo', name: '保育所・放課後児童クラブの優先的な取り扱い', tag: '保育・学童',
+      text: '保育所の入所や放課後児童クラブの利用にあたっては、ひとり親家庭に特別の配慮をするよう法律で定められています。選考での取り扱いは市区町村によって異なります。',
+      where: '市区町村の保育・学童保育の担当窓口', src: '母子及び父子並びに寡婦福祉法 第28条', url: 'https://laws.e-gov.go.jp/law/339AC0000000129' },
+    { g: 'keigen', when: 'teateKyuyo', name: 'JR通勤定期乗車券の割引', tag: '児童扶養手当の受給世帯',
+      text: '児童扶養手当を受給している世帯の方は、JRの通勤定期乗車券を割引価格で購入できます。市区町村の窓口で証明書の交付を受けたうえで、駅で購入します。',
+      where: '市区町村の児童扶養手当担当窓口', src: '内閣府（地方分権改革の提案資料）', url: 'https://www.cao.go.jp/bunken-suishin/teianbosyu/doc/r07/shi_98_cfa_23.pdf' },
+
+    /* ── 期限のある手続き ── */
+    { g: 'kigen', when: 'all', name: '離婚後も婚姻中の氏を名乗る届出', tag: '離婚の日から3か月以内',
+      text: '離婚後も婚姻中の氏を引き続き名乗る場合は、離婚の日から3か月以内に市区町村へ届け出ます。',
+      where: '本籍地または所在地の市区町村', src: '戸籍法 第77条の2', url: 'https://laws.e-gov.go.jp/law/322AC0000000224' },
+    { g: 'kigen', when: 'all', name: '国民健康保険・国民年金の切り替え', tag: '14日以内',
+      text: '元配偶者の健康保険の被扶養者や、国民年金の第3号被保険者だった方は、離婚後に国民健康保険への加入と国民年金の種別変更の届出が必要です。届出の期限は、いずれも14日以内と定められています。',
+      where: '市区町村の窓口', src: '国民健康保険法施行規則 第3条', url: 'https://laws.e-gov.go.jp/law/333M50000100053' },
+    { g: 'kigen', when: 'after', name: '年金分割の請求', tag: '離婚の翌日から5年以内',
+      text: '婚姻期間中の厚生年金の記録を、元夫婦の間で分割できる制度です。2026年4月1日以降に離婚した場合、請求期限は離婚の翌日から5年以内です。',
+      where: '年金事務所', src: '日本年金機構', url: 'https://www.nenkin.go.jp/service/jukyu/seido/kyotsu/rikon/20140421-04.html' },
+    { g: 'kigen', when: 'before', name: '年金分割の請求', tag: '離婚の翌日から2年以内',
+      text: '婚姻期間中の厚生年金の記録を、元夫婦の間で分割できる制度です。2026年3月31日までに離婚した場合、請求期限は離婚の翌日から2年以内です。',
+      where: '年金事務所', src: '日本年金機構', url: 'https://www.nenkin.go.jp/service/jukyu/seido/kyotsu/rikon/20140421-04.html' },
+    { g: 'kigen', when: 'after', name: '財産分与の請求', tag: '離婚の翌日から5年以内',
+      text: '婚姻中に夫婦で築いた財産の分与を、家庭裁判所に請求できます。2026年4月1日以降に離婚した場合、請求できる期間は、離婚した日の翌日から5年です。',
+      where: '家庭裁判所', src: '裁判所', url: 'https://www.courts.go.jp/saiban/syurui/syurui_kazi/kazi_07_04/index.html' },
+    { g: 'kigen', when: 'before', name: '財産分与の請求', tag: '離婚の翌日から2年以内',
+      text: '婚姻中に夫婦で築いた財産の分与を、家庭裁判所に請求できます。2026年3月31日までに離婚した場合、請求できる期間は、離婚した日の翌日から2年です。',
+      where: '家庭裁判所', src: '裁判所', url: 'https://www.courts.go.jp/saiban/syurui/syurui_kazi/kazi_07_04/index.html' },
+    { g: 'kigen', when: 'all', name: '子の氏の変更許可', tag: '期限なし',
+      text: '子どもの氏を、ともに暮らす親の氏に変更する場合は、家庭裁判所の許可が必要です。申立ての費用は、子ども1人につき収入印紙800円と郵便切手です。',
+      where: '子どもの住所地の家庭裁判所', src: '裁判所', url: 'https://www.courts.go.jp/saiban/syurui/syurui_kazi/kazi_06_07/index.html' },
+    { g: 'kigen', when: 'mitorikime', name: '養育費の取り決めの文書化', tag: '養育費が未定の方',
+      text: '2026年4月から、養育費の取り決めを父母の間で文書にしておけば、公正証書などがなくても差押えを申し立てられるようになりました。優先的に回収できる額は、子ども1人につき月額8万円までです。',
+      where: '父母の間で作成。公証役場で公正証書にすることもできます', src: '法務省', url: 'https://www.moj.go.jp/content/001449160.pdf' },
+
+    /* ── 相談窓口 ── */
+    { g: 'soudan', when: 'all', name: '養育費・親子交流相談支援センター', tag: '養育費・親子交流',
+      text: '養育費や親子交流の取り決め方、支払いが滞った場合の手続きについて、電話やメールで相談できます。こども家庭庁の委託事業です。電話番号は0120-965-419（携帯電話からは03-3980-4108）です。',
+      where: '電話・メールで相談', src: '養育費・親子交流相談支援センター', url: 'https://www.youikuhi-soudan.jp/' },
+    { g: 'soudan', when: 'all', name: '法テラス（日本司法支援センター）', tag: '法律相談',
+      text: '収入と資産が一定の基準以下の場合、弁護士や司法書士による無料の法律相談（1回30分、同じ問題につき3回まで）を利用でき、依頼する際の費用の立替えも受けられます。',
+      where: '法テラス・サポートダイヤル 0570-078374', src: '法テラス', url: 'https://www.houterasu.or.jp/site/soudan-tatekae/goriyounonagare.html' },
+    { g: 'soudan', when: 'all', name: '家庭裁判所の養育費請求調停・履行勧告', tag: '養育費',
+      text: '養育費について父母の協議がまとまらない場合は、家庭裁判所に調停を申し立てることができます。費用は子ども1人につき収入印紙1,200円と郵便切手です。調停などで決まった養育費が支払われない場合は、無料の履行勧告を申し出ることもできます。',
+      where: '相手方の住所地の家庭裁判所', src: '裁判所', url: 'https://www.courts.go.jp/saiban/syurui/syurui_kazi/kazi_07_07/index.html' },
+    { g: 'soudan', when: 'all', name: '養育費の取り決めにかかる費用の補助', tag: '自治体の制度',
+      text: '養育費に関する公正証書の作成費用や、保証会社と契約する際の保証料を補助している自治体があります。国の事業を活用して自治体が実施しているもので、実施の有無と補助額は自治体によって異なります。',
+      where: '市区町村のひとり親家庭支援窓口', src: 'こども家庭庁', url: 'https://www.cfa.go.jp/policies/hitori-oya/9116d150' },
+    { g: 'soudan', when: 'all', name: '母子家庭等就業・自立支援センター', tag: '仕事',
+      text: 'ひとり親を対象に、就業相談や就業支援講習会、就業情報の提供を行う窓口です。養育費に関する相談にも対応しています。',
+      where: '都道府県・指定都市・中核市の窓口', src: 'こども家庭庁', url: 'https://www.cfa.go.jp/policies/hitori-oya/syuugyou-jiritsu-center' },
+    { g: 'soudan', when: 'all', name: 'ひとり親家庭等日常生活支援事業', tag: '暮らし',
+      text: '修学や病気などで一時的に家事や保育の支援が必要になった場合に、家庭生活支援員の派遣を受けられます。実施の有無と利用者負担は自治体によって異なります。',
+      where: '市区町村のひとり親家庭支援窓口', src: 'こども家庭庁', url: 'https://www.cfa.go.jp/policies/hitori-oya/hitorioya-seikatsu-shien/' },
+    { g: 'soudan', when: 'all', name: '親子交流支援団体の一覧', tag: '親子交流',
+      text: '父母だけでは子どもの受け渡しや日程の調整が難しい場合に、親子交流を支援する民間団体があります。法務省が、掲載を希望した団体の一覧を公表しています。',
+      where: '各支援団体', src: '法務省', url: 'https://www.moj.go.jp/MINJI/minji07_00286.html' }
+  ];
+  /* ── 並び順と属性 ──
+     並び順は、対象となる人の範囲が広い制度を先にした編集上の順番（利用件数の統計による順位ではない）。
+     各分類の先頭5件を最初に表示し、残りは「そのほかの制度」に折りたたむ。期限のある手続きはすべて表示する。 */
+  var ORDER = {
+    kane: ['就学援助', '高等学校等就学支援金', '自立支援教育訓練給付金', '高等職業訓練促進給付金', '母子父子寡婦福祉資金貸付金',
+           '高校生等奨学給付金', '高等教育の修学支援新制度', 'ひとり親家庭住宅支援資金貸付', '国の教育ローン（日本政策金融公庫）',
+           '特別児童扶養手当・障害児福祉手当', '生活福祉資金貸付制度', '生活保護'],
+    keigen: ['ひとり親家庭等医療費助成', '子どもの医療費助成', '幼児教育・保育の無償化と保育料の軽減', '国民健康保険料の軽減', '国民年金保険料の免除・納付猶予',
+             '保育所・放課後児童クラブの優先的な取り扱い', '公営住宅の優先入居', '国民年金保険料の育児期間の免除', 'JR通勤定期乗車券の割引'],
+    soudan: ['養育費・親子交流相談支援センター', '法テラス（日本司法支援センター）', '母子家庭等就業・自立支援センター', '家庭裁判所の養育費請求調停・履行勧告',
+             '養育費の取り決めにかかる費用の補助', 'ひとり親家庭等日常生活支援事業', '親子交流支援団体の一覧']
+  };
+  var ATTRS = [['mishu', '未就学児がいる'], ['shochu', '小・中学生がいる'], ['koko', '高校生がいる'], ['shikaku', '資格取得・仕事探し'],
+               ['sumai', '住まいを確保したい'], ['seikatsu', '生活費が不足している'], ['hoken', '国民健康保険・国民年金に加入'],
+               ['youikuhi', '養育費を取り決めたい'], ['shogai', '子どもに障害がある']];
+  var ATTR_OF = {
+    '就学援助': ['shochu'], '高等学校等就学支援金': ['koko'], '高校生等奨学給付金': ['koko'], '高等教育の修学支援新制度': ['koko'],
+    '国の教育ローン（日本政策金融公庫）': ['koko'], '自立支援教育訓練給付金': ['shikaku'], '高等職業訓練促進給付金': ['shikaku'],
+    '母子父子寡婦福祉資金貸付金': ['seikatsu', 'koko', 'sumai'], 'ひとり親家庭住宅支援資金貸付': ['sumai', 'shikaku'],
+    '特別児童扶養手当・障害児福祉手当': ['shogai'], '生活福祉資金貸付制度': ['seikatsu', 'koko'], '生活保護': ['seikatsu'],
+    '国民年金保険料の免除・納付猶予': ['hoken', 'seikatsu'], '国民年金保険料の育児期間の免除': ['hoken', 'mishu'], '国民健康保険料の軽減': ['hoken', 'seikatsu'],
+    '幼児教育・保育の無償化と保育料の軽減': ['mishu'], 'ひとり親家庭等医療費助成': ['mishu', 'shochu', 'koko'], '子どもの医療費助成': ['mishu', 'shochu', 'koko'],
+    '公営住宅の優先入居': ['sumai'], '保育所・放課後児童クラブの優先的な取り扱い': ['mishu', 'shochu'], 'JR通勤定期乗車券の割引': ['shikaku'],
+    '国民健康保険・国民年金の切り替え': ['hoken'], '養育費の取り決めの文書化': ['youikuhi'],
+    '養育費・親子交流相談支援センター': ['youikuhi'], '法テラス（日本司法支援センター）': ['youikuhi'], '家庭裁判所の養育費請求調停・履行勧告': ['youikuhi'],
+    '養育費の取り決めにかかる費用の補助': ['youikuhi'], '母子家庭等就業・自立支援センター': ['shikaku'], 'ひとり親家庭等日常生活支援事業': ['mishu', 'shochu'],
+    '親子交流支援団体の一覧': []
+  };
+  LIST.forEach(function (it) { it.attr = ATTR_OF[it.name] || []; });
+  LIST.sort(function (x, y) {
+    var gx = GROUPS.map(function (g) { return g.id; }).indexOf(x.g), gy = GROUPS.map(function (g) { return g.id; }).indexOf(y.g);
+    if (gx !== gy) return gx - gy;
+    var o = ORDER[x.g]; if (!o) return 0;
+    return o.indexOf(x.name) - o.indexOf(y.name);
+  });
+  var TOP = 5;
+
+  /** 離婚の時期で2通りある項目（年金分割・財産分与）を1つにまとめた一覧（本文の一覧用） */
+  function merged() {
+    var out = [];
+    LIST.forEach(function (it) {
+      var prev = null; out.forEach(function (m) { if (m.name === it.name) prev = m; });
+      if (prev) { prev.text += ' ' + it.text.replace(/^.*?。/, ''); prev.tag = '離婚の時期により2年または5年'; }
+      else { var c = {}; Object.keys(it).forEach(function (k) { c[k] = it[k]; }); out.push(c); }
+    });
+    return out;
+  }
+  function itemHtml(it) {
+    return '<details class="sitem"><summary><span class="sname">' + it.name + '</span><span class="stag">' + it.tag + '</span></summary><p>' + it.text + '</p>' +
+      '<p class="swhere"><b>窓口</b>　' + it.where + '</p><p class="ssrc">出典：<a href="' + it.url + '" target="_blank" rel="noopener">' + it.src + '</a></p></details>';
+  }
+  /** 一覧の HTML。attr を指定すると、その属性に関係する制度だけをすべて表示する。
+      指定しないときは、分類ごとに先頭5件を表示し、残りを折りたたむ（期限のある手続きはすべて表示）。 */
+  function listHtml(items, attr) {
+    var h = '', n = 0;
+    GROUPS.forEach(function (gp) {
+      var its = items.filter(function (it) { return it.g === gp.id && (!attr || it.attr.indexOf(attr) >= 0); });
+      if (!its.length) return;
+      n += its.length;
+      var all = !!attr || gp.id === 'kigen' || its.length <= TOP;
+      var head = all ? its : its.slice(0, TOP), rest = all ? [] : its.slice(TOP);
+      h += '<h3>' + gp.title + '（' + its.length + '件）</h3><p class="slead">' + (rest.length ? 'まず確認したい' + TOP + '件を表示しています。' : gp.lead) + '</p>' +
+        '<div class="seido">' + head.map(itemHtml).join('') + '</div>' +
+        (rest.length ? '<details class="smore"><summary>そのほかの' + gp.title + 'を表示する（' + rest.length + '件）</summary><div class="seido">' + rest.map(itemHtml).join('') + '</div></details>' : '');
+    });
+    if (!n) h = '<p class="slead">該当する制度はありません。</p>';
+    return h;
+  }
+  /** 絞り込みのボタン。items の中に1件以上ある属性だけを出す */
+  function chipsHtml(items, cur, hide) {
+    var h = '<div class="chips" role="group" aria-label="状況で絞り込む"><button type="button" class="chip' + (!cur ? ' on' : '') + '" data-attr="">すべて</button>';
+    ATTRS.forEach(function (a) {
+      if (hide && hide.indexOf(a[0]) >= 0) return;
+      if (!items.some(function (it) { return it.attr.indexOf(a[0]) >= 0; })) return;
+      h += '<button type="button" class="chip' + (cur === a[0] ? ' on' : '') + '" data-attr="' + a[0] + '">' + a[1] + '</button>';
+    });
+    return h + '</div>';
+  }
+  var api = { GROUPS: GROUPS, LIST: LIST, ATTRS: ATTRS, merged: merged, listHtml: listHtml, chipsHtml: chipsHtml };
+  if (typeof module !== 'undefined' && module.exports) module.exports = api; else root.HugmeSeido = api;
+})(typeof window !== 'undefined' ? window : this);
+
+</script>
+<script>
+/* 離婚後の子育てのお金 まとめて計算 ― 画面の部品（質問に1つずつ答える形）。計算は calc-core.js（HugmeCalc）に任せる。 */
+(function () {
+  'use strict';
+  var C = window.HugmeCalc;
+  var $ = function (id) { return document.getElementById(id); };
+  var wiz = $('wiz');
+
+  /* ── 回答（初期値） ── */
+  var S = { n: 1, ages: [5], live: 'a', carers: ['a'],
+            workA: 'k', incA: '', workB: 'k', incB: '',
+            rikon: 'after', torikime: 'no', paid: '',
+            dokyo: 'no', dokyoWork: 'k', dokyoInc: '', nenkin: 'no', jijitsu: 'no',
+            shahoA: '', shahoB: '' };
+  var step = 0, fired = false;
+
+  /* ── 小道具 ── */
+  function yen(v) { return Math.round(v).toLocaleString('ja-JP') + '円'; }
+  function man(v) { return (Math.round(v * 10) / 10) + '万円'; }
+  function who(c) { return c === 'a' ? 'あなた' : '相手'; }
+  function other(c) { return c === 'a' ? 'b' : 'a'; }
+  function numOf(v, max) { var x = parseFloat(v); return (isFinite(x) && x >= 0) ? Math.min(x, max || 9999) : null; }
+  function choice(name, opts, cur) {
+    return '<div class="choices" role="radiogroup">' + opts.map(function (o) {
+      return '<label class="choice' + (cur === o[0] ? ' on' : '') + '"><input type="radio" name="' + name + '" value="' + o[0] + '"' +
+        (cur === o[0] ? ' checked' : '') + '><span>' + o[1] + (o[2] ? '<small>' + o[2] + '</small>' : '') + '</span></label>';
+    }).join('') + '</div>';
+  }
+  function ageSelect(i, cur) {
+    var h = '<select data-age="' + i + '" aria-label="' + (i + 1) + '人目の年齢">', a;
+    for (a = 0; a <= 18; a++) h += '<option value="' + a + '"' + (a === cur ? ' selected' : '') + '>' + a + '歳</option>';
+    return h + '</select>';
+  }
+  function incomeBlock(key, label) {
+    var w = S['work' + key];
+    return choice('work' + key, [['k', '給与所得', '会社員・公務員・パート・アルバイト'], ['j', '事業所得', '個人事業主・フリーランス'], ['n', '収入はない']], w) +
+      '<div class="sub" data-show="income"' + (w === 'n' ? ' hidden' : '') + '><label class="f" for="inc' + key + '">' + label + '</label>' +
+      '<div class="unit"><input type="number" id="inc' + key + '" min="0" max="9999" step="1" inputmode="numeric" value="' + S['inc' + key] + '" placeholder="例：300"><span>万円</span></div>' +
+      '<p class="hint" data-hint="k"' + (w === 'j' ? ' hidden' : '') + '>税金や社会保険料が引かれる前の金額です。源泉徴収票の「支払金額」をご覧ください。</p>' +
+      '<p class="hint" data-hint="j"' + (w === 'j' ? '' : ' hidden') + '>確定申告書の「課税される所得金額」に、基礎控除や青色申告特別控除など、実際には支出していない控除を加えた金額です。</p></div>';
+  }
+
+  /* ── 質問の定義 ── */
+  var STEPS = [
+    { title: '子どもは何人ですか',
+      body: function () { return choice('n', [1, 2, 3, 4, 5, 6].map(function (i) { return [String(i), i + '人']; }), String(S.n)); },
+      read: function () { var v = wiz.querySelector('input[name=n]:checked'); S.n = v ? parseInt(v.value, 10) : 1;
+        while (S.ages.length < S.n) { S.ages.push(5); S.carers.push(S.live === 'b' ? 'b' : 'a'); }
+        S.ages.length = S.n; S.carers.length = S.n; return true; } },
+    { title: '子どもの年齢を教えてください', lead: '今年の12月31日時点の満年齢を選択してください。18歳までが対象です。',
+      body: function () { return '<div class="agegrid">' + S.ages.map(function (a, i) {
+        return '<label class="agecell"><span>' + (i + 1) + '人目</span>' + ageSelect(i, a) + '</label>'; }).join('') + '</div>'; },
+      read: function () { Array.prototype.forEach.call(wiz.querySelectorAll('select[data-age]'), function (el) {
+        S.ages[parseInt(el.getAttribute('data-age'), 10)] = parseInt(el.value, 10); }); return true; } },
+    { title: '子どもと主に暮らしているのは、どちらですか', lead: '離婚後の予定でもかまいません。',
+      body: function () {
+        var opts = [['a', 'あなた'], ['b', '相手', '元配偶者、または離婚を予定している配偶者']];
+        if (S.n > 1) opts.push(['split', 'きょうだいで分かれて暮らしている']);
+        if (S.n === 1 && S.live === 'split') S.live = 'a';
+        return choice('live', opts, S.live) + '<div class="sub" data-show="split"' + (S.live === 'split' ? '' : ' hidden') + '>' +
+          S.ages.map(function (a, i) { return '<label class="agecell"><span>' + (i + 1) + '人目（' + a + '歳）</span><select data-carer="' + i + '">' +
+            '<option value="a"' + (S.carers[i] === 'a' ? ' selected' : '') + '>あなたと暮らしている</option><option value="b"' + (S.carers[i] === 'b' ? ' selected' : '') + '>相手と暮らしている</option></select></label>'; }).join('') + '</div>'; },
+      read: function () { var v = wiz.querySelector('input[name=live]:checked'); S.live = v ? v.value : 'a';
+        if (S.live === 'split') Array.prototype.forEach.call(wiz.querySelectorAll('select[data-carer]'), function (el) { S.carers[parseInt(el.getAttribute('data-carer'), 10)] = el.value; });
+        else S.carers = S.ages.map(function () { return S.live; });
+        return true; } },
+    { title: 'あなたの収入について教えてください',
+      body: function () { return incomeBlock('A', '年収（額面）'); },
+      read: function () { return readIncome('A'); } },
+    { title: '相手の収入について教えてください', lead: '正確な金額が分からない場合は、おおよその金額でかまいません。',
+      body: function () { return incomeBlock('B', '年収（額面）'); },
+      read: function () { return readIncome('B'); } },
+    { title: '離婚の時期を教えてください',
+      body: function () { return choice('rikon', [['after', '2026年4月1日以降に離婚した'], ['yet', 'これから離婚する予定'], ['before', '2026年3月31日までに離婚した']], S.rikon); },
+      read: function () { var v = wiz.querySelector('input[name=rikon]:checked'); S.rikon = v ? v.value : 'after'; return true; } },
+    { title: '養育費の金額は決まっていますか',
+      body: function () { return choice('torikime', [['no', 'まだ決まっていない', '算定表の目安をもとに計算します'], ['yes', '決まっている']], S.torikime) +
+        '<div class="sub" data-show="paid"' + (S.torikime === 'yes' ? '' : ' hidden') + '><label class="f" for="paid">養育費の月額（子ども全員の合計）</label>' +
+        '<div class="unit"><input type="number" id="paid" min="0" max="99" step="0.1" inputmode="decimal" value="' + S.paid + '" placeholder="例：5"><span>万円</span></div></div>'; },
+      read: function () { var v = wiz.querySelector('input[name=torikime]:checked'); S.torikime = v ? v.value : 'no';
+        if (S.torikime === 'yes') { var p = numOf($('paid').value, 99); if (p === null) return '養育費の月額を入力してください。'; S.paid = String(p); }
+        return true; } },
+    { title: '子どもと暮らす親は、自分の父母やきょうだいと同居していますか', lead: '児童扶養手当は、同居する父母、祖父母、きょうだいなどの所得が一定額以上の場合、支給されません。',
+      body: function () { return choice('dokyo', [['no', '同居していない'], ['yes', '同居している（同居する予定）']], S.dokyo) +
+        '<div class="sub" data-show="dokyo"' + (S.dokyo === 'yes' ? '' : ' hidden') + '><p class="hint">同居する家族のうち、収入が最も多い方について入力してください。</p>' +
+        choice('dokyoWork', [['k', '給与所得'], ['j', '事業所得'], ['n', '収入はない、または年金のみ']], S.dokyoWork) +
+        '<label class="f" for="dokyoInc">その方の年収（額面）</label><div class="unit"><input type="number" id="dokyoInc" min="0" max="9999" step="1" inputmode="numeric" value="' + S.dokyoInc + '" placeholder="例：400"><span>万円</span></div></div>'; },
+      read: function () { var v = wiz.querySelector('input[name=dokyo]:checked'); S.dokyo = v ? v.value : 'no';
+        if (S.dokyo === 'yes') { var w = wiz.querySelector('input[name=dokyoWork]:checked'); S.dokyoWork = w ? w.value : 'k';
+          var d = numOf($('dokyoInc').value); S.dokyoInc = d === null ? '' : String(d);
+          if (S.dokyoWork !== 'n' && d === null) return '同居する家族の年収を入力してください。'; }
+        return true; } },
+    { title: '子どもと暮らす親は、遺族年金や障害年金を受け取っていますか', lead: '国から年金を受け取っている場合、児童扶養手当は年金額に応じて減額されます。年金保険料を納めているだけの方は「受け取っていない」を選択してください。',
+      body: function () { return choice('nenkin', [['no', '受け取っていない'], ['yes', '受け取っている', '遺族年金（配偶者などが亡くなった場合の年金）、障害年金（病気やけがで生活や仕事に支障がある場合の年金）、老齢年金など']], S.nenkin); },
+      read: function () { var v = wiz.querySelector('input[name=nenkin]:checked'); S.nenkin = v ? v.value : 'no'; return true; } },
+    { title: '子どもと暮らす親に、再婚相手や事実婚のパートナーはいますか', lead: '婚姻届を提出していなくても、生計をともにするパートナーがいる場合は「いる」を選択してください。',
+      body: function () { return choice('jijitsu', [['no', 'いない'], ['yes', 'いる']], S.jijitsu); },
+      read: function () { var v = wiz.querySelector('input[name=jijitsu]:checked'); S.jijitsu = v ? v.value : 'no'; return true; } }
+  ];
+  function readIncome(key) {
+    var w = wiz.querySelector('input[name=work' + key + ']:checked'); S['work' + key] = w ? w.value : 'k';
+    if (S['work' + key] === 'n') { S['inc' + key] = '0'; return true; }
+    var v = numOf($('inc' + key).value);
+    if (v === null) return '年収を入力してください。';
+    S['inc' + key] = String(v); return true;
+  }
+
+  /* ── 質問の表示 ── */
+  function show() {
+    var st = STEPS[step], pct = Math.round((step) / STEPS.length * 100);
+    wiz.innerHTML = '<div class="progress" aria-hidden="true"><div style="width:' + pct + '%"></div></div>' +
+      '<p class="stepno">質問 ' + (step + 1) + ' / ' + STEPS.length + '</p>' +
+      '<h2 id="qtitle" tabindex="-1">' + st.title + '</h2>' + (st.lead ? '<p class="hint">' + st.lead + '</p>' : '') +
+      '<div class="qbody">' + st.body() + '</div><p class="err" id="qerr" role="alert"></p>' +
+      '<div class="navbtns">' + (step > 0 ? '<button type="button" class="btn btn-sub" id="prevBtn">戻る</button>' : '<span></span>') +
+      '<button type="button" class="btn btn-main" id="nextBtn">' + (step === STEPS.length - 1 ? '結果を見る' : '次へ') + '</button></div>';
+    $('nextBtn').addEventListener('click', next);
+    if (step > 0) $('prevBtn').addEventListener('click', function () { STEPS[step].read(); step--; show(); focusTitle(); });
+  }
+  function focusTitle() { var t = $('qtitle'); if (t) { t.focus({ preventScroll: true }); $('calcform').scrollIntoView({ behavior: 'smooth', block: 'start' }); } }
+  wiz.addEventListener('change', function (e) {
+    var t = e.target;
+    if (t.type !== 'radio') return;
+    Array.prototype.forEach.call(wiz.querySelectorAll('input[name="' + t.name + '"]'), function (r) { r.parentNode.classList.toggle('on', r.checked); });
+    var map = { live: ['split', 'split'], torikime: ['paid', 'yes'], dokyo: ['dokyo', 'yes'] };
+    if (map[t.name]) { var el = wiz.querySelector('[data-show="' + map[t.name][0] + '"]'); if (el) el.hidden = t.value !== map[t.name][1]; }
+    if (t.name === 'workA' || t.name === 'workB') {
+      wiz.querySelector('[data-show="income"]').hidden = t.value === 'n';
+      wiz.querySelector('[data-hint="k"]').hidden = t.value === 'j';
+      wiz.querySelector('[data-hint="j"]').hidden = t.value !== 'j';
+    }
+  });
+  function next() {
+    var r = STEPS[step].read();
+    if (r !== true) { $('qerr').textContent = r; return; }
+    if (step < STEPS.length - 1) { step++; show(); focusTitle(); }
+    else { $('calcform').hidden = true; render(); $('result').hidden = false; $('result').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (!fired) { fired = true; if (window.hugmeAnalytics) window.hugmeAnalytics.event('okane_calc_complete'); } }   // 入力値・金額は送らない
+  }
+
+  /* ── 制度の一覧（上位5件＋そのほか、状況で絞り込むボタン） ── */
+  function mountSeido(el, items, before, after, hide) {
+    var cur = '';
+    function draw() {
+      el.innerHTML = (before || '') + '<p class="chiplabel">状況に合わせて絞り込む</p>' + window.HugmeSeido.chipsHtml(items, cur, hide) +
+        '<div class="slist">' + window.HugmeSeido.listHtml(items, cur) + '</div>' + (after || '');
+    }
+    el.onclick = function (e) {
+      var b = e.target.closest ? e.target.closest('.chip') : null;
+      if (!b) return;
+      cur = b.getAttribute('data-attr'); draw();
+    };
+    draw();
+  }
+
+  /* ── 結果 ── */
+  function parent(key) {
+    var m = S['work' + key] === 'n' ? 0 : (numOf(S['inc' + key]) || 0), sh = numOf(S['shaho' + key], 999);
+    return { man: m, yen: Math.round(m * 10000), jiei: S['work' + key] === 'j', shaho: sh === null ? null : Math.round(sh * 10000) };
+  }
+  function row(label, value, sub) {
+    return '<tr><th scope="row">' + label + (sub ? '<span class="thsub">' + sub + '</span>' : '') + '</th><td>' + value + '</td></tr>';
+  }
+  function render() {
+    var a = parent('A'), b = parent('B');
+    var kids = S.ages.map(function (g, i) { return { age: g, carer: S.carers[i] }; });
+    var y = C.youikuhi(a, b, kids), recv = other(y.payer);
+    var paid = S.torikime === 'yes' ? numOf(S.paid, 99) : null;
+    var used = paid === null ? (y.amount > 0 ? (y.band[0] + y.band[1]) / 2 : 0) : paid;
+    var usedNen = Math.round(used * 10000) * 12;
+    var bandText = y.band[0] + '〜' + y.band[1] + '万円';
+    var jijitsu = S.jijitsu === 'yes';
+    var gim = (S.dokyo === 'yes' && S.dokyoWork !== 'n') ? C.fuyoGimushaOver(Math.round((numOf(S.dokyoInc) || 0) * 10000), S.dokyoWork === 'j') : null;
+
+    /* 1 養育費 */
+    var h1 = '<p class="r-dir">' + who(y.payer) + 'から' + who(recv) + 'へ、月額</p><p class="r-amount">' + bandText + '</p>' +
+      '<p class="r-note">裁判所の養育費算定表（令和元年版）の基礎となっている標準算定方式で算出した目安です。</p>';
+    var notes = [];
+    if (y.split) notes.push('父母がそれぞれ子どもと暮らしている場合の算定表は、公表されていません。標準算定方式の考え方を当てはめた参考値です。');
+    if (S.n > 3) notes.push('算定表の対象は子ども3人までです。4人以上の場合は、同じ計算式を当てはめた参考値となります。');
+    if (!y.split) {
+      h1 += '<div class="cbox" style="margin-top:14px"><div class="t">法定養育費（取り決めがない場合）</div>' +
+        (S.rikon === 'before'
+          ? '<div class="v">対象外</div><div class="d">法定養育費は、2026年4月1日以降に離婚した場合に限り発生します。</div>'
+          : '<div class="v">月額' + (S.n * 2) + '万円</div><div class="d">子ども1人につき月額2万円です。養育費の取り決めをせずに離婚した場合、取り決めが成立するまでの間、暫定的に請求できます。算定表の目安とは別の制度です。</div>') + '</div>';
+    }
+    if (paid !== null) h1 += '<p class="r-note">手当の計算には、入力された養育費（月額' + man(paid) + '）を使用しています。</p>';
+    if (notes.length) h1 += '<p class="r-warn">' + notes.join('<br>') + '</p>';
+    h1 += '<p class="r-note">子どもごとの内訳は、<a href="/youikuhi-keisan/">養育費かんたん計算</a>で確認できます。</p>';
+    $('rYouikuhi').innerHTML = h1;
+
+    /* 2 手当 */
+    var h2 = '', sumRows = [];
+    ['a', 'b'].forEach(function (c) {
+      var ages = kids.filter(function (k) { return k.carer === c; }).map(function (k) { return k.age; });
+      if (!ages.length) return;
+      var p = c === 'a' ? a : b, yk = (c === recv) ? usedNen : 0;
+      var n16 = ages.filter(function (g) { return g >= 16; }).length;
+      var t = C.jidoFuyoTeate(p, ages, yk, n16), t0 = n16 ? C.jidoFuyoTeate(p, ages, yk, 0) : null, jt = C.jidoTeate(ages);
+      var stop = jijitsu ? '再婚相手や事実婚のパートナーがいる場合、児童扶養手当は原則として支給されません。'
+        : (gim && gim.over ? '同居する家族の所得が限度額（236万円）以上のため、児童扶養手当は支給されない見込みです。' : '');
+      var teate = stop ? 0 : t.monthly;
+      h2 += '<h3>' + who(c) + 'が受給できる手当（子ども' + ages.length + '人）</h3><div class="tablewrap"><table class="kv"><tbody>' +
+        row('児童扶養手当', stop ? '<b>支給対象外の見込み</b>' : ('<b>' + (t.monthly ? '月額 ' + yen(t.monthly) + '</b>（' + t.kubun + '）' : '支給対象外</b><span class="thsub">所得が限度額以上のため</span>')), '2026年4月分以降の金額') +
+        row('児童手当', '<b>月額 ' + yen(jt) + '</b>', '所得制限なし') + '</tbody></table></div>';
+      if (stop) h2 += '<p class="r-warn">' + stop + '</p>';
+      else {
+        h2 += '<details><summary>児童扶養手当の計算の内訳</summary><p>' +
+          (p.jiei ? '所得 ' + yen(t.base) : '給与所得から10万円を差し引いた額 ' + yen(t.base)) + ' に、養育費の8割にあたる ' + yen(t.youikuhi80) +
+          ' を加え、一律控除の8万円を差し引いた ' + yen(t.shotoku) + ' が、判定に用いる所得です。子ども' + t.n + '人の場合、所得が ' + yen(t.l1) +
+          ' 未満で全部支給、' + yen(t.l2) + ' 未満で一部支給となります。' + (c === recv ? '養育費は月額' + man(used) + 'として計算しました。' : '') + '</p></details>';
+        if (c === recv && t.kubun === '一部支給') {
+          var t2 = C.jidoFuyoTeate(p, ages, yk + 120000, n16);
+          if (t2.kubun === '一部支給') h2 += '<p class="callout">養育費が月額1万円増えると、児童扶養手当は月額 <b>' + yen(t.monthly - t2.monthly) +
+            '</b> 減少します。養育費の8割が所得に算入されるためです。差し引きでは、月額 ' + yen(10000 - (t.monthly - t2.monthly)) + ' の増加となります。</p>';
+        }
+        if (t0 && t0.monthly !== t.monthly) h2 += '<p class="r-note">16〜18歳の子どもを' + who(c) + 'の扶養親族として申告している場合の金額です。申告していない場合は限度額が1人につき15万円低くなり、目安は月額 ' + yen(t0.monthly) + ' となります。</p>';
+        if (gim && !gim.over) h2 += '<p class="r-note">同居する家族の所得は限度額（236万円）未満として判定しました。その方に扶養親族がいる場合、限度額は1人につき38万円高くなります。</p>';
+        if (S.nenkin === 'yes') h2 += '<p class="r-warn">遺族年金や障害年金などの公的年金を受け取っている場合、児童扶養手当は年金額に応じて全部または一部が支給されません。上記の金額から減額される可能性があります。</p>';
+      }
+      sumRows.push({ c: c, teate: teate, jido: jt });
+    });
+    h2 += '<p class="r-note">児童扶養手当は前年の所得をもとに決定されます。ここでは、前年も同じ年収だったものとして計算しています。受給開始から5年を経過した場合の減額は反映していません。支給額は市区町村が決定します。</p>';
+    $('rTeate').innerHTML = h2;
+
+    /* 3 税 */
+    var z = C.zei(a, b, kids, { jijitsukon: jijitsu }), h3 = '';
+    if (!z) h3 = '<p>きょうだいで分かれて暮らしている場合は、子どもごとの申告のしかたによって結果が変わるため、金額を表示していません。「扶養と控除のしくみ」をご参照のうえ、税務署にご確認ください。</p>';
+    else if (z.baseCarer.over || z.baseOther.over) h3 = '<p>合計所得金額が2,350万円を超える場合は、計算の対象外としています。</p>';
+    else {
+      var cw = who(z.carer), ow = who(other(z.carer)), k1 = z.case1.carerKojo, l1 = [];
+      if (k1.hitorioya) l1.push('ひとり親控除 35万円');
+      if (k1.fuyo) l1.push('扶養控除 ' + (k1.fuyo / 10000) + '万円（16歳以上の子ども' + z.n16 + '人）');
+      var tax = function (o) { return '所得税 年額 ' + yen(o.shotoku) + '<br>' + (o.juminHikazei ? '住民税 非課税の見込み<span class="thsub">ひとり親で、合計所得金額が135万円以下のため</span>' : '住民税 年額 ' + yen(o.jumin)); };
+      var blk = function (title, rows) { return '<div class="cbox zcase"><div class="t">' + title + '</div>' + rows.map(function (r) {
+        return '<div class="zrow"><div class="zwho">' + r[0] + '</div><div class="zval">' + r[1] + '</div></div>'; }).join('') + '</div>'; };
+      var whyNo = jijitsu ? '事実婚のパートナーがいる場合、ひとり親控除は適用されません。' : '合計所得金額が500万円を超えるため、ひとり親控除は適用されません。';
+      h3 = '<p>子どもを所得税の扶養親族として申告できるのは、父母のどちらか一方に限られます。2つのケースを比較できるよう並べました。どちらが有利かの判定は行っていません。</p><div class="zgrid">' +
+        blk('子ども全員を' + cw + 'の扶養親族とする場合', [
+          [cw + 'に適用される控除', (l1.length ? l1.join('<br>') : 'なし') + (z.hitorioyaOK ? '' : '<span class="thsub">' + whyNo + '</span>')],
+          [cw + 'の軽減額の目安', tax(z.case1.carer)],
+          [ow + 'に適用される控除', 'なし'], [ow + 'の軽減額の目安', '0円']]) +
+        blk('子ども全員を' + ow + 'の扶養親族とする場合', [
+          [cw + 'に適用される控除', 'なし<span class="thsub">子ども全員が' + ow + 'の扶養親族になると、ひとり親控除を受けられない場合があります。</span>'],
+          [cw + 'の軽減額の目安', '0円<span class="thsub">ひとり親控除を受けられない場合</span>'],
+          [ow + 'に適用される控除', z.n16 ? '扶養控除 ' + (z.case2.otherKojo.fuyo / 10000) + '万円（16歳以上の子ども' + z.n16 + '人）' : 'なし<span class="thsub">扶養控除の対象は、12月31日時点で16歳以上の子どもです。</span>'],
+          [ow + 'の軽減額の目安', tax(z.case2.other)]]) + '</div>';
+      var kari = [];
+      if (z.baseCarer.shahoKari) kari.push(cw);
+      if (z.baseOther.shahoKari) kari.push(ow);
+      h3 += '<p class="r-note">2026年分の税制にもとづく目安です。住民税は翌年度の所得割の軽減額を示しています。' +
+        (kari.length ? kari.join('と') + 'の社会保険料は年収の15%と仮定しました。' : '') + '住宅ローン控除、医療費控除、生命保険料控除などは反映していません。</p>' +
+        '<details><summary>社会保険料を入力して再計算する</summary><p>源泉徴収票の「社会保険料等の金額」を入力すると、より実態に近い目安になります。</p>' +
+        '<label class="f" for="shahoA">あなたの社会保険料（年額）</label><div class="unit"><input type="number" id="shahoA" min="0" max="999" step="0.1" inputmode="decimal" value="' + S.shahoA + '"><span>万円</span></div>' +
+        '<label class="f" for="shahoB">相手の社会保険料（年額）</label><div class="unit"><input type="number" id="shahoB" min="0" max="999" step="0.1" inputmode="decimal" value="' + S.shahoB + '"><span>万円</span></div>' +
+        '<div class="rowbtns" style="margin-top:12px"><button type="button" class="btn btn-sub" id="reTax">再計算する</button></div></details>' +
+        '<p class="r-warn">離れて暮らす親が子どもを扶養親族として申告できるのは、養育費を継続して支払っているなど、子どもと生計を一にしている場合です。共同親権の場合のひとり親控除の取り扱いについては、国税庁の見解を確認できていないため、掲載していません。個別のケースは税務署にご確認ください。</p>';
+    }
+    $('rZei').innerHTML = h3;
+    if ($('reTax')) $('reTax').addEventListener('click', function () { S.shahoA = $('shahoA').value; S.shahoB = $('shahoB').value; render(); $('rZei').scrollIntoView({ block: 'start' }); });
+
+    /* 5 あわせて確認したい制度 */
+    var SD = window.HugmeSeido, anyAge = function (lo, hi) { return S.ages.some(function (g) { return g >= lo && g <= hi; }); };
+    var carerWorks = S.live === 'split' ? [S.workA, S.workB] : [S.live === 'a' ? S.workA : S.workB];
+    var notKyuyo = carerWorks.some(function (w) { return w !== 'k'; }), isKyuyo = carerWorks.some(function (w) { return w === 'k'; });
+    var teateOK = sumRows.some(function (r) { return r.teate > 0; });
+    var WHEN = { all: true, shochu: anyAge(5, 15), koko: anyAge(14, 18), shingaku: anyAge(16, 18), teate: teateOK,
+      kokunen: notKyuyo, ikuji: notKyuyo && anyAge(0, 0), hoiku: anyAge(0, 5), hoikuGakudo: anyAge(0, 11),
+      teateKyuyo: teateOK && isKyuyo, after: S.rikon !== 'before', before: S.rikon === 'before', mitorikime: S.torikime !== 'yes' };
+    var base = SD.LIST.filter(function (it) { return WHEN[it.when]; });
+    mountSeido($('rSeido'), base,
+      '<p>回答の内容をもとに、子どもと暮らす親が利用できる可能性のある制度と、離婚後に必要となる手続きをまとめました。対象となるかどうかは、所得や世帯の状況によって異なります。詳しくは、それぞれの窓口にご確認ください。</p>',
+      (jijitsu ? '<p class="r-warn">再婚相手や事実婚のパートナーがいる場合、ひとり親を対象とする制度は利用できないことがあります。</p>' : '') +
+      '<p class="r-note">回答の内容に該当する' + base.length + '件を掲載しています。すべての制度は、このページ下部の「離婚後に確認したい制度の一覧」でご覧いただけます。</p>',
+      [anyAge(0, 5) ? '' : 'mishu', anyAge(5, 15) ? '' : 'shochu', anyAge(14, 18) ? '' : 'koko', notKyuyo ? '' : 'hoken']);
+
+    /* 4 まとめ */
+    var h4 = '';
+    sumRows.forEach(function (r) {
+      var yk = (r.c === recv ? 1 : -1) * Math.round(used * 10000), total = yk + r.teate + r.jido;
+      h4 += '<div class="cbox"><div class="t">' + who(r.c) + 'が受け取る金額の目安（月額）</div><div class="v">' + yen(total) + '</div><div class="d">' +
+        (yk >= 0 ? '養育費 ' + yen(yk) : '養育費の支払い −' + yen(-yk)) + '、児童扶養手当 ' + yen(r.teate) + '、児童手当 ' + yen(r.jido) + ' の合計です。' +
+        (paid === null && used > 0 ? '養育費は目安の中央値（月額' + man(used) + '）で計算しました。' : '') + '</div></div>';
+    });
+    $('rSum').innerHTML = h4 + '<p class="r-note">給与などの収入は含みません。児童扶養手当と児童手当は、2か月分がまとめて支給されます。</p>';
+
+    var workName = function (k) { return S['work' + k] === 'n' ? '収入なし' : (parent(k).man + '万円（' + (S['work' + k] === 'j' ? '事業所得' : '給与所得') + '）'); };
+    $('condText').textContent = '子ども ' + kids.map(function (k) { return k.age + '歳'; }).join('・') + '（' +
+      (S.live === 'split' ? 'きょうだいで分かれて暮らしている' : who(S.live) + 'と同居') + '）／あなたの年収 ' + workName('A') + '／相手の年収 ' + workName('B');
+    $('printCond').textContent = '計算条件：あなたの年収 ' + a.man + '万円（' + (a.jiei ? '事業所得' : '給与所得') + '）、相手の年収 ' + b.man + '万円（' + (b.jiei ? '事業所得' : '給与所得') +
+      '）、子ども ' + kids.map(function (k) { return k.age + '歳（' + who(k.carer) + 'と同居）'; }).join('・') + '。';
+  }
+
+  $('btnPrint').addEventListener('click', function () { window.print(); });
+  function restart() { $('result').hidden = true; $('calcform').hidden = false; step = 0; show(); $('calcform').scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  $('btnEdit').addEventListener('click', restart);
+  $('btnEditTop').addEventListener('click', restart);
+  if ($('seidoAll')) mountSeido($('seidoAll'), window.HugmeSeido.merged());   // 本文の一覧にも絞り込みのボタンを付ける
+  $('calcform').hidden = false;
+  show();
+})();
+
+</script>
+
+</body>
+</html>
