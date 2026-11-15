@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="apple-itunes-app" content="app-id=6782561944">
+<!-- 本番だけを計測。共通スクリプトで流入元とストアクリックを集計します。 -->
+<script src="../../assets/analytics.js"></script>
+<title>離婚したら、生活していけるのか。数えられるところから数えてみる</title>
+<meta name="description" content="離婚後の毎月のお金は、児童手当、児童扶養手当、養育費、税引き後の給与の順に数えると見通しが立ちます。2026年4月からの手当の額、養育費の目安と受給の実態、母と子どもだけの勤労者世帯の平均の支出をまとめました。">
+<link rel="canonical" href="https://hugme.tigerlabo.com/column/rikon-seikatsuhi/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://hugme.tigerlabo.com/column/rikon-seikatsuhi/">
+<meta property="og:title" content="離婚したら、生活していけるのか。数えられるところから数えてみる">
+<meta property="og:description" content="離婚後の生活費は、制度で金額が決まるものから順に数えます。児童手当、児童扶養手当、養育費、給与の数え方と、試算の例、母と子どもだけの勤労者世帯の支出の平均を図で確認できます。">
+<meta property="og:site_name" content="はぐみぃ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://hugme.tigerlabo.com/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://hugme.tigerlabo.com/assets/og-image.png">
+<link rel="icon" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/icon.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://tigerlabo.com/#organization",
+      "name": "株式会社タイガーラボ",
+      "alternateName": [
+        "TIGERLABO",
+        "TigerLabo",
+        "Tigerlabo Inc."
+      ],
+      "url": "https://tigerlabo.com",
+      "logo": "https://tigerlabo.com/assets/logo.png",
+      "sameAs": [
+        "https://map.yahoo.co.jp/v3/place/VBGxuHJFPOM",
+        "https://note.com/tigerlabo",
+        "https://www.youtube.com/@hugme_jp"
+      ]
+    },
+    {
+      "@type": "Article",
+      "@id": "https://hugme.tigerlabo.com/column/rikon-seikatsuhi/#article",
+      "isPartOf": {
+        "@id": "https://hugme.tigerlabo.com/column/rikon-seikatsuhi/#webpage"
+      },
+      "headline": "離婚したら、生活していけるのか。数えられるところから数えてみる",
+      "description": "離婚後の毎月のお金は、児童手当、児童扶養手当、養育費、税引き後の給与の順に数えると見通しが立ちます。2026年4月からの手当の額、養育費の目安と受給の実態、母と子どもだけの勤労者世帯の平均の支出をまとめました。",
+      "inLanguage": "ja",
+      "datePublished": "2026-11-16",
+      "dateModified": "2026-11-16",
+      "author": {
+        "@id": "https://tigerlabo.com/#organization"
+      },
+      "publisher": {
+        "@id": "https://tigerlabo.com/#organization"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://hugme.tigerlabo.com/column/rikon-seikatsuhi/#webpage"
+      },
+      "about": "離婚後のひとり親世帯の毎月の収入（児童手当、児童扶養手当、養育費、給与）の数え方と、支出との比較",
+      "image": "https://hugme.tigerlabo.com/assets/og-image.png"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://hugme.tigerlabo.com/column/rikon-seikatsuhi/#webpage",
+      "url": "https://hugme.tigerlabo.com/column/rikon-seikatsuhi/",
+      "name": "離婚したら、生活していけるのか。数えられるところから数えてみる",
+      "inLanguage": "ja",
+      "isPartOf": {
+        "@id": "https://tigerlabo.com/#organization"
+      },
+      "primaryImageOfPage": "https://hugme.tigerlabo.com/assets/og-image.png"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://hugme.tigerlabo.com/column/rikon-seikatsuhi/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "はぐみぃ",
+          "item": "https://hugme.tigerlabo.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "離婚後の子育て役立つ情報コラム",
+          "item": "https://hugme.tigerlabo.com/column/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "離婚後の生活費の数え方",
+          "item": "https://hugme.tigerlabo.com/column/rikon-seikatsuhi/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://hugme.tigerlabo.com/column/rikon-seikatsuhi/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "離婚後の生活費は、何から数えればよいですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "制度で金額が決まるものから数えます。子どもの年齢と人数で決まる児童手当、前年の所得で変わる児童扶養手当、父母の収入から目安が出る養育費、税金と社会保険料を差し引いた後の給与の順です。合計が出たら、家賃を中心とした毎月の支出と比較します。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "児童手当は月にいくらですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "子ども1人あたり、3歳未満が月15,000円、3歳以上高校生年代までが月10,000円です。年齢が上の子から数えて3人目以降の子どもは、年齢にかかわらず月30,000円です。偶数月に、前月までの2か月分が支給されます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "別居中でも、児童手当を受け取れますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "父母が離婚協議中などで別居している場合、児童手当は子どもと同居している親に優先して支給されます。子どもと暮らす親が、住んでいる市区町村に申請します。支給は申請した月の翌月分からです。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "児童扶養手当はいくらですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "2026年4月からの月額は、子ども1人の場合、全部支給で48,050円です。一部支給の場合は、所得に応じて48,040円から11,340円の間で減額されます。2人目以降は、全部支給で1人につき11,350円が加算されます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "養育費を受け取ると、児童扶養手当は減りますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "受け取った養育費の8割が所得に加えられるため、減る場合があります。子ども1人、給与の額面収入が年181万円の例では、養育費を月2万5,000円受け取ると手当は3,970円減りますが、養育費を含めた合計は21,030円増えます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "養育費を決めずに離婚した場合、請求できますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "2026年4月1日以降に離婚した場合は、取り決めをしていなくても、子どもを主に監護している親が、子ども1人あたり月2万円の法定養育費を請求できます。取り決めをするまでの暫定的なもので、養育費の額の基準ではありません。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "実家に戻ると、児童扶養手当はどうなりますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "同居する父母やきょうだいなどの所得が一定額以上ある場合、児童扶養手当は支給されません。実家へ戻ることを考えている場合は、同居する家族の所得を含めて試算しておく必要があります。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "母と子どもだけの世帯は、1か月にいくら使っていますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "母親と18歳未満の子どもだけの勤労者世帯の消費支出は、月262,542円です（2025年の家計調査）。集計した世帯は62世帯と少なく、地域や家賃の有無で大きく変わるため、比較の目安として使います。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "資格を取る間の生活費を支援する制度はありますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "高等職業訓練促進給付金があります。ひとり親が養成機関で6か月以上学ぶ場合、訓練期間中は月10万円（住民税課税世帯は月70,500円）が支給され、最後の1年間は月4万円が増額されます。児童扶養手当を受けているか同等の所得水準であることなどが要件です。"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+
+  :root{
+    --bg:#FFFCF7; --card:#ffffff; --text:#3a3a3a; --sub:#6a6a6a;
+    --accent:#F4A261; --accent-deep:#D9772F; --green:#7FB77E; --line:#f0e8dd; --soft:#FBF3E8;
+    --maxw:760px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg); color:var(--text); font-family:-apple-system,"Hiragino Maru Gothic ProN","Hiragino Sans",sans-serif; line-height:1.95; -webkit-font-smoothing:antialiased; overflow-x:hidden}
+  a{color:var(--accent-deep)}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 22px}
+  header.nav{display:flex; align-items:center; justify-content:space-between; max-width:960px; margin:0 auto; padding:18px 22px}
+  header.nav .brand{display:flex; align-items:center; gap:10px}
+  header.nav .brand img{width:34px; height:34px; border-radius:9px}
+  header.nav .brand span{font-weight:700; font-size:17px; color:#2a2a2a}
+  header.nav .nav-cta{background:var(--accent); color:#fff; padding:8px 18px; border-radius:999px; font-weight:700; font-size:13px; text-decoration:none; white-space:nowrap}
+  header.nav .nav-right { display:flex; align-items:center; gap:10px; }
+  header.nav .nav-press { color:#2a2a2a; border:1px solid rgba(139,111,94,.28); background:#fff; padding:7px 15px; border-radius:999px; font-weight:700; font-size:13px; white-space:nowrap; text-decoration:none; }
+  @media(max-width:480px){ header.nav { padding-left:16px; padding-right:16px; } header.nav .nav-right { gap:6px; } header.nav .nav-press { padding:7px 11px; font-size:12px; } header.nav .nav-cta { padding:8px 13px; } }
+  .crumb{max-width:var(--maxw); margin:0 auto; padding:16px 22px 0; font-size:12.5px; color:var(--sub)}
+  .crumb a{color:var(--sub); text-decoration:none}
+  .crumb span{margin:0 7px; opacity:.5}
+  main{padding:8px 0 40px}
+  .eyebrow{display:inline-block; background:var(--card); border:1px solid var(--line); color:var(--accent-deep); font-size:12px; font-weight:700; padding:5px 14px; border-radius:999px; margin:20px 0 16px}
+  h1{font-size:clamp(24px,4.5vw,33px); line-height:1.5; font-weight:800; color:#2a2a2a; margin-bottom:20px}
+  .lead{background:var(--soft); border:1px solid var(--line); border-radius:16px; padding:20px 22px; font-size:15.5px; color:#3a3a3a; margin-bottom:16px}
+  .byline{font-size:12.5px; color:var(--sub); margin-bottom:26px}
+  h2{font-size:clamp(20px,3.6vw,25px); color:#2a2a2a; line-height:1.5; margin:46px 0 6px; padding-top:22px; border-top:1px solid var(--line); font-weight:800}
+  h3{font-size:17px; color:#2a2a2a; margin:28px 0 6px; font-weight:700}
+  .ans{font-size:15.5px; color:#3a3a3a; margin:14px 0 10px; font-weight:600}
+  p{font-size:15px; color:var(--text); margin:12px 0}
+  strong,b{color:#2a2a2a}
+  ul,ol{margin:14px 0 14px 2px}
+  li{margin:8px 0 8px 22px; font-size:15px}
+  .fig{margin:22px 0; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 12px 12px}
+  .fig figcaption{font-size:12.5px; color:var(--sub); line-height:1.7; margin-top:8px}
+  .tablewrap{overflow-x:auto; border:1px solid var(--line); border-radius:14px; margin:18px 0}
+  table{border-collapse:collapse; width:100%; min-width:480px; background:var(--card); font-size:14px}
+  th,td{padding:12px 14px; text-align:left; border-bottom:1px solid var(--line); vertical-align:top}
+  thead th{background:var(--soft); color:#2a2a2a; font-weight:700; font-size:13px}
+  tbody tr:last-child td{border-bottom:none}
+  td b{color:var(--accent-deep)}
+  .callout{background:#F1F7F0; border-left:4px solid var(--green); border-radius:0 12px 12px 0; padding:16px 18px; margin:20px 0; font-size:14.5px; color:#3a3a3a}
+  .cta{background:linear-gradient(135deg,#FFF3E4,#F4EFE6); border-radius:20px; padding:28px 24px; margin:32px 0; text-align:center}
+  .cta p{margin:0 0 16px; font-size:15px; color:#3a3a3a}
+  .btn-store{display:inline-flex; align-items:center; gap:9px; background:#111; color:#fff; padding:13px 24px; border-radius:14px; font-weight:700; font-size:14.5px; text-decoration:none; box-shadow:0 8px 20px rgba(0,0,0,0.14)}
+  .btn-store .sub{display:block; font-size:10.5px; font-weight:400; opacity:.8}
+  .store-pair{display:flex; flex-wrap:wrap; justify-content:center; gap:12px}
+  details{background:var(--card); border:1px solid var(--line); border-radius:13px; padding:16px 18px; margin-bottom:11px}
+  summary{font-weight:700; font-size:14.5px; cursor:pointer; color:#2a2a2a; list-style:none}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"＋"; float:right; color:var(--accent-deep)}
+  details[open] summary::after{content:"－"}
+  details p{margin-top:11px; font-size:14px; color:var(--sub)}
+  .sources{font-size:12.5px; color:var(--sub); margin:24px 0; padding-top:16px; border-top:1px solid var(--line)}
+  .sources a{color:var(--sub)}
+  .related{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:22px; margin:28px 0}
+  .related h2{border:none; padding:0; margin:0 0 14px; font-size:17px}
+  .related a{display:block; padding:11px 0; border-bottom:1px solid var(--line); text-decoration:none; color:#2a2a2a; font-weight:700; font-size:14.5px}
+  .related a:last-child{border-bottom:none}
+  .related a span{color:var(--accent-deep)}
+  .disclaimer{font-size:12.5px; color:var(--sub); background:var(--soft); border-radius:12px; padding:14px 16px; margin:22px 0}
+  footer{padding:36px 22px 56px; text-align:center; color:var(--sub); font-size:12px}
+  footer .flinks{display:flex; gap:18px; justify-content:center; margin-bottom:14px; flex-wrap:wrap}
+  footer .flinks a{color:var(--sub); font-weight:600; text-decoration:none}
+  blockquote{background:var(--card); border-left:4px solid var(--accent); border-radius:0 12px 12px 0; padding:14px 18px; margin:16px 0; font-size:14.5px; color:#3a3a3a}
+  .src{font-size:12.5px; color:var(--sub); margin:6px 0 14px}
+  .src a{color:var(--sub)}
+  .notelink{background:var(--soft); border:1px solid var(--line); border-radius:14px; padding:14px 18px; margin:24px 0; font-size:14px}
+  .reflist{font-size:13px; color:var(--sub)}
+  .reflist li{font-size:13px; overflow-wrap:anywhere}
+  .reflist a{color:var(--sub)}
+  /* ===== 読み物の型（2026年11月）で足した書式。上の base は既存のコラムと同じ ===== */
+  :root{ --or-p:#FDEBDB; --or-d:#C9712E; --gr-d:#4E8A4D; --gr-p:#E6F2E5; --ng:#B5675A; --ng-p:#F7E9E5; --round:"Hiragino Maru Gothic ProN","Hiragino Sans",sans-serif }
+  html{scroll-padding-top:64px}
+  p,li,h1,h2,h3,td,th,summary{overflow-wrap:anywhere}
+  h2,.tl-h,.fig-title{text-wrap:balance}
+  @supports (word-break:auto-phrase){ h2,.tl-h,.fig-title{word-break:auto-phrase} }
+  .lead b{color:var(--accent-deep)}
+  .byline span{display:inline-block}
+  .updated{font-size:12.5px; color:var(--sub); margin:-18px 0 22px}
+
+  /* 時期の帯（ページの上に残る、時期への近道） */
+  .when{position:sticky; top:0; z-index:5; background:rgba(255,252,247,.96); backdrop-filter:blur(6px); border-bottom:1px solid var(--line); margin:0 -22px 8px; padding:9px 22px}
+  .when ul{display:flex; gap:8px; overflow-x:auto; margin:0; padding:0; scrollbar-width:none; -webkit-overflow-scrolling:touch}
+  .when ul::-webkit-scrollbar{display:none}
+  .when li{list-style:none; margin:0; flex:0 0 auto; font-size:13px}
+  .when a{display:block; padding:6px 13px; border:1px solid var(--line); background:#fff; border-radius:999px; color:#2a2a2a; font-weight:700; text-decoration:none; white-space:nowrap; line-height:1.5}
+  .when a:hover,.when a:focus-visible{border-color:var(--accent); color:var(--accent-deep)}
+
+  /* 目次 */
+  .toc{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px 20px; margin:26px 0}
+  .toc summary{font-size:15px}
+  .toc ol{margin:12px 0 2px; counter-reset:toc}
+  .toc li{list-style:none; margin:0; border-top:1px dashed var(--line); font-size:14.5px; counter-increment:toc}
+  .toc li a{display:flex; gap:10px; padding:10px 2px; color:#2a2a2a; text-decoration:none; font-weight:600; line-height:1.6}
+  .toc li a::before{content:counter(toc); flex:0 0 22px; height:22px; margin-top:1px; border-radius:50%; background:var(--or-p); color:var(--or-d); font-size:12px; font-weight:800; display:flex; align-items:center; justify-content:center}
+  .toc li a:hover{color:var(--accent-deep)}
+
+  /* 章の見出しに付ける時期の札 */
+  h2 .chip{display:block; width:fit-content; background:var(--accent); color:#fff; font-size:12px; font-weight:800; letter-spacing:.06em; padding:3px 12px; border-radius:999px; margin-bottom:8px}
+  h2 .chip.g{background:var(--green)}
+  h3{display:flex; gap:9px; align-items:baseline}
+  h3 .no{flex:0 0 auto; min-width:24px; height:24px; padding:0 6px; border-radius:12px; background:var(--accent); color:#fff; font-size:13px; font-weight:800; display:inline-flex; align-items:center; justify-content:center; transform:translateY(-1px)}
+  .more{font-size:14px; margin:8px 0 4px}
+  .more a{font-weight:700}
+  .due{display:inline-block; background:var(--or-p); color:var(--or-d); font-weight:800; font-size:12.5px; padding:2px 10px; border-radius:8px; margin:2px 0 0}
+
+  /* 図の枠 */
+  .figbox{margin:26px -6px; background:var(--card); border:1px solid var(--line); border-radius:18px; padding:20px 16px 14px}
+  .fig-kicker{display:inline-block; background:var(--accent); color:#fff; font-size:11.5px; font-weight:800; letter-spacing:.08em; padding:3px 12px; border-radius:999px}
+  .fig-title{font-family:var(--round); font-weight:800; font-size:19px; line-height:1.45; color:#2a2a2a; margin:8px 0 2px}
+  .fig-sub{font-size:13px; color:var(--sub); line-height:1.7; margin:0 0 12px}
+  .figbox figcaption{font-size:12px; color:var(--sub); line-height:1.7; margin-top:12px; border-top:1px solid var(--line); padding-top:9px}
+
+  /* 図1：縦の年表 */
+  .tl{position:relative; margin:6px 0 0; padding:0}
+  .tl::before{content:""; position:absolute; left:15px; top:8px; bottom:8px; width:4px; border-radius:2px; background:linear-gradient(#C4DFC3 0, #C4DFC3 var(--split,34%), #F9C79A var(--split,34%), #F9C79A 100%)}
+  .tl > li{list-style:none; position:relative; margin:0; padding:0 0 16px 44px; font-size:14px}
+  .tl > li:last-child{padding-bottom:2px}
+  .tl-dot{position:absolute; left:4px; top:2px; width:26px; height:26px; border-radius:50%; background:#fff; border:3px solid var(--accent); display:flex; align-items:center; justify-content:center; color:var(--or-d)}
+  .tl > li.pre .tl-dot{border-color:var(--green); color:var(--gr-d)}
+  .tl-dot svg{width:14px; height:14px; fill:none; stroke:currentColor; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round}
+  .tl-when{font-size:12px; font-weight:800; letter-spacing:.04em; color:var(--or-d)}
+  .tl > li.pre .tl-when{color:var(--gr-d)}
+  .tl-h{font-family:var(--round); font-weight:800; font-size:15.5px; color:#2a2a2a; line-height:1.5; margin:1px 0 6px}
+  .tl-items{margin:0; padding:0; display:grid; gap:6px}
+  .tl-items li{list-style:none; margin:0; display:flex; gap:8px; align-items:flex-start; background:var(--bg); border:1px solid var(--line); border-radius:11px; padding:8px 10px; font-size:13.5px; line-height:1.6}
+  .tl-items .n{flex:0 0 22px; height:22px; border-radius:50%; background:var(--accent); color:#fff; font-size:12px; font-weight:800; display:flex; align-items:center; justify-content:center; margin-top:1px}
+  .tl-items li.plain{background:transparent; border-style:dashed}
+  .tl-items b{display:block; color:#2a2a2a; text-wrap:pretty}
+  .tl-items small,.fig-sub,.figbox figcaption,.cmp-note,.tri-c p{text-wrap:pretty}
+  .tl-items small{display:block; font-size:12.5px; color:var(--sub); line-height:1.6}
+  .tl-mark{list-style:none; position:relative; margin:2px 0 16px; padding:0 0 0 44px}
+  .tl-mark span{display:inline-block; background:#2a2a2a; color:#fff; font-size:12px; font-weight:800; letter-spacing:.08em; padding:4px 14px; border-radius:999px}
+  .tl-mark::before{content:""; position:absolute; left:9px; top:6px; width:16px; height:16px; border-radius:50%; background:#2a2a2a; border:3px solid #fff; box-shadow:0 0 0 1px #2a2a2a}
+  .legend{display:flex; flex-wrap:wrap; gap:6px 14px; font-size:12px; color:var(--sub); margin:0 0 12px}
+  .legend i{display:inline-flex; width:18px; height:18px; border-radius:50%; background:var(--accent); color:#fff; font-style:normal; font-weight:800; font-size:11px; align-items:center; justify-content:center; margin-right:5px; vertical-align:-3px}
+
+  /* 期限の早見表（スマホでは札に組み替える） */
+  .duetable{min-width:0}
+  .duetable td.d{white-space:nowrap; font-weight:800; color:var(--or-d)}
+  @media(max-width:600px){
+    .tablewrap.cards{border:none; border-radius:0; overflow:visible}
+    .duetable, .duetable tbody, .duetable tr, .duetable td{display:block; width:100%}
+    .duetable thead{position:absolute; left:-9999px}
+    .duetable tr{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:12px 14px; margin:0 0 10px}
+    .duetable td{border:none; padding:0; font-size:14px}
+    .duetable td.t{font-weight:800; color:#2a2a2a; font-size:15px}
+    .duetable td.d{font-size:19px; font-family:var(--round); margin:2px 0 4px}
+    .duetable td[data-l]::before{content:attr(data-l) "："; color:var(--sub); font-size:12.5px; font-weight:700}
+  }
+
+  /* 図2：申請した月と支給の始まり */
+  .cmp{display:grid; gap:10px}
+  .cmp-row{border:1px solid var(--line); border-radius:13px; padding:11px 12px; background:var(--bg)}
+  .cmp-row.ok{background:var(--gr-p); border-color:#C4DFC3}
+  .cmp-h{font-weight:800; font-size:14px; color:#2a2a2a; margin-bottom:8px; display:flex; gap:7px; align-items:center}
+  .cmp-h .mk{flex:0 0 20px; height:20px; border-radius:50%; background:var(--gr-d); color:#fff; font-size:12px; display:flex; align-items:center; justify-content:center}
+  .cmp-row:not(.ok) .mk{background:var(--ng)}
+  .months{display:grid; grid-template-columns:repeat(4,1fr); gap:4px}
+  .months div{border-radius:8px; background:#fff; border:1px solid var(--line); text-align:center; padding:6px 2px; font-size:12px; line-height:1.45; color:var(--sub)}
+  .months div b{display:block; font-size:13px; color:#2a2a2a}
+  .months div.act{border-color:var(--accent); background:var(--or-p); color:var(--or-d); font-weight:700}
+  .months div.pay{background:var(--gr-d); border-color:var(--gr-d); color:#fff; font-weight:700}
+  .months div.pay b{color:#fff}
+  .months div.none{background:var(--ng-p); border-color:#E8CFC9; color:var(--ng)}
+  .cmp-note{font-size:13px; margin-top:8px; color:#3a3a3a; line-height:1.65}
+
+  /* 図3：養育費の3つの場合 */
+  .tri{display:grid; gap:10px}
+  @media(min-width:640px){ .tri{grid-template-columns:repeat(3,1fr)} }
+  .tri-c{border:1px solid var(--line); border-radius:14px; padding:13px 13px 12px; background:var(--bg)}
+  .tri-c h4{font-family:var(--round); font-size:14.5px; font-weight:800; color:#2a2a2a; line-height:1.5}
+  .tri-num{font-family:var(--round); font-weight:800; font-size:25px; color:var(--or-d); line-height:1.3; margin:6px 0 2px}
+  .tri-num small{font-size:12.5px; color:var(--sub); font-weight:700; margin-left:2px}
+  .tri-c p{font-size:13px; margin:4px 0 0; line-height:1.65}
+  .tri-c.g .tri-num{color:var(--gr-d)}
+
+  /* 囲み */
+  .safe{background:var(--ng-p); border:1px solid #E8CFC9; border-radius:14px; padding:14px 16px; margin:18px 0; font-size:14.5px}
+  .safe b{color:var(--ng)}
+  .sum{background:var(--soft); border:1px solid var(--line); border-radius:16px; padding:8px 18px 10px; margin:16px 0}
+  .sum li{font-size:14.5px}
+  .pair{display:block; background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px 18px; margin:22px 0; text-decoration:none; color:#2a2a2a}
+  .pair small{display:block; color:var(--accent-deep); font-weight:800; font-size:12px; letter-spacing:.06em}
+  .pair b{display:block; font-size:15px; line-height:1.6; margin-top:2px}
+  .faq h3{display:block}
+  .appnote{font-size:12.5px; color:var(--sub); margin-top:12px}
+  @media print{ .when, header.nav, footer, .cta, .related{display:none} body{background:#fff} .figbox{break-inside:avoid} details{break-inside:avoid} }
+  .cta p{text-wrap:balance}
+  @media(max-width:420px){ .cta{padding:24px 14px} .btn-store{padding:13px 14px; font-size:13.5px; white-space:nowrap} }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <a class="brand" href="/" style="text-decoration:none">
+    <img src="/assets/icon-256.png" alt="はぐみぃ 共同養育アプリのアイコン" width="34" height="34">
+    <span>はぐみぃ</span>
+  </a>
+  <div class="nav-right">
+    <a class="nav-press" href="/press/">プレスリリース</a>
+    <a class="nav-cta" href="/#download">無料で入手</a>
+  </div>
+</header>
+
+<nav class="crumb" aria-label="パンくず">
+  <a href="/">はぐみぃ</a><span>›</span><a href="/column/">離婚後の子育て役立つ情報コラム</a><span>›</span>離婚後の生活費の数え方
+</nav>
+
+<main>
+  <article class="wrap">
+    <span class="eyebrow">お役立ちコラム｜お金</span>
+    <h1>離婚したら、生活していけるのか。数えられるところから数えてみる</h1>
+    <p class="byline"><span>文責：株式会社タイガーラボ 編集部</span>　｜　<span>公開日：2026年11月16日</span></p>
+
+    <div class="lead">
+      離婚後の毎月のお金は、金額の算定方法が異なる4つに分けて数えると見通しが立ちます。順番は、<b>子どもの年齢と人数で決まる児童手当、所得で変わる児童扶養手当、父母の収入から目安が出る養育費、税引き後の給与</b>です。合計を毎月の支出と比較すると、家賃や働き方を具体的に検討できます。
+    </div>
+
+    <p>離婚を考えていても、離婚後の生活費の見通しが立たず、踏み切れない方もいるのではないでしょうか。母子世帯の母が最も困っていることとして「家計」を挙げた割合は、49.0%にのぼります（2021年の全国ひとり親世帯等調査。「特にない」などを除く割合）。</p>
+    <p>離婚後に受け取るお金は、手当、養育費、給与で金額の算定方法が異なるため、全体の額をつかみにくいものです。ただ、制度ごとに数える順番を決めておけば、相手と話し合う前でも、月の収入のおおよその額は一人で計算できます。自分の条件での試算は、<a href="/okane-keisan/">養育費と手当の計算</a>で、質問に答えるだけで行えます。</p>
+
+    <nav class="when" aria-label="数える順番から探す">
+      <ul>
+        <li><a href="#junban">数える順番</a></li>
+        <li><a href="#jidou">1 児童手当</a></li>
+        <li><a href="#fuyou">2 児童扶養手当</a></li>
+        <li><a href="#youikuhi">3 養育費</a></li>
+        <li><a href="#kyuyo">4 給与</a></li>
+        <li><a href="#rei">試算の例</a></li>
+        <li><a href="#shishutsu">支出と比較</a></li>
+        <li><a href="#faq">よくある質問</a></li>
+      </ul>
+    </nav>
+
+    <details class="toc" id="toc" open>
+      <summary>この記事の目次</summary>
+      <ol>
+        <li><a href="#junban">数える順番は、制度で金額が決まるものから</a></li>
+        <li><a href="#jidou">児童手当は、子どもの年齢と人数で決まる</a></li>
+        <li><a href="#fuyou">児童扶養手当は、前年の所得で金額が変わる</a></li>
+        <li><a href="#youikuhi">養育費は、父母の収入から目安が分かる</a></li>
+        <li><a href="#kyuyo">給与は、税引き後の額で数える</a></li>
+        <li><a href="#rei">試算の例：子ども1人、給与の額面収入が年181万円の場合</a></li>
+        <li><a href="#shishutsu">合計が出たら、毎月の支出と比較する</a></li>
+        <li><a href="#faq">よくある質問</a></li>
+        <li><a href="#matome">まとめ</a></li>
+      </ol>
+    </details>
+
+    <h2 id="junban">数える順番は、制度で金額が決まるものから</h2>
+    <p class="ans">離婚後の毎月のお金は、金額の算定方法によって4つに分けられます。制度で金額が決まるものから順に数え、最後に支出と比較します。</p>
+    <ol>
+      <li><b>児童手当</b>：子どもの年齢と人数で金額が決まります。</li>
+      <li><b>児童扶養手当</b>：前年の所得と、受け取る養育費の額によって変わります。</li>
+      <li><b>養育費</b>：父母の年収と子どもの人数・年齢から、目安の額が分かります。</li>
+      <li><b>給与</b>：税金と社会保険料を差し引いた後の額で数えます。</li>
+    </ol>
+    <p>このうち児童扶養手当と養育費は、互いに影響します。受け取った養育費の一部が手当の所得に加えられるため、2つは同時に試算すると実態に近い額になります。</p>
+
+    <style>
+      .rs-steps{list-style:none; margin:4px 0 0; padding:0; display:grid; gap:0}
+      .rs-steps > li{list-style:none; margin:0; position:relative; display:grid; grid-template-columns:40px 1fr; gap:10px; padding:0 0 14px}
+      .rs-steps > li:not(:last-child)::after{content:""; position:absolute; left:19px; top:40px; bottom:2px; width:2px; background:var(--line)}
+      .rs-no{width:40px; height:40px; border-radius:50%; background:var(--accent); color:#fff; font-family:var(--round); font-weight:800; font-size:18px; display:flex; align-items:center; justify-content:center; position:relative; z-index:1}
+      .rs-steps > li.rs-last .rs-no{background:var(--gr-d)}
+      .rs-card{background:#fff; border:1px solid var(--line); border-radius:13px; padding:10px 12px}
+      .rs-card h4{font-family:var(--round); font-weight:800; font-size:15.5px; color:#2a2a2a; line-height:1.45; margin:0}
+      .rs-card p{font-size:13px; line-height:1.65; margin:4px 0 0; color:#3a3a3a; text-wrap:pretty}
+      .rs-tag{display:inline-block; font-size:11.5px; font-weight:800; border-radius:999px; padding:2px 10px; margin:6px 6px 0 0; line-height:1.5}
+      .rs-tag.fix{background:var(--or-p); color:var(--or-d)}
+      .rs-tag.calc{background:var(--gr-p); color:var(--gr-d)}
+      .rs-tag.self{background:var(--bg); color:var(--sub); border:1px solid var(--line)}
+      .rs-steps > li.rs-last .rs-card{background:var(--gr-p); border-color:#C4DFC3}
+    </style>
+    <figure class="figbox" id="fig1" aria-labelledby="fig1t">
+      <span class="fig-kicker">数える順番</span>
+      <div class="fig-title" id="fig1t">制度で金額が決まるものから数え、最後に支出と比較する</div>
+      <p class="fig-sub">札は、金額の分かり方です。</p>
+      <ol class="rs-steps">
+        <li>
+          <span class="rs-no" aria-hidden="true">1</span>
+          <div class="rs-card">
+            <h4>児童手当</h4>
+            <p>子どもの年齢と人数で、月額が決まります。</p>
+            <span class="rs-tag fix">金額が決まっている</span>
+          </div>
+        </li>
+        <li>
+          <span class="rs-no" aria-hidden="true">2</span>
+          <div class="rs-card">
+            <h4>児童扶養手当</h4>
+            <p>前年の所得と、受け取る養育費の額で変わります。</p>
+            <span class="rs-tag calc">計算ページで試算できる</span>
+          </div>
+        </li>
+        <li>
+          <span class="rs-no" aria-hidden="true">3</span>
+          <div class="rs-card">
+            <h4>養育費</h4>
+            <p>父母の年収と子どもの人数・年齢から、目安の額が分かります。受け取れない場合も数えておきます。</p>
+            <span class="rs-tag calc">計算ページで試算できる</span>
+          </div>
+        </li>
+        <li>
+          <span class="rs-no" aria-hidden="true">4</span>
+          <div class="rs-card">
+            <h4>給与</h4>
+            <p>税金と社会保険料を差し引いた後の額で数えます。</p>
+            <span class="rs-tag self">給与明細で確認する</span>
+          </div>
+        </li>
+        <li class="rs-last">
+          <span class="rs-no" aria-hidden="true">5</span>
+          <div class="rs-card">
+            <h4>毎月の支出と比較する</h4>
+            <p>1から4の合計を、家賃を中心とした支出と比較します。</p>
+          </div>
+        </li>
+      </ol>
+      <figcaption>児童扶養手当と養育費は互いに影響するため、同時に試算します。</figcaption>
+    </figure>
+
+    <h2 id="jidou"><span class="chip">1</span>児童手当は、子どもの年齢と人数で決まる</h2>
+    <p class="ans">児童手当の月額は、子ども1人あたり、3歳未満が15,000円、3歳以上高校生年代までが10,000円です。第3子以降は、年齢にかかわらず30,000円となります。</p>
+    <div class="tablewrap">
+      <table style="min-width:0">
+        <thead><tr><th>子どもの年齢</th><th>第1子・第2子</th><th>第3子以降</th></tr></thead>
+        <tbody>
+          <tr><td>3歳未満</td><td>15,000円</td><td>30,000円</td></tr>
+          <tr><td>3歳以上、高校生年代まで</td><td>10,000円</td><td>30,000円</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>対象は、18歳に達する日以後の最初の3月31日までの子どもです。第3子以降とは、年齢が上の子から数えて3人目以降の子どもを指し、親などが経済的に負担している22歳の年度末までの兄や姉も数に含まれます。支給は偶数月で、前月までの2か月分がまとめて振り込まれます。</p>
+
+    <h3>別居中は、子どもと暮らす親が受け取れる</h3>
+    <p>父母が離婚協議中などで別居している場合、児童手当は子どもと同居している親に優先して支給されます。受給者を変えるには、子どもと暮らす親が、住んでいる市区町村に申請しなければなりません。支給は申請した月の翌月分からとなり、離婚協議中で別居している人は、毎年の現況届の提出も必要です。</p>
+
+    <h2 id="fuyou"><span class="chip">2</span>児童扶養手当は、前年の所得で金額が変わる</h2>
+    <p class="ans">2026年4月からの児童扶養手当の月額は、子ども1人の場合、全部支給で48,050円です。所得が一定額を超えると一部支給となり、所得に応じて48,040円から11,340円の間で減額されます。</p>
+    <div class="tablewrap">
+      <table style="min-width:0">
+        <thead><tr><th>区分</th><th>子ども1人目</th><th>2人目以降の加算（1人につき）</th></tr></thead>
+        <tbody>
+          <tr><td>全部支給</td><td>48,050円</td><td>11,350円</td></tr>
+          <tr><td>一部支給</td><td>48,040円〜11,340円</td><td>11,340円〜5,680円</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>金額は前年の所得で決まります。子ども1人の世帯で、所得の限度額を収入に換算した目安は、全部支給が190万円、一部支給が385万円とされています。養育費を受け取っている場合は、その8割が所得に加えられます。</p>
+    <p>支給は1月、3月、5月、7月、9月、11月の年6回です。申請した月の翌月分から支給され、さかのぼって受け取ることはできません。</p>
+
+    <h3>実家に戻る場合と、パートナーがいる場合</h3>
+    <p>同居する父母やきょうだいなどの所得が一定額以上ある場合、児童扶養手当は支給されません。婚姻の届け出をしていなくても、生計をともにするパートナーがいる場合は、原則として支給の対象外です。離婚後に実家へ戻ることを考えている場合は、同居する家族の所得を含めて試算しておく必要があります。</p>
+    <p class="more">金額の試算は <a href="/okane-keisan/">養育費と手当の計算</a></p>
+
+    <h2 id="youikuhi"><span class="chip">3</span>養育費は、父母の収入から目安が分かる</h2>
+    <p class="ans">養育費の額は父母の協議で決めますが、裁判所が公表している算定表を使うと、父母の年収と子どもの人数・年齢から、標準的な月額の目安が分かります。相手と話し合う前でも、目安は試算できます。</p>
+    <p>2026年4月1日以降に離婚した場合は、取り決めをしていなくても、子どもを主に監護している親が、子ども1人あたり月2万円の「法定養育費」を請求できます。ただし、取り決めをするまでの暫定的・補充的なもので、養育費の額の基準や標準となるものではないとされています。</p>
+    <p class="more">目安は <a href="/youikuhi-keisan/">養育費かんたん計算</a>、算定表の見方は <a href="/guide/yoiku-hi-soba-jukyu/">養育費の相場はいくら？算定表の見方</a></p>
+
+    <h3>受け取れない場合も、数えておく</h3>
+    <p>取り決めた養育費が、支払われ続けるとは限りません。離婚によって母子世帯になった世帯のうち、養育費を現在も受け取っているのは30.8%です（2021年の全国ひとり親世帯等調査）。取り決めをしている世帯に限っても、57.9%にとどまります。</p>
+    <p>そのため生活費を見積もるときは、養育費がある場合とない場合の2通りで計算しておくと、受け取れなくなったときの備えを考えやすくなります。取り決めを書面に残しておくと、支払われないときに取れる手段も増えます。</p>
+    <p class="more">書面の残し方は <a href="/column/rikon-nenpyo-zenpen/">離婚前後の手続きの年表（前編）</a>、支払われないときは <a href="/column/youikuhi-saisoku-mae/">養育費が払われないとき、自分で催促する前に使える制度</a></p>
+
+    <h3>離婚が成立するまでは、婚姻費用を請求できる</h3>
+    <p>別居中で離婚が成立していない期間の生活費は、養育費ではなく「婚姻費用」として、収入の多い側に請求します。別居から離婚までの期間も、収入の見通しに含めておきます。</p>
+    <p class="more">詳しくは <a href="/column/konin-hiyo/">別居中の生活費。離婚が決まる前でも相手に請求できる「婚姻費用」をわかりやすく解説</a></p>
+
+    <h2 id="kyuyo"><span class="chip">4</span>給与は、税引き後の額で数える</h2>
+    <p class="ans">給与は、税金と社会保険料を差し引いた後の額で数えます。離婚後に働き方を変える予定がある場合は、変えた後の見込みの額を使います。</p>
+    <p>所得税には、ひとり親を対象とした「ひとり親控除」があります。12月31日時点で婚姻をしておらず、生計を一にする子どもがいて、事実婚の相手がいないことなどが要件です。2026年分の所得税では、合計所得金額が500万円以下であれば、所得から35万円を差し引けます。</p>
+
+    <h3>資格を取る間の生活費を支援する制度</h3>
+    <p>ひとり親が、就職に有利な資格の取得を目指して養成機関で6か月以上学ぶ場合は、高等職業訓練促進給付金を利用できます。訓練期間中は月10万円（住民税課税世帯は月70,500円）が支給され、最後の1年間は月4万円が増額されます。修了後には、さらに5万円（住民税課税世帯は25,000円）が支給されます。</p>
+    <p>対象は、児童扶養手当を受けているか同等の所得水準にあり、仕事や育児と修業の両立が難しいと認められる人です。看護師、准看護師、保育士、介護福祉士、理学療法士、作業療法士、調理師、製菓衛生師などの国家資格のほか、デジタル分野の民間資格も対象に含まれます。申し込みの窓口は、住んでいる都道府県か市区町村です。</p>
+
+    <h2 id="rei">試算の例：子ども1人、給与の額面収入が年181万円の場合</h2>
+    <p class="ans">5歳の子ども1人を育て、給与の額面収入が年181万円の場合、手当と養育費の合計は、養育費が月2万5,000円なら月79,080円、養育費がなければ月58,050円です。これに税引き後の給与を加えた額が、月の収入の目安となります。</p>
+    <p>養育費を月2万5,000円受け取ると、その8割が所得に加えられるため、児童扶養手当は全部支給の48,050円から一部支給の44,080円に減ります。減る額は3,970円で、受け取る養育費のほうが大きいため、合計は21,030円増える計算です。</p>
+
+    <style>
+      .rs-bars{display:grid; gap:14px; margin-top:2px}
+      .rs-case{background:#fff; border:1px solid var(--line); border-radius:13px; padding:11px 12px}
+      .rs-case h4{font-family:var(--round); font-weight:800; font-size:14.5px; color:#2a2a2a; line-height:1.5; margin:0 0 2px}
+      .rs-total{font-family:var(--round); font-weight:800; font-size:24px; color:var(--or-d); line-height:1.3; margin:0 0 8px}
+      .rs-total small{font-size:12.5px; color:var(--sub); font-weight:700; margin-left:4px}
+      .rs-bar{display:flex; height:22px; border-radius:6px; overflow:hidden; background:var(--bg); border:1px solid var(--line)}
+      .rs-bar span{display:block; height:100%}
+      .rs-bar .t{background:var(--accent)}
+      .rs-bar .j{background:#F9C79A}
+      .rs-bar .y{background:var(--green)}
+      .rs-rows{list-style:none; margin:8px 0 0; padding:0; display:grid; gap:3px}
+      .rs-rows li{list-style:none; margin:0; display:flex; align-items:center; gap:8px; font-size:13px; line-height:1.55}
+      .rs-rows i{flex:0 0 12px; height:12px; border-radius:3px; display:inline-block}
+      .rs-rows i.t{background:var(--accent)} .rs-rows i.j{background:#F9C79A} .rs-rows i.y{background:var(--green)}
+      .rs-rows b{margin-left:auto; font-weight:800; color:#2a2a2a; white-space:nowrap}
+      .rs-rows .dn{color:var(--ng); font-weight:700; font-size:12px; margin-left:6px}
+      .rs-diff{margin-top:12px; background:var(--gr-p); border:1px solid #C4DFC3; border-radius:12px; padding:10px 12px; font-size:13.5px; line-height:1.65; color:#2a2a2a}
+      .rs-diff b{color:var(--gr-d)}
+    </style>
+    <figure class="figbox" id="fig2" aria-labelledby="fig2t">
+      <span class="fig-kicker">試算の例</span>
+      <div class="fig-title" id="fig2t">養育費を受け取ると手当は減るが、合計は増える</div>
+      <p class="fig-sub">子ども1人（5歳）、給与の額面収入が前年も今年も年181万円で、養育費も前年から同じ額を受け取っている場合の月額です。給与は含めていません。</p>
+      <div class="rs-bars">
+        <div class="rs-case">
+          <h4>養育費がない場合</h4>
+          <div class="rs-total">58,050円<small>／月</small></div>
+          <div class="rs-bar" role="img" aria-label="児童扶養手当48,050円と児童手当10,000円で合計58,050円">
+            <span class="t" style="width:60.76%"></span><span class="j" style="width:12.65%"></span>
+          </div>
+          <ul class="rs-rows">
+            <li><i class="t" aria-hidden="true"></i>児童扶養手当（全部支給）<b>48,050円</b></li>
+            <li><i class="j" aria-hidden="true"></i>児童手当<b>10,000円</b></li>
+          </ul>
+        </div>
+        <div class="rs-case">
+          <h4>養育費が月2万5,000円の場合</h4>
+          <div class="rs-total">79,080円<small>／月</small></div>
+          <div class="rs-bar" role="img" aria-label="児童扶養手当44,080円、児童手当10,000円、養育費25,000円で合計79,080円">
+            <span class="t" style="width:55.74%"></span><span class="j" style="width:12.65%"></span><span class="y" style="width:31.61%"></span>
+          </div>
+          <ul class="rs-rows">
+            <li><i class="t" aria-hidden="true"></i>児童扶養手当（一部支給）<b>44,080円<span class="dn">3,970円減</span></b></li>
+            <li><i class="j" aria-hidden="true"></i>児童手当<b>10,000円</b></li>
+            <li><i class="y" aria-hidden="true"></i>養育費<b>25,000円</b></li>
+          </ul>
+        </div>
+      </div>
+      <p class="rs-diff">受け取った養育費の8割が手当の所得に加えられ、手当は3,970円減ります。養育費を含めた合計は<b>21,030円増えます</b>。</p>
+      <figcaption>帯の長さは金額に比例しています。計算ページと同じ式で計算しました。同居する家族の所得や、受給している年金があると結果は変わります。</figcaption>
+    </figure>
+
+    <p>前年も同じ収入で、養育費も前年から同じ額を受け取っていたと仮定し、計算ページと同じ式で計算しています。子どもの人数や年齢、同居する家族の有無が違えば、結果も変わります。</p>
+    <p class="more">自分の条件での試算は <a href="/okane-keisan/">養育費と手当の計算</a></p>
+
+    <h2 id="shishutsu">合計が出たら、毎月の支出と比較する</h2>
+    <p class="ans">収入の合計が出たら、毎月の支出と比較します。母親と18歳未満の子どもだけの勤労者世帯の消費支出は、月262,542円です（2025年の家計調査）。</p>
+    <p>勤労者世帯とは、世帯主が会社や官公庁などに勤めている世帯です。同じ世帯の収入は、税金と社会保険料を差し引いた後の額（調査の用語では可処分所得）で月293,794円となっています。この額には、児童扶養手当などの社会保障給付が含まれます。ただし集計した世帯は62世帯と少なく、住む地域や、家賃を支払っているかどうかで支出は大きく変わります。平均はあくまで比較の目安として使い、自分の家計の実際の支出と並べて検討します。</p>
+
+    <style>
+      .rs-big{display:grid; grid-template-columns:1fr 1fr; gap:8px; margin:2px 0 12px}
+      .rs-big div{background:#fff; border:1px solid var(--line); border-radius:13px; padding:10px 11px}
+      .rs-big small{display:block; font-size:12px; font-weight:700; color:var(--sub); line-height:1.5}
+      .rs-big b{display:block; font-family:var(--round); font-weight:800; font-size:21px; line-height:1.3; color:var(--gr-d); margin-top:2px; white-space:nowrap}
+      .rs-big div.out b{color:var(--or-d)}
+      .rs-big span{font-size:12px; font-weight:700; color:var(--sub)}
+      .rs-items{list-style:none; margin:0; padding:0; display:grid; gap:6px}
+      .rs-items li{list-style:none; margin:0; display:grid; grid-template-columns:7.2em 1fr 4.6em; align-items:center; gap:8px; font-size:13px; line-height:1.4}
+      .rs-items .nm{color:#2a2a2a; font-weight:700}
+      .rs-items .br{height:12px; background:var(--bg); border-radius:4px; overflow:hidden; border:1px solid var(--line)}
+      .rs-items .br span{display:block; height:100%; background:var(--accent)}
+      .rs-items li.hi .br span{background:var(--or-d)}
+      .rs-items .yen{text-align:right; font-weight:800; color:#2a2a2a; white-space:nowrap}
+      .rs-items-h{font-size:12.5px; font-weight:800; color:var(--sub); margin:0 0 6px}
+      @media(max-width:360px){ .rs-items li{grid-template-columns:6.4em 1fr 4.4em; font-size:12.5px} .rs-big b{font-size:19px} }
+    </style>
+    <figure class="figbox" id="fig3" aria-labelledby="fig3t">
+      <span class="fig-kicker">支出の目安</span>
+      <div class="fig-title" id="fig3t">母と子どもだけの勤労者世帯の消費支出は、月平均262,542円</div>
+      <p class="fig-sub">2025年の家計調査で、母親と18歳未満の子どもだけの勤労者世帯（62世帯）の平均です。</p>
+      <div class="rs-big">
+        <div><small>収入（税引き後）</small><b>293,794<span>円</span></b></div>
+        <div class="out"><small>消費支出</small><b>262,542<span>円</span></b></div>
+      </div>
+      <p class="rs-items-h">消費支出の内訳（月額）</p>
+      <ul class="rs-items">
+        <li><span class="nm">食料</span><span class="br"><span style="width:100%"></span></span><span class="yen">65,836円</span></li>
+        <li><span class="nm">住居</span><span class="br"><span style="width:45.65%"></span></span><span class="yen">30,057円</span></li>
+        <li><span class="nm">光熱・水道</span><span class="br"><span style="width:30.91%"></span></span><span class="yen">20,347円</span></li>
+        <li><span class="nm">家具・家事用品</span><span class="br"><span style="width:12.92%"></span></span><span class="yen">8,507円</span></li>
+        <li><span class="nm">衣服</span><span class="br"><span style="width:18.78%"></span></span><span class="yen">12,363円</span></li>
+        <li><span class="nm">保健医療</span><span class="br"><span style="width:14.51%"></span></span><span class="yen">9,553円</span></li>
+        <li><span class="nm">交通・通信</span><span class="br"><span style="width:45.69%"></span></span><span class="yen">30,082円</span></li>
+        <li><span class="nm">教育</span><span class="br"><span style="width:39.2%"></span></span><span class="yen">25,809円</span></li>
+        <li><span class="nm">教養娯楽</span><span class="br"><span style="width:38.73%"></span></span><span class="yen">25,495円</span></li>
+        <li><span class="nm">その他</span><span class="br"><span style="width:52.39%"></span></span><span class="yen">34,492円</span></li>
+      </ul>
+      <figcaption>帯の長さは金額に比例しています。収入（税引き後）は、調査の用語では可処分所得で、児童扶養手当などの社会保障給付を含みます。住居は家賃を支払っていない世帯を含めた平均で、家賃・地代を支払っている世帯は48.3%です。出典：総務省統計局「家計調査」2025年 第3-6表。</figcaption>
+    </figure>
+
+    <h3>大きく変わるのは住まいの費用</h3>
+    <p>同じ調査で家賃・地代を支払っている世帯は48.3%で、離婚の前後で大きく変わりやすいのが住まいの費用です。公営住宅の家賃は、入居者の収入などに応じて決まります。児童扶養手当を受給している人などのうち、自立に向けた計画（母子・父子自立支援プログラム）の策定を受けた人が、家賃の実費を月7万円まで、原則12か月、無利子で借りられる貸付もあります。</p>
+    <p class="more">詳しくは <a href="/column/kouei-yachin/">公営住宅の家賃は、収入で決まります</a>、<a href="/column/jutaku-shikin-kashitsuke/">家賃を12か月、無利子で借りられる制度</a></p>
+
+    <h3>金額を数えにくい制度</h3>
+    <p>ひとり親家庭の医療費助成は、自治体が独自に設けている制度で、対象者の条件や助成の内容は市区町村によって異なります。小学生・中学生の学用品費や給食費などを援助する就学援助も、認定の基準を市町村が定めています。いずれも金額を一律には計算できないため、住んでいる市区町村の窓口で確認してください。</p>
+
+    <h2 id="faq">よくある質問</h2>
+    <div class="faq">
+      <details><summary>離婚後の生活費は、何から数えればよいですか？</summary><p>制度で金額が決まるものから数えます。子どもの年齢と人数で決まる児童手当、前年の所得で変わる児童扶養手当、父母の収入から目安が出る養育費、税金と社会保険料を差し引いた後の給与の順です。合計が出たら、家賃を中心とした毎月の支出と比較します。</p></details>
+      <details><summary>児童手当は月にいくらですか？</summary><p>子ども1人あたり、3歳未満が月15,000円、3歳以上高校生年代までが月10,000円です。年齢が上の子から数えて3人目以降の子どもは、年齢にかかわらず月30,000円です。偶数月に、前月までの2か月分が支給されます。</p></details>
+      <details><summary>別居中でも、児童手当を受け取れますか？</summary><p>父母が離婚協議中などで別居している場合、児童手当は子どもと同居している親に優先して支給されます。子どもと暮らす親が、住んでいる市区町村に申請します。支給は申請した月の翌月分からです。</p></details>
+      <details><summary>児童扶養手当はいくらですか？</summary><p>2026年4月からの月額は、子ども1人の場合、全部支給で48,050円です。一部支給の場合は、所得に応じて48,040円から11,340円の間で減額されます。2人目以降は、全部支給で1人につき11,350円が加算されます。</p></details>
+      <details><summary>養育費を受け取ると、児童扶養手当は減りますか？</summary><p>受け取った養育費の8割が所得に加えられるため、減る場合があります。子ども1人、給与の額面収入が年181万円の例では、養育費を月2万5,000円受け取ると手当は3,970円減りますが、養育費を含めた合計は21,030円増えます。</p></details>
+      <details><summary>養育費を決めずに離婚した場合、請求できますか？</summary><p>2026年4月1日以降に離婚した場合は、取り決めをしていなくても、子どもを主に監護している親が、子ども1人あたり月2万円の法定養育費を請求できます。取り決めをするまでの暫定的なもので、養育費の額の基準ではありません。</p></details>
+      <details><summary>実家に戻ると、児童扶養手当はどうなりますか？</summary><p>同居する父母やきょうだいなどの所得が一定額以上ある場合、児童扶養手当は支給されません。実家へ戻ることを考えている場合は、同居する家族の所得を含めて試算しておく必要があります。</p></details>
+      <details><summary>母と子どもだけの世帯は、1か月にいくら使っていますか？</summary><p>母親と18歳未満の子どもだけの勤労者世帯の消費支出は、月262,542円です（2025年の家計調査）。集計した世帯は62世帯と少なく、地域や家賃の有無で大きく変わるため、比較の目安として使います。</p></details>
+      <details><summary>資格を取る間の生活費を支援する制度はありますか？</summary><p>高等職業訓練促進給付金があります。ひとり親が養成機関で6か月以上学ぶ場合、訓練期間中は月10万円（住民税課税世帯は月70,500円）が支給され、最後の1年間は月4万円が増額されます。児童扶養手当を受けているか同等の所得水準であることなどが要件です。</p></details>
+    </div>
+
+    <h2 id="matome">まとめ</h2>
+    <ul class="sum">
+      <li>離婚後の毎月のお金は、児童手当、児童扶養手当、養育費、税引き後の給与の順に数えます。</li>
+      <li>児童手当は、子どもの年齢と人数で月額が決まります。</li>
+      <li>児童扶養手当は前年の所得で決まり、受け取った養育費の8割が所得に加えられます。</li>
+      <li>養育費は算定表で目安が分かりますが、受け取れない場合も含めて2通りで計算しておきます。</li>
+      <li>合計は、家賃を中心とした毎月の支出と比較します。</li>
+    </ul>
+    <p>お金の見通しは、離婚するかどうかを考えるための材料の一つです。数字が出たあとも迷うことはありますが、数えること自体は、相手に知らせずに一人でできます。</p>
+
+    <a class="pair" href="/column/rikon-nenpyo-zenpen/">
+      <small>あわせて読む</small>
+      <b>離婚後の準備はできているか。ひとり親になる前後で押さえておくべき7つの制度【年表・前編】</b>
+    </a>
+
+    <h2 id="sources">出典</h2>
+    <ul class="reflist">
+      <li><a href="https://www.cfa.go.jp/policies/kokoseido/jidouteate/annai" target="_blank" rel="noopener">こども家庭庁「児童手当制度のご案内」</a></li>
+      <li><a href="https://www.cfa.go.jp/policies/hitori-oya/fuyou-teate" target="_blank" rel="noopener">こども家庭庁「児童扶養手当について」（児童扶養手当制度の概要）</a></li>
+      <li><a href="https://laws.e-gov.go.jp/law/336AC0000000238" target="_blank" rel="noopener">児童扶養手当法（e-Gov法令検索）</a></li>
+      <li><a href="https://laws.e-gov.go.jp/law/336CO0000000405" target="_blank" rel="noopener">児童扶養手当法施行令（e-Gov法令検索）</a></li>
+      <li><a href="https://www.courts.go.jp/saiban/syurui/syurui_kazi/kazi_07_07/index.html" target="_blank" rel="noopener">裁判所「養育費請求調停」</a></li>
+      <li><a href="https://www.courts.go.jp/toukei_siryou/siryo/H30shihou_houkoku/index.html" target="_blank" rel="noopener">裁判所「平成30年度司法研究（養育費、婚姻費用の算定に関する実証的研究）の報告について」</a></li>
+      <li><a href="https://laws.e-gov.go.jp/law/129AC0000000089" target="_blank" rel="noopener">民法（e-Gov法令検索）</a></li>
+      <li><a href="https://warp.da.ndl.go.jp/info:ndljp/pid/12862028/www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000188147_00013.html" target="_blank" rel="noopener">厚生労働省「令和3年度 全国ひとり親世帯等調査結果報告」（国立国会図書館の保存版）</a></li>
+      <li><a href="https://www.cfa.go.jp/policies/hitori-oya/reserch_single-parent_households" target="_blank" rel="noopener">こども家庭庁「全国ひとり親世帯等調査」</a></li>
+      <li><a href="https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1171.htm" target="_blank" rel="noopener">国税庁 No.1171 ひとり親控除</a></li>
+      <li><a href="https://www.cfa.go.jp/policies/hitori-oya/syokugyou-kunren/" target="_blank" rel="noopener">こども家庭庁「高等職業訓練促進給付金のご案内」</a></li>
+      <li><a href="https://www.e-stat.go.jp/stat-search/file-download?statInfId=000040409537&fileKind=0" target="_blank" rel="noopener">総務省統計局「家計調査（家計収支編）2025年 第3-6表 世帯類型別1世帯当たり1か月間の収入と支出」（e-Stat）</a></li>
+      <li><a href="https://www.stat.go.jp/data/kakei/kaisetsu.html" target="_blank" rel="noopener">総務省統計局「家計調査 用語の解説」</a></li>
+      <li><a href="https://laws.e-gov.go.jp/law/326AC1000000193" target="_blank" rel="noopener">公営住宅法（e-Gov法令検索）</a></li>
+      <li><a href="https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/0a870592-1814-4b21-bf56-16f06080c594/49ffc01c/20260423_policies_hitori-oya_105.pdf" target="_blank" rel="noopener">こども家庭庁「令和8年度予算関係資料 子育て・生活支援」（ひとり親家庭高等職業訓練促進資金貸付事業（住宅支援資金））</a></li>
+      <li><a href="https://www.soumu.go.jp/main_content/001084750.pdf" target="_blank" rel="noopener">総務省「ひとり親家庭等の支援に関する調査」結果報告書</a></li>
+      <li><a href="https://www.mext.go.jp/a_menu/shotou/career/05010502/017.htm" target="_blank" rel="noopener">文部科学省「就学援助制度について」</a></li>
+      <li><a href="https://www.cfa.go.jp/policies/hitori-oya/syuugyou-jiritsu-center" target="_blank" rel="noopener">こども家庭庁「ひとり親家庭等就業・自立支援事業について」</a></li>
+    </ul>
+
+    <h3>相談したいとき</h3>
+    <ul>
+      <li>お住まいの市区町村のひとり親家庭の相談窓口</li>
+      <li>ひとり親家庭支援センター等（就業相談や就業支援講習会。都道府県や市などが実施）</li>
+      <li>養育費・親子交流相談支援センター　0120-965-419（携帯電話からは 03-3980-4108）</li>
+      <li>法テラス・サポートダイヤル　0570-078374（平日9時から21時、土曜9時から17時）</li>
+    </ul>
+    <div class="callout">※いま安全が心配な状況にある方へ。DV相談ナビ（＃8008）、児童相談所虐待対応ダイヤル（189）、緊急のときは 110 です。</div>
+
+    <div class="disclaimer">
+      ※この記事は一般的な説明で、個別の事案についての助言ではありません。金額や条件は2026年11月時点のもので、実際の支給額は世帯の状況により異なります。自治体によって内容が異なる制度もあります。
+    </div>
+
+    <div class="related">
+      <h2>関連するページ</h2>
+      <a href="/okane-keisan/">養育費と手当の計算 <span>→</span></a>
+      <a href="/column/rikon-nenpyo-zenpen/">【年表・前編】ひとり親になる前後で押さえておくべき7つの制度 <span>→</span></a>
+      <a href="/column/konin-hiyo/">別居中の生活費。離婚が決まる前でも請求できる「婚姻費用」 <span>→</span></a>
+      <a href="/column/jutaku-shikin-kashitsuke/">離婚したいけれど、住むところがない。家賃を12か月、無利子で借りられる制度 <span>→</span></a>
+      <a href="/column/kouei-yachin/">公営住宅の家賃は、収入で決まります <span>→</span></a>
+      <a href="/column/">離婚後の子育て役立つ情報コラム 一覧 <span>→</span></a>
+    </div>
+
+    <div class="cta">
+      <p><b>取り決めたあとの、面会の予定と養育費の記録に</b></p>
+      <p>はぐみぃは、面会の日程調整と養育費の記録を、電話番号やLINEを交換せずに続けられる共同養育アプリです。無料で使え、課金も広告もありません。</p>
+      <div class="store-pair">
+        <a class="btn-store" href="https://apps.apple.com/jp/app/id6782561944?pt=129057504&ct=lp&mt=8"><span>📱</span><span>App Storeで無料ダウンロード<span class="sub">iPhone・iOS 15.1以上</span></span></a>
+        <a class="btn-store" href="https://play.google.com/store/apps/details?id=com.tigerlabo.hugme"><span>📱</span><span>Google Playで無料ダウンロード<span class="sub">Android 7.0以上</span></span></a>
+      </div>
+    </div>
+  </article>
+</main>
+
+<script>
+/* 飾りだけ：幅の狭い画面では、目次を閉じた状態で始める（本文はすべて HTML にある） */
+(function(){var t=document.getElementById('toc'); if(t && window.matchMedia('(max-width:600px)').matches) t.removeAttribute('open');})();
+</script>
+<style>
+  .footer-resources{max-width:800px;margin:0 auto 28px;text-align:left}
+  .footer-resources__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .footer-resource{display:flex;align-items:center;gap:14px;padding:16px;background:#fff;border:1px solid rgba(139,111,94,.16);border-radius:14px;text-decoration:none;box-shadow:0 4px 16px rgba(83,61,47,.07);transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+  .footer-resource:hover{transform:translateY(-2px);border-color:rgba(181,123,94,.4);box-shadow:0 8px 22px rgba(83,61,47,.11)}
+  .footer-resource:focus-visible{outline:3px solid rgba(181,123,94,.3);outline-offset:3px}
+  .footer-resource__logo{display:flex;flex:0 0 48px;align-items:center;justify-content:center;width:48px;height:48px;border-radius:13px;background:#fff}
+  .footer-resource__logo--note{border:1px solid #e5e5e5;color:#111;font-size:14px;font-weight:800;letter-spacing:-.04em}
+  .footer-resource__logo--youtube{background:#fff1f3}
+  .footer-resource__youtube-mark{position:relative;width:30px;height:21px;border-radius:6px;background:#ff0033}
+  .footer-resource__youtube-mark::after{content:"";position:absolute;top:6px;left:12px;border-top:4.5px solid transparent;border-bottom:4.5px solid transparent;border-left:7px solid #fff}
+  .footer-resource__desc{display:block;min-width:0;color:var(--sub,#6f6862);font-size:13px;font-weight:400;line-height:1.7}
+  @media(max-width:620px){.footer-resources{margin-bottom:24px}.footer-resources__grid{grid-template-columns:1fr}.footer-resource{padding:14px}}
+</style>
+<footer>
+  <section class="footer-resources" aria-label="はぐみぃを理解するための情報">
+    <div class="footer-resources__grid">
+      <a class="footer-resource" href="https://note.com/tigerlabo" target="_blank" rel="noopener" aria-label="note：面会交流・養育費・制度を、公的資料からやさしく整理">
+        <span class="footer-resource__logo footer-resource__logo--note" aria-hidden="true">note</span>
+        <span class="footer-resource__desc">面会交流・養育費・制度を、公的資料からやさしく整理</span>
+      </a>
+      <a class="footer-resource" href="https://www.youtube.com/@hugme_jp" target="_blank" rel="noopener" aria-label="YouTube：はぐみぃの使い方と、子育てに役立つ短い解説">
+        <span class="footer-resource__logo footer-resource__logo--youtube" aria-hidden="true"><span class="footer-resource__youtube-mark"></span></span>
+        <span class="footer-resource__desc">はぐみぃの使い方と、子育てに役立つ短い解説</span>
+      </a>
+    </div>
+  </section>
+  <div class="flinks">
+    <a href="/">はぐみぃトップ</a>
+    <a href="/guide/">共同養育ガイド</a>
+    <a href="/column/">お役立ちコラム</a>
+    <a href="/support/">サポート・お問い合わせ</a>
+    <a href="/for-professionals/">支援団体・士業・自治体の方へ</a>
+    <a href="/privacy/">プライバシーポリシー</a>
+    <a href="/terms/">利用規約</a>
+    <a href="/support/#operator">運営会社：株式会社タイガーラボ</a>
+  </div>
+  <div>運営：株式会社タイガーラボ　最終更新：2026年11月16日</div>
+  <div>© 2026 TIGERLABO Inc.</div>
+</footer>
+
+<script src="/assets/site-nav.js" defer></script>
+</body>
+</html>
