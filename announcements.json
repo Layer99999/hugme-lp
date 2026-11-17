@@ -1,6 +1,16 @@
 {
   "announcements": [
     {
+      "id": "law-2026-11-public-housing-single-parent-deduction",
+      "date": "2026-11-11",
+      "category": "law",
+      "headline": "2028年1月から、公営住宅の入居と家賃の計算で使うひとり親控除が38万円に上がることになりました",
+      "body": "2026年11月11日に、公営住宅法施行令を改正する政令が公布されました。公営住宅の入居資格や家賃を決めるときに収入から差し引くひとり親控除の額を、所得税の改正に合わせて35万円から38万円に引き上げます。施行は2028年1月1日です。すでに入居している方などには経過措置が設けられます。詳しくは、お住まいの自治体の公営住宅の窓口でご確認ください。",
+      "source": "国土交通省（e-Govパブリック・コメント）",
+      "url": "https://public-comment.e-gov.go.jp/pcm/1040?CLASSNAME=PCM1040&id=155260721&Mode=1",
+      "theme": "住宅"
+    },
+    {
       "id": "law-2026-11-joint-custody-stats-june",
       "date": "2026-11-04",
       "category": "law",
